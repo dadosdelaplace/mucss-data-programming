@@ -9,14 +9,14 @@
 // general
 $body-bg: #ffffff !default; // color de fondo
 $body-color: #444442 !default; // color de texto
-$link-color: #25985F !default; // color de links
+$link-color: #2972A8 !default; // color de links
 $link-weight: bold !default;
 $presentation-font-size-root: 1.9em;
 $font-family-sans-serif: 'KoHo', sans-serif !default;
 
 // headings
 $presentation-heading-font: "Quicksand", sans-serif !default;
-$presentation-heading-color: #25985F !default; // color headings
+$presentation-heading-color: #2972A8 !default; // color headings
 $presentation-heading-font-weight: bold !default;
 $h1-font-size: 2.2em !default;
 $h2-font-size: 2em !default;
@@ -25,7 +25,7 @@ $h4-font-size: 1.3em !default;
 $footer-font-size: 1.9em !default;
 
 //code
-$code-color: #2F70AD !default;
+$code-color: #2fad7e !default;
 $font-family-monospace: "Spline Sans Mono", monospace  !default;
 $code-block-border-color: lighten($body-color, 30%) !default;
 $code-block-bg: #ffffff !default;
@@ -79,7 +79,7 @@ code span.ot {
 /*-- scss:rules --*/
 
 .backgrounds .title-slide {
-    background-color: #C9F1E0 !important;
+    background-color: #C9E0F1 !important;
 }
  
   
@@ -107,7 +107,7 @@ code span.ot {
 
 
 .reveal h1, h2 {
-  color: #25985F !important;
+  color: #2972A8 !important;
   font-weight: bold !important;
 }
 
@@ -157,7 +157,7 @@ code span.ot {
    background: linear-gradient(
     to bottom,
     transparent 65%,
-    #ECB467 35%
+    #EFD3A7 35%
   );
 }
 
