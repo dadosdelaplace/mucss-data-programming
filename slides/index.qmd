@@ -107,8 +107,8 @@ Currently, [**researcher and lecturer at the Faculty of Statistics of the UCM**]
 ::: {style="font-size:20px"}
 |  LESSON | WEEK | DATE | TOPIC | SCRIPTS | EJ. | CASO PRÁCTICO | ENTREGA | 
 |:------:|:--------:|:--------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
-|     [1](#clase-1-primeros-pasos)      | S1     | 14 sep |                 R base programming                   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |                 [💻](#tu-turno)                 |                        |         | 
-|     [2](#clase-2-primeros-datos)      | S2     | 21 sep |                 Tipos básicos de datos                 | [📝](https://github.com/dadosdelaplace/docencia-R-master-bio-2324/tree/main/material/scripts)  |       [💻](#tu-turno-1) [💻](#tu-turno-2)       |  [🐣](#caso-práctico)  |         |     
+|     [1](#clase-1-primeros-pasos)      | S1     | 14 sep |                 R base programming                   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |                 [💻](#tu-turno) [💻](#tu-turno-1)               |                        |         | 
+|     [2](#clase-2)      | S2     | 21 sep |                 From the value to the database                 | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-2) [💻](#tu-turno-3)       |  [🐣](#caso-práctico)  |         |     
 
 :::
 :::
@@ -1022,4 +1022,11 @@ today() - birth_date
 ```
 :::
 
+
+# Lesson 2: from the value to the database {#clase-2}
+
+[**Concatenate values: vectors (variables). Basic operations with vectors. Loops vs vectorial programming. Control flow estructures**]{style="color:#444442;"}
+
 ---
+
+
