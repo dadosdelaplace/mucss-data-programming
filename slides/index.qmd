@@ -31,7 +31,7 @@ execute:
 
 ## Hi!
 
-[**Mail**]{.hl-green}: **<javalv09@ucm.es>**. 
+[**Mail**]{.hl-green}: **<javiealv@pa.uc3m.es**> and **<javalv09@ucm.es>**. 
 
 ::: columns
 ::: {.column width="30%"}
@@ -107,8 +107,9 @@ Currently, [**researcher and lecturer at the Faculty of Statistics of the UCM**]
 ::: {style="font-size:20px"}
 |  LESSON | WEEK | DATE | TOPIC | SCRIPTS | EJ. | CASO PRÁCTICO | ENTREGA | 
 |:------:|:--------:|:--------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
-|     [1](#clase-1-primeros-pasos)      | S1     | 14 sep |                 R base programming                   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |                 [💻](#tu-turno) [💻](#tu-turno-1)               |                        |         | 
-|     [2](#clase-2)      | S2     | 21 sep |                 From the value to the database                 | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-2) [💻](#tu-turno-3)       |  [🐣](#caso-práctico)  |         |     
+|     [1](#clase-1-primeros-pasos)      | S1     | 14 sep |                 R base programming                   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno)  [💻](#tu-turno-1) [💻](#tu-turno-2) |       [🐣](#caso-práctico-1)                  |         | 
+|     [2](#clase-2)      | S2     | ¿? |                 First databases and   control flow estructures       | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-3)    |  [🐣](#caso-práctico-2)  |         |     
+|     [3](#clase-3)      | S3    | ¿? |        Tidy data    | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         |     
 
 :::
 :::
@@ -1022,11 +1023,526 @@ today() - birth_date
 ```
 :::
 
+---
 
-# Lesson 2: from the value to the database {#clase-2}
+## Vectors: concatenate
 
-[**Concatenate values: vectors (variables). Basic operations with vectors. Loops vs vectorial programming. Control flow estructures**]{style="color:#444442;"}
+Working with data usually implies having [**columns that represent variables**]{.hl-yellow}: we will call [**vectors**]{.hl-yellow} a [**concatenation**]{.hl-purple} of cells (values) of the [**same type**]{.hl-purple}.
+
+. . .
+
+The simplest way is using the `c()` command (c, **concatenate**), and just introduce its **elements between parentheses, and separated by commas**.
+
+```{r}
+age <- c(33, 27, 60, 61)
+age
+```
+
+. . .
+
+::: callout-tip
+A single number `x <- 1` (or `x <- c(1)`) is actually a vector of length one.
+:::
 
 ---
 
+## Vectors: concatenate
 
+::: columns
+::: {.column width="40%"}
+![](img/edades_environment.jpg)
+:::
+
+::: {.column width="60%"}
+As you can see, in the `environment` area we have now a **collection of elements** saved
+
+```{r}
+age
+```
+:::
+:::
+
+. . .
+
+The [**length of a vector**]{.hl-yellow} can be computed with `length()`.
+
+```{r}
+length(age)
+```
+
+. . .
+
+We can also  [**concatenate vectors themselves**]{.hl-yellow}
+
+```{r}
+c(age, age, 8)
+```
+
+---
+
+## Numerical sequences
+
+Many times we will want to create [**numeric sequences**]{.hl-yellow} (for example, the days of the month). The `seq(start, end)` command allows us to create a **sequence** from a start element to an end element, [**advance one at a time**]{.hl-purple}.
+
+```{r}
+seq(1, 31)
+```
+
+. . .
+
+The command `1:n` returns the same as `seq(1, n)` (if the initial element is greater than the final one, it will understand that the sequence is [**decreasing**]{.hl-purple}).
+
+```{r}
+1:5
+7:-3
+```
+
+---
+
+## Numerical sequences
+
+We can also define [**other type of discretization step**]{.hl-yellow} between consecutives
+
+```{r}
+seq(1, 7, by = 0.5) # from 1 to 7 by step = 0.5
+```
+
+. . .
+
+In other cases we will be interested in defining a [**sequence with a specific length**]{.hl-yellow}
+
+```{r}
+seq(1, 50, l = 7) # length 7
+```
+
+. . .
+
+We may even want to generate a vector of [**n repeated elements**]{.hl-yellow}.
+
+```{r}
+rep(0, 7)
+```
+
+---
+
+## Vectors: characters
+
+A vector is a **concatenation** of [**same type**]{.hl-yellow} elements, but they do not necessarily have to be numerical types. Let us create an example sentence.
+
+```{r}
+sentence <- "I am Javi"
+sentence
+length(sentence)
+```
+
+. . .
+
+In the previous case it was not a vector, it was a single text element. To create a vector we must use `c()` again and separate elements with commas.
+
+```{r}
+vector <- c("I", "am", "Javi")
+vector
+length(vector)
+```
+
+---
+
+## Vectors
+
+What will happen if we [**concatenate elements of different type**]{.hl-yellow}?
+
+. . .
+
+```{r}
+c(1, 2, "javi", "3", TRUE)
+```
+
+Notice that since they are all of the same type, what `R` does is [**convert**]{.hl-yellow} everything to character,  [**violating data integrity**]{.hl-red}
+
+. . .
+
+```{r}
+c(3, 4, TRUE, FALSE)
+```
+
+It is important to understand that the logical values are actually [**stored internally as 0/1**]{.hl-yellow}
+
+---
+
+## Operating with vectors
+
+With numeric vectors we can do the same [**arithmetic operations**]{.hl-yellow} as with numbers → a [**number is a vector**]{.hl-purple} (of length one).
+
+. . .
+
+What will happen if we [**add or subtract a value**]{.hl-yellow} to a vector?
+
+. . .
+
+```{r}
+x <- c(1, 3, 5, 7)
+x + 1
+x * 2
+```
+
+::: callout-warning
+## Be careful
+
+Unless we indicate otherwise, in `R` operations with vectors are always [**element to element**]{.hl-orange}
+:::
+
+---
+
+## Operating with vectors
+
+Vectors can also interact with each other, so we can define, for example, [**sums of vectors**]{.hl-yellow} (element by element)
+
+```{r}
+x <- c(2, 4, 6)
+y <- c(1, 3, 5)
+x + y
+```
+
+. . .
+
+Since the operation (e.g., a sum) is performed element by element, what will happen if [**let's add two vectors of different length**]{.hl-yellow}?
+
+. . .
+
+```{r}
+z <- c(1, 3, 5, 7)
+x + z
+```
+
+What it does is [**recycle elements**]{.hl-yellow}: if you have a vector of 4 elements and we add another one of 3 elements, it will recycle from the vector with smaller length.
+
+---
+
+## Operating with vectors
+
+A very common operation is to [**ask data**]{.hl-yellow} by using [**logical conditions**]{.hl-purple}. For example, if we define a vector of temperatures....
+
+[**What days was it less than 22 degrees**]{.hl-yellow}
+
+```{r}
+x <- c(15, 20, 31, 27, 15, 29)
+```
+
+. . .
+
+```{r}
+x < 22
+```
+
+It will return a [**logical vector**]{.hl-yellow}, depending on whether **each element** fulfills or not the requested condition (of **equal length** to the requested vector).
+
+. . .
+
+If we had a [**missing data**]{.hl-yellow} (e.g., due to device error that day), the evaluated condition would also be `NA`.
+
+```{r}
+y <- c(15, 20, NA, 31, 27, 7, 29, 10)
+y < 22
+```
+
+---
+
+## Operating with vectors
+
+Logical [**conditions can be combined**]{.hl-yellow} in two ways:
+
+- [**Intersection**]{.hl-yellow}: [**all**]{.hl-purple} concatenated conditions must be checked ([**conjunction and**]{.hl-purple} with `&`) to return a `TRUE`.
+
+```{r}
+x < 30 & x > 15
+```
+
+-    [**Union**]{.hl-yellow}: it is sufficient that [**at least one**]{.hl-purple} is fulfilled ([**conjunction or**]{.hl-purple} with `|`).
+
+```{r}
+x < 30 | x > 15
+```
+
+. . .
+
+`any()` and `all()` allow us to check that [**all (or any) elements**]{.hl-yellow} meet the following criteria
+
+```{r}
+any(x < 30)
+all(x < 30)
+```
+
+---
+
+## Operating with vectors
+
+We can also use [**statistical operations**]{.hl-yellow} such as `sum()` which, given a vector, returns the sum of all its elements.
+
+```{r}
+x <- c(1, -2, 3, -1)
+sum(x)
+```
+
+[**What happens when a single value is missing?**]{.hl-yellow}
+
+. . .
+
+```{r}
+x <- c(1, -2, 3, NA, -1)
+sum(x)
+```
+
+By default, if we have a missing data, the [**operation will also be missing**]{.hl-yellow}. In order to [**remove that data**]{.hl-purple}, we use an optional argument `na.rm = TRUE`.
+
+```{r}
+sum(x, na.rm = TRUE)
+```
+
+---
+
+## Operating with vectors
+
+As we have mentioned, logical values are stored internally as 0 and 1, so we can use them in arithmetic operations.
+
+
+For example, if we want to [**find the number of elements that fulfill a condition**]{.hl-yellow} (for example, "less than 3"), those that do will be assigned a 1 (`TRUE`) and those that don't a 0 (`FALSE`), so we only need to add this logical vector to obtain the number of elements that fulfill a condition.
+
+```{r}
+x <- c(2, 4, 6)
+sum(x < 3)
+```
+
+---
+
+## Operating with vectors
+
+Other common operations are [**average**]{.hl-yellow}, [**median**]{.hl-yellow}, [**percentiles**]{.hl-yellow}, etc.
+
+
+- [**Average (mean)**]{.hl-yellow}: centrality measure that consists of adding all the elements and dividing by the number of elements added. The best known but the [**least robust**]{.hl-red}: given a set, if outliers (very large or very small values) are introduced, the mean is strongly perturbed.
+
+
+```{r}
+x <- c(165, 170, 181, 191, 150, 155, 167, NA, 173, 177)
+mean(x, na.rm = TRUE)
+```
+
+---
+
+## Operating with vectors
+
+Other common operations are [**average**]{.hl-yellow}, [**median**]{.hl-yellow}, [**percentiles**]{.hl-yellow}, etc.
+
+
+-   [**Mediana**]{.hl-yellow}: measure of centrality that consists of ordering the elements and keeping the one that occupies the middle.
+
+
+```{r}
+x <- c(165, 170, 181, 191, 150, 155, 167, 173, 177)
+median(x)
+```
+
+. . .
+
+-   [**Percentiles**]{.hl-yellow}: measures of location (they divide the data into equal parts).
+
+```{r}
+quantile(x) # por defecto percentiles 0-25-50-75-100
+quantile(x, probs = c(0.1, 0.4, 0.9))
+```
+
+---
+
+## Operating with vectors
+
+Another very common operation is to [**access elements**]{.hl-yellow} of it. The simplest way is to use the `[i]` operator (access the i-th element).
+
+```{r}
+age <- c(20, 30, 33, NA, 61) 
+age[3] # third position
+```
+
+. . .
+
+
+Since a number is just a vector of length one, this operation can also be applied using a [**vector of indexes to select**]{.hl-yellow}
+
+```{r}
+y <- c("Hi", "how", "are", "you", "?")
+y[c(1:2, 4)] # first, second and fourth elemento
+```
+
+::: callout-tip
+To access the last one, without worrying about which one, we can pass as index the length `x[length(x)]`.
+
+:::
+
+---
+
+## Operating with vectors
+
+Other times we will not want to select but [**delete some elements**]{.hl-yellow}. We will have to repeat the same operation but with the sign `-` in front: the operator `[-i]` does not select the i-th element of the vector but discards it.
+
+```{r}
+y
+y[-2]
+```
+
+
+. . .
+
+Many times we will want to [**select or eliminate based on logical conditions**]{.hl-yellow}, depending on the values, so we will pass as index the condition itself (remember, `x < 2` returns a logical vector).
+
+```{r}
+age <- c(15, 21, 30, 17, 45)
+names <- c("javi", "maría", "laura", "carla", "luis")
+names[age < 18] 
+```
+
+---
+
+## Operating with vectors
+
+Finally, a common action is to [**sort values**]{.hl-yellow}:
+
+-   `sort()`: returns the [**sorted vector**]{.hl-yellow}. By default from smallest to largest but with `decreasing = TRUE` we can change it.
+
+```{r}
+age <- c(81, 7, 25, 41, 65, 20, 33, 23, 77)
+sort(age)
+sort(age, decreasing = TRUE)
+```
+
+. . .
+
+-   `order()`: returns the [**index vector**]{.hl-yellow} that we would have to use to have the sorted vector.
+
+```{r}
+order(x)
+x[order(x)]
+```
+
+---
+
+## 💻 Your turn {#tu-turno-2}
+
+[**Try to solve the following exercises without looking at the solutions**]{style="color:#444442;"}
+
+::: panel-tabset
+### [**Exercise 1**]{.hl-yellow}
+
+📝 Define the vector `x` as the concatenation of the first 5 odd numbers, and calculate their sum.
+
+```{r}
+#| code-fold: true
+#| eval: false
+# Two ways
+x <- c(1, 3, 5, 7, 9)
+x <- seq(1, 9, by = 2)
+
+sum(x)
+```
+
+### [**Exercise 2**]{.hl-yellow}
+
+📝 Get the elements of `x` greater than 4. Calculate the number of elements of `x` greater than 4.
+
+```{r}
+#| code-fold: true
+#| eval: false
+x[x > 4]
+sum(x > 4)
+```
+
+### [**Exercise 3**]{.hl-yellow}
+
+📝 Calculate the vector `1/x` and obtain the ordered version (from smallest to largest).
+
+```{r}
+#| code-fold: true
+#| eval: false
+z <- 1/x
+sort(z)
+z[order(z)]
+```
+
+### [**Exercise 4**]{.hl-yellow}
+
+📝 Find the maximum and minimum of vector `x`.
+
+```{r}
+#| code-fold: true
+#| eval: false
+min(x)
+max(x)
+```
+
+### [**Exercise 5**]{.hl-yellow}
+
+📝 Find of the vector `x` the elements greater (strictly) than 1 and less (strictly) than 7. Find a way to find out if all the elements are positive or not.
+
+```{r}
+#| code-fold: true
+#| eval: false
+x[x > 1 & x < 7]
+all(x > 0)
+```
+
+### [**Exercise 6**]{.hl-yellow}
+
+📝 Given the vector `x <- c(1, -5, 8, NA, 10, -3, 9)`, extract the elements that occupy the places 1, 2, 5, 6. Removes from the vector the second element. After removing it, compute its sum and mean
+
+```{r}
+#| code-fold: true
+#| eval: false
+x <- c(1, -5, 8, NA, 10, -3, 9)
+x[c(1, 2, 5, 6)]
+y <- x[-2]
+sum(y, na.rm = TRUE)
+mean(y, na.rm = TRUE)
+```
+:::
+
+---
+
+## 🐣 Case study {#caso-práctico-1}
+
+In the `{datasets}` package we have several datasets, and one of them is named as `airquality`. I have extracted below 3 variables from this dataset
+
+```{r}
+temperature <- airquality$Temp
+month <- airquality$Month
+day <- airquality$Day
+```
+
+1. What [**represents the data**]{.hl-yellow}? How to find out?
+
+. . .
+
+2. How many [**records do we have for May**]{.hl-yellow}? What about April? Construct a new `date` variable with the [**date**]{.hl-yellow} of each record (combining year, month and day).
+
+. . .
+
+3. Create a new variable `temp_celsius` with the [**temperature in ºC**]{.hl-yellow} (units of the original variable are in Fahrenheit)
+
+. . .
+
+4. What was the [**average temperature**]{.hl-yellow} for the month of August? Extract the days when the [**temperature exceeded 30 degrees**]{.hl-yellow} and determine the number of days when it did.
+
+
+# Lesson 2: first databases {#clase-2}
+
+[**First databases: matrices and data.frames. Tibbles as standard type for databases. Loops vs vectorial programming. Control flow estructures**]{style="color:#444442;"}
+
+---
+
+## ...
+
+# Lesson 3: tidydata {#clase-3}
+
+[**R base vs tidyverse. Pipe operator. Principles of tidy data: tidy vs messy data. Pivoting datasets**]{style="color:#444442;"}
+
+
+---
+
+## ...
