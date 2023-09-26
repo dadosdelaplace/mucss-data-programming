@@ -501,7 +501,7 @@ Master in Computational Social Sciences • 2023-2024
 <td style="text-align: center;">First databases: tibbles and tidy data</td>
 <td style="text-align: center;"><a href="https://github.com/dadosdelaplace/mucss-data-programming/material/scripts">📝</a></td>
 <td style="text-align: center;"><a href="#/tu-turno-3">💻</a></td>
-<td style="text-align: center;"><a href="#/caso-práctico-2">🐣</a></td>
+<td style="text-align: center;"><a href="#/caso-práctico-2">🐣</a> <a href="#/caso-práctico-3">🐣</a></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -1370,7 +1370,7 @@ Master in Computational Social Sciences • 2023-2024
 <div class="cell">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a><span class="fu">today</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-09-25"</code></pre>
+<pre><code>[1] "2023-09-26"</code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -1380,7 +1380,7 @@ Master in Computational Social Sciences • 2023-2024
 <div class="cell">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="fu">now</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-09-25 14:29:40 CEST"</code></pre>
+<pre><code>[1] "2023-09-26 15:00:48 CEST"</code></pre>
 </div>
 </div>
 </div>
@@ -2039,96 +2039,95 @@ Master in Computational Social Sciences • 2023-2024
 <h1>Lesson 2: first databases</h1>
 <p><span style="color:#444442;"><strong>First databases: tibbles as standard type for databases. R base vs tidyverse. Pipe operator. Principles of tidy data: tidy vs messy data. Pivoting datasets</strong></span></p>
 </section>
-<section id="primer-intento-matrices" class="slide level2">
-<h2>Primer intento: matrices</h2>
-<p>Cuando analizamos datos solemos tener <span class="hl-yellow"><strong>varias variables</strong></span> de cada individuo: necesitamos una «tabla» que las recopile. La opción más inmediata son las <span class="hl-yellow"><strong>matrices</strong></span>: concatenación de variables del <span class="hl-purple"><strong>mismo tipo e igual longitud</strong></span>.</p>
+<section id="first-attempt-matrices" class="slide level2">
+<h2>First attempt: matrices</h2>
+<p>In data science we usually have <span class="hl-yellow"><strong>several variables</strong></span> for each individual: we need a “table” to collect them. The most immediate option is <span class="hl-yellow"><strong>matrices</strong></span>: a concatenation of variables of <span class="hl-purple"><strong>same type and equal length</strong></span>.</p>
 <div class="fragment">
-<p>Imagina que tenemos estaturas y pesos de 4 personas. ¿Cómo <span class="hl-yellow"><strong>crear un dataset con las dos variables</strong></span>?</p>
+<p>Let us imagine that we have heights and weights of 4 people. How to <span class="hl-yellow"><strong>create a dataset with those variables</strong></span>?</p>
 <ul>
-<li>Con <code>cbind()</code> <span class="hl-yellow"><strong>concatenamos vectores en forma de columnas</strong></span></li>
+<li>Function <code>cbind()</code> allow us to <span class="hl-yellow"><strong>concatenate vectors by columns</strong></span></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb174"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb174-1"><a href="#cb174-1"></a>estaturas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">160</span>, <span class="dv">170</span>, <span class="dv">180</span>)</span>
-<span id="cb174-2"><a href="#cb174-2"></a>pesos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">63</span>, <span class="dv">70</span>, <span class="dv">85</span>, <span class="dv">95</span>)</span>
-<span id="cb174-3"><a href="#cb174-3"></a>datos_matriz <span class="ot">&lt;-</span> <span class="fu">cbind</span>(estaturas, pesos)</span>
-<span id="cb174-4"><a href="#cb174-4"></a>datos_matriz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb174"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb174-1"><a href="#cb174-1"></a>heights <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">160</span>, <span class="dv">170</span>, <span class="dv">180</span>)</span>
+<span id="cb174-2"><a href="#cb174-2"></a>weights <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">63</span>, <span class="dv">70</span>, <span class="dv">85</span>, <span class="dv">95</span>)</span>
+<span id="cb174-3"><a href="#cb174-3"></a>data_matrix <span class="ot">&lt;-</span> <span class="fu">cbind</span>(heights, weights)</span>
+<span id="cb174-4"><a href="#cb174-4"></a>data_matrix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>     estaturas pesos
-[1,]       150    63
-[2,]       160    70
-[3,]       170    85
-[4,]       180    95</code></pre>
+<pre><code>     heights weights
+[1,]     150      63
+[2,]     160      70
+[3,]     170      85
+[4,]     180      95</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="primer-intento-matrices-1" class="slide level2">
-<h2>Primer intento: matrices</h2>
+<section id="first-attempt-matrices-1" class="slide level2">
+<h2>First attempt: matrices</h2>
 <ul>
-<li>También podemos <span class="hl-yellow"><strong>construir la matriz por filas</strong></span> con la función <code>rbind()</code> (aunque lo recomendable es tener cada variable en columna e individuo en fila).</li>
+<li>We can also <span class="hl-yellow"><strong>define a matrix by rows</strong></span> with the <code>rbind()</code> function (although it is recommended to have each variable in column and individuals in row).</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb176"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb176-1"><a href="#cb176-1"></a><span class="co"># Construimos la matriz por filas</span></span>
-<span id="cb176-2"><a href="#cb176-2"></a><span class="fu">rbind</span>(estaturas, pesos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb176"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb176-1"><a href="#cb176-1"></a><span class="fu">rbind</span>(heights, weights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>          [,1] [,2] [,3] [,4]
-estaturas  150  160  170  180
-pesos       63   70   85   95</code></pre>
+<pre><code>        [,1] [,2] [,3] [,4]
+heights  150  160  170  180
+weights   63   70   85   95</code></pre>
 </div>
 </div>
 <ul>
-<li>Podemos <span class="hl-yellow"><strong>visualizar la matriz</strong></span> con la función <code>View()</code>.</li>
+<li>We can <span class="hl-yellow"><strong>view the matrix</strong></span> (in a tabular way) using the function <code>View()</code>.</li>
 </ul>
 <div class="fragment">
 <ul>
-<li>Podemos <span class="hl-yellow"><strong>comprobar las dimensiones</strong></span> con <code>dim()</code>, <code>nrow()</code> y <code>ncol()</code>: nuestros datos están tabulados:</li>
+<li>We can <span class="hl-yellow"><strong>check dimensions</strong></span> with <code>dim()</code>, <code>nrow()</code> and <code>ncol()</code> (data is now tabulated).</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb178"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb178-1"><a href="#cb178-1"></a><span class="fu">dim</span>(datos_matriz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb178"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb178-1"><a href="#cb178-1"></a><span class="fu">dim</span>(data_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4 2</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb180"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb180-1"><a href="#cb180-1"></a><span class="fu">nrow</span>(datos_matriz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb180"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb180-1"><a href="#cb180-1"></a><span class="fu">nrow</span>(data_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="primer-intento-matrices-2" class="slide level2">
-<h2>Primer intento: matrices</h2>
+<section id="first-attempt-matrices-2" class="slide level2">
+<h2>First attempt: matrices</h2>
 <ul>
-<li>También podemos <span class="hl-yellow"><strong>«darle vuelta» (matriz transpuesta)</strong></span> con <code>t()</code>.</li>
+<li>We can also <span class="hl-yellow"><strong>transpose a matrix</strong></span> with <code>t()</code>.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb182"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb182-1"><a href="#cb182-1"></a><span class="fu">t</span>(datos_matriz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb182"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb182-1"><a href="#cb182-1"></a><span class="fu">t</span>(data_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>          [,1] [,2] [,3] [,4]
-estaturas  150  160  170  180
-pesos       63   70   85   95</code></pre>
+<pre><code>        [,1] [,2] [,3] [,4]
+heights  150  160  170  180
+weights   63   70   85   95</code></pre>
 </div>
 </div>
 <div class="fragment">
 <ul>
-<li>Dado que ahora tenemos dos dimensiones, para <span class="hl-yellow"><strong>acceder a elementos</strong></span> deberemos proporcionar el índice de la fila y de la columna (si quedan libres implica todos de esa dimensión)</li>
+<li>Since we now have two dimensions, to <span class="hl-yellow"><strong>access elements</strong></span> we must provide the index of the row and column inside of brackets (if they are free, it implies all of that dimension)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb184"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb184-1"><a href="#cb184-1"></a>datos_matriz[<span class="dv">2</span>, <span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb184"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb184-1"><a href="#cb184-1"></a>data_matrix[<span class="dv">2</span>, <span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>estaturas 
-      160 </code></pre>
+<pre><code>heights 
+    160 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb186"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb186-1"><a href="#cb186-1"></a>datos_matriz[, <span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb186"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb186-1"><a href="#cb186-1"></a>data_matrix[, <span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 63 70 85 95</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="primer-intento-matrices-3" class="slide level2">
-<h2>Primer intento: matrices</h2>
+<section id="first-attempt-matrices-3" class="slide level2">
+<h2>First attempt: matrices</h2>
 <ul>
-<li>También podemos definir una <span class="hl-yellow"><strong>matriz a partir de un vector numérico</strong></span>, reorganizando los valores en forma de matriz (sabiendo que los elementos se van <strong>colocando por columnas</strong>).</li>
+<li>We can also define a <span class="hl-yellow"><strong>matrix from a numeric vector</strong></span>, reorganizing the values in the form of a matrix (knowing that the elements are <strong>placed by columns</strong>).</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb188"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb188-1"><a href="#cb188-1"></a>z <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>, <span class="at">ncol =</span> <span class="dv">5</span>) </span>
@@ -2141,7 +2140,7 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 <div class="fragment">
-<p>Con las matrices sucede como con los vectores: cuando aplicamos una <span class="hl-yellow"><strong>operación aritmética lo hacemos elemento a elemento</strong></span></p>
+<p>With matrices it is the same as with vectors: when we apply an <span class="hl-yellow"><strong>arithmetic operation, we do it element by element</strong></span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb190"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb190-1"><a href="#cb190-1"></a>z<span class="sc">/</span><span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -2153,42 +2152,42 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 </section>
-<section id="primer-intento-matrices-4" class="slide level2">
-<h2>Primer intento: matrices</h2>
-<p>También podemos <span class="hl-yellow"><strong>realizar operaciones por columnas/filas</strong></span> sin recurrir a bucles con la función <code>apply()</code>, y le indicaremos como <strong>argumentos</strong></p>
+<section id="first-attempt-matrices-4" class="slide level2">
+<h2>First attempt: matrices</h2>
+<p>We can also apply <span class="hl-yellow"><strong>apply functions by columns/rows</strong></span> (avoiding loops) with <code>apply()</code>, taking as <strong>input arguments</strong></p>
 <ul>
-<li>la matriz</li>
-<li>el sentido de la operación (MARGIN = 1 por filas, MARGIN = 2 por columnas)</li>
-<li>la función a aplicar</li>
+<li>a matrix</li>
+<li>the sense (<code>MARGIN = 1</code> by rows, <code>MARGIN = 2</code> by columns)</li>
+<li>a function to be applied.</li>
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb192"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb192-1"><a href="#cb192-1"></a><span class="co"># Media (mean) por columnas (MARGIN = 2)</span></span>
-<span id="cb192-2"><a href="#cb192-2"></a><span class="fu">apply</span>(datos_matriz, <span class="at">MARGIN =</span> <span class="dv">2</span>, <span class="at">FUN =</span> <span class="st">"mean"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb192"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb192-1"><a href="#cb192-1"></a><span class="co"># Mean by columns (MARGIN = 2)</span></span>
+<span id="cb192-2"><a href="#cb192-2"></a><span class="fu">apply</span>(data_matrix, <span class="at">MARGIN =</span> <span class="dv">2</span>, <span class="at">FUN =</span> <span class="st">"mean"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>estaturas     pesos 
-   165.00     78.25 </code></pre>
+<pre><code>heights weights 
+ 165.00   78.25 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb194"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb194-1"><a href="#cb194-1"></a><span class="co"># (Cuasi)varianza (var) por columnas (MARGIN = 2)</span></span>
-<span id="cb194-2"><a href="#cb194-2"></a><span class="fu">apply</span>(datos_matriz, <span class="at">MARGIN =</span> <span class="dv">2</span>, <span class="at">FUN =</span> <span class="st">"var"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb194"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb194-1"><a href="#cb194-1"></a><span class="co"># (Quasi)var (var) by columns (MARGIN = 2)</span></span>
+<span id="cb194-2"><a href="#cb194-2"></a><span class="fu">apply</span>(data_matrix, <span class="at">MARGIN =</span> <span class="dv">2</span>, <span class="at">FUN =</span> <span class="st">"var"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>estaturas     pesos 
- 166.6667  208.9167 </code></pre>
+<pre><code> heights  weights 
+166.6667 208.9167 </code></pre>
 </div>
 </div>
 </div>
 <div class="fragment">
-<p><span class="hl-red"><strong>No profundizaremos</strong></span> más ya que nuestro objetivo es tener variables de misma longitud pero <span class="hl-yellow"><strong>tipos diferentes</strong></span> (pero que sepas que existen).</p>
+<p><span class="hl-red"><strong>We won’t go deeper</strong></span> any further since our goal is to have variables of the same length but <span class="hl-yellow"><strong>different types</strong></span> (but know they exist).</p>
 </div>
 </section>
 <section id="tu-turno-matrices" class="slide level2">
-<h2>💻 Tu turno (matrices)</h2>
-<p><span style="color:#444442;"><strong>Intenta realizar los siguientes ejercicios sin mirar las soluciones</strong></span></p>
+<h2>💻 Your turn (matrices)</h2>
+<p><span style="color:#444442;"><strong>Try to solve the following exercises without looking at the solutions</strong></span></p>
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1"><span class="hl-yellow"><strong>Ejercicio 1</strong></span></a></li><li><a href="#tabset-4-2"><span class="hl-yellow"><strong>Ejercicio 2</strong></span></a></li><li><a href="#tabset-4-3"><span class="hl-yellow"><strong>Ejercicio 3</strong></span></a></li><li><a href="#tabset-4-4"><span class="hl-yellow"><strong>Ejercicio 4</strong></span></a></li></ul>
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1"><span class="hl-yellow"><strong>Exercise 1</strong></span></a></li><li><a href="#tabset-4-2"><span class="hl-yellow"><strong>Exercise 2</strong></span></a></li><li><a href="#tabset-4-3"><span class="hl-yellow"><strong>Exercise 3</strong></span></a></li><li><a href="#tabset-4-4"><span class="hl-yellow"><strong>Exercise 4</strong></span></a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1">
-<p>📝 Modifica el código para definir una matriz <code>x</code> de ceros de 3 filas y 7 columnas de unos.</p>
+<p>📝 Modify the code below to define an <code>x</code> matrix of ones with 3 rows and 7 columns.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb196"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb196-1"><a href="#cb196-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
 <span id="cb196-2"><a href="#cb196-2"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2202,7 +2201,7 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 <div id="tabset-4-2">
-<p>📝 A la matriz anterior, suma un 1 a cada número de la matriz y divide el resultado entre 5. Tras ello calcula su transpuesta y obtén sus dimensiones</p>
+<p>📝 Add a 1 to each number in the matrix above, and divide the result by 5. After that, calculate its transpose and obtain its dimensions</p>
 <div class="cell">
 <details>
 <summary>Código</summary>
@@ -2213,113 +2212,113 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 <div id="tabset-4-3">
-<p>📝 Define la matriz <code>x &lt;- matrix(1:12, nrow = 4)</code>. Obtén la primera fila, la tercera columna, y el elemento (4, 1).</p>
+<p>📝 Define matrix <code>x &lt;- matrix(1:12, nrow = 4)</code>. Get the first row, the third column, and the element (4, 1).</p>
 <div class="cell">
 <details>
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb199"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb199-1"><a href="#cb199-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">nrow =</span> <span class="dv">4</span>)</span>
-<span id="cb199-2"><a href="#cb199-2"></a>x[<span class="dv">1</span>, ] <span class="co"># primera fila</span></span>
-<span id="cb199-3"><a href="#cb199-3"></a>x[, <span class="dv">3</span>] <span class="co"># tercera columna</span></span>
-<span id="cb199-4"><a href="#cb199-4"></a>x[<span class="dv">4</span>, <span class="dv">1</span>] <span class="co"># elemento (4, 1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb199-2"><a href="#cb199-2"></a>x[<span class="dv">1</span>, ] <span class="co"># first row</span></span>
+<span id="cb199-3"><a href="#cb199-3"></a>x[, <span class="dv">3</span>] <span class="co"># third column</span></span>
+<span id="cb199-4"><a href="#cb199-4"></a>x[<span class="dv">4</span>, <span class="dv">1</span>] <span class="co"># element (4, 1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
 <div id="tabset-4-4">
-<p>📝 Con la matriz anterior definida como <code>x &lt;- matrix(1:12, nrow = 4)</code>, calcula la media de todos los elementos, la media de cada fila y la media de cada columna. Calcula la suma de de cada fila y de cada columna</p>
+<p>📝 With the above matrix defined as <code>x &lt;- matrix(1:12, nrow = 4)</code>, calculate the mean of all elements, the mean of each row and the mean of each column. Calculate the sum of each row and each column.</p>
 <div class="cell">
 <details>
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb200"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb200-1"><a href="#cb200-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">nrow =</span> <span class="dv">4</span>)</span>
-<span id="cb200-2"><a href="#cb200-2"></a><span class="fu">mean</span>(x) <span class="co"># de todos</span></span>
-<span id="cb200-3"><a href="#cb200-3"></a><span class="fu">apply</span>(x, <span class="at">MARGIN =</span> <span class="dv">1</span>, <span class="at">FUN =</span> <span class="st">"mean"</span>) <span class="co"># media por filas</span></span>
-<span id="cb200-4"><a href="#cb200-4"></a><span class="fu">apply</span>(x, <span class="at">MARGIN =</span> <span class="dv">2</span>, <span class="at">FUN =</span> <span class="st">"mean"</span>) <span class="co"># media por columnas</span></span>
-<span id="cb200-5"><a href="#cb200-5"></a><span class="fu">apply</span>(x, <span class="at">MARGIN =</span> <span class="dv">1</span>, <span class="at">FUN =</span> <span class="st">"sum"</span>) <span class="co"># suma por filas</span></span>
-<span id="cb200-6"><a href="#cb200-6"></a><span class="fu">apply</span>(x, <span class="at">MARGIN =</span> <span class="dv">2</span>, <span class="at">FUN =</span> <span class="st">"sum"</span>) <span class="co"># suma por columnas</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb200-2"><a href="#cb200-2"></a><span class="fu">mean</span>(x) <span class="co"># mean (of all elements)</span></span>
+<span id="cb200-3"><a href="#cb200-3"></a><span class="fu">apply</span>(x, <span class="at">MARGIN =</span> <span class="dv">1</span>, <span class="at">FUN =</span> <span class="st">"mean"</span>) <span class="co"># mean by rows</span></span>
+<span id="cb200-4"><a href="#cb200-4"></a><span class="fu">apply</span>(x, <span class="at">MARGIN =</span> <span class="dv">2</span>, <span class="at">FUN =</span> <span class="st">"mean"</span>) <span class="co"># mean by columns</span></span>
+<span id="cb200-5"><a href="#cb200-5"></a><span class="fu">apply</span>(x, <span class="at">MARGIN =</span> <span class="dv">1</span>, <span class="at">FUN =</span> <span class="st">"sum"</span>) <span class="co"># sum by rows</span></span>
+<span id="cb200-6"><a href="#cb200-6"></a><span class="fu">apply</span>(x, <span class="at">MARGIN =</span> <span class="dv">2</span>, <span class="at">FUN =</span> <span class="st">"sum"</span>) <span class="co"># sum by columns</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="segundo-intento-data.frame" class="slide level2">
-<h2>Segundo intento: data.frame</h2>
-<p>Las matrices tienen el mismo problema que los vectores: si juntamos datos de distinto tipo, se <span class="hl-red"><strong>perturba la integridad del dato</strong></span> ya que los convierte</p>
+<section id="second-attempt-data.frame" class="slide level2">
+<h2>Second attempt: data.frame</h2>
+<p>Matrices have the same problem as vectors: if we collect data of different types together, <span class="hl-red"><strong>data integrity is compromised</strong></span> as it converts them into.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb201" data-code-line-numbers="4-5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb201-1"><a href="#cb201-1"></a>edades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">14</span>, <span class="dv">24</span>, <span class="cn">NA</span>)</span>
-<span id="cb201-2"><a href="#cb201-2"></a>soltero <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">NA</span>, <span class="cn">FALSE</span>)</span>
-<span id="cb201-3"><a href="#cb201-3"></a>nombres <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"javi"</span>, <span class="st">"laura"</span>, <span class="st">"lucía"</span>)</span>
-<span id="cb201-4"><a href="#cb201-4"></a>matriz <span class="ot">&lt;-</span> <span class="fu">cbind</span>(edades, soltero, nombres)</span>
-<span id="cb201-5"><a href="#cb201-5"></a>matriz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb201" data-code-line-numbers="4-5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb201-1"><a href="#cb201-1"></a>ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">14</span>, <span class="dv">24</span>, <span class="cn">NA</span>)</span>
+<span id="cb201-2"><a href="#cb201-2"></a>single <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">NA</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb201-3"><a href="#cb201-3"></a>names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"javi"</span>, <span class="st">"laura"</span>, <span class="st">"lucía"</span>)</span>
+<span id="cb201-4"><a href="#cb201-4"></a>matrix <span class="ot">&lt;-</span> <span class="fu">cbind</span>(ages, single, names)</span>
+<span id="cb201-5"><a href="#cb201-5"></a>matrix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>     edades soltero nombres
-[1,] "14"   "TRUE"  "javi" 
-[2,] "24"   NA      "laura"
-[3,] NA     "FALSE" "lucía"</code></pre>
+<pre><code>     ages single  names  
+[1,] "14" "TRUE"  "javi" 
+[2,] "24" NA      "laura"
+[3,] NA   "FALSE" "lucía"</code></pre>
 </div>
 </div>
 <div class="fragment">
-<p>Al ya no ser números no podemos realizar operaciones aritméticas</p>
+<p>Since we are no longer numbers, we cannot perform arithmetic operations.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb203"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb203-1"><a href="#cb203-1"></a>matriz <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb203"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb203-1"><a href="#cb203-1"></a>matrix <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error in matriz + 1: non-numeric argument to binary operator</code></pre>
+<pre><code>Error in matrix + 1: non-numeric argument to binary operator</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="segundo-intento-data.frame-1" class="slide level2">
-<h2>Segundo intento: data.frame</h2>
-<p>Para poder trabajar con <span class="hl-yellow"><strong>variables de distinto tipo</strong></span> tenemos lo que se conoce como <span class="hl-yellow"><strong>data.frame</strong></span>: concatenación de variables de igual longitud pero pueden ser de <span class="hl-purple"><strong>tipo distinto</strong></span>.</p>
+<section id="second-attempt-data.frame-1" class="slide level2">
+<h2>Second attempt: data.frame</h2>
+<p>In order to work with <span class="hl-yellow"><strong>variables of different type</strong></span> we have what is known as <span class="hl-yellow"><strong>data.frame</strong></span>: concatenation of variables of equal length but may be of <span class="hl-purple"><strong>different type</strong></span>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb205" data-code-line-numbers="1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb205-1"><a href="#cb205-1"></a>tabla <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(edades, soltero, nombres)</span>
-<span id="cb205-2"><a href="#cb205-2"></a><span class="fu">class</span>(tabla)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb205" data-code-line-numbers="1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb205-1"><a href="#cb205-1"></a>table <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(ages, single, names)</span>
+<span id="cb205-2"><a href="#cb205-2"></a><span class="fu">class</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "data.frame"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb207" data-code-line-numbers="1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb207-1"><a href="#cb207-1"></a>tabla</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb207" data-code-line-numbers="1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb207-1"><a href="#cb207-1"></a>table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  edades soltero nombres
-1     14    TRUE    javi
-2     24      NA   laura
-3     NA   FALSE   lucía</code></pre>
+<pre><code>  ages single names
+1   14   TRUE  javi
+2   24     NA laura
+3   NA  FALSE lucía</code></pre>
 </div>
 </div>
 </section>
-<section id="segundo-intento-data.frame-2" class="slide level2">
-<h2>Segundo intento: data.frame</h2>
-<p>Dado que un <code>data.frame</code> es ya una «base de datos» las variables no son meros vectores matemáticos: <span class="hl-yellow"><strong>tienen un significado</strong></span> y podemos (debemos) <span class="hl-purple"><strong>ponerles nombres</strong></span></p>
+<section id="second-attempt-data.frame-2" class="slide level2">
+<h2>Second attempt: data.frame</h2>
+<p>Since a <code>data.frame</code> is already a <code>database</code> the variables are not mere mathematical vectors: <span class="hl-yellow"><strong>they have a meaning</strong></span> and we can (must) <span class="hl-purple"><strong>name them</strong></span>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb209"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb209-1"><a href="#cb209-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb209-2"><a href="#cb209-2"></a>tabla <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">"edad"</span> <span class="ot">=</span> edades, <span class="st">"estado"</span> <span class="ot">=</span> soltero, <span class="st">"nombre"</span> <span class="ot">=</span> nombres,</span>
-<span id="cb209-3"><a href="#cb209-3"></a>             <span class="st">"f_nacimiento"</span> <span class="ot">=</span> <span class="fu">as_date</span>(<span class="fu">c</span>(<span class="st">"1989-09-10"</span>, <span class="st">"1992-04-01"</span>, <span class="st">"1980-11-27"</span>)))</span>
-<span id="cb209-4"><a href="#cb209-4"></a>tabla</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb209-2"><a href="#cb209-2"></a>table <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">"ags"</span> <span class="ot">=</span> ages, <span class="st">"single"</span> <span class="ot">=</span> single, <span class="st">"name"</span> <span class="ot">=</span> names,</span>
+<span id="cb209-3"><a href="#cb209-3"></a>             <span class="st">"b_date"</span> <span class="ot">=</span> <span class="fu">as_date</span>(<span class="fu">c</span>(<span class="st">"1989-09-10"</span>, <span class="st">"1992-04-01"</span>, <span class="st">"1980-11-27"</span>)))</span>
+<span id="cb209-4"><a href="#cb209-4"></a>table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  edad estado nombre f_nacimiento
-1   14   TRUE   javi   1989-09-10
-2   24     NA  laura   1992-04-01
-3   NA  FALSE  lucía   1980-11-27</code></pre>
+<pre><code>  ags single  name     b_date
+1  14   TRUE  javi 1989-09-10
+2  24     NA laura 1992-04-01
+3  NA  FALSE lucía 1980-11-27</code></pre>
 </div>
 </div>
 </section>
-<section id="segundo-intento-data.frame-3" class="slide level2">
-<h2>Segundo intento: data.frame</h2>
-<p><span class="hl-yellow"><strong>¡TENEMOS NUESTRO PRIMER CONJUNTO DE DATOS!</strong></span> Puedes visualizarlo escribiendo su nombre en consola o con <code>View(tabla)</code></p>
+<section id="second-attempt-data.frame-3" class="slide level2">
+<h2>Second attempt: data.frame</h2>
+<p><span class="hl-yellow"><strong>We have our first dataset!</strong></span> You can view it by typing its name in the console or with <code>View(table)</code>.</p>
 
 <img data-src="img/view_tabla.jpg" class="r-stretch"></section>
-<section id="segundo-intento-data.frame-4" class="slide level2">
-<h2>Segundo intento: data.frame</h2>
-<p>Si queremos acceder a sus elementos, podemos como en las matrices (aunque no es recomendable): ahora <span class="hl-yellow"><strong>tenemos dos índices</strong></span> (filas y columnas, dejando libre la que no usemos)</p>
+<section id="second-attempt-data.frame-4" class="slide level2">
+<h2>Second attempt: data.frame</h2>
+<p>If we want to access its elements, we can, as in matrices (although it is not recommended): now <span class="hl-yellow"><strong>we have two indexes</strong></span> (rows and columns, leaving free the one we don’t use)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb211"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb211-1"><a href="#cb211-1"></a>tabla[<span class="dv">2</span>, ]  <span class="co"># segunda fila (todas sus variables)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb211"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb211-1"><a href="#cb211-1"></a>table[<span class="dv">2</span>, ]  <span class="co"># second row (all variables)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  edad estado nombre f_nacimiento
-2   24     NA  laura   1992-04-01</code></pre>
+<pre><code>  ags single  name     b_date
+2  24     NA laura 1992-04-01</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb213"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb213-1"><a href="#cb213-1"></a>tabla[, <span class="dv">3</span>]  <span class="co"># tercera columna (de todos los individuos)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb213"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb213-1"><a href="#cb213-1"></a>table[, <span class="dv">3</span>]  <span class="co"># third column (all individuals)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "javi"  "laura" "lucía"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb215"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb215-1"><a href="#cb215-1"></a>tabla[<span class="dv">2</span>, <span class="dv">1</span>]  <span class="co"># primera característica de la segunda persona</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb215"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb215-1"><a href="#cb215-1"></a>table[<span class="dv">2</span>, <span class="dv">1</span>]  <span class="co"># first variable for the second individual</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 24</code></pre>
 </div>
@@ -2329,28 +2328,28 @@ pesos       63   70   85   95</code></pre>
 <div class="column" style="width:25%;">
 <p><img data-src="img/menu_data_frame.jpg"></p>
 </div><div class="column" style="width:75%;">
-<p>También tiene ventajas de una <span class="hl-yellow"><strong>«base» de datos</strong></span> : podemos <span class="hl-purple"><strong>aceder a las variables por su nombre</strong></span> (<strong>recomendable</strong> ya que las variables pueden cambiar de posición), poniendo el nombre de la tabla seguido del símbolo <code>$</code> (con el <strong>tabulador</strong>, nos aparecerá un menú de columnas a elegir)</p>
+<p>It also has advantages of a <span class="hl-yellow"><strong>database</strong></span> : we can <span class="hl-purple"><strong>access variables by name</strong></span> (<strong>recommendable</strong> since variables can change position), putting the name of the table followed by the symbol <code>$</code> (with the <strong>tab</strong>, a menu of columns to choose from will appear).</p>
 </div>
 </div>
 </div>
 </section>
-<section id="segundo-intento-data.frame-5" class="slide level2">
-<h2>Segundo intento: data.frame</h2>
+<section id="second-attempt-data.frame-5" class="slide level2">
+<h2>Second attempt: data.frame</h2>
 <ul>
-<li><code>names()</code>: nos muestra los nombres de las variables</li>
+<li><code>names()</code>: show us the names of the variables.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb217"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb217-1"><a href="#cb217-1"></a><span class="fu">names</span>(tabla)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb217"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb217-1"><a href="#cb217-1"></a><span class="fu">names</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "edad"         "estado"       "nombre"       "f_nacimiento"</code></pre>
+<pre><code>[1] "ags"    "single" "name"   "b_date"</code></pre>
 </div>
 </div>
 <div class="fragment">
 <ul>
-<li><code>dim()</code>: nos muestra las dimensiones (también <code>nrow()</code> y <code>ncol()</code>)</li>
+<li><code>dim()</code>: show us the dimensions (see also <code>nrow()</code> and <code>ncol()</code>)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb219"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb219-1"><a href="#cb219-1"></a><span class="fu">dim</span>(tabla)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb219"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb219-1"><a href="#cb219-1"></a><span class="fu">dim</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3 4</code></pre>
 </div>
@@ -2358,100 +2357,94 @@ pesos       63   70   85   95</code></pre>
 </div>
 <div class="fragment">
 <ul>
-<li>Podemos acceder a las variables por su nombre</li>
+<li>We can access to variables by name</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb221"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb221-1"><a href="#cb221-1"></a>tabla[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="st">"nombre"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb221"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb221-1"><a href="#cb221-1"></a>table[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="st">"name"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "javi"  "lucía"</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="segundo-intento-data.frame-6" class="slide level2">
-<h2>Segundo intento: data.frame</h2>
-<p>Si tenemos uno ya creado y queremos <span class="hl-yellow"><strong>añadir una columna</strong></span> es tan simple como usar la función <code>data.frame()</code> que ya hemos visto para concatenar la columna. Vamos añadir por ejemplo una nueva variable, el número de hermanos de cada individuo.</p>
+<section id="second-attempt-data.frame-6" class="slide level2">
+<h2>Second attempt: data.frame</h2>
+<p>If we have one already created and we want to <span class="hl-yellow"><strong>add a column</strong></span> it is as simple as using the <code>data.frame()</code> function we have already seen to concatenate the column. Let’s add for example a new variable, the number of siblings of each individual.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb223"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb223-1"><a href="#cb223-1"></a><span class="co"># Añadimos una nueva columna con nº de hermanos/as</span></span>
-<span id="cb223-2"><a href="#cb223-2"></a>hermanos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb223-3"><a href="#cb223-3"></a>tabla <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(tabla, <span class="st">"n_hermanos"</span> <span class="ot">=</span> hermanos)</span>
-<span id="cb223-4"><a href="#cb223-4"></a>tabla</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb223"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb223-1"><a href="#cb223-1"></a><span class="co"># Add new column</span></span>
+<span id="cb223-2"><a href="#cb223-2"></a>siblings <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb223-3"><a href="#cb223-3"></a>table <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(table, <span class="st">"n_sib"</span> <span class="ot">=</span> siblings)</span>
+<span id="cb223-4"><a href="#cb223-4"></a>table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  edad estado nombre f_nacimiento n_hermanos
-1   14   TRUE   javi   1989-09-10          0
-2   24     NA  laura   1992-04-01          2
-3   NA  FALSE  lucía   1980-11-27          3</code></pre>
+<pre><code>  ags single  name     b_date n_sib
+1  14   TRUE  javi 1989-09-10     0
+2  24     NA laura 1992-04-01     2
+3  NA  FALSE lucía 1980-11-27     3</code></pre>
 </div>
 </div>
-</section></section>
-<section>
-<section id="clase-3-primeras-bases-de-datos" class="title-slide slide level1 center">
-<h1>Clase 3: primeras bases de datos. R base vs Tidyverse</h1>
-<p><span style="color:#444442;"><strong>Nuestra base de datos: tibble. Tidydata: un multiverso de datos limpios</strong></span></p>
 </section>
-<section id="intento-final-tibble" class="slide level2">
-<h2>Intento final: tibble</h2>
-<p>Las tablas en formato <code>data.frame</code> tienen algunas <span class="hl-red"><strong>limitaciones</strong></span></p>
-<p>La principal es que <span class="hl-red"><strong>no permite la recursividad</strong></span>: imagina que definimos una base de datos con estaturas y pesos, y queremos una tercera variable con el IMC</p>
+<section id="final-attempt-tibble" class="slide level2">
+<h2>Final attempt: tibble</h2>
+<p>Tables in <code>data.frame</code> format have some <span class="hl-red"><strong>limitations</strong></span></p>
+<p>The main one is that <span class="hl-red"><strong>does not allow recursion</strong></span>: imagine we define a database with heights and weights, and we want a third variable with BMI.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb225"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb225-1"><a href="#cb225-1"></a><span class="fu">data.frame</span>(<span class="st">"estatura"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">1.7</span>, <span class="fl">1.8</span>, <span class="fl">1.6</span>), <span class="st">"peso"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">75</span>, <span class="dv">70</span>),</span>
-<span id="cb225-2"><a href="#cb225-2"></a>           <span class="st">"IMC"</span> <span class="ot">=</span> peso <span class="sc">/</span> (estatura<span class="sc">^</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb225"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb225-1"><a href="#cb225-1"></a><span class="fu">data.frame</span>(<span class="st">"height"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">1.7</span>, <span class="fl">1.8</span>, <span class="fl">1.6</span>), <span class="st">"weight"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">75</span>, <span class="dv">70</span>),</span>
+<span id="cb225-2"><a href="#cb225-2"></a>           <span class="st">"BMI"</span> <span class="ot">=</span> weight <span class="sc">/</span> (height<span class="sc">^</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error in data.frame(estatura = c(1.7, 1.8, 1.6), peso = c(80, 75, 70), : object 'peso' not found</code></pre>
+<pre><code>Error in data.frame(height = c(1.7, 1.8, 1.6), weight = c(80, 75, 70), : object 'weight' not found</code></pre>
 </div>
 </div>
 <div class="fragment">
-<p>&nbsp;</p>
-<p>De ahora en adelante usaremos el formato <code>tibble</code> (un <span class="hl-yellow"><strong>data.frame mejorado</strong></span>)</p>
+<p>From now on we will use the <code>tibble</code> format (an <span class="hl-yellow"><strong>enhanced data.frame</strong></span>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb227"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb227-1"><a href="#cb227-1"></a><span class="fu">library</span>(tibble)</span>
-<span id="cb227-2"><a href="#cb227-2"></a><span class="fu">tibble</span>(<span class="st">"estatura"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">1.7</span>, <span class="fl">1.8</span>, <span class="fl">1.6</span>), <span class="st">"peso"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">75</span>, <span class="dv">70</span>),</span>
-<span id="cb227-3"><a href="#cb227-3"></a>       <span class="st">"IMC"</span> <span class="ot">=</span> peso <span class="sc">/</span> (estatura<span class="sc">^</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb227-2"><a href="#cb227-2"></a><span class="fu">tibble</span>(<span class="st">"height"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">1.7</span>, <span class="fl">1.8</span>, <span class="fl">1.6</span>), <span class="st">"weight"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">75</span>, <span class="dv">70</span>),</span>
+<span id="cb227-3"><a href="#cb227-3"></a>       <span class="st">"BMI"</span> <span class="ot">=</span> weight <span class="sc">/</span> (height<span class="sc">^</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
-  estatura  peso   IMC
-     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1      1.7    80  27.7
-2      1.8    75  23.1
-3      1.6    70  27.3</code></pre>
+  height weight   BMI
+   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1    1.7     80  27.7
+2    1.8     75  23.1
+3    1.6     70  27.3</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="intento-final-tibble-1" class="slide level2">
-<h2>Intento final: tibble</h2>
+<section id="final-attempt-tibble-1" class="slide level2">
+<h2>Final attempt: tibble</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb229"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb229-1"><a href="#cb229-1"></a>tabla <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="st">"estatura"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">1.7</span>, <span class="fl">1.8</span>, <span class="fl">1.6</span>), <span class="st">"peso"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">75</span>, <span class="dv">70</span>),</span>
-<span id="cb229-2"><a href="#cb229-2"></a>                <span class="st">"IMC"</span> <span class="ot">=</span> peso <span class="sc">/</span> (estatura<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb229-3"><a href="#cb229-3"></a>tabla</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb229"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb229-1"><a href="#cb229-1"></a>table <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="st">"height"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">1.7</span>, <span class="fl">1.8</span>, <span class="fl">1.6</span>), <span class="st">"weight"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">75</span>, <span class="dv">70</span>),</span>
+<span id="cb229-2"><a href="#cb229-2"></a>                <span class="st">"BMI"</span> <span class="ot">=</span> weight <span class="sc">/</span> (height<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb229-3"><a href="#cb229-3"></a>table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 3
-  estatura  peso   IMC
-     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1      1.7    80  27.7
-2      1.8    75  23.1
-3      1.6    70  27.3</code></pre>
+  height weight   BMI
+   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1    1.7     80  27.7
+2    1.8     75  23.1
+3    1.6     70  27.3</code></pre>
 </div>
 </div>
-<p>Las tablas en formato <code>tibble</code> nos permitirá una <span class="hl-yellow"><strong>gestión más ágil, eficiente y coherente</strong></span> de los datos, con 4 ventajas principales:</p>
+<p>Tables in <code>tibble</code> format will allow a <span class="hl-yellow"><strong>more agile, efficient and coherent</strong></span> data management, with 4 main advantages:</p>
 <div class="fragment">
 <ul>
-<li><span class="hl-yellow"><strong>Metainformación</strong></span>: si te fijas en la cabecera, nos dice ya automáticamente el número de filas y columnas, y el tipo de cada variable</li>
+<li><span class="hl-yellow"><strong>Metainfo</strong></span>: if you look at the header, it automatically tells us the number of rows and columns, and the type of each variable.</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><span class="hl-yellow"><strong>Recursividad</strong></span>: permite definir las variables secuencialmente (como hemos visto)</li>
+<li><span class="hl-yellow"><strong>Recursivity</strong></span>: allows you to define the variables sequentially (as we have seen).</li>
 </ul>
 </div>
 </section>
-<section id="intento-final-tibble-2" class="slide level2">
-<h2>Intento final: tibble</h2>
+<section id="final-attempt-tibble-2" class="slide level2">
+<h2>Final attempt: tibble</h2>
 <ul>
-<li><span class="hl-yellow"><strong>Consistencia</strong></span>: si accedes a una columna que no existe avisa con un warning</li>
+<li><span class="hl-yellow"><strong>Consistency</strong></span>: if you access a column that does not exist, a warning message is issued.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb231"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb231-1"><a href="#cb231-1"></a>tabla<span class="sc">$</span>invent</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb231"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb231-1"><a href="#cb231-1"></a>table<span class="sc">$</span>invent</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Unknown or uninitialised column: `invent`.</code></pre>
 </div>
@@ -2461,7 +2454,7 @@ pesos       63   70   85   95</code></pre>
 </div>
 <div class="fragment">
 <ul>
-<li><span class="hl-yellow"><strong>Por filas</strong></span>: crear por filas (copiar y pegar de una tabla) con <code>tribble()</code></li>
+<li><span class="hl-yellow"><strong>By rows</strong></span>: create by rows (copy and paste from a table) with <code>tribble()</code>.</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb234"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb234-1"><a href="#cb234-1"></a><span class="fu">tribble</span>(<span class="sc">~</span>colA, <span class="sc">~</span>colB,</span>
@@ -2486,20 +2479,20 @@ pesos       63   70   85   95</code></pre>
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p>El paquete <code>{datapasta}</code> nos permite <span class="hl-green"><strong>copiar y pegar</strong></span> tablas de páginas web y documentos sencillos</p>
+<p>The <code>{datapasta}</code> package allows us to <span class="hl-green"><strong>copy and paste</strong></span> tables from web pages and simple documents.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
 <section id="tu-turno-tibble" class="slide level2">
-<h2>💻 Tu turno (tibble)</h2>
-<p><span style="color:#444442;"><strong>Intenta realizar los siguientes ejercicios sin mirar las soluciones</strong></span></p>
+<h2>💻 Your turn (tibble)</h2>
+<p><span style="color:#444442;"><strong>Try to solve the following exercises without looking at the solutions</strong></span></p>
 <div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1"><span class="hl-yellow"><strong>Ejercicio 1</strong></span></a></li><li><a href="#tabset-5-2"><span class="hl-yellow"><strong>Ejercicio 2</strong></span></a></li><li><a href="#tabset-5-3"><span class="hl-yellow"><strong>Ejercicio 3</strong></span></a></li><li><a href="#tabset-5-4"><span class="hl-yellow"><strong>Ejercicio 4</strong></span></a></li><li><a href="#tabset-5-5"><span class="hl-yellow"><strong>Ejercicio 5</strong></span></a></li><li><a href="#tabset-5-6"><span class="hl-yellow"><strong>Ejercicio 6</strong></span></a></li></ul>
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1"><span class="hl-yellow"><strong>Exercise 1</strong></span></a></li><li><a href="#tabset-5-2"><span class="hl-yellow"><strong>Exercise 2</strong></span></a></li><li><a href="#tabset-5-3"><span class="hl-yellow"><strong>Exercise 3</strong></span></a></li><li><a href="#tabset-5-4"><span class="hl-yellow"><strong>Exercise 4</strong></span></a></li><li><a href="#tabset-5-5"><span class="hl-yellow"><strong>Exercise 5</strong></span></a></li><li><a href="#tabset-5-6"><span class="hl-yellow"><strong>Exercise 6</strong></span></a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1">
-<p>📝 Carga del paquete <code>{datasets}</code> el conjunto de datos <code>airquality</code> (variables de la calidad del aire de Nueva York desde mayo hasta septiembre de 1973). ¿Es el conjunto de datos airquality de tipo tibble? En caso negativo, conviértelo a tibble (busca en la documentación del paquete en <a href="https://tibble.tidyverse.org/index.html" class="uri">https://tibble.tidyverse.org/index.html</a>).</p>
+<p>📝 Load from the <code>{datasets}</code> package the <code>airquality</code> dataset (New York air quality variables from May through September 1973). Is the airquality dataset of type tibble? If not, convert it to tibble (look in the package documentation at <a href="https://tibble.tidyverse.org/index.html" class="uri">https://tibble.tidyverse.org/index.html</a>).</p>
 <div class="cell">
 <details>
 <summary>Código</summary>
@@ -2510,7 +2503,7 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 <div id="tabset-5-2">
-<p>📝 Una vez convertido a <code>tibble</code> obtén el nombre de las variables y las dimensiones del conjunto de datos. ¿Cuántas variables hay? ¿Cuántos días se han medido?</p>
+<p>📝 Once converted into <code>tibble</code> get the name of the variables and the dimensions of the data set. How many variables are there? How many days have been measured?</p>
 <div class="cell">
 <details>
 <summary>Código</summary>
@@ -2521,7 +2514,7 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 <div id="tabset-5-3">
-<p>📝 Filtra solo los datos del mes de agosto.</p>
+<p>📝 Filters only data for the month of August.</p>
 <div class="cell">
 <details>
 <summary>Código</summary>
@@ -2530,7 +2523,7 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 <div id="tabset-5-4">
-<p>📝 Selecciona aquellos datos que no sean ni de julio ni de agosto.</p>
+<p>📝 Select those data that are not from July or August.</p>
 <div class="cell">
 <details>
 <summary>Código</summary>
@@ -2539,7 +2532,7 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 <div id="tabset-5-5">
-<p>📝 Modifica el siguiente código para quedarte solo con las variable de ozono y temperatura.</p>
+<p>📝 Modify the following code to keep only the ozone and temperature variables.</p>
 <div class="cell">
 <details>
 <summary>Código</summary>
@@ -2548,7 +2541,7 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 <div id="tabset-5-6">
-<p>📝 Selecciona los datos de temperatura y viento de agosto. Traduce a castellano el nombre de las columnas del conjunto filtrado.</p>
+<p>📝 Select the temperature and wind data for August. Translate the name of the columns of the filtered set to your motherlanguage.</p>
 <div class="cell">
 <details>
 <summary>Código</summary>
@@ -2560,71 +2553,71 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 </section>
-<section id="resumen-hasta-ahora" class="slide level2">
-<h2>Resumen hasta ahora</h2>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
 <ul>
-<li>Cada <span class="hl-yellow"><strong>celda puede ser de un tipo diverso</strong></span>: números, texto, fechas, valores lógicos, etc</li>
+<li>Each <span class="hl-yellow"><strong>cell can be of a different type</strong></span>: numbers, text, dates, logical values, etc.</li>
 </ul>
 <div class="fragment">
 <ul>
-<li>Un <span class="hl-yellow"><strong>vector es una concatenación de celdas</strong></span> (las futuras columnas de nuestras tablas) –&gt; En <code>R</code> por defecto las operaciones se hacen <span class="hl-yellow"><strong>elemento a elemento</strong></span></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Una <span class="hl-yellow"><strong>matriz</strong></span> nos permite concatenar <span class="hl-yellow"><strong>variables del MISMO tipo y MISMA longitud</strong></span> –&gt; objeto bidimensional (dos índices)</li>
+<li>A <span class="hl-yellow"><strong>vector is a concatenation of cells</strong></span> (columns of our tables) –&gt; In <code>R</code> by default the operations are done <span class="hl-yellow"><strong>element by element</strong></span></li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li>Un <span class="hl-yellow"><strong>data.frame</strong></span> nos permite concatenar <span class="hl-yellow"><strong>variables de DISTINTO tipo y MISMA longitud</strong></span> –&gt; usaremos <span class="hl-yellow"><strong>tibble</strong></span> como una opción mejorada de base de datos</li>
+<li>A <span class="hl-yellow"><strong>matrix</strong></span> allows us to concatenate <span class="hl-yellow"><strong>variables of the SAME type and SAME length</strong></span> –&gt; two-dimensional object (two indices)</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>A <span class="hl-yellow"><strong>data.frame</strong></span> allows us to concatenate <span class="hl-yellow"><strong>variables of DIFFERENT type and SAME length</strong></span> –&gt; we will use <span class="hl-yellow"><strong>tibble</strong></span> as an enhanced database option.</li>
 </ul>
 </div>
 </section>
-<section id="caso-práctico-1" class="slide level2">
-<h2>🐣 Caso práctico</h2>
-<p>Del paquete <code>Biostatistics</code> usaremos el conunto de datos <code>pinniped</code></p>
+<section id="caso-práctico-2" class="slide level2">
+<h2>🐣 Case study</h2>
+<p>From the <code>{Biostatistics}</code> package we will use the <code>pinniped</code> data set.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb242"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb242-1"><a href="#cb242-1"></a>Biostatistics<span class="sc">::</span>pinniped</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="1">
-<li>¿Qué <span class="hl-yellow"><strong>representan</strong></span> los datos? ¿Qué <span class="hl-yellow"><strong>tipo de dato</strong></span> es? En caso de que no lo sea, convierte la base de datos a un <code>tibble</code> (renombra con <code>pinniped_tb</code>)</li>
+<li>What <span class="hl-yellow"><strong>data type</strong></span> does the data represent? What <span class="hl-yellow"><strong>data type</strong></span> is it? If not, convert the database to a <code>tibble</code> (rename with <code>pinniped_tb</code>).</li>
 </ol>
 <div class="fragment">
 <ol start="2" type="1">
-<li>¿Cuántos registros hay? ¿Y variables? ¿De qué tipo es cada una?</li>
+<li>How many records are there, and variables, what type is each one?</li>
 </ol>
 </div>
 <div class="fragment">
 <ol start="3" type="1">
-<li>Incorpora una <span class="hl-yellow"><strong>variable extra llamada phoca</strong></span> que sea de tipo lógico y que nos diga si una especie es de la categoría <code>Phoca</code> o no.</li>
+<li>Incorporate an <span class="hl-yellow"><strong>extra variable named phoca</strong></span> that is of logical type and check whether a species is of category <code>Phoca</code> or not.</li>
 </ol>
 </div>
 <div class="fragment">
 <ol start="4" type="1">
-<li>¿A qué sexo le <span class="hl-yellow"><strong>pesa más el cerebro</strong></span>: a las hembras o a los machos? ¿A quienes les <span class="hl-yellow"><strong>pesa más el cuerpo</strong></span>: a los monógamos o a los polígamos?</li>
+<li>Which sex is <span class="hl-yellow"><strong>weighted more by brain</strong></span>: females or males? Who is <span class="hl-yellow"><strong>weighted more by body</strong></span>: monogamous or polygamous?</li>
 </ol>
 </div>
 <div class="fragment">
 <ol start="5" type="1">
-<li>Incopora una nueva variable que represente la <span class="hl-yellow"><strong>diferencia entre el peso del cerebro entre machos y hembras</strong></span> (machos - hembras) para cada especie.</li>
+<li>Add a new variable representing the <span class="hl-yellow"><strong>difference in brain weight between males and females</strong></span> (males - females) for each species.</li>
 </ol>
 </div>
 </section>
 <section id="r-base-vs-tidyverse" class="slide level2">
 <h2>R base vs Tidyverse</h2>
-<p>Si conoces algún otro lenguaje de programación (o tienes gente cercana que programa) te extrañará que aún no hayamos hablado de conceptos habituales como</p>
+<p>If you know any other programming language, you will be surprised that we have not yet talked about common concepts such as</p>
 <ul>
-<li><p><span class="hl-yellow"><strong>Bucles for</strong></span>: repetir un código un número fijo de iteraciones.</p></li>
-<li><p><span class="hl-yellow"><strong>Bucles while</strong></span>: repetir un código hasta que se cumpla una condición</p></li>
-<li><p><span class="hl-yellow"><strong>Estructuras if-else</strong></span>: estructuras de control para decidir por donde camina el código en función del valor de las variables.</p></li>
+<li><p><span class="hl-yellow"><strong>For loops</strong></span>: repeat a code a fixed number of iterations.</p></li>
+<li><p><span class="hl-yellow"><strong>while loops</strong></span>: repeat a code until a condition is verified.</p></li>
+<li><p><span class="hl-yellow"><strong>if-else structures</strong></span>: control flow structures to decide where the code walks depending on the value of variables.</p></li>
 </ul>
 <div class="fragment">
-<p>Y aunque conocer dichas estructuras puede sernos en algún momento interesante, en la <span class="hl-red"><strong>mayoría de ocasiones vamos a poder evitarlas</strong></span> (en especial los bucles)</p>
+<p>And although knowing these structures can be interesting at some point, in <span class="hl-red"><strong>most of the times we will be able to avoid them</strong></span> (specially loops).</p>
 </div>
 </section>
-<section id="qué-es-tidyverse" class="slide level2">
-<h2>¿Qué es tidyverse?</h2>
+<section id="what-about-tidyverse" class="slide level2">
+<h2>What about tidyverse?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="img/tidyverrse_universe.jpg"></p>
@@ -2632,91 +2625,91 @@ pesos       63   70   85   95</code></pre>
 <p><img data-src="img/flow_tidyverse.jpg"></p>
 </div>
 </div>
-<p><code>{tidyverse}</code> es un <span class="hl-yellow"><strong>«universo» de paquetes</strong></span> para garanatizar un flujo de trabajo (de inicio a fin) eficiente, coherente y lexicográficamente sencillo de entender, basado en la idea de que <span class="hl-purple"><strong>nuestros datos están limpios y ordenados (tidy)</strong></span></p>
+<p><code>{tidyverse}</code> is an <span class="hl-yellow"><strong>“universe” of packages</strong></span> to ensure an efficient, coherent and lexicographically simple to understand workflow based on the idea that <span class="hl-purple"><strong>our data is clean and tidy</strong></span></p>
 </section>
-<section id="qué-es-tidyverse-1" class="slide level2">
-<h2>¿Qué es tidyverse?</h2>
+<section id="what-about-tidyverse-1" class="slide level2">
+<h2>What about tidyverse?</h2>
 <div class="columns">
 <div class="column" style="width:45%;">
 <p><img data-src="img/tidyverrse_universe.jpg"></p>
 </div><div class="column" style="width:55%;">
 <ul>
-<li><code>{tibble}</code>: optimizando data.frame</li>
-<li><code>{tidyr}</code>: limpieza de datos</li>
-<li><code>{readr}</code>: carga datos rectangulares (.csv)</li>
-<li><code>{dplyr}</code>: gramática para depurar</li>
-<li><code>{stringr}</code>: manejo de textos</li>
-<li><code>{ggplot2}</code>: visualización de datos</li>
-<li><code>{tidymodels}</code>: modelización/predicción</li>
+<li><code>{tibble}</code>: optimizing data.frame</li>
+<li><code>{tidyr}</code>: data cleaning</li>
+<li><code>{readr}</code>: loading rectangular data (.csv)</li>
+<li><code>{dplyr}</code>: grammar for debugging</li>
+<li><code>{stringr}</code>: text handling</li>
+<li><code>{ggplot2}</code>: data visualization</li>
+<li><code>{tidymodels}</code>: modeling/prediction</li>
 </ul>
 </div>
 </div>
-<p>También tenemos los paquetes <code>{purrr}</code> para el manejo de listas, <code>{forcast}</code> para cualitativas, <code>{lubridate}</code> para fechas, <code>{readxl}</code> para importar archivos .xls y .xlsx, <code>{rvest}</code> para web scraping y <code>{rmarkdown}</code> para comunicar resultados.</p>
+<p>We also have the <code>{purrr}</code> packages for list management, <code>{forcast}</code> for qualitative variables, <code>{lubridate}</code> for dates, <code>{readxl}</code> for importing .xls and .xlsx files, <code>{rvest}</code> for web scraping and <code>{rmarkdown}</code> for reporting results.</p>
 </section>
-<section id="qué-es-tidyverse-2" class="slide level2">
-<h2>¿Qué es tidyverse?</h2>
+<section id="what-about-tidyverse-2" class="slide level2">
+<h2>What about tidyverse?</h2>
 <div class="columns">
 <div class="column" style="width:45%;">
 <p><img data-src="img/tidyverrse_universe.jpg"></p>
 </div><div class="column" style="width:55%;">
 <ul>
-<li><code>{tibble}</code>: <span class="hl-yellow"><strong>optimizando data.frame</strong></span></li>
-<li><code>{tidyr}</code>: <span class="hl-yellow"><strong>limpieza de datos</strong></span></li>
-<li><code>{readr}</code>: carga datos rectangulares (.csv)</li>
-<li><code>{dplyr}</code>: gramática para depurar</li>
-<li><code>{stringr}</code>: manejo de textos</li>
-<li><code>{ggplot2}</code>: visualización de datos</li>
-<li><code>{tidymodels}</code>: modelización/predicción</li>
+<li><code>{tibble}</code>: <span class="hl-yellow"><strong>optimizing data.frame</strong></span></li>
+<li><code>{tidyr}</code>: <span class="hl-yellow"><strong>data cleaning</strong></span></li>
+<li><code>{readr}</code>: loading rectangular data (.csv)</li>
+<li><code>{dplyr}</code>: grammar for debugging</li>
+<li><code>{stringr}</code>: text handling</li>
+<li><code>{ggplot2}</code>: data visualization</li>
+<li><code>{tidymodels}</code>: modeling/prediction</li>
 </ul>
 </div>
 </div>
-<p>También tenemos los paquetes <code>{purrr}</code> para el manejo de listas, <code>{forcast}</code> para cualitativas, <code>{lubridate}</code> para fechas, <code>{readxl}</code> para importar archivos .xls y .xlsx, <code>{rvest}</code> para web scraping y <code>{rmarkdown}</code> para comunicar resultados.</p>
+<p>We also have the <code>{purrr}</code> packages for list management, <code>{forcast}</code> for qualitative variables, <code>{lubridate}</code> for dates, <code>{readxl}</code> for importing .xls and .xlsx files, <code>{rvest}</code> for web scraping and <code>{rmarkdown}</code> for reporting results.</p>
 </section>
-<section id="filosofía-base-tidy-data" class="slide level2">
-<h2>Filosofía base: tidy data</h2>
+<section id="idea-tidy-data" class="slide level2">
+<h2>Idea: Tidy Data</h2>
 <blockquote>
 <p>Tidy datasets are all alike, but every messy dataset is messy in its own way (Hadley Wickham, Chief Scientist en RStudio)</p>
 </blockquote>
 <div style="font-size:120px; text-align: center; color:#F8DF58;">
 <p><b>TIDY</b><b><span style="color:#CAB0EE;">VERSE</span></b></p>
 </div>
-<p>El <span class="hl-purple"><strong>universo</strong></span> de paquetes <code>{tidyverse}</code> se basa en la idea introducido por <strong>Hadley Wickham</strong> (el Dios al que rezo) de <span class="hl-yellow"><strong>estandarizar</strong></span> el formato los datos para</p>
+<p>The <span class="hl-purple"><strong>universe</strong></span> of <code>{tidyverse}</code> packages is based on the idea introduced by <strong>Hadley Wickham</strong> (the God I pray to) of <span class="hl-yellow"><strong>standardize</strong></span> formatting data to</p>
 <div>
 <ul>
-<li class="fragment"><span class="hl-green"><strong>sistematizar</strong></span> la depuración</li>
-<li class="fragment">hacer más <span class="hl-green"><strong>sencillo</strong></span> su manipulación.</li>
-<li class="fragment">código <span class="hl-green"><strong>legible</strong></span></li>
+<li class="fragment"><span class="hl-green"><strong>systematize</strong></span> debugging</li>
+<li class="fragment">make it <span class="hl-green"><strong>simpler</strong></span> to manipulate.</li>
+<li class="fragment"><span class="hl-green"><strong>readable</strong></span> code.</li>
 </ul>
 </div>
 </section>
-<section id="reglas-del-tidy-data" class="slide level2">
-<h2>Reglas del tidy data</h2>
-<p>Lo primero por tanto será entender qué son los <span class="hl-yellow"><strong>conjuntos tidydata</strong></span> ya que todo <code>{tidyverse}</code> se basa en que los datos están estandarizados.</p>
+<section id="tidy-data-rules" class="slide level2">
+<h2>Tidy data: rules</h2>
+<p>The first thing will therefore be to understand what the <span class="hl-yellow"><strong>tidydata sets</strong></span> are, since the whole <code>{tidyverse}</code> is based on the data being standardized.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="fragment fade-in">
 <ol type="1">
-<li>Cada <span class="hl-yellow"><strong>variable</strong></span> en una <span class="hl-purple"><strong>única columna</strong></span></li>
+<li>Each <span class="hl-yellow"><strong>variable</strong></span> in a <span class="hl-purple"><strong>single column</strong></span></li>
 </ol>
 </div>
 <div class="fragment fade-in">
 <ol start="2" type="1">
-<li>Cada <span class="hl-yellow"><strong>individuo</strong></span> en una <span class="hl-purple"><strong>fila diferente</strong></span></li>
+<li>Each <span class="hl-yellow"><strong>individual</strong></span> in a <span class="hl-purple"><strong>different row</strong></span></li>
 </ol>
 </div>
 <div class="fragment fade-in">
 <ol start="3" type="1">
-<li>Cada <span class="hl-yellow"><strong>celda</strong></span> con un <span class="hl-purple"><strong>único valor</strong></span></li>
+<li>Each <span class="hl-yellow"><strong>cell</strong></span> with a <span class="hl-purple"><strong>single value</strong></span></li>
 </ol>
 </div>
 <div class="fragment fade-in">
 <ol start="4" type="1">
-<li>Cada <span class="hl-yellow"><strong>dataset</strong></span> en un <span class="hl-purple"><strong>tibble</strong></span></li>
+<li>Each <span class="hl-yellow"><strong>dataset</strong></span> in a <span class="hl-purple"><strong>tibble</strong></span></li>
 </ol>
 </div>
 <div class="fragment fade-in">
 <ol start="5" type="1">
-<li>Si queremos cruzar <span class="hl-yellow"><strong>múltiples tablas</strong></span> debemos tener una <span class="hl-purple"><strong>columna común</strong></span></li>
+<li>If we want to cross <span class="hl-yellow"><strong>multiple tables</strong></span> we must have a <span class="hl-purple"><strong>common (key) column</strong></span></li>
 </ol>
 </div>
 </div><div class="column" style="width:50%;">
@@ -2724,24 +2717,23 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 </section>
-<section id="tubería-pipe" class="slide level2">
-<h2>Tubería (pipe)</h2>
-<p>En <code>{tidyverse}</code> será clave el <span class="hl-yellow"><strong>operador pipe (tubería)</strong></span> definido como <code>|&gt;</code> (<span class="hl-purple"><strong>ctrl+shift+M</strong></span>): será una <span class="hl-yellow"><strong>tubería que recorre los datos</strong></span> y los transforma.</p>
+<section id="pipe-operator" class="slide level2">
+<h2>Pipe operator</h2>
+<p>In <code>{tidyverse}</code> the <span class="hl-yellow"><strong>pipe operator</strong></span>, defined as <code>|&gt;</code> (<span class="hl-purple"><strong>ctrl+shift+M</strong></span>), will be key: it will be a <span class="hl-yellow"><strong>pipe that traverses the data</strong></span> and transforms it.</p>
 <div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>En R base, si queremos aplicar tres funciones <code>first()</code>, <code>second()</code> y <code>third()</code> en orden, sería</p>
+<p>In R base, if we want to apply three functions <code>first()</code>, <code>second()</code> and <code>third()</code> in order, it would be</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb243"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb243-1"><a href="#cb243-1"></a><span class="fu">third</span>(<span class="fu">second</span>(<span class="fu">first</span>(datos)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb243"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb243-1"><a href="#cb243-1"></a><span class="fu">third</span>(<span class="fu">second</span>(<span class="fu">first</span>(data)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
-<p>En <code>{tidyverse}</code> podremos <span class="hl-yellow"><strong>leer de izquierda a derecha</strong></span> y separar los datos de las acciones</p>
+<p>In <code>{tidyverse}</code> we can <span class="hl-yellow"><strong>read from left to right</strong></span> and separate the data from the actions</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb244"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb244-1"><a href="#cb244-1"></a>datos <span class="sc">|&gt;</span> <span class="fu">first</span>() <span class="sc">|&gt;</span> <span class="fu">second</span>() <span class="sc">|&gt;</span> <span class="fu">third</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb244"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb244-1"><a href="#cb244-1"></a>data <span class="sc">|&gt;</span> <span class="fu">first</span>() <span class="sc">|&gt;</span> <span class="fu">second</span>() <span class="sc">|&gt;</span> <span class="fu">third</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-<p>&nbsp;</p>
 </div>
 <div class="fragment">
 <div class="callout callout-caution callout-captioned callout-style-default">
@@ -2750,33 +2742,32 @@ pesos       63   70   85   95</code></pre>
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Apunte importante</strong></p>
+<p><strong>Note that…</strong></p>
 </div>
 <div class="callout-content">
-<p>Desde la versión 4.1.0 de <code>R</code> disponemos de <code>|&gt;</code>, un pipe <strong>nativo</strong> disponible <span class="hl-purple"><strong>fuera de tidyverse</strong></span>, sustituyendo al <span class="hl-red"><strong>antiguo pipe</strong></span> <code>%&gt;%</code> que dependía del paquete <code>{magrittr}</code> (bastante problemático).</p>
+<p>Since version 4.1.0 of <code>R</code> we have <code>|&gt;</code>, a <strong>native</strong> pipe available <span class="hl-purple"><strong>outside tidyverse</strong></span>, replacing the <span class="hl-red"><strong>old pipe</strong></span> <code>%&gt;%</code> which depended on the <code>{magrittr}</code> package (quite problematic).</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="tubería-pipe-1" class="slide level2">
-<h2>Tubería (pipe)</h2>
-<p>La principal ventaja es que el <span class="hl-yellow"><strong>código sea muy legible (casi literal)</strong></span> pudiendo hacer grandes operaciones con los datos con apenas código.</p>
-<p>&nbsp;</p>
+<section id="pipe-operator-1" class="slide level2">
+<h2>Pipe operator</h2>
+<p>The main advantage is that the <span class="hl-yellow"><strong>code is very readable (almost literal)</strong></span> and you can do large operations on the data with very little code.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb245"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb245-1"><a href="#cb245-1"></a>datos <span class="sc">|&gt;</span></span>
-<span id="cb245-2"><a href="#cb245-2"></a>  <span class="fu">limpio</span>(...) <span class="sc">|&gt;</span></span>
-<span id="cb245-3"><a href="#cb245-3"></a>  <span class="fu">filtro</span>(...) <span class="sc">|&gt;</span></span>
-<span id="cb245-4"><a href="#cb245-4"></a>  <span class="fu">selecciono</span>(...) <span class="sc">|&gt;</span></span>
-<span id="cb245-5"><a href="#cb245-5"></a>  <span class="fu">ordeno</span>(...) <span class="sc">|&gt;</span></span>
-<span id="cb245-6"><a href="#cb245-6"></a>  <span class="fu">modifico</span>(...) <span class="sc">|&gt;</span></span>
-<span id="cb245-7"><a href="#cb245-7"></a>  <span class="fu">renombro</span>(...) <span class="sc">|&gt;</span></span>
-<span id="cb245-8"><a href="#cb245-8"></a>  <span class="fu">agrupo</span>(...) <span class="sc">|&gt;</span></span>
-<span id="cb245-9"><a href="#cb245-9"></a>  <span class="fu">cuento</span>(...) <span class="sc">|&gt;</span></span>
-<span id="cb245-10"><a href="#cb245-10"></a>  <span class="fu">resumo</span>(...) <span class="sc">|&gt;</span></span>
-<span id="cb245-11"><a href="#cb245-11"></a>  <span class="fu">pinto</span>(...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb245"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb245-1"><a href="#cb245-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb245-2"><a href="#cb245-2"></a>  <span class="fu">tidy</span>(...) <span class="sc">|&gt;</span></span>
+<span id="cb245-3"><a href="#cb245-3"></a>  <span class="fu">filter</span>(...) <span class="sc">|&gt;</span></span>
+<span id="cb245-4"><a href="#cb245-4"></a>  <span class="fu">select</span>(...) <span class="sc">|&gt;</span></span>
+<span id="cb245-5"><a href="#cb245-5"></a>  <span class="fu">arrange</span>(...) <span class="sc">|&gt;</span></span>
+<span id="cb245-6"><a href="#cb245-6"></a>  <span class="fu">modify</span>(...) <span class="sc">|&gt;</span></span>
+<span id="cb245-7"><a href="#cb245-7"></a>  <span class="fu">rename</span>(...) <span class="sc">|&gt;</span></span>
+<span id="cb245-8"><a href="#cb245-8"></a>  <span class="fu">group</span>(...) <span class="sc">|&gt;</span></span>
+<span id="cb245-9"><a href="#cb245-9"></a>  <span class="fu">count</span>(...) <span class="sc">|&gt;</span></span>
+<span id="cb245-10"><a href="#cb245-10"></a>  <span class="fu">summary</span>(...) <span class="sc">|&gt;</span></span>
+<span id="cb245-11"><a href="#cb245-11"></a>  <span class="fu">plot</span>(...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <center>
@@ -2785,10 +2776,9 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 </section>
-<section id="datos-sucios-messy-data" class="slide level2">
-<h2>Datos SUCIOS: messy data</h2>
-<p>¿Pero qué aspecto tienen los <span class="hl-yellow"><strong>datos no tidy</strong></span>? Vamos a cargar la tabla <code>table4a</code> del paquete <code>{tidyr}</code> (ya lo tenemos cargado del entorno tidyverse).</p>
-<p>&nbsp;</p>
+<section id="messy-data" class="slide level2">
+<h2>Messy data</h2>
+<p>But what does the <span class="hl-yellow"><strong>non-tidy data</strong></span> look like? Let’s load the <code>table4a</code> table from the <code>{tidyr}</code> package (we already have it loaded from the tidyverse environment).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb246"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb246-1"><a href="#cb246-1"></a><span class="fu">library</span>(tidyr)</span>
 <span id="cb246-2"><a href="#cb246-2"></a>table4a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2801,11 +2791,10 @@ pesos       63   70   85   95</code></pre>
 3 China       212258 213766</code></pre>
 </div>
 </div>
-<p>&nbsp;</p>
-<p><span class="hl-red"><strong>¿Qué puede estar fallando?</strong></span></p>
+<p><span class="hl-red"><strong>What could be wrong?</strong></span></p>
 </section>
-<section id="pivotar-pivot_longer" class="slide level2">
-<h2>Pivotar: pivot_longer()</h2>
+<section id="pivoting-pivot_longer" class="slide level2">
+<h2>Pivoting: pivot_longer()</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
@@ -2820,11 +2809,11 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:60%;">
-<p>❎ Cada <span class="hl-red"><strong>fila representa dos observaciones</strong></span> (1999 y 2000) → las columnas <code>1999</code> y <code>2000</code> en realidad deberían ser en sí <span class="hl-yellow"><strong>valores de una variable</strong></span> y no nombres de columnas.</p>
+<p>❎ Each <span class="hl-red"><strong>row represents two observations</strong></span> (1999 and 2000) → columns <code>1999</code> and <code>2000</code> should actually themselves be <span class="hl-yellow"><strong>values of a variable</strong></span> and not column names.</p>
 </div>
 </div>
 <div class="fragment">
-<p>Incluiremos una <span class="hl-yellow"><strong>nueva columna</strong></span> que nos guarde el año y otra que guarde el valor de la variable de interés en cada uno de esos años. Y lo haremos con la función <code>pivot_longer()</code>: <span class="hl-yellow"><strong>pivotaremos la tabla</strong></span> a formato long:</p>
+<p>We will include a <span class="hl-yellow"><strong>new column</strong></span> that stores the year and another one that stores the value of the variable of interest in each of those years. And we will do it with the <code>pivot_longer()</code> function: <span class="hl-yellow"><strong>pivot the table</strong></span> to long format</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb250"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb250-1"><a href="#cb250-1"></a>table4a <span class="sc">|&gt;</span> </span>
 <span id="cb250-2"><a href="#cb250-2"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"1999"</span>, <span class="st">"2000"</span>), <span class="at">names_to =</span> <span class="st">"year"</span>, <span class="at">values_to =</span> <span class="st">"cases"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2842,8 +2831,8 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 </section>
-<section id="pivotar-pivot_longer-1" class="slide level2">
-<h2>Pivotar: pivot_longer()</h2>
+<section id="pivoting-pivot_longer-1" class="slide level2">
+<h2>Pivoting: pivot_longer()</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -2867,17 +2856,15 @@ pesos       63   70   85   95</code></pre>
 <p><img data-src="img/table4a.jpg"></p>
 </div>
 </div>
-<p>&nbsp;</p>
 <ul>
-<li><code>cols</code>: <span class="hl-yellow"><strong>nombre de las variables a pivotar</strong></span></li>
-<li><code>names_to</code>: nombre de la nueva variable a la quemandamos la <span class="hl-yellow"><strong>cabecera</strong></span> de la tabla (los nombres).</li>
-<li><code>values_to</code>: nombre de la nueva variable a la que vamos a mandar los <span class="hl-yellow"><strong>datos</strong></span>.</li>
+<li><code>cols</code>: <span class="hl-yellow"><strong>name of the variables to be pivoted</strong></span></li>
+<li><code>names_to</code>: name of the new variable to which we send the <span class="hl-yellow"><strong>header</strong></span> of the table (the names).</li>
+<li><code>values_to</code>: name of the new variable to which we are going to send the <span class="hl-yellow"><strong>data</strong></span>.</li>
 </ul>
 </section>
-<section id="datos-sucios-messy-data-1" class="slide level2">
-<h2>Datos SUCIOS: messy data</h2>
-<p>Veamos otro ejemplo con la tabla <code>table2</code></p>
-<p>&nbsp;</p>
+<section id="messy-data-1" class="slide level2">
+<h2>Messy data</h2>
+<p>Let us see another example in <code>table2</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb254"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb254-1"><a href="#cb254-1"></a>table2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -2898,11 +2885,10 @@ pesos       63   70   85   95</code></pre>
 12 China        2000 population 1280428583</code></pre>
 </div>
 </div>
-<p>&nbsp;</p>
-<p><span class="hl-red"><strong>¿Qué puede estar fallando?</strong></span></p>
+<p><span class="hl-red"><strong>What could be wrong?</strong></span></p>
 </section>
-<section id="pivotar-pivot_wider" class="slide level2">
-<h2>Pivotar: pivot_wider()</h2>
+<section id="pivoting-pivot_wider" class="slide level2">
+<h2>Pivoting: pivot_wider()</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <div class="cell">
@@ -2925,11 +2911,11 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:40%;">
-<p>❎ Cada <span class="hl-red"><strong>observación está dividido en dos filas</strong></span> → los <span class="hl-yellow"><strong>registros con el mismo año deberían ser el mismo</strong></span></p>
+<p>❎ Each <span class="hl-red"><strong>observation is divided into two rows</strong></span> → the <span class="hl-yellow"><strong>records with the same year should be the same</strong></span></p>
 </div>
 </div>
 <div class="fragment">
-<p>Lo que haremos será lo opuesto: con <code>pivot_wider()</code> <span class="hl-yellow"><strong>ensancharemos la tabla</strong></span></p>
+<p>We will do will be the opposite: with <code>pivot_wider()</code> <span class="hl-yellow"><strong>we will widen the table</strong></span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb257"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb257-1"><a href="#cb257-1"></a>table2 <span class="sc">|&gt;</span>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> type, <span class="at">values_from =</span> count)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -2946,9 +2932,9 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 </section>
-<section id="datos-sucios-messy-data-2" class="slide level2">
-<h2>Datos SUCIOS: messy data</h2>
-<p>Veamos otro ejemplo con la tabla <code>table3</code></p>
+<section id="messy-data-2" class="slide level2">
+<h2>Messy data</h2>
+<p>Let us see another example in <code>table3</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb259"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb259-1"><a href="#cb259-1"></a>table3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -2963,10 +2949,10 @@ pesos       63   70   85   95</code></pre>
 6 China        2000 213766/1280428583</code></pre>
 </div>
 </div>
-<p><span class="hl-red"><strong>¿Qué puede estar fallando?</strong></span></p>
+<p><span class="hl-red"><strong>What could be wrong?</strong></span></p>
 </section>
-<section id="separar-separate" class="slide level2">
-<h2>Separar: separate()</h2>
+<section id="separate" class="slide level2">
+<h2>separate()</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <div class="cell">
@@ -2984,11 +2970,11 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:40%;">
-<p>❎ Cada <span class="hl-red"><strong>celda contiene varios valores</strong></span></p>
+<p>❎ Each <span class="hl-red"><strong>cell contains several values</strong></span></p>
 </div>
 </div>
 <div class="fragment">
-<p>Lo que haremos será hacer uso de la función <code>separate()</code> para mandar <span class="hl-yellow"><strong>separar cada valor</strong></span> a una columna diferente.</p>
+<p>What we will do is make use of the <code>separate()</code> function to send <span class="hl-yellow"><strong>separate each value</strong></span> to a different column.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb263"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb263-1"><a href="#cb263-1"></a>table3 <span class="sc">|&gt;</span> <span class="fu">separate</span>(rate, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"cases"</span>, <span class="st">"pop"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -3005,8 +2991,8 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 </section>
-<section id="separar-separate-1" class="slide level2">
-<h2>Separar: separate()</h2>
+<section id="separate-1" class="slide level2">
+<h2>separate()</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb265"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb265-1"><a href="#cb265-1"></a>table3 <span class="sc">|&gt;</span> <span class="fu">separate</span>(rate, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"cases"</span>, <span class="st">"pop"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -3021,8 +3007,7 @@ pesos       63   70   85   95</code></pre>
 6 China        2000 213766 1280428583</code></pre>
 </div>
 </div>
-<p>Fíjate que los datos, aunque los ha separado, <span class="hl-red"><strong>los ha mantenido como texto</strong></span> cuando en realidad deberían ser variables numéricas. Para ello podemos añadir el argumento opcional <code>convert = TRUE</code></p>
-<div class="fragment">
+<p>Notice that the data, although it has separated them, <span class="hl-red"><strong>kept them as text</strong></span> when in fact they should be numeric variables. For this we can add the optional argument <code>convert = TRUE</code>. . . .</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb267"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb267-1"><a href="#cb267-1"></a>table3 <span class="sc">|&gt;</span> <span class="fu">separate</span>(rate, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"cases"</span>, <span class="st">"pop"</span>), <span class="at">convert =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -3037,11 +3022,10 @@ pesos       63   70   85   95</code></pre>
 6 China        2000 213766 1280428583</code></pre>
 </div>
 </div>
-</div>
 </section>
-<section id="datos-sucios-messy-data-3" class="slide level2">
-<h2>Datos SUCIOS: messy data</h2>
-<p>Veamos el último ejemplo con la tabla <code>table5</code></p>
+<section id="messy-data-3" class="slide level2">
+<h2>Messy data</h2>
+<p>Let us see the last example in <code>table5</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb269"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb269-1"><a href="#cb269-1"></a>table5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -3056,10 +3040,10 @@ pesos       63   70   85   95</code></pre>
 6 China       20      00    213766/1280428583</code></pre>
 </div>
 </div>
-<p><span class="hl-red"><strong>¿Qué puede estar fallando?</strong></span></p>
+<p><span class="hl-red"><strong>What could be wrong?</strong></span></p>
 </section>
-<section id="unir-unite" class="slide level2">
-<h2>Unir unite()</h2>
+<section id="unite" class="slide level2">
+<h2>unite()</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -3077,35 +3061,35 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<p>❎ Tenemos <span class="hl-red"><strong>mismos valores divididos en dos columnas</strong></span></p>
+<p>❎ We have <span class="hl-red"><strong>same values divided into two columns</strong></span></p>
 </div>
 </div>
 <div class="fragment">
-<p>Usaremos <code>unite()</code> para <span class="hl-yellow"><strong>unir los valores</strong></span> de siglo y año en una misma columna</p>
+<p>We will use <code>unite()</code> to <span class="hl-yellow"><strong>unite the values</strong></span> of century and year in the same column</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb273"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb273-1"><a href="#cb273-1"></a>table5 <span class="sc">|&gt;</span> <span class="fu">unite</span>(<span class="at">col =</span> year_completo, century, year, <span class="at">sep =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb273"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb273-1"><a href="#cb273-1"></a>table5 <span class="sc">|&gt;</span> <span class="fu">unite</span>(<span class="at">col =</span> year_whole, century, year, <span class="at">sep =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
-  country     year_completo rate             
-  &lt;chr&gt;       &lt;chr&gt;         &lt;chr&gt;            
-1 Afghanistan 1999          745/19987071     
-2 Afghanistan 2000          2666/20595360    
-3 Brazil      1999          37737/172006362  
-4 Brazil      2000          80488/174504898  
-5 China       1999          212258/1272915272
-6 China       2000          213766/1280428583</code></pre>
+  country     year_whole rate             
+  &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;            
+1 Afghanistan 1999       745/19987071     
+2 Afghanistan 2000       2666/20595360    
+3 Brazil      1999       37737/172006362  
+4 Brazil      2000       80488/174504898  
+5 China       1999       212258/1272915272
+6 China       2000       213766/1280428583</code></pre>
 </div>
 </div>
 </div>
 </section>
 <section id="tu-turno-3" class="slide level2">
 <h2>💻 Tu turno</h2>
-<p><span style="color:#444442;"><strong>Intenta realizar los siguientes ejercicios sin mirar las soluciones</strong></span></p>
+<p><span style="color:#444442;"><strong>Try to solve the following exercises without looking at the solutions</strong></span></p>
 <div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1"><span class="hl-yellow"><strong>Ejercicio 1</strong></span></a></li><li><a href="#tabset-6-2"><span class="hl-yellow"><strong>Ejercicio 2</strong></span></a></li><li><a href="#tabset-6-3"><span class="hl-yellow"><strong>Ejercicio 3</strong></span></a></li></ul>
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1"><span class="hl-yellow"><strong>Exercise 1</strong></span></a></li><li><a href="#tabset-6-2"><span class="hl-yellow"><strong>Exercise 2</strong></span></a></li><li><a href="#tabset-6-3"><span class="hl-yellow"><strong>Exercise 3</strong></span></a></li></ul>
 <div class="tab-content">
 <div id="tabset-6-1">
-<p>📝 Echa un vistazo a la tabla <code>table4b</code> del paquete <code>{tidyr}</code>. ¿Es tidydata? En caso negativo, ¿qué falla? ¿Cómo convertirla a tidy data en caso de que no lo sea ya?</p>
+<p>📝 Take a look at table <code>table4b</code> in package <code>{tidyr}</code>. Is it tidydata? If not, what is wrong, how to convert it to tidy data in case it is not already?</p>
 <div class="cell">
 <details>
 <summary>Código</summary>
@@ -3116,7 +3100,7 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 <div id="tabset-6-2">
-<p>📝 Echa un vistazo a la tabla <code>relig_income</code> del paquete <code>{tidyr}</code>. ¿Es tidydata? En caso negativo, ¿qué falla? ¿Cómo convertirla a tidy data en caso de que no lo sea ya?</p>
+<p>📝 Take a look at table <code>relig_income</code> in package <code>{tidyr}</code>. Is it tidydata? If not, what is wrong, how to convert it to tidy data in case it is not already?</p>
 <div class="cell">
 <details>
 <summary>Código</summary>
@@ -3128,7 +3112,7 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 <div id="tabset-6-3">
-<p>📝 Echa un vistazo a la tabla <code>billboard</code> del paquete <code>{tidyr}</code>. ¿Es tidydata? En caso negativo, ¿qué falla? ¿Cómo convertirla a tidy data en caso de que no lo sea ya?</p>
+<p>📝 Take a look at table <code>billboard</code> in package <code>{tidyr}</code>. Is it tidydata? If not, what is wrong, how to convert it to tidy data in case it is not already?</p>
 <div class="cell">
 <details>
 <summary>Código</summary>
@@ -3144,29 +3128,29 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 </section>
-<section id="caso-práctico-2" class="slide level2">
-<h2>🐣 Caso práctico</h2>
-<p>En el paquete <code>{tidyr}</code> contamos con el dataset <code>who</code> (dataset de la Organización Mundial de la Salud)</p>
+<section id="caso-práctico-3" class="slide level2">
+<h2>🐣 Case study</h2>
+<p>In the <code>{tidyr}</code> package we have the <code>who</code> dataset (World Health Organization dataset).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb278"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb278-1"><a href="#cb278-1"></a><span class="fu">library</span>(tidyr)</span>
 <span id="cb278-2"><a href="#cb278-2"></a>who</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="1">
-<li>¿Qué <span class="hl-yellow"><strong>significan los datos</strong></span>? ¿Cuántas <span class="hl-yellow"><strong>variables y observaciones</strong></span> tenemos?</li>
+<li>What do <span class="hl-yellow"><strong>data</strong></span> mean? How many <span class="hl-yellow"><strong>variables and observations</strong></span> do we have?</li>
 </ol>
 <div class="fragment">
 <ol start="2" type="1">
-<li>¿Cuántos <span class="hl-yellow"><strong>tipos de variables</strong></span> tenemos?</li>
+<li>How many <span class="hl-yellow"><strong>variable types</strong></span> do we have?</li>
 </ol>
 </div>
 <div class="fragment">
 <ol start="3" type="1">
-<li>¿Todas las variables son necesarias? <span class="hl-yellow"><strong>Elimina la información redundante</strong></span>.</li>
+<li>Are all variables necessary? <span class="hl-yellow"><strong>Remove redundant information</strong></span>.</li>
 </ol>
 </div>
 <div class="fragment">
 <ol start="4" type="1">
-<li><span class="hl-yellow"><strong>Convierte a tidydata</strong></span> la base de datos realizando todas las opciones que consideres (consejo: usa papel y boli para bocetar como debería quedar la base de datos).</li>
+<li><span class="hl-yellow"><strong>Convert to tidydata</strong></span> the database by making all the options you consider (tip: use paper to sketch how the database should look like).</li>
 </ol>
 </div>
 </section></section>

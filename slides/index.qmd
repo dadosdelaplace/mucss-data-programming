@@ -108,7 +108,7 @@ Currently, [**researcher and lecturer at the Faculty of Statistics of the UCM**]
 |  LESSON | WEEK | DATE | TOPIC | SCRIPTS | EJ. | CASO PRÁCTICO | ENTREGA | 
 |:------:|:--------:|:--------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
 |     [1](#clase-1-primeros-pasos)      | S1     | 14 sep |                 R base programming                   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno)  [💻](#tu-turno-1) [💻](#tu-turno-2) |       [🐣](#caso-práctico-1)                  |         | 
-|     [2](#clase-2)      | S2     | 26 sep |                 First databases: tibbles and tidy data       | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-3)    |  [🐣](#caso-práctico-2)  |         |     
+|     [2](#clase-2)      | S2     | 26 sep |                 First databases: tibbles and tidy data       | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-3)    |  [🐣](#caso-práctico-2) [🐣](#caso-práctico-3)  |         |     
 |     [3](#clase-3)      | S3    | 28 sep |     Control flow structures and rmarkdown   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         |   
 |     [4](#clase-4)      | ¿?    | ¿? |        Tidyverse I   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
 |     [5](#clase-5)      | ¿?    | ¿? |        Tidyverse II   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
@@ -1628,7 +1628,7 @@ z/5
 We can also apply [**apply functions by columns/rows**]{.hl-yellow} (avoiding loops) with `apply()`, taking as **input arguments**
 
 - a matrix
-- the sense in which operation must be applied (`MARGIN = 1` by rows, `MARGIN = 2` by columns)
+- the sense (`MARGIN = 1` by rows, `MARGIN = 2` by columns)
 - a function to be applied.
 
 . . .
@@ -1715,57 +1715,57 @@ apply(x, MARGIN = 2, FUN = "sum") # sum by columns
 
 ## Second attempt: data.frame
 
-Las matrices tienen el mismo problema que los vectores: si juntamos datos de distinto tipo, se [**perturba la integridad del dato**]{.hl-red} ya que los convierte
+Matrices have the same problem as vectors: if we collect data of different types together, [**data integrity is compromised**]{.hl-red} as it converts them into.
 
 ```{r}
 #| code-line-numbers: "4-5"
-edades <- c(14, 24, NA)
-soltero <- c(TRUE, NA, FALSE)
-nombres <- c("javi", "laura", "lucía")
-matriz <- cbind(edades, soltero, nombres)
-matriz
+ages <- c(14, 24, NA)
+single <- c(TRUE, NA, FALSE)
+names <- c("javi", "laura", "lucía")
+matrix <- cbind(ages, single, names)
+matrix
 ```
 
 . . .
 
-Al ya no ser números no podemos realizar operaciones aritméticas
+Since we are no longer numbers, we cannot perform arithmetic operations.
 
 ```{r}
 #| error: true
-matriz + 1
+matrix + 1
 ```
 
 ---
 
 ## Second attempt: data.frame
 
-Para poder trabajar con [**variables de distinto tipo**]{.hl-yellow} tenemos lo que se conoce como [**data.frame**]{.hl-yellow}: concatenación de variables de igual longitud pero pueden ser de [**tipo distinto**]{.hl-purple}.
+In order to work with [**variables of different type**]{.hl-yellow} we have what is known as [**data.frame**]{.hl-yellow}: concatenation of variables of equal length but may be of [**different type**]{.hl-purple}.
 
 ```{r}
 #| code-line-numbers: "1"
-tabla <- data.frame(edades, soltero, nombres)
-class(tabla)
-tabla
+table <- data.frame(ages, single, names)
+class(table)
+table
 ```
 
 ---
 
 ## Second attempt: data.frame
 
-Dado que un `data.frame` es ya una «base de datos» las variables no son meros vectores matemáticos: [**tienen un significado**]{.hl-yellow} y podemos (debemos) [**ponerles nombres**]{.hl-purple}
+Since a `data.frame` is already a `database` the variables are not mere mathematical vectors: [**they have a meaning**]{.hl-yellow} and we can (must) [**name them**]{.hl-purple}.
 
 ```{r}
 library(lubridate)
-tabla <- data.frame("edad" = edades, "estado" = soltero, "nombre" = nombres,
-             "f_nacimiento" = as_date(c("1989-09-10", "1992-04-01", "1980-11-27")))
-tabla
+table <- data.frame("ags" = ages, "single" = single, "name" = names,
+             "b_date" = as_date(c("1989-09-10", "1992-04-01", "1980-11-27")))
+table
 ```
 
 ---
 
 ## Second attempt: data.frame
 
-[**¡TENEMOS NUESTRO PRIMER CONJUNTO DE DATOS!**]{.hl-yellow} Puedes visualizarlo escribiendo su nombre en consola o con `View(tabla)`
+[**We have our first dataset!**]{.hl-yellow} You can view it by typing its name in the console or with `View(table)`.
 
 ![](img/view_tabla.jpg)
 
@@ -1773,12 +1773,12 @@ tabla
 
 ## Second attempt: data.frame
 
-Si queremos acceder a sus elementos, podemos como en las matrices (aunque no es recomendable): ahora [**tenemos dos índices**]{.hl-yellow} (filas y columnas, dejando libre la que no usemos)
+If we want to access its elements, we can, as in matrices (although it is not recommended): now [**we have two indexes**]{.hl-yellow} (rows and columns, leaving free the one we don't use)
 
 ```{r}
-tabla[2, ]  # segunda fila (todas sus variables)
-tabla[, 3]  # tercera columna (de todos los individuos)
-tabla[2, 1]  # primera característica de la segunda persona
+table[2, ]  # second row (all variables)
+table[, 3]  # third column (all individuals)
+table[2, 1]  # first variable for the second individual
 ```
 
 . . .
@@ -1789,7 +1789,7 @@ tabla[2, 1]  # primera característica de la segunda persona
 :::
 
 ::: {.column width="75%"}
-También tiene ventajas de una [**«base» de datos**]{.hl-yellow} : podemos [**aceder a las variables por su nombre**]{.hl-purple} (**recomendable** ya que las variables pueden cambiar de posición), poniendo el nombre de la tabla seguido del símbolo `$` (con el **tabulador**, nos aparecerá un menú de columnas a elegir)
+It also has advantages of a [**database**]{.hl-yellow} : we can [**access variables by name**]{.hl-purple} (**recommendable** since variables can change position), putting the name of the table followed by the symbol `$` (with the **tab**, a menu of columns to choose from will appear).
 :::
 :::
 
@@ -1797,65 +1797,63 @@ También tiene ventajas de una [**«base» de datos**]{.hl-yellow} : podemos [**
 
 ## Second attempt: data.frame
 
--   `names()`: nos muestra los nombres de las variables
+- `names()`: show us the names of the variables.
 
 ```{r}
-names(tabla)
+names(table)
 ```
 
 . . .
 
--   `dim()`: nos muestra las dimensiones (también `nrow()` y `ncol()`)
+- `dim()`: show us the dimensions (see also `nrow()` and `ncol()`)
 
 ```{r}
-dim(tabla)
+dim(table)
 ```
 
 . . .
 
--   Podemos acceder a las variables por su nombre
+-  We can access to variables by name
 
 ```{r}
-tabla[c(1, 3), "nombre"]
+table[c(1, 3), "name"]
 ```
 
 ---
 
 ## Second attempt: data.frame
 
-Si tenemos uno ya creado y queremos [**añadir una columna**]{.hl-yellow} es tan simple como usar la función `data.frame()` que ya hemos visto para concatenar la columna. Vamos añadir por ejemplo una nueva variable, el número de hermanos de cada individuo.
+If we have one already created and we want to [**add a column**]{.hl-yellow} it is as simple as using the `data.frame()` function we have already seen to concatenate the column. Let's add for example a new variable, the number of siblings of each individual.
 
 ```{r}
-# Añadimos una nueva columna con nº de hermanos/as
-hermanos <- c(0, 2, 3)
-tabla <- data.frame(tabla, "n_hermanos" = hermanos)
-tabla
+# Add new column
+siblings <- c(0, 2, 3)
+table <- data.frame(table, "n_sib" = siblings)
+table
 ```
 
 ---
 
 ## Final attempt: tibble
 
-Las tablas en formato `data.frame` tienen algunas [**limitaciones**]{.hl-red}
+Tables in `data.frame` format have some [**limitations**]{.hl-red}
 
-La principal es que [**no permite la recursividad**]{.hl-red}: imagina que definimos una base de datos con estaturas y pesos, y queremos una tercera variable con el IMC
+The main one is that [**does not allow recursion**]{.hl-red}: imagine we define a database with heights and weights, and we want a third variable with BMI.
 
 ```{r}
 #| error: true
-data.frame("estatura" = c(1.7, 1.8, 1.6), "peso" = c(80, 75, 70),
-           "IMC" = peso / (estatura^2))
+data.frame("height" = c(1.7, 1.8, 1.6), "weight" = c(80, 75, 70),
+           "BMI" = weight / (height^2))
 ```
 
 . . .
 
- 
-
-De ahora en adelante usaremos el formato `tibble` (un [**data.frame mejorado**]{.hl-yellow})
+From now on we will use the `tibble` format (an [**enhanced data.frame**]{.hl-yellow}).
 
 ```{r}
 library(tibble)
-tibble("estatura" = c(1.7, 1.8, 1.6), "peso" = c(80, 75, 70),
-       "IMC" = peso / (estatura^2))
+tibble("height" = c(1.7, 1.8, 1.6), "weight" = c(80, 75, 70),
+       "BMI" = weight / (height^2))
 ```
 
 ---
@@ -1863,35 +1861,35 @@ tibble("estatura" = c(1.7, 1.8, 1.6), "peso" = c(80, 75, 70),
 ## Final attempt: tibble
 
 ```{r}
-tabla <- tibble("estatura" = c(1.7, 1.8, 1.6), "peso" = c(80, 75, 70),
-                "IMC" = peso / (estatura^2))
-tabla
+table <- tibble("height" = c(1.7, 1.8, 1.6), "weight" = c(80, 75, 70),
+                "BMI" = weight / (height^2))
+table
 ```
 
-Las tablas en formato `tibble` nos permitirá una [**gestión más ágil, eficiente y coherente**]{.hl-yellow} de los datos, con 4 ventajas principales:
+Tables in `tibble` format will allow a [**more agile, efficient and coherent**]{.hl-yellow} data management, with 4 main advantages:
 
 . . .
 
--   [**Metainformación**]{.hl-yellow}: si te fijas en la cabecera, nos dice ya automáticamente el número de filas y columnas, y el tipo de cada variable
+- [**Metainfo**]{.hl-yellow}: if you look at the header, it automatically tells us the number of rows and columns, and the type of each variable.
 
 . . .
 
--   [**Recursividad**]{.hl-yellow}: permite definir las variables secuencialmente (como hemos visto)
+- [**Recursivity**]{.hl-yellow}: allows you to define the variables sequentially (as we have seen).
 
 ---
 
 ## Final attempt: tibble
 
--   [**Consistencia**]{.hl-yellow}: si accedes a una columna que no existe avisa con un warning
+- [**Consistency**]{.hl-yellow}: if you access a column that does not exist, a warning message is issued.
 
 ```{r}
 #| warning: true
-tabla$invent
+table$invent
 ```
 
 . . .
 
--   [**Por filas**]{.hl-yellow}: crear por filas (copiar y pegar de una tabla) con `tribble()`
+- [**By rows**]{.hl-yellow}: create by rows (copy and paste from a table) with `tribble()`.
 
 ```{r}
 tribble(~colA, ~colB,
@@ -1902,21 +1900,22 @@ tribble(~colA, ~colB,
 . . .
 
 ::: callout-tip
-El paquete `{datapasta}` nos permite [**copiar y pegar**]{.hl-green} tablas de páginas web y documentos sencillos
+## Tip
+The `{datapasta}` package allows us to [**copy and paste**]{.hl-green} tables from web pages and simple documents.
 :::
 
 
 ---
 
-## 💻 Tu turno (tibble) {#tu-turno-tibble}
+## 💻 Your turn (tibble) {#tu-turno-tibble}
 
-[**Intenta realizar los siguientes ejercicios sin mirar las soluciones**]{style="color:#444442;"}
+[**Try to solve the following exercises without looking at the solutions**]{style="color:#444442;"}
 
 ::: panel-tabset
 
-### [**Ejercicio 1**]{.hl-yellow}
+### [**Exercise 1**]{.hl-yellow}
 
-📝 Carga del paquete `{datasets}` el conjunto de datos `airquality` (variables de la calidad del aire de Nueva York desde mayo hasta septiembre de 1973). ¿Es el conjunto de datos airquality de tipo tibble? En caso negativo, conviértelo a tibble (busca en la documentación del paquete en <https://tibble.tidyverse.org/index.html>).
+📝 Load from the `{datasets}` package the `airquality` dataset (New York air quality variables from May through September 1973). Is the airquality dataset of type tibble? If not, convert it to tibble (look in the package documentation at <https://tibble.tidyverse.org/index.html>).
 
 ```{r}
 #| code-fold: true
@@ -1926,9 +1925,9 @@ class(datasets::airquality)
 airquality_tb <- as_tibble(datasets::airquality)
 ```
 
-### [**Ejercicio 2**]{.hl-yellow}
+### [**Exercise 2**]{.hl-yellow}
 
-📝 Una vez convertido a `tibble` obtén el nombre de las variables y las dimensiones del conjunto de datos. ¿Cuántas variables hay? ¿Cuántos días se han medido?
+📝 Once converted into `tibble` get the name of the variables and the dimensions of the data set. How many variables are there? How many days have been measured?
 
 ```{r}
 #| code-fold: true
@@ -1938,9 +1937,9 @@ ncol(airquality_tb)
 nrow(airquality_tb)
 ```
 
-### [**Ejercicio 3**]{.hl-yellow}
+### [**Exercise 3**]{.hl-yellow}
 
-📝 Filtra solo los datos del mes de agosto.
+📝 Filters only data for the month of August.
 
 ```{r}
 #| code-fold: true
@@ -1948,9 +1947,9 @@ nrow(airquality_tb)
 airquality_tb[airquality_tb$Month == 8, ]
 ```
 
-### [**Ejercicio 4**]{.hl-yellow}
+### [**Exercise 4**]{.hl-yellow}
 
-📝 Selecciona aquellos datos que no sean ni de julio ni de agosto.
+📝 Select those data that are not from July or August.
 
 ```{r}
 #| code-fold: true
@@ -1958,9 +1957,9 @@ airquality_tb[airquality_tb$Month == 8, ]
 airquality_tb[!(airquality_tb$Month %in% c(7, 8)), ]
 ```
 
-### [**Ejercicio 5**]{.hl-yellow}
+### [**Exercise 5**]{.hl-yellow}
 
-📝 Modifica el siguiente código para quedarte solo con las variable de ozono y temperatura.
+📝 Modify the following code to keep only the ozone and temperature variables.
 
 ```{r}
 #| code-fold: true
@@ -1968,9 +1967,9 @@ airquality_tb[!(airquality_tb$Month %in% c(7, 8)), ]
 airquality_tb[, c("Ozone", "Temp")]
 ```
 
-### [**Ejercicio 6**]{.hl-yellow}
+### [**Exercise 6**]{.hl-yellow}
 
-📝 Selecciona los datos de temperatura y viento de agosto. Traduce a castellano el nombre de las columnas del conjunto filtrado.
+📝 Select the temperature and wind data for August. Translate the name of the columns of the filtered set to your motherlanguage.
 
 ```{r}
 #| code-fold: true
@@ -1984,66 +1983,65 @@ names(airquality_tb) <- c("ozono", "rad_solar", "viento", "temp", "mes", "dia")
 
 ## Summary
 
--   Cada [**celda puede ser de un tipo diverso**]{.hl-yellow}: números, texto, fechas, valores lógicos, etc
+- Each [**cell can be of a different type**]{.hl-yellow}: numbers, text, dates, logical values, etc.
 
 . . .
 
--   Un [**vector es una concatenación de celdas**]{.hl-yellow} (las futuras columnas de nuestras tablas) --\> En `R` por defecto las operaciones se hacen [**elemento a elemento**]{.hl-yellow}
+- A [**vector is a concatenation of cells**]{.hl-yellow} (columns of our tables) --> In `R` by default the operations are done [**element by element**]{.hl-yellow}
 
 . . .
 
--   Una [**matriz**]{.hl-yellow} nos permite concatenar [**variables del MISMO tipo y MISMA longitud**]{.hl-yellow} --\> objeto bidimensional (dos índices)
+- A [**matrix**]{.hl-yellow} allows us to concatenate [**variables of the SAME type and SAME length**]{.hl-yellow} --> two-dimensional object (two indices)
 
 . . .
 
--   Un [**data.frame**]{.hl-yellow} nos permite concatenar [**variables de DISTINTO tipo y MISMA longitud**]{.hl-yellow} --\> usaremos [**tibble**]{.hl-yellow} como una opción mejorada de base de datos
+- A [**data.frame**]{.hl-yellow} allows us to concatenate [**variables of DIFFERENT type and SAME length**]{.hl-yellow} --> we will use [**tibble**]{.hl-yellow} as an enhanced database option.
 
 ---
 
-## 🐣 Caso práctico {#caso-práctico-1}
+## 🐣 Case study {#caso-práctico-2}
 
-Del paquete `Biostatistics` usaremos el conunto de datos `pinniped`
+From the `{Biostatistics}` package we will use the `pinniped` data set.
 
 ```{r}
 #| eval: false
 Biostatistics::pinniped
 ```
 
-
-1. ¿Qué [**representan**]{.hl-yellow} los datos? ¿Qué [**tipo de dato**]{.hl-yellow} es? En caso de que no lo sea, convierte la base de datos a un `tibble` (renombra con `pinniped_tb`)
-
-. . .
-
-2. ¿Cuántos registros hay? ¿Y variables? ¿De qué tipo es cada una?
+1. What [**data type**]{.hl-yellow} does the data represent? What [**data type**]{.hl-yellow} is it? If not, convert the database to a `tibble` (rename with `pinniped_tb`).
 
 . . .
 
-3. Incorpora una [**variable extra llamada phoca**]{.hl-yellow} que sea de tipo lógico y que nos diga si una especie es de la categoría `Phoca` o no.
+2. How many records are there, and variables, what type is each one?
 
 . . .
 
-4. ¿A qué sexo le [**pesa más el cerebro**]{.hl-yellow}: a las hembras o a los machos? ¿A quienes les [**pesa más el cuerpo**]{.hl-yellow}: a los monógamos o a los polígamos?
+3. Incorporate an [**extra variable named phoca**]{.hl-yellow} that is of logical type and check whether a species is of category `Phoca` or not.
 
 . . .
 
-5. Incopora una nueva variable que represente la [**diferencia entre el peso del cerebro entre machos y hembras**]{.hl-yellow} (machos - hembras) para cada especie.
+4. Which sex is [**weighted more by brain**]{.hl-yellow}: females or males? Who is [**weighted more by body**]{.hl-yellow}: monogamous or polygamous?
+
+. . .
+
+5. Add a new variable representing the [**difference in brain weight between males and females**]{.hl-yellow} (males - females) for each species.
 
 
 ---
 
 ## R base vs Tidyverse
 
-Si conoces algún otro lenguaje de programación (o tienes gente cercana que programa) te extrañará que aún no hayamos hablado de conceptos habituales como
+If you know any other programming language, you will be surprised that we have not yet talked about common concepts such as
 
--   [**Bucles for**]{.hl-yellow}: repetir un código un número fijo de iteraciones.
+- [**For loops**]{.hl-yellow}: repeat a code a fixed number of iterations.
 
--   [**Bucles while**]{.hl-yellow}: repetir un código hasta que se cumpla una condición
+- [**while loops**]{.hl-yellow}: repeat a code until a condition is verified.
 
--   [**Estructuras if-else**]{.hl-yellow}: estructuras de control para decidir por donde camina el código en función del valor de las variables.
+- [**if-else structures**]{.hl-yellow}: control flow structures to decide where the code walks depending on the value of variables.
 
 . . .
 
-Y aunque conocer dichas estructuras puede sernos en algún momento interesante, en la [**mayoría de ocasiones vamos a poder evitarlas**]{.hl-red} (en especial los bucles)
+And although knowing these structures can be interesting at some point, in [**most of the times we will be able to avoid them**]{.hl-red} (specially loops).
 
 ---
 
@@ -2059,7 +2057,7 @@ Y aunque conocer dichas estructuras puede sernos en algún momento interesante, 
 :::
 :::
 
-`{tidyverse}` es un [**«universo» de paquetes**]{.hl-yellow} para garanatizar un flujo de trabajo (de inicio a fin) eficiente, coherente y lexicográficamente sencillo de entender, basado en la idea de que [**nuestros datos están limpios y ordenados (tidy)**]{.hl-purple}
+`{tidyverse}` is an [**"universe" of packages**]{.hl-yellow} to ensure an efficient, coherent and lexicographically simple to understand workflow based on the idea that [**our data is clean and tidy**]{.hl-purple}
 
 ---
 
@@ -2071,17 +2069,17 @@ Y aunque conocer dichas estructuras puede sernos en algún momento interesante, 
 :::
 
 ::: {.column width="55%"}
--   `{tibble}`: optimizando data.frame
--   `{tidyr}`: limpieza de datos
--   `{readr}`: carga datos rectangulares (.csv)
--   `{dplyr}`: gramática para depurar
--   `{stringr}`: manejo de textos
--   `{ggplot2}`: visualización de datos
--   `{tidymodels}`: modelización/predicción
+- `{tibble}`: optimizing data.frame
+- `{tidyr}`: data cleaning
+- `{readr}`: loading rectangular data (.csv)
+- `{dplyr}`: grammar for debugging
+- `{stringr}`: text handling
+- `{ggplot2}`: data visualization
+- `{tidymodels}`: modeling/prediction
 :::
 :::
 
-También tenemos los paquetes `{purrr}` para el manejo de listas, `{forcast}` para cualitativas, `{lubridate}` para fechas, `{readxl}` para importar archivos .xls y .xlsx, `{rvest}` para web scraping y `{rmarkdown}` para comunicar resultados.
+We also have the `{purrr}` packages for list management, `{forcast}` for qualitative variables, `{lubridate}` for dates, `{readxl}` for importing .xls and .xlsx files, `{rvest}` for web scraping and `{rmarkdown}` for reporting results.
 
 ---
 
@@ -2093,17 +2091,17 @@ También tenemos los paquetes `{purrr}` para el manejo de listas, `{forcast}` pa
 :::
 
 ::: {.column width="55%"}
--   `{tibble}`: [**optimizando data.frame**]{.hl-yellow}
--   `{tidyr}`: [**limpieza de datos**]{.hl-yellow}
--   `{readr}`: carga datos rectangulares (.csv)
--   `{dplyr}`: gramática para depurar
--   `{stringr}`: manejo de textos
--   `{ggplot2}`: visualización de datos
--   `{tidymodels}`: modelización/predicción
+-   `{tibble}`: [**optimizing data.frame**]{.hl-yellow}
+-   `{tidyr}`: [**data cleaning**]{.hl-yellow}
+- `{readr}`: loading rectangular data (.csv)
+- `{dplyr}`: grammar for debugging
+- `{stringr}`: text handling
+- `{ggplot2}`: data visualization
+- `{tidymodels}`: modeling/prediction
 :::
 :::
 
-También tenemos los paquetes `{purrr}` para el manejo de listas, `{forcast}` para cualitativas, `{lubridate}` para fechas, `{readxl}` para importar archivos .xls y .xlsx, `{rvest}` para web scraping y `{rmarkdown}` para comunicar resultados.
+We also have the `{purrr}` packages for list management, `{forcast}` for qualitative variables, `{lubridate}` for dates, `{readxl}` for importing .xls and .xlsx files, `{rvest}` for web scraping and `{rmarkdown}` for reporting results.
 
 ---
 
@@ -2115,40 +2113,40 @@ También tenemos los paquetes `{purrr}` para el manejo de listas, `{forcast}` pa
 <b>TIDY</b><b>[VERSE</b>]{style="color:#CAB0EE;"}
 :::
 
-El [**universo**]{.hl-purple} de paquetes `{tidyverse}` se basa en la idea introducido por **Hadley Wickham** (el Dios al que rezo) de [**estandarizar**]{.hl-yellow} el formato los datos para
+The [**universe**]{.hl-purple} of `{tidyverse}` packages is based on the idea introduced by **Hadley Wickham** (the God I pray to) of [**standardize**]{.hl-yellow} formatting data to
 
 ::: incremental
--   [**sistematizar**]{.hl-green} la depuración
--   hacer más [**sencillo**]{.hl-green} su manipulación.
--   código [**legible**]{.hl-green}
+- [**systematize**]{.hl-green} debugging
+- make it [**simpler**]{.hl-green} to manipulate.
+- [**readable**]{.hl-green} code.
 :::
 
 ---
 
 ## Tidy data: rules
 
-Lo primero por tanto será entender qué son los [**conjuntos tidydata**]{.hl-yellow} ya que todo `{tidyverse}` se basa en que los datos están estandarizados.
+The first thing will therefore be to understand what the [**tidydata sets**]{.hl-yellow} are, since the whole `{tidyverse}` is based on the data being standardized.
 
 ::: columns
 ::: {.column width="50%"}
 ::: {.fragment .fade-in}
-1.  Cada [**variable**]{.hl-yellow} en una [**única columna**]{.hl-purple}
+1. Each [**variable**]{.hl-yellow} in a [**single column**]{.hl-purple}
 :::
 
 ::: {.fragment .fade-in}
-2.  Cada [**individuo**]{.hl-yellow} en una [**fila diferente**]{.hl-purple}
+2.  Each [**individual**]{.hl-yellow} in a [**different row**]{.hl-purple}
 :::
 
 ::: {.fragment .fade-in}
-3.  Cada [**celda**]{.hl-yellow} con un [**único valor**]{.hl-purple}
+3.  Each [**cell**]{.hl-yellow} with a [**single value**]{.hl-purple}
 :::
 
 ::: {.fragment .fade-in}
-4.  Cada [**dataset**]{.hl-yellow} en un [**tibble**]{.hl-purple}
+4.  Each [**dataset**]{.hl-yellow} in a [**tibble**]{.hl-purple}
 :::
 
 ::: {.fragment .fade-in}
-5.  Si queremos cruzar [**múltiples tablas**]{.hl-yellow} debemos tener una [**columna común**]{.hl-purple}
+5.  If we want to cross [**multiple tables**]{.hl-yellow} we must have a [**common (key) column**]{.hl-purple}
 :::
 :::
 
@@ -2161,63 +2159,60 @@ Lo primero por tanto será entender qué son los [**conjuntos tidydata**]{.hl-ye
 
 ## Pipe operator
 
-En `{tidyverse}` será clave el [**operador pipe (tubería)**]{.hl-yellow} definido como `|>` ([**ctrl+shift+M**]{.hl-purple}): será una [**tubería que recorre los datos**]{.hl-yellow} y los transforma.
+In `{tidyverse}` the [**pipe operator**]{.hl-yellow}, defined as `|>` ([**ctrl+shift+M**]{.hl-purple}), will be key: it will be a [**pipe that traverses the data**]{.hl-yellow} and transforms it.
 
 . . .
 
 ::: columns
 ::: {.column width="50%"}
-En R base, si queremos aplicar tres funciones `first()`, `second()` y `third()` en orden, sería
+In R base, if we want to apply three functions `first()`, `second()` and `third()` in order, it would be
 
 ```{r}
 #| eval: false
-third(second(first(datos)))
+third(second(first(data)))
 ```
 :::
 
 ::: {.column width="50%"}
-En `{tidyverse}` podremos [**leer de izquierda a derecha**]{.hl-yellow} y separar los datos de las acciones
+In `{tidyverse}` we can [**read from left to right**]{.hl-yellow} and separate the data from the actions
 
 ```{r}
 #| eval: false
-datos |> first() |> second() |> third()
+data |> first() |> second() |> third()
 ```
 :::
 :::
 
- 
 
 . . .
 
 ::: callout-caution
-## Apunte importante
+## Note that...
 
-Desde la versión 4.1.0 de `R` disponemos de `|>`, un pipe **nativo** disponible [**fuera de tidyverse**]{.hl-purple}, sustituyendo al [**antiguo pipe**]{.hl-red} `%>%` que dependía del paquete `{magrittr}` (bastante problemático).
+Since version 4.1.0 of `R` we have `|>`, a **native** pipe available [**outside tidyverse**]{.hl-purple}, replacing the [**old pipe**]{.hl-red} `%>%` which depended on the `{magrittr}` package (quite problematic).
 :::
 
 ---
 
 ## Pipe operator
 
-La principal ventaja es que el [**código sea muy legible (casi literal)**]{.hl-yellow} pudiendo hacer grandes operaciones con los datos con apenas código.
-
- 
+The main advantage is that the [**code is very readable (almost literal)**]{.hl-yellow} and you can do large operations on the data with very little code.
 
 ::: columns
 ::: {.column width="50%"}
 ```{r}
 #| eval: false
-datos |>
-  limpio(...) |>
-  filtro(...) |>
-  selecciono(...) |>
-  ordeno(...) |>
-  modifico(...) |>
-  renombro(...) |>
-  agrupo(...) |>
-  cuento(...) |>
-  resumo(...) |>
-  pinto(...)
+data |>
+  tidy(...) |>
+  filter(...) |>
+  select(...) |>
+  arrange(...) |>
+  modify(...) |>
+  rename(...) |>
+  group(...) |>
+  count(...) |>
+  summary(...) |>
+  plot(...)
 ```
 :::
 
@@ -2230,18 +2225,16 @@ datos |>
 
 ## Messy data
 
-¿Pero qué aspecto tienen los [**datos no tidy**]{.hl-yellow}? Vamos a cargar la tabla `table4a` del paquete `{tidyr}` (ya lo tenemos cargado del entorno tidyverse).
+But what does the [**non-tidy data**]{.hl-yellow} look like? Let's load the `table4a` table from the `{tidyr}` package (we already have it loaded from the tidyverse environment).
 
- 
 
 ```{r}
 library(tidyr)
 table4a
 ```
 
- 
 
-[**¿Qué puede estar fallando?**]{.hl-red}
+[**What could be wrong?**]{.hl-red}
 
 ---
 
@@ -2255,13 +2248,13 @@ table4a
 :::
 
 ::: {.column width="60%"}
-❎ Cada [**fila representa dos observaciones**]{.hl-red} (1999 y 2000) → las columnas `1999` y `2000` en realidad deberían ser en sí [**valores de una variable**]{.hl-yellow} y no nombres de columnas.
+❎ Each [**row represents two observations**]{.hl-red} (1999 and 2000) → columns `1999` and `2000` should actually themselves be [**values of a variable**]{.hl-yellow} and not column names.
 :::
 :::
 
 . . .
 
-Incluiremos una [**nueva columna**]{.hl-yellow} que nos guarde el año y otra que guarde el valor de la variable de interés en cada uno de esos años. Y lo haremos con la función `pivot_longer()`: [**pivotaremos la tabla**]{.hl-yellow} a formato long:
+We will include a [**new column**]{.hl-yellow} that stores the year and another one that stores the value of the variable of interest in each of those years. And we will do it with the `pivot_longer()` function: [**pivot the table**]{.hl-yellow} to long format
 
 ```{r}
 table4a |> 
@@ -2287,27 +2280,24 @@ table4a |>
 :::
 :::
 
- 
 
--   `cols`: [**nombre de las variables a pivotar**]{.hl-yellow}
--   `names_to`: nombre de la nueva variable a la quemandamos la [**cabecera**]{.hl-yellow} de la tabla (los nombres).
--   `values_to`: nombre de la nueva variable a la que vamos a mandar los [**datos**]{.hl-yellow}.
+- `cols`: [**name of the variables to be pivoted**]{.hl-yellow}
+- `names_to`: name of the new variable to which we send the [**header**]{.hl-yellow} of the table (the names).
+- `values_to`: name of the new variable to which we are going to send the [**data**]{.hl-yellow}.
 
 ---
 
 ## Messy data
 
-Veamos otro ejemplo con la tabla `table2`
+Let us see another example in `table2`
 
- 
 
 ```{r}
 table2
 ```
 
- 
 
-[**¿Qué puede estar fallando?**]{.hl-red}
+[**What could be wrong?**]{.hl-red}
 
 ---
 
@@ -2322,13 +2312,13 @@ table2
 :::
 
 ::: {.column width="40%"}
-❎ Cada [**observación está dividido en dos filas**]{.hl-red} → los [**registros con el mismo año deberían ser el mismo**]{.hl-yellow}
+❎ Each [**observation is divided into two rows**]{.hl-red} → the [**records with the same year should be the same**]{.hl-yellow}
 :::
 :::
 
 . . .
 
-Lo que haremos será lo opuesto: con `pivot_wider()` [**ensancharemos la tabla**]{.hl-yellow}
+We will do will be the opposite: with `pivot_wider()` [**we will widen the table**]{.hl-yellow}
 
 ```{r}
 table2 |>  pivot_wider(names_from = type, values_from = count)
@@ -2338,7 +2328,7 @@ table2 |>  pivot_wider(names_from = type, values_from = count)
 
 ## Messy data
 
-Veamos otro ejemplo con la tabla `table3`
+Let us see another example in `table3`
 
 
 ```{r}
@@ -2346,7 +2336,7 @@ table3
 ```
 
 
-[**¿Qué puede estar fallando?**]{.hl-red}
+[**What could be wrong?**]{.hl-red}
 
 ---
 
@@ -2360,13 +2350,13 @@ table3
 :::
 
 ::: {.column width="40%"}
-❎ Cada [**celda contiene varios valores**]{.hl-red}
+❎ Each [**cell contains several values**]{.hl-red}
 :::
 :::
 
 . . .
 
-Lo que haremos será hacer uso de la función `separate()` para mandar [**separar cada valor**]{.hl-yellow} a una columna diferente.
+What we will do is make use of the `separate()` function to send [**separate each value**]{.hl-yellow} to a different column.
 
 ```{r}
 table3 |> separate(rate, into = c("cases", "pop"))
@@ -2380,8 +2370,7 @@ table3 |> separate(rate, into = c("cases", "pop"))
 table3 |> separate(rate, into = c("cases", "pop"))
 ```
 
-Fíjate que los datos, aunque los ha separado, [**los ha mantenido como texto**]{.hl-red} cuando en realidad deberían ser variables numéricas. Para ello podemos añadir el argumento opcional `convert = TRUE`
-
+Notice that the data, although it has separated them, [**kept them as text**]{.hl-red} when in fact they should be numeric variables. For this we can add the optional argument `convert = TRUE`.
 . . .
 
 ```{r}
@@ -2392,7 +2381,7 @@ table3 |> separate(rate, into = c("cases", "pop"), convert = TRUE)
 
 ## Messy data
 
-Veamos el último ejemplo con la tabla `table5`
+Let us see the last example in `table5`
 
 
 ```{r}
@@ -2400,7 +2389,7 @@ table5
 ```
 
 
-[**¿Qué puede estar fallando?**]{.hl-red}
+[**What could be wrong?**]{.hl-red}
 
 ---
 
@@ -2414,29 +2403,30 @@ table5
 :::
 
 ::: {.column width="50%"}
-❎ Tenemos [**mismos valores divididos en dos columnas**]{.hl-red}
+❎ We have [**same values divided into two columns**]{.hl-red}
 :::
 :::
 
 . . .
 
-Usaremos `unite()` para [**unir los valores**]{.hl-yellow} de siglo y año en una misma columna
+We will use `unite()` to [**unite the values**]{.hl-yellow} of century and year in the same column
 
 ```{r}
-table5 |> unite(col = year_completo, century, year, sep = "")
+table5 |> unite(col = year_whole, century, year, sep = "")
 ```
 
 ---
 
 ## 💻 Tu turno {#tu-turno-3}
 
-[**Intenta realizar los siguientes ejercicios sin mirar las soluciones**]{style="color:#444442;"}
+
+[**Try to solve the following exercises without looking at the solutions**]{style="color:#444442;"}
 
 ::: panel-tabset
 
-### [**Ejercicio 1**]{.hl-yellow}
+### [**Exercise 1**]{.hl-yellow}
 
-📝 Echa un vistazo a la tabla `table4b` del paquete `{tidyr}`. ¿Es tidydata? En caso negativo, ¿qué falla? ¿Cómo convertirla a tidy data en caso de que no lo sea ya?
+📝 Take a look at table `table4b` in package `{tidyr}`. Is it tidydata? If not, what is wrong, how to convert it to tidy data in case it is not already?
 
 ```{r}
 #| code-fold: true
@@ -2446,9 +2436,9 @@ table4b |>
                values_to = "cases")
 ```
 
-### [**Ejercicio 2**]{.hl-yellow}
+### [**Exercise 2**]{.hl-yellow}
 
-📝 Echa un vistazo a la tabla `relig_income` del paquete `{tidyr}`. ¿Es tidydata? En caso negativo, ¿qué falla? ¿Cómo convertirla a tidy data en caso de que no lo sea ya?
+📝 Take a look at table `relig_income` in package `{tidyr}`. Is it tidydata? If not, what is wrong, how to convert it to tidy data in case it is not already?
 
 ```{r}
 #| code-fold: true
@@ -2459,9 +2449,9 @@ relig_income |>
                values_to = "people")
 ```
 
-### [**Ejercicio 3**]{.hl-yellow}
+### [**Exercise 3**]{.hl-yellow}
 
-📝 Echa un vistazo a la tabla `billboard` del paquete `{tidyr}`. ¿Es tidydata? En caso negativo, ¿qué falla? ¿Cómo convertirla a tidy data en caso de que no lo sea ya?
+📝 Take a look at table `billboard` in package `{tidyr}`. Is it tidydata? If not, what is wrong, how to convert it to tidy data in case it is not already?
 
 ```{r}
 #| code-fold: true
@@ -2478,9 +2468,9 @@ billboard |>
 
 ---
 
-## 🐣 Caso práctico {#caso-práctico-2}
+## 🐣 Case study {#caso-práctico-3}
 
-En el paquete `{tidyr}` contamos con el dataset `who` (dataset de la Organización Mundial de la Salud)
+In the `{tidyr}` package we have the `who` dataset (World Health Organization dataset).
 
 ```{r}
 #| eval: false
@@ -2489,19 +2479,19 @@ who
 ```
 
 
-1. ¿Qué [**significan los datos**]{.hl-yellow}? ¿Cuántas [**variables y observaciones**]{.hl-yellow} tenemos?
+1. What do [**data**]{.hl-yellow} mean? How many [**variables and observations**]{.hl-yellow} do we have?
 
 . . .
 
-2. ¿Cuántos [**tipos de variables**]{.hl-yellow} tenemos?
+2. How many [**variable types**]{.hl-yellow} do we have?
 
 . . .
 
-3. ¿Todas las variables son necesarias? [**Elimina la información redundante**]{.hl-yellow}.
+3. Are all variables necessary? [**Remove redundant information**]{.hl-yellow}.
 
 . . .
 
-4. [**Convierte a tidydata**]{.hl-yellow} la base de datos realizando todas las opciones que consideres (consejo: usa papel y boli para bocetar como debería quedar la base de datos).
+4. [**Convert to tidydata**]{.hl-yellow} the database by making all the options you consider (tip: use paper to sketch how the database should look like).
 
 
 
