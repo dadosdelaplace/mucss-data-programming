@@ -107,18 +107,24 @@ Currently, [**researcher and lecturer at the Faculty of Statistics of the UCM**]
 ::: {style="font-size:20px"}
 |  LESSON | WEEK | DATE | TOPIC | SCRIPTS | EJ. | CASO PRÁCTICO | ENTREGA | 
 |:------:|:--------:|:--------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
-|     [1](#clase-1-primeros-pasos)      | S1     | 14 sep |                 R base programming                   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno)  [💻](#tu-turno-1) [💻](#tu-turno-2) |       [🐣](#caso-práctico-1)                  |         | 
-|     [2](#clase-2)      | S2     | 26 sep |                 First databases: tibbles and tidy data       | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-3)    |  [🐣](#caso-práctico-2) [🐣](#caso-práctico-3)  |         |     
-|     [3](#clase-3)      | S3    | 28 sep |     Control flow structures and rmarkdown   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         |   
-|     [4](#clase-4)      | ¿?    | ¿? |        Tidyverse I   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
-|     [5](#clase-5)      | ¿?    | ¿? |        Tidyverse II   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
-|     [6](#clase-6)      | ¿?    | ¿? |        Tidyverse III   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
-|     [7](#clase-7)      | ¿?    | ¿? |        Advance data types and funcitons I   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |    
-|     [8](#clase-8)      | ¿?    | ¿? |        Advance data types and funcitons II   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |   | 
-|     [9](#clase-9)      | ¿?    | ¿? |        Advance data management  | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
+|     [1](#clase-1-primeros-pasos)      | S1     | 14 sep |                 R base programming                   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno)  [💻](#tu-turno-1) [💻](#tu-turno-1a) |       [🐣](#caso-práctico-1)                  |         | 
+|     [2](#clase-2)      | S2     | 26 sep |                 First databases: tibbles and tidy data       | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |      [💻](#tu-turno-tibble) [💻](#tu-turno-2)    |  [🐣](#caso-práctico-2) [🐣](#caso-práctico-3)  |         |     
+|     [3](#clase-3)      | S3    | 28 sep |     Tidyverse: rows | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-3) [💻](#tu-turno-3a) [💻](#tu-turno-3b)      |  [🐣](#caso-práctico-3)  |         |   
+|     [4](#clase-4)      | S4    | 5 oct |   Tidyverse: columns   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
+|     [5](#clase-5)      | S5   | 10 oct |        Control flow structures and rmarkdown    | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
+|     [6](#clase-6)      | S6    | 19 oct |     Tidyverse: summarising   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
+|     [7](#clase-7)      | S7    | 24 oct |        Functions  | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |    
+|     [8](#clase-8)      | S7    | 26 oct |        Advance data types: list, factors and strings   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |   | 
+|     [9](#clase-9)      | S10   | 16 nov |        Advance data management  | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
 
 :::
 :::
+
+* Individual Task I (10%): 24th October (R base, databases, tidydata)
+
+* Individual Task II (20%): 7th November (Tidyverse, control flow structures, functions)
+
+* Individual Task III (30%): 7th December (all contents)
 
 ---
 
@@ -1431,7 +1437,7 @@ x[order(x)]
 
 ---
 
-## 💻 Your turn {#tu-turno-2}
+## 💻 Your turn {#tu-turno-1a}
 
 [**Try to solve the following exercises without looking at the solutions**]{style="color:#444442;"}
 
@@ -2417,7 +2423,7 @@ table5 |> unite(col = year_whole, century, year, sep = "")
 
 ---
 
-## 💻 Tu turno {#tu-turno-3}
+## 💻 Your turn {#tu-turno-2}
 
 
 [**Try to solve the following exercises without looking at the solutions**]{style="color:#444442;"}
@@ -2495,11 +2501,1124 @@ who
 
 
 
-# Lesson 3: control flow structures and rmd {#clase-3}
+# Lesson 3: tidyverse (rows) {#clase-3}
 
-[**Loops vs vectorial programming. Control flow estructures. Rmarkdown and Quarto**]{style="color:#444442;"}
+[**Handling data by rows**]{style="color:#444442;"}
+
+---
+
+
+## What about tidyverse?
+
+::: columns
+::: {.column width="45%"}
+![](img/tidyverrse_universe.jpg)
+:::
+
+::: {.column width="55%"}
+- `{tibble}`: [**optimizing data.frame**]{.hl-yellow}
+- `{tidyr}`: data cleaning
+- `{readr}`: loading rectangular data (.csv)
+- `{dplyr}`: [**grammar for debugging**]{.hl-yellow}
+- `{stringr}`: text handling
+- `{ggplot2}`: data visualization
+- `{tidymodels}`: modeling/prediction
+:::
+:::
+
+We also have the `{purrr}` packages for list management, `{forcast}` for qualitative variables, `{lubridate}` for dates, `{readxl}` for importing .xls and .xlsx files, `{rvest}` for web scraping and `{rmarkdown}` for reporting results.
+
+---
+
+## Preprocessing: dplyr
+
+Within `{tidyverse}`, we will use the `{dplyr}` package for the [**preprocessing and debugging**]{.hl-yellow} of databases.
+
+::: columns
+::: {.column width="50%"}
+All the debugging process that we are going to perform is on the [**assumption that our data is in tidydata format**]{.hl-yellow}
+:::
+
+::: {.column width="50%"}
+![](img/tidy_def.jpg){width="160%"}
+:::
+::::
+
+Remember that in `{tidyverse}` the [**pipe operator**]{.hl-yellow} defined as `|>` ([**ctrl+shift+M**]{.hl-purple}) will be crucial: it will be a [**pipe that traverses the data**]{.hl-yellow} and transforms it.
+
+. . .
+
+Let's practice with the `starwars` dataset from the loaded `{dplyr}` package.
+
+```{r}
+#| eval: false
+library(tidyverse)
+starwars
+```
+
+---
+
+## Sampling
+
+:::: columns
+::: {.column width="60%"}
+
+One of the most common operations is what is known in statistics as [**sampling**]{.hl-yellow}: a [**selection or filtering of records**]{.hl-yellow} (a subsample).
+
+:::
+
+::: {.column width="40%"}
+
+![](img/muestreo.jpeg){width=500}
+:::
+::::
+
+. . .
+
+
+* [**Non-random (by quotas)**]{.hl-purple}: based on logical conditions on the records (`filter()`)
+
+. . .
+
+* [**Non-random (intentional/discretionary)**]{.hl-purple}: in terms of  position (`slice()`)
+
+. . .
+
+* [**Simple random**]{.hl-purple} (`slice_sample()`)
+
+. . .
+
+* [**Stratified simple sampling**]{.hl-purple} (`group_by()` + `slice_sample()`)
+
 
 
 ---
 
-## ...
+## Filtering: filter()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+datos |>
+  filtro(condicion)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  filter(condition)
+```
+:::
+:::
+
+The simplest one is when [**filter records**]{.hl-yellow} based on some logical condition: with `filter()` only individuals that verify certain conditions will be selected (non-random sampling by conditions).
+
+::: incremental
+-   `==`, `!=`: [**equal**]{.hl-purple} or [**different**]{.hl-yellow} to (`|> filter(variable == "a")`)
+-   `>`, `<`: [**greater**]{.hl-purple} or [**less**]{.hl-yellow} than (`|> filter(variable < 3)`)
+-   `>=`, `<=`: [**greater or equal**]{.hl-yellow} or [**less or equal**]{.hl-purple} to (`|> filter(variable >= 5)`)
+-   `%in%`: values [**belong**]{.hl-yellow} to a valid set of options (`|> filter(variable %in% c("blue", "green"))`)
+-   `between(variable, val1, val2)`: if continuous numerical values are [**within a range**]{.hl-yellow} (`|> filter(between(variable, 160, 180))`)
+:::
+
+---
+
+## Filtering: filter()
+
+These [**logical conditions**]{.hl-yellow} can be [**combined**]{.hl-yellow} in different ways (and, or, or mutually exclusive).
+
+![](img/tablas_verdad.png)
+
+. . .
+
+
+::: callout-tip
+## Important
+
+Remember that inside `filter()` there must always be something that returns a [**vector of logical values**]{.hl-green}.
+
+:::
+
+---
+
+## Filtering: filter()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+datos |>
+  filtro(condicion)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  filter(condition)
+```
+:::
+:::
+
+How would you go about... [**filter**]{.hl-yellow} the characters with [**brown eyes**]{.hl-purple}?
+
+. . .
+
+[**What kind of variable is it?**]{.hl-yellow} --> The variable `eye_color` is qualitative so it is represented by texts.
+. . .
+
+```{r}
+#| echo: false
+#| include: false
+library(tidyverse)
+```
+
+```{r}
+starwars |>
+  filter(eye_color == "brown")
+```
+
+---
+
+## Filtering: filter()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+datos |>
+  filtro(condicion)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  filter(condition)
+```
+:::
+:::
+
+How would you go about... [**filter**]{.hl-yellow} the characters without [**brown eyes**]{.hl-purple}?
+
+. . .
+
+
+```{r}
+starwars |>
+  filter(eye_color != "brown")
+```
+
+---
+
+## Filtering: filter()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+datos |>
+  filtro(condicion)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  filter(condition)
+```
+:::
+:::
+
+How would you go about... [**filter**]{.hl-yellow} the characters with [**brown or blue eyes**]{.hl-purple}?
+. . .
+
+```{r}
+starwars |>
+  filter(eye_color %in% c("blue", "brown"))
+```
+
+---
+
+## Filtering: filter()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+datos |>
+  filtro(condicion)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  filter(condition)
+```
+:::
+:::
+
+Note that `%in%` is equivalent to concatenating several `==` with a conjunction or (`|`)
+
+```{r}
+starwars |>
+  filter(eye_color == "blue" | eye_color == "brown")
+```
+
+---
+
+## Filtering: filter()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+datos |>
+  filtro(condicion)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  filter(condition)
+```
+:::
+:::
+
+
+How would you go about... [**filter**]{.hl-yellow} the characters  [**are between 120 and 160 cm**]{.hl-purple}?
+
+
+. . .
+
+[**What type of variable is it?**]{.hl-yellow} --> The variable `height` is a continuous quantitative variable so we must filter by ranges of values (intervals) --> we will use `between()`.
+
+. . .
+
+```{r}
+starwars |>
+  filter(between(height, 120, 160))
+```
+
+
+---
+
+## Filtering: filter()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+datos |>
+  filtro(condicion)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  filter(condition)
+```
+:::
+:::
+
+How would you... [**filter**]{.hl-yellow} characters that [**have brown eyes and are not human**]{.hl-purple}?
+
+. . .
+
+```{r}
+starwars |>
+  filter(eye_color == "brown" & species != "Human")
+```
+
+---
+
+## Filtering: filter()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+datos |>
+  filtro(condicion)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  filter(condition)
+```
+:::
+:::
+
+How would you... [**filter**]{.hl-yellow} characters that [**have eyes and are not human, or are over 60 years old**]{.hl-purple}? Think it through: the [**parentheses are important**]{.hl-yellow}: $(a+b)*c$ is not the same as $a+(b*c)$.
+
+. . .
+
+```{r}
+starwars |>
+  filter((eye_color == "brown" & species != "Human") | birth_year > 60)
+```
+
+---
+
+## Drop missing: drop_na()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+datos |>
+  retirar_ausentes(var1, var2, ...)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  drop_na(var1, var2, ...)
+```
+:::
+:::
+
+There is a special filter for one of the most common operations in debugging: [**remove absent**]{.hl-yellow}. For this we can use inside a filter `is.na()`, which returns `TRUE/FALSE` depending on whether it is absent, or ....
+
+. . .
+
+Use `drop_na()`: if no variable is specified, it removes records with absent in any variable. Later we will see how to [**impute those missing ones**]{.hl-yellow} 
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  drop_na(mass, height)
+```
+
+```{r}
+#| echo: false
+starwars |>
+  drop_na(mass, height, sex) |> 
+  select(name, mass, height, hair_color) |> 
+  slice(1:7)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  drop_na()
+```
+
+```{r}
+#| echo: false
+starwars |>
+  drop_na() |> 
+  select(name, mass, height, hair_color) |> 
+  slice(1:7)
+```
+:::
+:::
+
+---
+
+## 💻 Your turn {#tu-turno-3}
+
+[**Try to solve the following exercises without looking at the solutions**]{style="color:#444442;"}
+
+::: panel-tabset
+
+### [**Exercise 1**]{.hl-yellow}
+
+📝 Select from the starwars dataset only those characters that are androids or whose `species` value is unknown.
+
+```{r}
+#| code-fold: true
+#| eval: false
+starwars |>
+  filter(species == "Droid" | is.na(species))
+```
+
+### [**Exercise 2**]{.hl-yellow}
+
+📝 Select from the starwars dataset only the characters whose weight is between 65 and 90 kg.
+
+```{r}
+#| code-fold: true
+#| eval: false
+starwars |> filter(between(mass, 65, 90))
+```
+
+### [**Exercise 3**]{.hl-yellow}
+
+📝 After clearing missing data in all variables, select from the starwars dataset only the characters that are human and come from Tatooine.
+
+```{r}
+#| code-fold: true
+#| eval: false
+starwars |>
+  drop_na() |> 
+  filter(species == "Human" & homeworld == "Tatooine")
+```
+
+### [**Exercise 4**]{.hl-yellow}
+
+📝 Select, from the original starwars dataset, non-human characters, `male` in sex and measuring between 120 and 170 cm, or characters with brown or red eyes.
+
+```{r}
+#| code-fold: true
+#| eval: false
+starwars |>
+  filter((species != "Human" & sex == "male" &
+            between(height, 120, 170)) |
+           eye_color %in% c("brown", "red"))
+```
+
+### [**Exercise 5**]{.hl-yellow}
+
+📝 Check information about the `str_detect()` function (`{stringr}` package loaded in `{tidyverse}`). Tip: test the functions you are going to use with some test vector beforehand so that you can check how they work. After you know what it does, filter out only those characters with the last name `Skywalker`.
+
+```{r}
+#| code-fold: true
+#| eval: false
+starwars |> filter(str_detect(name, "Skywalker"))
+```
+:::
+
+---
+
+## Slice of data: slice()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+datos |> rebanadas(posiciones)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |> slice(positions)
+```
+:::
+:::
+
+Sometimes we may be interested in performing a [**non-random discretionary sampling**]{.hl-yellow}, or in other words, [**filter by position**]{.hl-yellow}: with `slice(positions)` we can select specific rows by passing as argument a [**index vector**]{.hl-yellow}.
+
+. . .
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+
+# fila 1
+starwars |>
+  slice(1)
+```
+
+```{r}
+#| echo: false
+starwars |> slice(1) |> select(name:hair_color)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+
+# filas de la 7 a la 9
+starwars |>
+  slice(7:9)
+```
+
+```{r}
+#| echo: false
+starwars |> slice(7:9) |> select(name:hair_color)
+```
+:::
+:::
+
+. . .
+
+```{r}
+#| eval: false
+
+# filas 2, 7, 10 y 31
+starwars |>
+  slice(c(2, 7, 10, 31))
+```
+
+```{r}
+#| echo: false
+starwars |>
+  slice(c(2, 7, 10, 31)) |> select(name:sex)
+```
+
+---
+
+## Slice of data: slice()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+datos |>
+  rebanadas(posiciones)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  slice(positions)
+```
+:::
+:::
+
+We have some default options:
+
+* with `slice_head(n = ...)` and `slice_tail(n = ...)` we can get the [**header and tail**]{.hl-yellow} of the table.
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |> slice_head(n = 2)
+```
+
+```{r}
+#| echo: false
+starwars |> slice_head(n = 2) |> select(name:hair_color)
+```
+:::
+
+::: {.column width="\"50%"}
+```{r}
+#| eval: false
+starwars |> slice_tail(n = 2)
+```
+
+```{r}
+#| echo: false
+starwars |> slice_tail(n = 2) |> select(name:hair_color)
+```
+:::
+:::
+
+---
+
+## Slice of data: slice()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+datos |>
+  rebanadas(posiciones)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  slice(positions)
+```
+:::
+:::
+
+We have some default options:
+
+* with `slice_max()` and `slice_min()` we get the [**rows with smallest/largest value of a variable**]{.hl-yellow} (if tie, all unless `with_ties = FALSE`) that we indicate in `order_by = ...`.
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |> slice_min(mass, n = 2)
+```
+
+```{r}
+#| echo: false
+starwars |> slice_min(n = 2, order_by = mass) |> select(name:hair_color)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |> slice_max(height, n = 2)
+```
+
+```{r}
+#| echo: false
+starwars |> slice_max(n = 2, order_by = height) |> select(name:hair_color)
+```
+:::
+:::
+
+---
+
+## Random slices: slice_sample()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+datos |>
+  rebanadas_aleatorias(tamaño_muestral)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  slice_sample(sample_size)
+```
+:::
+:::
+
+The so-called [**simple random sampling**]{.hl-yellow} is based on [**selecting individuals randomly**]{.hl-yellow}, so that each one has certain [**probabilities**]{.hl-yellow} of being selected. With `slice_sample(n = ...)` we can randomly extract n (a priori equiprobable) records.
+
+```{r}
+starwars |> slice_sample(n = 2)
+```
+
+. . .
+
+::: callout-important
+## Important
+
+[**«Randomness» does not imply equiprobable**]{.hl-yellow}: a normal die is just as random as a trick die. There are no things "more random" than others, they simply have different underlying probability laws.
+
+:::
+
+---
+
+## Random slices: slice_sample()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+datos |>
+  rebanadas_aleatorias(tamaño_muestral)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  slice_sample(sample_size)
+```
+:::
+:::
+
+
+We can also indicate the [**proportion of data to be sampled**]{.hl-yellow} (instead of the number) and if we want it to be [**with replacement (that can be repeated)**]{.hl-yellow}.
+
+```{r}
+# 5% de registros aleatorios con reemplazamiento
+starwars |> 
+  slice_sample(prop = 0.05, replace = TRUE)
+
+```
+
+
+---
+
+
+## Random slices: slice_sample()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+datos |>
+  rebanadas_aleatorias(tamaño_muestral)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  slice_sample(sample_size)
+```
+:::
+:::
+
+
+As we said, "random" is not the same as "equiprobable", so we can pass a [**probability vector**]{.hl-yellow}. For example, let's force that it is very improbable to draw a row other than the first two rows
+
+```{r}
+starwars |>
+  slice_sample(n = 2, weight_by = c(0.495, 0.495, rep(0.01/85, 85)))
+```
+
+. . .
+
+```{r}
+starwars |>
+  slice_sample(n = 2, weight_by = c(0.495, 0.495, rep(0.01/85, 85)))
+```
+
+---
+
+## A parenthesis: sample()
+
+The `slice_sample()` function is simply a `{tidyverse}` integration of the basic `R` function known as `sample()` that allows us to [**sample elements**]{.hl-yellow}
+
+. . .
+
+For example, we are going to [**sample 10 rolls of a die**]{.hl-yellow}, indicating to it.
+
+- [**support**]{.hl-purple} of our random variable (values allowed in `x`)
+- [**size**]{.hl-purple} sample (`size`)
+- [**replacement**]{.hl-purple} (if `TRUE` then it can come out repeated, as in the case of the die)
+
+```{r}
+sample(x = 1:6, size = 10, replace = TRUE)
+```
+
+---
+
+## A parenthesis: sample()
+
+The previous option generates events of a random variable [**equiprobable**]{.hl-yellow} but as before, we can assign a vector of probabilities or [**mass function**]{.hl-yellow} to it with the argument `prob = ...`.
+
+```{r}
+sample(x = 1:6, size = 50, replace = TRUE,
+       prob = c(0.5, 0.2, 0.1, 0.1, 0.05, 0.05))
+```
+
+---
+
+
+## A parenthesis: sample()
+
+**How would you make the following statement?**
+
+&nbsp;
+
+Supongamos que en una ciudad se han estudiado los perfiles de votantes en parejas heterosexuales. Sean las variables aleatorias $X_m$ y $X_h$ tal que $X_m=1$ si una vota a un partido X, $X_m=0$ si no, $X_h=1$ si un hombre vota a un partido X y $X_p=0$ si no. El modelo teórico asociado a este tipo de electorado indica que la distribución conjunta viene dada por $P(X_m = 1, X_h=1)=0.02$, $P(X_m = 1, X_h=0)=0.08$, $P(X_m = 1, X_h=0)=0.1$ y $P(X_m = 0, X_h=0)=0.8$
+
+**Generates a sample** of size $n = 1000$ (support `"10"`, `"01"`, `"00"` and `"11"`) using `sample()`.
+---
+
+## 💻 Your turn {#tu-turno-3a}
+
+[**Try to solve the following exercises without looking at the solutions**]{style="color:#444442;"}
+
+::: panel-tabset
+### [**Exercise 1**]{.hl-yellow}
+
+📝 Select only the characters that are human and brown-eyed, then sort them in descending height and ascending weight.
+
+```{r}
+#| code-fold: true
+#| eval: false
+starwars |>
+  filter(eye_color == "brown" & species == "Human") |> 
+  arrange(height, desc(mass))
+```
+
+### [**Exercise 2**]{.hl-yellow}
+
+📝 Randomly extract 3 rows.
+
+```{r}
+#| code-fold: true
+#| eval: false
+starwars |> slice_sample(n = 3)
+```
+
+### [**Exercise 3**]{.hl-yellow}
+
+📝 Sampling (randomly) 10% of data.
+
+```{r}
+#| code-fold: true
+#| eval: false
+starwars |> slice_sample(prop = 0.1)
+```
+
+### [**Exercise 4**]{.hl-yellow}
+
+📝 Randomly draws 10 characters but in such a way that the probability of each character being drawn is proportional to its weight (heavier, more likely).
+
+```{r}
+#| code-fold: true
+#| eval: false
+starwars |>
+  drop_na(mass) |> 
+  slice_sample(n = 10, weight_by = mass)
+```
+
+### [**Exercise 5**]{.hl-yellow}
+
+📝 Select the 3 oldest characters.
+
+```{r}
+#| code-fold: true
+#| eval: false
+starwars |> slice_max(birth_year, n = 3)
+```
+
+
+:::
+
+
+---
+
+## Rearrange rows: arrange()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+datos |> ordenar(var1, var2, ...)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |> arrange(var1, var2, ...)
+```
+:::
+:::
+
+We can also [**order rows**]{.hl-yellow} according to some variable with `arrange()`.
+
+```{r}
+#| eval: false
+starwars |> arrange(mass)
+```
+
+```{r}
+#| echo: false
+starwars |> arrange(mass) |> select(name:eye_color) |> slice(1:5) 
+```
+
+. . .
+
+By default, arranging is done [**from lowest to highest**]{.hl-yellow} but we can [**reverse the order**]{.hl-purple} with `desc()`.
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |> arrange(desc(height))
+```
+
+```{r}
+#| echo: false
+starwars |> arrange(desc(height)) |> select(name:mass) |> slice(1:5) 
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |> arrange(mass, desc(height))
+```
+
+```{r}
+#| echo: false
+starwars |> arrange(mass, desc(height)) |> select(name:mass) |> slice(1:5) 
+```
+:::
+:::
+
+---
+
+## Remove duplicates: distinct()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+datos |> sin_duplicados(var1, var2, ...)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |> distinct(var1, var2, ...)
+```
+:::
+:::
+
+Many times we will need to make sure that there are no duplicates in some variable (DNI) and we can [**delete duplicate rows**]{.hl-yellow} with `distinct()`.
+
+```{r}
+starwars |> distinct(sex)
+```
+
+. . .
+
+To keep all variables we will use `.keep_all = TRUE`.
+
+```{r}
+#| eval: false
+starwars |> distinct(sex, .keep_all = TRUE)
+```
+
+```{r}
+#| echo: false
+starwars |> distinct(sex, .keep_all = TRUE) |> slice(1:3)
+```
+
+---
+
+## Add rows: bind_rows()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+tibble1 |> encuadernar_filas(tibble2)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+tibble1 |> bind_rows(tibble2)
+```
+:::
+:::
+
+Finally, we can [**bind new rows**]{.hl-yellow} with `bind_rows()` with [**new observations in table**]{.hl-red} (if columns do not match fill with missing data)
+
+```{r}
+datos <-
+  tibble("names" = c("javi", "laura"), "ages" = c(33, 50))
+datos
+```
+
+. . .
+
+```{r}
+datos |> bind_rows(tibble("names" = c("carlos", NA), "zip" = c(28045, 28019)))
+```
+
+---
+
+## 💻 Your turn {#tu-turno-3b}
+
+[**Try to solve the following exercises without looking at the solutions**]{style="color:#444442;"}
+
+::: panel-tabset
+### [**Exercise 1**]{.hl-yellow}
+
+📝 To find out what unique values are in the hair color, remove duplicates of the `hair_color` variable by first removing the missing ones from the `hair_color` variable.
+
+```{r}
+#| code-fold: true
+#| eval: false
+starwars |>
+  drop_na(hair_color) |> 
+  distinct(hair_color)
+```
+
+### [**Exercise 2**]{.hl-yellow}
+
+📝 Just considering the characters that are human and taller than 160 cm, eliminate duplicates in eye color, eliminate missing data in weight, select the 3 tallest, and order from tallest to shortest in weight. Return the table.
+
+```{r}
+#| code-fold: true
+#| eval: false
+starwars |>
+  filter(species == "Human" & height > 160) |> 
+  distinct(eye_color, .keep_all = TRUE) |> 
+  drop_na(mass) |> 
+  slice_max(height, n = 3) |> 
+  arrange(desc(mass))
+```
+:::
+
+---
+
+## In summary
+
+The key to `{tidyverse}` is the [**legibility**]{.hl-yellow}: it is very important that the code is understood, for our future self but also for the [**algorithmic transparency**]{.hl-yellow} towards the others
+
+[**For example**]{.hl-purple}: we will remove absent from the weight variable, we will filter the human characters and height higher than 140cm, without duplicates in the hair color, extracting the 5 tallest and obtaining 2 random characters finally.
+
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  elimino_ausentes(peso) |> 
+  filtro(especie humana Y altura > 140 cm) |> 
+  sin_duplicados(color de pelo) |>
+  rebanadas_max(peso, n = 5) |> 
+  rebanadas_aleatorias(n = 2)
+```
+:::
+
+
+::: {.column width="50%"}
+```{r}
+#| eval: false
+starwars |>
+  drop_na(mass) |> 
+  filter(species == "Human" & height > 140) |> 
+  distinct(hair_color, .keep_all = TRUE) |>
+  slice_max(mass, n = 5) |> 
+  slice_sample(n = 2)
+```
+:::
+:::
+
+
+--- 
+
+## 🐣 Case study {#caso-práctico-3}
+
+We are going to use the `biopsy` dataset that can be found in the dataset aggregator <https://vincentarelbundock.github.io/Rdatasets/index.html>. The [**dataset contains data from 699 patients who underwent a breast biopsy**]{.hl-yellow}, obtaining 11 variables (one id and 10 scales measured from 1 to 10).
+
+You can see the documentation at <https://vincentarelbundock.github.io/Rdatasets/doc/MASS/biopsy.html>
+. . .
+
+1. [**Load the dataset**]{.hl-yellow} from the `{MASS}` package.
+. . .
+
+2. The variable `ID` should be the identifier of each record: [**eliminate duplicates**]{.hl-yellow} for that variable of the previous dataset.
+
+---
+
+## 🐣 Case study {#caso-práctico-3a}
+
+3. From the above dataset [**filter**]{.hl-yellow} only patients with malignant tumor and the variable `V9` with value 4 or lower, [**further deleting any records containing missing data**]{.hl-yellow} in any of the variables.
+
+. . .
+
+4. From the above dataset obtain a [**sample of 20% of the data**]{.hl-yellow} (each record can be chosen with the same probability), and [**sort them**]{.hl-yellow} from highest to lowest by the variable `V1` and, in case of a tie, from lowest to highest by the variable `V2`.
+
