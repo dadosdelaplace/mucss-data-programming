@@ -120,6 +120,11 @@ Currently, [**researcher and lecturer at the Faculty of Statistics of the UCM**]
 :::
 :::
 
+---
+
+## Plannning
+
+
 * Individual Task I (10%): 24th October (R base, databases, tidydata)
 
 * Individual Task II (20%): 7th November (Tidyverse, control flow structures, functions)
