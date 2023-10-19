@@ -1,0 +1,189 @@
+---
+title: "Task I"
+author: "C. Tangana - DNI/id card: 00000000-X"
+format:
+  html:
+    theme: [style.scss]
+    toc: true
+    toc-location: right
+    toc-title: Table of Contents
+editor: visual
+---
+
+## Instructions (read before starting)
+
+-   Modify within the .qmd document your personal data (name and ID) located in the header of the file.
+
+-   Make sure, BEFORE further editing the document, that the .qmd file is rendered correctly and the corresponding .html is generated in your local folder on your computer.
+
+-   The chunks (code boxes) created are either empty or incomplete, hence most of them have the option #\| eval: false. Once you edit what you consider, you must change each chunck to #\| eval: true (or remove it directly) for them to be executed.
+
+-   Remember that you can execute chunk by chunk with the play button or execute all the chunks up to a given one (with the button to the left of the previous one).
+
+### Required packages
+
+We will need the following packages (play on the chunk to load them):
+
+```{r packages}
+rm(list = ls()) # Delete environment variables
+
+# descomentar si es la primera vez (y requieren instalación)
+# install.packages("glue")
+# install.packages("tidyverse")
+# install.packages("gapminder")
+# install.packages("readxl")
+library(glue)
+library(gapminder)
+library(readxl)
+library(tidyverse)
+```
+
+## Case study I: Star Wars
+
+The dataset to use will be loaded from the package `{dplyr}`. In it we have different variables of the Star Wars characters, with characteristics of their hair, skin, height, name, etc.
+
+```{r}
+# don't change the code
+starwars
+```
+
+### Exercise 1
+
+> How many characters are stored in the database? How many characteristics have been measured for each one? Extract in two different variables, names and heights, the corresponding variables from the table. What type is the variable name? And the variable height?
+
+```{r}
+#| eval: false
+
+# Type the code you consider
+names <- ...
+heights <- ...
+```
+
+[Write in the chunk the code you consider to answer the question and here below as normal text what you consider to answer, deleting this sentence]
+
+### Exercise 2
+
+> Create a third logical variable that stores whether they weigh more than 60 kg.
+
+```{r}
+#| eval: false
+
+# Type the code you consider
+starwars$more_60 <- ...
+```
+
+[Write in the chunk the code you consider to answer the question and here below as normal text what you consider to answer, deleting this sentence]
+
+### Exercise 3
+
+> Order the variable weight, first from youngest to oldest and then the other way around. Obtain the vector of names (ordered from youngest to oldest).
+
+```{r}
+#| eval: false
+
+# Type the code you consider
+sort(...)
+sort(...)
+nombres[...]
+```
+
+[Write in the chunk the code you consider to answer the question and here below as normal text what you consider to answer, deleting this sentence]
+
+### Exercise 4
+
+> Calculate the mean and standard deviation of the height and weight variables. Remember: watch out for absent ones. Define a vector with the names, weights and heights of the characters that have brown eyes (or CONTAIN "brown" in their color). Define a tibble with these three variables and incorporate a fourth variable called "BMI" that calculates the body mass index for them.
+
+```{r}
+#| eval: false
+
+# Type the code you consider
+mean(..., ...)
+sd(..., ...)
+
+tibble(...)
+```
+
+[Write in the chunk the code you consider to answer the question and here below as normal text what you consider to answer, deleting this sentence]
+
+## Caso study II: gapminder
+
+The dataset to be used will be loaded from the `{gapminder}` package.
+
+```{r}
+gapminder
+```
+
+In it we have different **economic variables from different countries in different years**.
+
+### Exercise 1:
+
+> Determine the dimension of our data. How many records do we have? How many variables do we have? How many different countries do we have (note: here we no longer have one record per country)?
+
+```{r}
+#| eval: false
+
+```
+
+[Write in the chunk the code you consider to answer the question and here below as normal text what you consider to answer, deleting this sentence]
+
+### Exercise 2:
+
+> Complete the code below and add a new text variable called `id` which, for each record, a `country-continent-year` (e.g., "Afghanistan-Asia-1952").
+
+```{r}
+#| eval: false
+library(glue)
+gapminder$id <- glue(...)
+```
+
+[Write in the chunk the code you consider to answer the question and here below as normal text what you consider to answer, deleting this sentence]
+
+### Exercise 3:
+
+> Determines the number of countries that in 2002 had more than 40 million inhabitants.
+
+```{r}
+#| eval: false
+
+```
+
+[Write in the chunk the code you consider to answer the question and here below as normal text what you consider to answer, deleting this sentence]
+
+## Case study III: covid data
+
+### Exercise 1
+
+> Go to the web <https://cnecovid.isciii.es/covid19/#documentaci%C3%B3n-y-datos> and import the file `casos_hosp_hosp_uci_uci_def_sexo_age_provres.csv` into a tibble. You have the documentation of the data at <https://cnecovid.isciii.es/covid19/resources/metadata_casos_hosp_uci_def_sexo_edad_provres.pdf>. If you need help or translation with the documentation, please send me an email.
+
+```{r}
+#| eval: false
+covid_raw <- read_csv(...)
+```
+
+[Write in the chunk the code you consider to answer the question and here below as normal text what you consider to answer, deleting this sentence]
+
+### Exercise 2
+
+> It detects how the unknown/absent cases are coded in the province variable (it detects before how the absent cases are coded in that variable). It then completes the lower code and calculates how many cases are reported for that unknown province value.
+
+```{r}
+#| eval: false
+
+```
+
+[Write in the chunk the code you consider to answer the question and here below as normal text what you consider to answer, deleting this sentence]
+
+### Exercise 3
+
+> Load the file `messy_covid_data.xlsx` and convert it to tidy data
+
+```{r}
+#| eval: false
+messy_covid <- ...
+
+messy_covid |>
+  pivot_...(...) |> 
+  ...
+```
+
+[Write in the chunk the code you consider to answer the question and here below as normal text what you consider to answer, deleting this sentence]

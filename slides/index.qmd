@@ -111,9 +111,9 @@ Currently, [**researcher and lecturer at the Faculty of Statistics of the UCM**]
 |     [2](#clase-2)      | S2     | 26 sep |                 First databases: tibbles and tidy data       | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |      [💻](#tu-turno-tibble) [💻](#tu-turno-2)    |  [🐣](#caso-práctico-2) [🐣](#caso-práctico-3)  |         |     
 |     [3](#clase-3)      | S3    | 28 sep |     Tidyverse: rows | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-3) [💻](#tu-turno-3a) [💻](#tu-turno-3b)      |  [🐣](#caso-práctico-3)  |         |   
 |     [4](#clase-4)      | S4    | 5 oct |   Tidyverse: columns   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4a)  [💻](#tu-turno-4b) [💻](#tu-turno-4c)      |  [🐣](#caso4) [🐣](#caso4a) [🐣](#caso4b)  |         | 
-|     [5](#clase-5)      | S5   | 10 oct |        Tidyverse: summarising. Rmarkdown    | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
-|     [6](#clase-6)      | S6    | 19 oct |     Control flow structures. Practical case studies  | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
-|     [7](#clase-7)      | S7    | 24 oct |        Functions  | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |    
+|     [5](#clase-5)      | S5   | 10 oct |        Tidyverse: summarising. Rmarkdown    | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-5a)  [💻](#tu-turno-5b)      |  [🐣](#caso5a) [🐣](#caso5b)  |         | 
+|     [6](#clase-6)      | S6    | 19 oct |     Import/export and functions | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
+|     [7](#clase-7)      | S7    | 24 oct |     Functions, control flow structures and joins | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |    
 |     [8](#clase-8)      | S7    | 26 oct |        Advance data types: list, factors and strings   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |   | 
 |     [9](#clase-9)      | S10   | 16 nov |        Advance data management  | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
 
@@ -4216,8 +4216,11 @@ Let's proceed to [**create a table with data of voters**]{.hl-yellow} of size `n
 
 2. After knowing the voting intention, create a third column called `income` in which you simulate their gross annual income. We will assume that for PP's voterts, incomes follows a distribution $N(\mu = 37000€, sigma = 800)$ and that for SUMAR's voters it follows a distribution $N(\mu = 26000€, sigma = 1200)$.
 
----
+# Lesson 5: tidyverse (summary)  {#clase-5}
 
+[**Summarizing data**]{style="color:#444442;"}
+
+---
 
 ## Count: count()
 
@@ -4616,7 +4619,7 @@ starwars |>
 
 ---
 
-## 💻 Your turn {#tu-turno-4c}
+## 💻 Your turn {#tu-turno-5a}
 
 [**Try to solve the following exercises without looking at the solutions**]{style="color:#444442;"}
 
@@ -4678,10 +4681,1895 @@ starwars |>
 
 ---
 
-## 🐣 Case study III {#caso4b}
+## 🐣 Case study I {#caso5a}
 
 Let us randomly select 50% of the data, keeping the original distribution (in proportions) between humans and non-humans (we should remove first missing values).
 
 . . .
 
 Then keep only the variables name, height, those representing a color characteristic and the variable films. Calculate the average heights in humans and non-humans. Finally calculate the frequencies of eye color and human/non-human.
+
+--- 
+
+
+## Report: rmd y Quarto
+
+One of the [**main strengths**]{.hl-yellow} of `R` is the [**easiness to generate reports, books, webs, notes and even slides**]{.hl-yellow} (this material for example). To do this, [**install**]{.hl-purple} before
+
+::: columns
+::: {.column width="40%"}
+-   package `{rmarkdown}` (allows us to generate `.rmd` files)
+
+```{r}
+#| eval: false
+install.packages("rmarkdown")
+```
+
+- install [**Quarto**](https://quarto.org/docs/get-started/) (the «new» `.rmd` files, names as `.qmd`)
+:::
+
+::: {.column width="60%"}
+![](img/quarto.png)
+:::
+:::
+
+---
+
+## Report: rmd y Quarto
+
+So far we have only programmed in scripts (`.R` files) within projects, but in many occasions [**we will not work alone**]{.hl-yellow} and we will need to [**communicate the results**]{.hl-yellow} in different formats:
+
+- notes (for ourselves)
+- slides
+- web
+- reports
+
+. . .
+ 
+For all of this we will use [**Quarto (new rmarkdown)**]{.hl-yellow}
+
+
+---
+
+## Report: rmd y Quarto
+
+The `.qmd` (or `.rmd`) extension files will allow us to easily combine:
+
+- [**Markdown**]{.hl-yellow}: [**typed language**]{.hl-purple} which allows us to create simple content (wordpress type, with text, **bold**, _cursives_, etc) with a readable layout.
+
+. . .
+
+- [**Math (latex)**]{.hl-yellow}: language for writing mathematical notation such as $x^2$ or $$sqrt{y}$ or $$int_{a}^{b} f(x) dx$.
+
+. . .
+
+- [**Code and outputs**]{.hl-yellow}: we will be able to show not only the final step but also the code you have been doing (not only in `R`), with [**code boxes called chunks**]{.hl-purple} .
+
+. . .
+
+- Images, [**graphics**]{.hl-yellow}, tables, styles (css, js), etc.
+
+---
+
+## Report: rmd y Quarto
+
+The main advantage of making this type of material in Quarto/Rmarkdown is that, by doing it from `RStudio`, you can generate a [**report or presentation without leaving the programming environment**]{.hl-yellow} in which you are working.
+
+This way you can analyze the data, summarize it and at the same time report it with the same tool.
+
+. . .
+
+Recently the `RStudio` team developed [**Quarto**]{.hl-yellow}, an improved version of Rmarkdown (`.qmd` files), with a slightly more aesthetic and simple format. You have all the documentation and examples at [**https://quarto.org/**](https://quarto.org/)
+
+
+---
+
+## Our first report
+
+::: columns
+::: {.column width="55%"}
+![](img/quarto-create.png)
+:::
+
+::: {.column width="45%"}
+We are going to create the [**first rmarkdown file with Quarto**]{.hl-yellow} with extension `.qmd`. For this we will only need to click on
+
+`File << New File << Quarto Document`
+:::
+:::
+
+---
+
+##  Our first report
+
+:::: columns
+::: {.column width="45%"}
+![](img/quarto-format.png)
+:::
+
+::: {.column width="55%"}
+After doing so we will be presented with several [**output format options**]{.hl-yellow}:
+
+- `.pdf` file
+- file `.html` ([**recommendable**]{.hl-yellow}): dynamic document, allows interaction with the user, like a "web page".
+- `.doc` file (not recommended)
+:::
+::::
+
+. . .
+
+For the moment we will leave the [**default HTML format**]{.hl-yellow} checked, and we will write the [**title**]{.hl-yellow} of our document. After that we will have our [**file .qmd**]{.hl-yellow} (it is no longer an .R script like the ones we have opened so far).
+
+---
+
+##  Our first report
+
+:::: columns
+::: {.column width="60%"}
+![](img/quarto-example.png)
+:::
+
+::: {.column width="40%"}
+
+You should have something similar to the image capture with [**two editing modes**]{.hl-yellow}: `Source` (with code, the recommended option until you master it) and `Visual` (more like a blog).
+
+:::
+::::
+
+To [**run the ENTIRE document**]{.hl-yellow} you must click `Render on Save` and hit save.
+
+![](img/quarto-prueba-html.png)
+
+You should have obtained an [**html output similar to this**]{.hl-yellow} (and a [**html file**]{.hl-yellow} has been generated on your pc).
+
+---
+
+##  Our first report
+
+:::: columns
+::: {.column width="50%"}
+![](img/quarto-example.png)
+
+:::
+
+::: {.column width="50%"}
+
+A `.qmd` file is [**basically divided into three parts**]{.hl-yellow}:
+
+* [**Header**]{.hl-yellow}: the part you have at the beginning between `---`.
+
+* [**Text**]{.hl-yellow}: that we can format and enhance with bold (written as **bold**, with double asterisk at the beginning and end), italics (_cursive_, with underscore at the beginning and end) or highlight function names or variables of R. You can add equations like $x^2$ (I have written `$x^2$`, between dollars).
+
+* [**R code**]{.hl-yellow}
+
+:::
+::::
+
+---
+
+## qmd header
+
+The [**header is in YAML**]{.hl-yellow} format and contains the [**metadata**]{.hl-yellow} of the document:
+
+:::: columns
+::: {.column width="30%"}
+![](img/quarto-cabecera.png)
+:::
+
+::: {.column width="70%"}
+
+* `title` and `subtitle`: document title/subtitle
+* `author`: author of the document
+* `date`: date
+* ``format`: output format (we can customize it)
+  * `theme`: if you have any style file
+  * `toc`: if you want index or not
+  * `toc-location`: index position
+  * `toc-title`: index title
+  * `toc-depth`: index depth
+* `editor`: if you are in visual or source mode.
+
+:::
+::::
+
+---
+
+## Text
+
+As for writing there is only one [**important thing**]{.hl-yellow}: unless we indicate otherwise, [**EVERYTHING we are going to write is (normal)** text]{.hl-yellow}. No R code.
+
+
+:::: columns
+::: {.column width="35%"}
+![](img/quarto-prueba-qmd2.png){width=350}
+![](img/quarto-prueba-html2.png){width=320}
+:::
+
+::: {.column width="65%"}
+We are going to start by writing a section at the beginning (`# Intro` and behind it e.g. the phrase
+
+> This material has been designed by Javier Álvarez Liébana, professor at the Complutense University of Madrid.
+
+In addition to the `Running Code` we will add a `#`: the [**OUT OF CHUNKS**]{.hl-yellow} `#` will be used to create [**epigraphs (sections)**]{.hl-yellow} in the document.
+
+
+:::
+::::
+
+
+---
+
+## Table of contents
+
+:::: columns
+::: {.column width="40%"}
+![](img/quarto-indice-qmd-2.png){width=370}
+![](img/quarto-indice-html2.png){width=370}
+:::
+
+::: {.column width="60%"}
+To make the [**index capture those sections**]{.hl-yellow} we will modify the header of the file as shown in the image (you can change the location of the index and the title if you want to test).
+
+:::
+::::
+
+---
+
+## Text
+
+Let's [**customize the text**]{.hl-yellow} by doing the following:
+
+:::: columns
+::: {.column width="50%"}
+![](img/quarto-texto-mejorado-qmd.png){width=370}
+![](img/quarto-texto-mejorado-html.png){width=370}
+:::
+
+::: {.column width="50%"}
+* Let's add [**bold to the name**]{.hl-yellow} (putting ** at the beginning and at the end).
+
+* Let's add [**cursive**]{.hl-yellow} to the word material (putting _ at the beginning and at the end).
+
+* Let's add a [**link**]{.hl-yellow} <https://www.ucm.es>, associating it to the name of the University. To do this we put the title in square brackets and just behind the link in brackets `["Universidad Complutense de Madrid"](https://www.ucm.es)`.
+
+:::
+::::
+
+---
+
+## Code
+
+To [**add R code**]{.hl-yellow} we must create our [**code boxes called chunks**]{.hl-yellow}: high in the path in our markdown text where we can include code from almost any language (and its outputs).
+
+&nbsp;
+
+:::: columns
+::: {.column width="50%"}
+![](img/quarto-chunk-qmd.png){width=470}
+:::
+
+::: {.column width="50%"}
+
+To include one you must go [**header**]{.hl-yellow} as follows you have a shortcut `Command + Option + I` (Mac) or `Ctrl + Shift + I` (Windows)
+:::
+
+::::
+
+---
+
+## Code
+
+Inside this box (which now has a different color in the document) [**write code R**]{.hl-yellow} as we have been doing so far in the scripts.
+
+:::: columns
+::: {.column width="50%"}
+![](img/quarto-chunk-1-qmd.png){width=410}
+![](img/quarto-chunk-1-html.png){width=410}
+:::
+
+::: {.column width="50%"}
+
+Let's for example define two variables and their sum in the following way, writing this code in our `.qmd` (inside that chunk).
+
+```{r}
+# R code
+x <- 1
+y <- 2
+x + y
+```
+
+:::
+
+::::
+
+
+---
+
+## Labelling chunks
+
+
+:::: columns
+::: {.column width="50%"}
+![](img/quarto-tag-chunks-qmd.png){width=400}
+![](img/quarto-tag-chunks-html.png){width=400}
+:::
+
+::: {.column width="50%"}
+Chunks can have a [**name or tag**]{.hl-yellow}, so that we can reference them again to avoid repeating code.
+:::
+::::
+
+
+---
+
+## Running chunks
+
+:::: columns
+::: {.column width="40%"}
+![](img/quarto-inline-qmd.png){width=400}
+![](img/quarto-inline-html.png){width=380}
+:::
+
+::: {.column width="60%"}
+In each chunk there are [**two buttons**]{.hl-yellow}:
+
+* [**play**]{.hl-yellow} button: activates the [**run and exit of that particular chunk**]{.hl-yellow} (you can view it within your own `RStudio`)
+
+* [**rewind**]{.hl-yellow} button: triggers [**execute and exit all chunks up to that one**]{.hl-yellow} (without getting to it)
+
+&nbsp;
+
+In addition we can [**include R code inside the text line**]{.hl-yellow} (instead of displaying the text x execute the R code displaying the variable).
+:::
+::::
+
+
+
+---
+
+## Customizing chunks
+
+The [**chunks can be customized**]{.hl-yellow} with options at the beginning of the chunk preceded by `#|`:
+
+* ` `#| echo: false`: [**execute code**]{.hl-green} and it [**shows result**]{.hl-green} but [**does not display code**]{.hl-red} in the output.
+
+* `#| include: false`: [**executes code**]{.hl-green} but [**does not display result**]{.hl-red} and [**does not display code**]{.hl-red} in the output.
+
+* `#| eval: false`: [**does not execute code**]{.hl-red}, [**does not display result**]{.hl-red} but [**does display code**]{.hl-green} on output.
+
+* `#| message: false`: [**executes code**]{.hl-green} but [**does not display output messages**]{.hl-red}.
+
+* `#| warning: false`: [**executes code**]{.hl-green} but [**does not display warning messages**]{.hl-red}.
+
+* `#| error: true`: [**executes code**]{.hl-green} and [**allows errors**]{.hl-green} showing the error message in the output.
+
+
+![](img/quarto-options-chunk.png){width=380}
+
+These options can be applied chunk by chunk or set globally with `knitr::opts_chunk$set()` at the beginning of the document (within a chunk).
+
+---
+
+## Organizing qmd
+
+In addition to text and code we can enter the following:
+
+* [**Equations**]{.hl-yellow}: you can additionally add equations such as $x^2$ (I have written `$x^2$`, the equation between dollars).
+
+* [**Lists**]{.hl-yellow}: you can itemize elements by putting `*`
+
+`* Step 1: ...`
+
+`* Step 2: ...`
+
+* [**Cross-references**]{.hl-yellow}: you can tag parts of the document (the tag is constructed with `{#section-name}`) and then call them with `[Section](@section-name)`).
+
+---
+
+## Graphics/images
+
+:::: columns
+::: {.column width="50%"}
+![](img/quarto-fig-qmd.png){width=340}
+![](img/quarto-fig-html.png){width=390}
+:::
+
+::: {.column width="50%"}
+Por último, también podemos [**añadir pies de gráficas o imágenes**]{.hl-yellow} añadiendo `#| fig-cap: "..."`
+:::
+::::
+
+. . .
+
+:::: columns
+::: {.column width="65%"}
+Finally, we can also [**add captions to graphics or images**]{.hl-yellow} by adding `#| fig-cap: "..."`.
+:::
+
+::: {.column width="35%"}
+![](img/quarto-cabecera-desplegable.png){width=400}
+:::
+::::
+
+---
+
+## Theme and styles
+
+:::: columns
+::: {.column width="50%"}
+![](img/quarto-estilos-qmd.png){width=400}
+![](img/quarto-estilos-html.png){width=400}
+:::
+
+::: {.column width="50%"}
+Finally, you can add a [**custom theme**]{.hl-yellow} including a [**style file**]{.hl-yellow} (`.scss` or `.css` file). I have left one for you at <https://github.com/dadosdelaplace/mucss-data-programming/tree/main/material>.
+
+::: callout-important
+## Important
+
+The style file must be in the same folder as the `.qmd` file.
+:::
+:::
+::::
+
+---
+
+## 🐣 Case study {#caso5b}
+
+Produce a `.qmd` report such that.
+
+* Create a file make [**one section per exercise**]{.hl-yellow} (see the following slides)
+
+* [**Detail all the steps**]{.hl-yellow} you consider mixing text, code and outputs .
+
+* If statistical measures such as the mean appear, [**try entering formulas**]{.hl-yellow} with `$$` (look for information on how to enter equations in latex).
+
+---
+
+## 🐣 Case study
+
+1. Loads the billboard datatable from the `{tidyr}` package.
+
+. . .
+
+2. First of all, select only the [**first 52 weeks**]{.hl-yellow} (but also artist, track and date variables). After that convert the dataset to [**tidydata**]{.hl-yellow} with the appropriate formats and types for each variable
+
+. . .
+
+3. Extracts the [**list of distinct artists**]{.hl-yellow} appearing in the table, including [**how many times**]{.hl-yellow} each appears.
+
+. . .
+
+4. Determines [**how many songs each artist**]{.hl-yellow} has
+
+---
+
+## 🐣 Case study
+
+
+5. Determines the [**5 songs that appear in the charts the most weeks**]{.hl-yellow}. 
+
+
+. . .
+
+6. Determines [**for each artist the song that appears the most weeks**]{.hl-yellow}. 
+
+
+. . .
+
+7. Determines the [**artist with the most songs**]{.hl-yellow} in the list
+
+. . .
+
+8. Calculates the [**highest position**]{.hl-yellow} that each song has been on. Calculates the highest position an artist has been in.
+
+---
+
+## 🐣 Case study
+
+9. Get a [**summary table**]{.hl-yellow} with the average ranking of each artist (counting only the highest ranking achieved by their songs), as well as the number of (different) songs they have placed in the top 100.
+
+. . .
+
+10. Perform stratified random sampling, extracting 50% of the data but maintaining the proportion of data among the different quarters.
+
+# Lesson 6: import and functions {#clase-6}
+
+[**Import/export and functions**]{style="color:#444442;"}
+
+---
+
+## 🐣 Case study 3
+
+We are going to use the `biopsy` dataset that can be found in the dataset aggregator <https://vincentarelbundock.github.io/Rdatasets/index.html>. The [**dataset contains data from 699 patients who underwent a breast biopsy**]{.hl-yellow}, obtaining 11 variables (one id and 10 scales measured from 1 to 10).
+
+You can see the documentation at <https://vincentarelbundock.github.io/Rdatasets/doc/MASS/biopsy.html>
+. . .
+
+1. [**Load the dataset**]{.hl-yellow} from the `{MASS}` package as a tibble
+
+```{r}
+#| code-fold: true
+library(tidyverse)
+biopsy <- as_tibble(MASS::biopsy)
+```
+
+---
+
+## 🐣 Case study 3
+
+2. The variable `ID` should be the identifier of each record: [**eliminate duplicates**]{.hl-yellow} for that variable of the previous dataset.
+
+```{r}
+#| code-fold: true
+biopsy <-
+  biopsy |> 
+  distinct(ID, .keep_all = TRUE)
+```
+
+---
+
+## 🐣 Case study 3
+
+3. From the above dataset [**filter**]{.hl-yellow} only patients with malignant tumor and the variable `V9` with value 4 or lower, [**further deleting any records containing missing data**]{.hl-yellow} in any of the variables.
+
+```{r}
+#| code-fold: true
+biopsy |> 
+  drop_na() |> 
+  filter(class == "malignant" & V9 <= 4) 
+```
+
+
+---
+
+## 🐣 Case study 3
+
+4. From the above dataset obtain a [**sample of 20% of the data**]{.hl-yellow} (each record can be chosen with the same probability), and [**sort them**]{.hl-yellow} from highest to lowest by the variable `V1` and, in case of a tie, from lowest to highest by the variable `V2`.
+
+
+```{r}
+#| code-fold: true
+set.seed(1234567)
+biopsy |> 
+  slice_sample(prop = 0.2) |> 
+  arrange(desc(V1), V2)
+```
+
+
+---
+
+## 🐣 Case study 4a
+
+From the original starwars dataset, include a column that calculates the BMI. After that, create a new variable that values `NA` if not human, `thin` below 18, `normal` between 18 and 30, `overweight` above 30.
+
+```{r}
+#| code-fold: true
+starwars |> 
+  mutate(height = height / 100,
+         BMI = mass / (height^2),
+         "human" = case_when(species != "Human" ~ NA,
+                             BMI < 18 ~ "thin",
+                             BMI < 30 ~ "normal",
+                             TRUE ~ "overweight"))
+```
+
+
+---
+
+## 🐣 Case study 4b
+
+
+Let's proceed to [**create a table with data of voters**]{.hl-yellow} of size `n = 30` where [**simulate the voting intention and their incomes**]{.hl-yellow}
+
+
+1. Create a `tibble` with two columns, one named `id_voter` and one named `party`. In the first case it should go from 1 to 30. In the second case, it simulates its voting intention so that there is a 0.5 chance of `PP` and 0.5 chance of `SUMAR` (Spanish political parties).
+
+```{r}
+#| code-fold: true
+data <- 
+  tibble("id_voter" = 1:30,
+         "party" = sample(c("PP", "SUMAR"), size = 30, replace = TRUE))
+```
+
+---
+
+## 🐣 Case study 4b
+
+2. After knowing the voting intention, create a third column called `income` in which you simulate their gross annual income. We will assume that for PP's voters, incomes follows a distribution $N(\mu = 37000€, sigma = 800)$ and that for SUMAR's voters it follows a distribution $N(\mu = 26000€, sigma = 1200)$.
+
+```{r}
+#| code-fold: true
+data <- 
+  data |> 
+  mutate("income" =
+           rnorm(n = 30, mean = if_else(party == "PP", 37000, 26000),
+                 sd = if_else(party == "PP", 800, 1200)))
+data
+```
+
+---
+
+## 🐣 Case study 5
+
+1. Loads the billboard datatable from the `{tidyr}` package.
+
+```{r}
+#| code-fold: true
+billboard
+```
+
+---
+
+## 🐣 Case study 5
+
+2. First of all, select only the [**first 52 weeks**]{.hl-yellow} (but also artist, track and date variables). After that convert the dataset to [**tidydata**]{.hl-yellow} with the appropriate formats and types for each variable
+
+```{r}
+#| code-fold: true
+billboard_1 <-
+  billboard |> 
+  select(artist:date.entered, num_range("wk", 1:52)) |> 
+  pivot_longer(cols = "wk1":"wk52", names_to = "week",
+               values_to = "rank", names_prefix = "wk",
+               values_drop_na = TRUE) |> 
+  mutate(week = as.numeric(week))
+```
+
+. . .
+
+3. Extracts the [**list of distinct artists**]{.hl-yellow} appearing in the table, including [**how many times**]{.hl-yellow} each appears.
+
+```{r}
+#| code-fold: true
+billboard_1 |> 
+  count(artist)
+```
+
+---
+
+## 🐣 Case study 5
+
+4. Determines [**how many songs each artist**]{.hl-yellow} has
+
+```{r}
+#| code-fold: true
+billboard_1 |> 
+  distinct(artist, track) |> 
+  count(artist)
+```
+
+---
+
+## 🐣 Case study 5
+
+5. Determines the [**5 songs that appear in the charts the most weeks**]{.hl-yellow}. 
+
+```{r}
+#| code-fold: true
+billboard_1 |> 
+  count(track) |>
+  slice_max(n = 5, n)
+```
+
+
+---
+
+## 🐣 Case study 5
+
+6. Determines [**for each artist the song that appears the most weeks**]{.hl-yellow}. 
+
+```{r}
+#| code-fold: true
+billboard_1 |> 
+  count(artist, track) |>
+  slice_max(n = 1, n, by = artist)
+```
+
+---
+
+## 🐣 Case study 5
+
+7. Determines the [**artist with the most songs**]{.hl-yellow} in the list
+
+```{r}
+#| code-fold: true
+billboard_1 |> 
+  distinct(artist, track) |>
+  count(artist) |> 
+  slice_max(n = 1, n)
+```
+
+---
+
+## 🐣 Case study 5
+
+8. Calculates the [**highest position**]{.hl-yellow} that each song has been on. Calculates the highest position an artist has been in.
+
+```{r}
+#| code-fold: true
+billboard_1 |> 
+  slice_min(rank, by = track, with_ties = FALSE) 
+
+billboard_1 |> 
+  slice_min(rank, by = artist, with_ties = FALSE) 
+```
+
+---
+
+## 🐣 Case study 5
+
+9. Get a [**summary table**]{.hl-yellow} with the average ranking of each artist (counting only the highest ranking achieved by their songs), as well as the number of (different) songs they have placed in the top 100.
+
+```{r}
+#| code-fold: true
+billboard_1 |> 
+  slice_min(rank, by = track, with_ties = FALSE) |> 
+  summarise(avg_rank = mean(rank), n_songs = n(), .by = artist)
+```
+
+---
+
+## 🐣 Case study 5
+
+10. Perform stratified random sampling, extracting 50% of the data but maintaining the proportion of data among the different quarters.
+
+
+```{r}
+#| code-fold: true
+billboard_1 |> 
+  mutate(q = lubridate::quarter(date.entered)) |> 
+  slice_sample(prop = 0.5, by = q)
+```
+
+---
+
+
+
+## Import/export
+
+So far we have only used data already loaded in packages but many times [**we will need to import data externally**]{.hl-yellow}. One of the main [**strengths**]{.hl-yellow} of `R` is that we can import data very easily in different formats:
+
+
+* [**R native formats**]{.hl-yellow}: `.rda`, `.RData` and `.rds` formats.
+
+* [**Rectangular (tabular) data**]{.hl-yellow}: `.csv` and `.tsv` formats
+
+* [**Untabulated data**]{.hl-yellow}: `.txt` format.
+
+* [**Data in excel**]{.hl-yellow}: `.xls` and `.xlsx` formats
+
+* [**Data from SAS/Stata/SPSS**]{.hl-yellow}: `.sas7bdat`, `.sav` and `.dat` formats
+
+* [**Data from Google Drive**]{.hl-yellow}
+
+* [**Data from API's**]{.hl-yellow}: aemet, catastro, twitter, spotify, etc.
+
+---
+
+## R native formats
+
+The [**simplest**]{.hl-yellow} files to import into `R` (and which usually take up less disk space) are its own [**native extensions**]{.hl-yellow}: files in `.RData`, `.rda` and `.rds` formats. To load the former we simply need to [**use the native**]{.hl-yellow} function `load()` by providing it the file path.
+
+* `RData` file: we are going to import a dataset with the different characteristics of the [**Titanic voyagers**]{.hl-purple}, including who survived and who died.
+
+
+```{r}
+#| eval: false
+load("./data/titanic.RData")
+as_tibble(titanic)
+```
+
+```{r}
+#| echo: false
+library(tidyverse)
+load("./data/titanic.RData")
+as_tibble(titanic) |> slice(1:5)
+```
+
+
+---
+
+## R native formats
+
+* `.rda` file: we will import a dataset with [**breast cancer data**]{.hl-purple} from [**Royston and Altman (2013)**](https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/1471-2288-13-33), including 2982 patients and their characteristics.
+
+
+```{r}
+#| eval: false
+load("./data/rotterdam_breast_cancer.rda")
+as_tibble(rotterdam)
+```
+
+```{r}
+#| echo: false
+library(tidyverse)
+load("./data/rotterdam_breast_cancer.rda")
+as_tibble(rotterdam) |> slice(1:7)
+```
+
+
+---
+
+## R native formats
+
+* `.rds` files: for this type we must use `readRDS()`, and we need to incorporate a [**argument `file`**]{.hl-yellow} with the path. In this case we are going to import [**lung cancer data**]{.hl-purple} from the North Central Cancer Treatment Group.
+
+```{r}
+#| eval: false
+lung_cancer <-
+  readRDS(file = "./data/NCCTG_lung_cancer.rds") |> as_tibble()
+```
+
+```{r}
+#| echo: false
+lung_cancer <-
+  readRDS(survival::cancer, file = "./data/NCCTG_lung_cancer.rds") |> 
+  as_tibble()
+lung_cancer |> slice(1:5)
+```
+
+::: callout-important
+
+## Important
+
+The [**paths**]{.hl-yellow} must always be [**without spaces, ñ, or accents**]{.hl-yellow}. And note that files loaded with `load()` are automatically loaded into the environment (with the originally saved name), but `read()` functions are only loaded locally (if not saved, they do not exist in the future).
+
+:::
+
+---
+
+## Tabular data: readr
+
+The `{readr}` package within the `{tidyverse}` environment contains several useful functions for [**loading rectangular data (without formatting)**]{.hl-yellow}.
+
+:::: columns
+::: {.column width="50%"}
+
+* `read_csv()`: `.csv` files whose [**separator is comma**]{.hl-purple}
+* `read_csv2()`: [**semicolon**]{.hl-purple}
+* `read_tsv()`: [**tabulator**]{.hl-purple}.
+* `read_table()`: [**space**]{.hl-purple}.
+* `read_delim()`: generic function for [**character delimited files**]{.hl-purple}.
+
+
+:::
+
+::: {.column width="50%"}
+
+![](img/data-import-readr.png)
+:::
+::::
+
+All of them need as **argument the file path** plus **other optional** (skip header or not, decimals, etc). See more at <https://readr.tidyverse.org/>
+
+---
+
+## Tabular data (.csv, .tsv)
+
+The main advantage of `{readr}` is that it [**automates formatting**]{.hl-yellow} to go from a flat (unformatted) file to a tibble (in rows and columns, with formatting).
+
+. . .
+
+* File `.csv`: with `read_csv()` we will load [**comma separated**]{.hl-purple} files, passing as [**argument the path**]{.hl-yellow} in `file = ...`. Let's import the `chickens.csv` dataset (about cartoon chickens, why not). If you look at the output it gives us the type of variables.
+
+```{r}
+library(readr)
+chickens <- read_csv(file = "./data/chickens.csv")
+chickens
+```
+
+---
+
+## Tabular data (.csv, .tsv)
+
+
+The [**variable format**]{.hl-yellow} will normally be done [**automatically**]{.hl-yellow} by `read_csv()`, and we can query it with `spec()`.
+
+```{r}
+spec(chickens)
+```
+
+---
+
+## Tabular data (.csv, .tsv)
+
+Although it usually does it well automatically we can [**specify the format explicitly**]{.hl-yellow} in `col_types = list()` (in list format, with `col_xxx()` for each type of variable, for example one we will put it as qualitative or factor). We can even indicate that [**variables we want to select**]{.hl-yellow} (without occupying memory), by indicating it in `col_select = ...` (in list format, with `col_select = ...`).
+
+
+```{r}
+chickens <-
+  read_csv(file = "./data/chickens.csv",
+           col_types = list(col_character(), col_factor(), col_double(), col_character()),
+           col_select = c(chicken, sex, eggs_laid))
+chickens
+```
+
+
+
+---
+
+
+## Untabulated data (.txt)
+
+What happens when the [**separator is not correct**]{.hl-red}?
+
+. . .
+
+If we use `read_csv()` it expects the separator between columns to be a comma but, as you can see with the following `.txt`, it interprets everything as a single column: [**has no comma and does not know where to separate**]{.hl-yellow}
+
+```{r}
+datos_txt <- read_csv(file = "./data/massey-rating.txt")
+dim(datos_txt)
+as_tibble(datos_txt)
+```
+
+
+---
+
+## Untabulated data (.txt)
+
+To do this we have.
+
+* `read_csv2()` when the [**separator is semicolon**]{.hl-yellow}, `read_tsv()` when the [**is a tab**]{.hl-yellow} and `read_table()` when the [**is a space**]{.hl-yellow}.
+
+* `read_delim()` in general.
+
+```{r}
+datos_txt <- read_table(file = "./data/massey-rating.txt")
+as_tibble(datos_txt)
+```
+
+
+---
+
+## Excel data (.xls, .xlsx)
+
+Another key import package will be the `{readxl}` package for [**importing data from Excel**]{.hl-yellow}. Three functions will be key:
+
+* `read_xls()` specific to `.xls`, `read_xlsx()` specific to `.xlsx`.
+* `read_excel()`: for both `.xls` and `.xlsx`.
+
+. . .
+
+We are going to import `deaths.xlsx` with celebrity death records.
+
+```{r}
+#| eval: false
+library(readxl)
+deaths <- read_xlsx(path = "./data/deaths.xlsx")
+deaths
+```
+
+```{r}
+#| echo: false
+library(readxl)
+deaths <- read_xlsx(path = "./data/deaths.xlsx")
+deaths |> slice(1:8)
+```
+
+---
+
+## Excel data (.xls, .xlsx)
+
+```{r}
+#| eval: false
+deaths
+```
+
+```{r}
+#| echo: false
+deaths |> slice(1:8)
+```
+
+One thing that is [**very common misfortune**]{.hl-yellow} is that there is some kind of comment or text at the beginning of the file, having to [**skip those rows**]{.hl-yellow}.
+
+---
+
+## Excel data (.xls, .xlsx)
+
+We can [**skip these rows**]{.hl-yellow} directly in the load with `skip = ...` (indicating the number of rows to skip).
+
+```{r}
+#| eval: false
+library(readxl)
+deaths <- read_xlsx(path = "./data/deaths.xlsx", skip = 4)
+deaths
+```
+
+```{r}
+#| echo: false
+library(readxl)
+deaths <- read_xlsx(path = "./data/deaths.xlsx", skip = 4)
+deaths |> slice(1:5)
+```
+
+---
+
+## Excel data (.xls, .xlsx)
+
+In addition with `col_names = ...` we can already rename the columns in the import (if [**provide names assumes 1st line already as a data**]{.hl-yellow})
+
+```{r}
+#| eval: false
+#| code-line-numbers: "3"
+deaths <-
+  read_xlsx(path = "./data/deaths.xlsx",
+            skip = 5,
+            col_names = c("name", "profession", "age", "kids", "birth", "death"))
+deaths
+```
+
+```{r}
+#| echo: false
+library(readxl)
+deaths <- read_xlsx(path = "./data/deaths.xlsx", skip = 5,
+                    col_names = c("name", "profession", "age", "kids", "birth", "death"))
+deaths |> slice(1:7)
+```
+        
+---
+
+## Excel data (.xls, .xlsx)
+
+Sometimes [**Excel dates are incorrectly formatted**]{.hl-red} (surprise): we can use `convertToDate()` from the `{openxlsx}` package to convert it.
+
+
+```{r}
+#| eval: false
+library(openxlsx)
+deaths$death <- convertToDate(deaths$death)
+deaths
+```
+   
+```{r}
+#| echo: false
+library(openxlsx)
+deaths$death <- convertToDate(deaths$death)
+deaths |> slice(1:7)
+```
+
+---
+
+## Excel data (.xls, .xlsx)
+
+We can also [**load an Excel with several sheets**]{.hl-yellow}: to [**indicate the sheet**]{.hl-yellow} (either by its name or by its number) we will use the argument `sheet = ...`.
+
+```{r}
+#| eval: false
+mtcars <- read_xlsx(path = "./data/datasets.xlsx", sheet = "mtcars")
+mtcars
+```
+
+
+```{r}
+#| echo: false
+mtcars <- read_xlsx(path = "./data/datasets.xlsx", sheet = "mtcars")
+mtcars |> slice(1:5)
+```
+
+
+. . .
+ 
+We can even indicate the [**range of cells**]{.hl-yellow} to load with `range = ...`.
+
+```{r}
+iris <- read_xlsx(path = "./data/datasets.xlsx", sheet = "iris", range = "C1:E4")
+iris
+```
+
+
+
+---
+
+## Importing from SAS/STATA/SPSS
+
+The `{haven}` package within the tidyverse orbit will allow us to [**import files from the 3 most important payment software**]{.hl-yellow}: SAS, SPSS and Stata.
+
+```{r}
+library(haven)
+
+# SAS
+iris_sas <- read_sas(data_file = "./data/iris.sas7bdat")
+
+# SPSS
+iris_spss <- read_sav(file = "./data/iris.sav")
+
+# Stata
+iris_stata <- read_dta(file = "./data/iris.dta")
+```
+
+---
+
+## Export
+
+In the same way that we can import we can also [**export**]{.hl-yellow}
+
+* exported in `.RData` (recommended option for variables stored in `R`). Remember that this extension [**can only be used in `R`**]{.hl-yellow}. To do so, just use `save(object, file = path)`.
+
+```{r}
+table <- tibble("a" = 1:4, "b" = 1:4)
+save(table, file = "./data/table.RData")
+rm(table) # eliminar
+load("./data/table.RData")
+table
+```
+
+
+---
+
+## Export
+
+In the same way that we can import we can also [**export**]{.hl-yellow}
+
+* exported in `.csv`. To do this we simply use `write_csv(object, file = path)`.
+
+```{r}
+write_csv(table, file = "./data/table.csv")
+read_csv(file = "./data/table.csv")
+```
+
+---
+
+## Directly from website
+
+One of the main advantages of `R` is that we can make use of all the previous functions of [**import but directly from a web**]{.hl-yellow}, without the need to perform the manual download: instead of passing it the local path we will indicate the [**link**]{.hl-yellow}. For example, we are going to download the covid data from ISCIII (<https://cnecovid.isciii.es/covid19/#documentaci%C3%B3n-y-datos>)
+
+```{r}
+#| eval: false
+covid_data <-
+  read_csv(file = "https://cnecovid.isciii.es/covid19/resources/casos_hosp_uci_def_sexo_edad_provres.csv", n_max = 700)
+covid_data
+```
+
+---
+
+## Importing from google drive
+
+Another option available (especially if we work with other people working) is to [**import from a Google Drive spreadsheet**]{.hl-yellow}, making use of `read_sheet()` from the `{googlesheets4}` package.
+
+The first time you will be asked for a tidyverse permission to interact with your drive
+
+```{r}
+#| eval: false
+library(googlesheets4)
+google_sheet <-
+  read_sheet("https://docs.google.com/spreadsheets/d/1n_UTbD93-oDJR2r-rsMNff5ro147NL_ZN_vYIA2eJ3Q/edit?usp=sharing")
+google_sheet
+```
+
+---
+
+## Importing from API (owid)
+
+Another interesting option is the [**data download from an API**]{.hl-yellow}: an intermediary between an app or data provider and our `R`. For example, let's load the `{owidR}` library, which allows us to download data from the web <https://ourworldindata.org/>. The `owid_covid()` function loads without realizing it more than 300 000 records with more than 50 variables from 238 countries.
+
+```{r}
+#| eval: false
+library(owidR)
+owid_covid()
+```
+
+```{r}
+#| echo: false
+#| eval: false
+library(owidR)
+owid_covid() |> slice(1:5)
+```
+
+---
+
+## Importing from (owid)
+
+This package has the `owid_search()` function to search datasets by keywords, for example, `emissions`, giving us a dataset with the title of the database and its id for later use.
+
+```{r}
+#| eval: false
+as_tibble(owid_search("emissions"))
+```
+
+```{r}
+#| echo: false
+#| eval: false
+as_tibble(owid_search("emissions")) |> slice(1:4)
+```
+
+. . .
+
+Let's ask you for example for the [**oecd emissions**]{.hl-yellow}
+
+```{r}
+#| eval: false
+owid("emissions-of-air-pollutants-oecd")
+```
+
+```{r}
+#| echo: false
+#| eval: false
+owid("emissions-of-air-pollutants-oecd") |> slice(1:5)
+```
+
+---
+
+## Importing from API (aemet)
+
+In many occasions to connect to the API we will first have to [**register and obtain a key**]{.hl-yellow}, this is the case of the `{climaemet}` package to access meteorological data (<https://opendata.aemet.es/centrodedescargas/inicio>).
+
+
+Once we have the API key we register it in our RStudio to be able to use it in the future.
+
+
+```{r}
+#| eval: false
+library(climaemet)
+
+# Api key
+apikey <- "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYXZhbHYwOUB1Y20uZXMiLCJqdGkiOiI4YTU1ODUxMS01MTE3LTQ4MTYtYmM4OS1hYmVkNDhiODBkYzkiLCJpc3MiOiJBRU1FVCIsImlhdCI6MTY2NjQ2OTcxNSwidXNlcklkIjoiOGE1NTg1MTEtNTExNy00ODE2LWJjODktYWJlZDQ4YjgwZGM5Iiwicm9sZSI6IiJ9.HEMR77lZy2ASjmOxJa8ppx2J8Za1IViurMX3p1reVBU"
+
+aemet_api_key(apikey, install = TRUE)
+```
+
+
+```{r}
+#| echo: false
+library(climaemet)
+```
+
+--- 
+
+## Importing from (aemet)
+
+
+With this package we can do a [**search for stations**]{.hl-yellow} to know both its postal code and its identifier code within the AEMET network (for example, the station of the airport of El Prat, Barcelona, is the code `"0076"`).
+
+```{r}
+#| eval: false
+stations <- aemet_stations()
+stations
+```
+
+```{r}
+#| echo: false
+#| eval: false
+stations <- aemet_stations()
+stations |> slice(1:4)
+```
+
+```{r}
+#| eval: false
+aemet_last_obs("0076")
+```
+
+```{r}
+#| echo: false
+#| eval: false
+aemet_last_obs("0076") |> slice(1:4)
+```
+
+---
+
+
+## 💻 Your turn {#tu-turno-6}
+
+[**Try to solve the following exercises without looking at the solutions**]{style="color:#444442;"}
+
+::: panel-tabset
+### [**Exercise 1**]{.hl-yellow}
+
+📝 The `who` dataset we have used in previous exercises, export it to a native `R` format in the `data` folder of the project
+
+```{r}
+#| code-fold: true
+#| eval: false
+library(tidyr)
+save(who, file = "./data/who.RData")
+```
+
+### [**Exercise 2**]{.hl-yellow}
+
+📝 Loads the `who` dataset but from the data folder (import the file created in the previous exercise)
+
+```{r}
+#| code-fold: true
+#| eval: false
+load("./data/who.RData")
+```
+
+### [**Exercise 3**]{.hl-yellow}
+
+📝 Repeats the same (export and import) in 4 formats: `.csv`, `.xlsx`, `.sav` (spss) and `.dta` (stata)
+
+```{r}
+#| code-fold: true
+#| eval: false
+
+# csv
+library(readr)
+write_csv(who, file = "./data/who.csv")
+who_data <- read_csv(file = "./data/who.csv")
+
+# excel
+library(openxlsx)
+write.xlsx(who, file = "./data/who.xlsx")
+who_data <- read_xlsx(path = "./data/who.xlsx")
+
+# sas y stata
+library(haven)
+write_sav(who, path = "./data/who.sav")
+who_data <- read_spss(path = "./data/who.sav")
+
+write_dta(who, path = "./data/who.dta")
+who_data <- read_dta(path = "./data/who.dta")
+```
+
+### [**Exercise 4**]{.hl-yellow}
+
+📝 Repeat the loading of `who.csv` but only select the first 4 columns already in the load.
+
+```{r}
+#| code-fold: true
+#| eval: false
+who_select <-
+  read_csv(file = "./data/who.csv",
+           col_select = c("country", "iso2", "iso3", "year"))
+```
+
+
+:::
+
+---
+
+## 🐣 Case study 6 {#case-6}
+
+
+In the data folder you have the dataset `breast-cancer-wisconsin-data.csv`. Create a `.qmd` file and customize it to include the following:
+
+1. Import the csv file into a `tibble`. Is it tidydata? How many patients and variables do we have?
+
+. . .
+
+2. The dataset represents breast cancer data (`id` identifier, `diagnosis` the malignant/benign diagnosis and all other tumor properties). What % had a malignant tumor and what % a benign one?
+
+. . .
+
+3. Which of the two types of tumors have, on average, a higher radius? 
+
+
+---
+
+## 🐣 Case study 6
+
+
+4. Seek the help of the `t.test()` function. This function allows us to test whether or not the means of two distributions are equal. Can we reject the null hypothesis that the radius means are the same, under a significance of $alpha = 0.05$?
+
+
+---
+
+
+## Functions
+
+Not only can we use **default functions** that come already loaded in packages, we can also [**create our own functions**]{.hl-yellow} to **automate tasks**.
+
+How to [**create our own function**]{.hl-purple}? Let's take a look at its **basic scheme**:
+
+. . .
+
+* [**Name**]{.hl-yellow}: for example `name_fun` (no spaces or strange characters). To the name we [**assign the reserved word**]{.hl-yellow} `function()` .
+
+. . .
+
+* Define [**input arguments**]{.hl-yellow} (inside `function()`).
+
+. . .
+
+```{r}
+#| eval: false
+name_fun <- function(input1, input2, ...) {
+  
+}
+```
+
+---
+
+## Functions
+
+Not only can we use **default functions** that come already loaded in packages, we can also [**create our own functions**]{.hl-yellow} to **automate tasks**.
+
+How to [**create our own function**]{.hl-purple}? Let's look at its **basic scheme**:
+
+
+* [**Body**]{.hl-yellow} function inside `{ }`.
+
+. . .
+
+* We end the function with the [**output**]{.hl-yellow} arguments with `return()`.
+
+
+```{r}
+#| eval: false
+name_fun <- function(input1, input2, ...) {
+  
+  # Code
+  code
+  
+  # Output
+  return(var_output)
+}
+```
+
+
+---
+
+## Functions
+
+* `input1, input2, ...`: will be the [**input arguments**]{.hl-yellow}, the arguments that the function takes to execute the code inside it.
+
+* `code`: lines of code that we want to [**execute the function**]{.hl-yellow}. 
+
+* `return(var_output)`: the [**output arguments**]{.hl-yellow} will be entered.
+
+
+```{r}
+#| eval: false
+name_fun <- function(input1, input2, ...) {
+  
+  # Code
+  code
+  
+  # Output
+  return(var_output)
+}
+```
+
+::: callout-important
+## Important
+
+All variables that we define inside the function are [**local variables: they will only exist inside the function**]{.hl-yellow} unless we specify otherwise.
+
+:::
+
+---
+
+## Functions
+
+Let's look at a very simple example of a function for [**calculate the area of a rectangle**]{.hl-yellow}.
+
+. . .
+
+Since the area of a rectangle is calculated as the **product of its sides**, we will need just that, its sides: those will be the [**input arguments**]{.hl-yellow} and the [**value to return**]{.hl-purple} will be just its **area** ($side_1 * side_2$).
+
+. . .
+
+```{r}
+# Definition
+calc_area <- function(side_1, side_2) {
+  
+  area <- side_1 * side_2
+  return(area)
+  
+}
+```
+
+---
+
+## Functions
+
+
+We can also do a direct definition, **without storing variables along the way**.
+
+```{r}
+# Definition
+calc_area <- function(side_1, side_2) {
+  
+  return(side_1 * side_2)
+  
+}
+```
+
+
+[**How to apply the function?**]{.hl-yellow}
+
+```{r}
+calc_area(5, 3) # rectangle 5 x 3 
+calc_area(1, 5) # rectangle 1 x 5
+```
+
+---
+
+## Default inputs
+
+Imagine now that we realize that 90% of the time we use this function to [**default calculate the area of a square**]{.hl-yellow} (i.e. we only need one side). To do this, we can define [**default arguments**]{.hl-yellow} in the function: they will take that value unless we assign another one.
+
+Why not assign `side_2 = side_1` by default, to save lines of code and time?
+
+. . .
+
+```{r}
+calc_area <- function(side_1, side_2 = side_1) {
+  
+  # Code
+  area <- side_1 * side_2
+  
+  # Result
+  return(area)
+  
+}
+```
+
+---
+
+## Default inputs
+
+
+```{r}
+calc_area <- function(side_1, side_2 = side_1) {
+  
+  # Code
+  area <- side_1 * side_2
+  
+  # Result
+  return(area)
+  
+}
+```
+
+Now [**default**]{.hl-yellow} the second side will be equal to the first (if added it will use both).
+
+
+```{r}
+calc_area(side_1 = 5) # square
+calc_area(side_1 = 5, side_2 = 7) # rectangle
+```
+
+---
+ 
+## Multiple output
+
+Let's complicate the function a bit and add in the output the values of each side, labeled `side_1` and `side_2`, [**packing the output in a list**]{.hl-yellow}.
+
+```{r}
+# Definition
+calc_area <- function(side_1, side_2 = side_1) {
+  
+  # Code
+  area <- side_1 * side_2
+  # Result
+  return(list("area" = area, "side_1" = side_1, "side_2" = side_2))
+  
+}
+```
+
+
+::: callout-important
+## Important
+
+All the variables that we define inside the function are [**local variables: they will only exist inside**]{.hl-yellow}
+
+:::
+
+---
+
+## Introduction to lists
+
+Let's see a small summary of the data we already know:
+
+* [**vectors**]{.hl-yellow}: collection of elements of the same type. They can be numbers, characters or logical values, among others.
+
+* [**matrices**]{.hl-yellow}: BIDIMENSIONAL collection of elements of equal type and equal length.
+
+* [**data.frame / tibble**]{.hl-yellow}: BIDIMENSIONAL collection of elements of equal length but of any type.
+
+. . .
+
+The [**lists**]{.hl-yellow} will be [**collections of variables of different type and different length**]{.hl-purple}, with totally heterogeneous structures (even a list can have inside it another list).
+
+---
+
+## Introduction to lists
+
+
+Let's create [**our first list**]{.hl-yellow} with `list()` with three elements: our parents' names, our place of birth and our siblings' ages.
+
+```{r}
+var_1 <- c("Paloma", "Gregorio")
+var_2 <- "Madrid"
+var_3 <- c(25, 30, 26)
+
+list_example <-
+  list("parents" = var_1, "birth_place" = var_2,
+       "siblings_ages" = var_3)
+list_example
+```
+
+---
+
+## Introduction to lists
+
+```{r}
+length(list_example)
+```
+
+If you look at the object we have defined as a list, its [**length**]{.hl-yellow} is 3 because we have **stored three elements**: a vector of characters (of length 2), a character (vector of length 1), and a vector of numbers (of length 3).
+
+. . .
+
+We have stored elements of [**different type**]{.hl-yellow} (something we could already do) but, in addition, of **different lengths**.
+
+```{r}
+dim(list_example) # NULL since we do not have a bidim object
+class(list_example) # list
+```
+
+---
+
+## Introduction to lists
+
+If we put them together with a `tibble()`, since they have different lengths, we would get an [**error**]{.hl-red}.
+
+```{r}
+#| error: true
+library(tibble)
+tibble("parents" = var_1,
+       "birth_place" = var_2,
+       "siblings_ages" = var_3)
+```
+
+---
+
+
+## Introduction to lists
+
+* [**Access by index**]{.hl-yellow}: with the operator `[[i]]` we access the **i-th element** of the list.
+
+```{r}
+list_example[[1]]
+```
+
+. . .
+
+* [**Access by name**]{.hl-yellow}: with the operator `$element_name` we access by its name.
+
+```{r}
+list_example$parents
+```
+
+. . .
+
+In contrast, the [**single bracket**]{.hl-yellow} allows us to access [**several elements**]{.hl-yellow} at a time
+
+```{r}
+# Many elements
+list_example[1:2]
+```
+
+---
+
+## Multiple output
+
+Before, we did not care about the order of the arguments, but now the [**order of the input arguments matters**]{.hl-yellow}, since we include `side_1` and `side_2` in the output. 
+
+. . .
+
+::: callout-note
+## Tip
+
+It is highly recommended to make the function call [**explicitly stating the arguments**]{.hl-yellow} to improve **legibility and interpretability**.
+
+```{r}
+# Same as calc_area(5, 3)
+calc_area(side_1 = 5, side_2 = 3)
+```
+
+:::
+
+---
+
+## Own functions: knowledge
+
+It seems silly what we have done, but we have crossed an important frontier: we have gone from [**consuming knowledge**]{.hl-yellow} (code from other packages, elaborated by others), to [**generating knowledge**]{.hl-purple}, creating our own functions.
+
+
+---
+
+## Local vs global variables
+
+An important aspect to think about with functions: what happens if we [**name a variable inside**]{.hl-yellow} a function to which we have **forgotten to assign** a value inside?
+
+. . .
+
+We must be cautious when using functions in `R`, since due to the [**"lexicographic rule "**]{.hl-yellow}, if a variable is not defined inside the function, `R` will [**look for such a variable in the environment**]{.hl-purple} of variables.
+
+```{r}
+x <- 1
+fun_example <- function() {
+    
+  print(x) # No output
+}
+fun_example()
+```
+
+---
+
+## Local vs global variables
+
+If a variable [**is already defined outside the function (global environment)**]{.hl-yellow}, and is also used inside changing its value, the value [**only changes inside**]{.hl-yellow} but [**not in the global environment**]{.hl-red}.
+
+```{r}
+x <- 1
+fun_example <- function() {
+    
+  x <- 2
+  print(x) # what is assigned inside
+}
+```
+
+```{r}
+# what is assigned inside
+fun_example() #<<
+# what is assigned outside
+print(x) #<<
+```
+
+---
+
+## Local vs global variables
+
+
+If we want it to change locally as well as [**globally**]{.hl-yellow} we must use the [**double assignment**]{.hl-yellow} (`<<-`).
+
+```{r}
+x <- 1
+y <- 2
+fun_example <- function() {
+  
+  # change locally
+  x <- 3 
+  # change globally
+  y <<- 0 #<<
+  
+  print(x)
+  print(y)
+}
+
+fun_example() # what is assigned inside
+x # what is assigned outside
+y # what is assigned outside
+```
+
+---
+
+
+## 💻 Your turn {#tu-turno-6a}
+
+[**Try to solve the following exercises without looking at the solutions**]{style="color:#444442;"}
+
+::: panel-tabset
+
+### [**Exercise 1**]{.hl-yellow}
+
+📝 Modify the code below to define a function called `sum_fun`, so that given two elements, it returns their sum.
+
+```{r}
+#| eval: false
+name_fun <- function(x, y) {
+  sum <- # código a ejecutar
+  return()
+}
+sum_fun(3, 7)
+```
+
+```{r}
+#| code-fold: true
+#| eval: false
+sum_fun <- function(x, y) {
+  sum <- x + y
+  return(sum)
+}
+sum_fun(3, 7)
+```
+
+### [**Exercise 2**]{.hl-yellow}
+
+📝 Modify the code below to define a function called `product_fun`, so that given two elements, it returns their product, but by default it calculates the square
+
+```{r}
+#| eval: false
+name_fun <- function(x, y) {
+  product <- # code
+  return()
+}
+product_fun(3)
+product_fun(3, -7)
+```
+
+```{r}
+#| code-fold: true
+#| eval: false
+product_fun <- function(x, y = x) {
+  product <- x * y
+  return(product)
+}
+product_fun(3)
+product_fun(3, -7)
+```
+
+### [**Exercise 3**]{.hl-yellow}
+
+📝 Define a function called `equal_names` that, given two names, tells us if they are equal or not. Do this by considering case-sensitive, and case-insensitive. Take a look at the `{stringr}` package.
+
+```{r}
+#| code-fold: true
+#| eval: false
+# Case-sensitive
+equal_names <- function(p_1, p_2) {
+  return(p_1 == p_2)
+}
+equal_names("Javi", "javi")
+equal_names("Javi", "Lucía")
+
+equal_names <- function(p_1, p_2) {
+  return(toupper(p_1) == toupper(p_2))
+}
+equal_names("Javi", "javi")
+equal_names("Javi", "Lucía")
+```
+
+### [**Exercise 4**]{.hl-yellow}
+
+📝 Create a function called `BMI_calc` that, given two arguments (weight and height in meters) and a name, returns a list with the BMI and the name.
+
+```{r}
+#| code-fold: true
+#| eval: false
+BMI_calc <- function(names, w, h) {
+  
+  return(list("names" = names, "BMI" = w/(h^2)))
+}
+```
+
+### [**Exercise 5**]{.hl-yellow}
+
+📝 Repeat the above exercise but with another optional argument called units (by default, `units = "m"`). Develop the function so that it does the right thing if `units = "m"` and if `units = "cm"`.
+
+```{r}
+#| code-fold: true
+#| eval: false
+BMI_calc <- function(names, w, h, units = "m") {
+  
+  return(list("names" = names,
+              "BMI" = w/(if_else(units == "m", h, h/100)^2)))
+}
+```
+
+ 
+### [**Exercise 6**]{.hl-yellow}
+
+📝 Create a tibble of 7 persons, with three variables (invent name, and simulate weight, height in centimeters), and apply the defined function so that we obtain a fourth column with their BMI.
+
+```{r}
+#| code-fold: true
+#| eval: false
+data <-
+  tibble("names" = c("javi", "sandra", "laura",
+                       "ana", "carlos", "leo", NA),
+         "w" = rnorm(n = 7, mean = 70, sd = 1),
+         "h" = rnorm(n = 7, mean = 168, sd = 5))
+
+BMI |> 
+  mutate(BMI = BMI_calc(names, w, h, units = "cm")$BMI)
+```
+
+
+:::
+
+
+---
+
+## 🐣 Case study 6b: funcitons {#case-6-b}
+
+Define a function called `temperature_converter` that, given a temperature in Fahrenheit, Celsius or Kelvin, converts it to any of the others (think what arguments the user needs). Apply the function to the `Temp` column of the `airquality` set, and incorporate it into the file in a new `Temp_Celsius` column.
+
+
+
+
+

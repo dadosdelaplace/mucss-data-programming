@@ -536,8 +536,8 @@ Master in Computational Social Sciences • 2023-2024
 <td style="text-align: center;">10 oct</td>
 <td style="text-align: center;">Tidyverse: summarising. Rmarkdown</td>
 <td style="text-align: center;"><a href="https://github.com/dadosdelaplace/mucss-data-programming/material/scripts">📝</a></td>
-<td style="text-align: center;"><a href="#/tu-turno-4">💻</a></td>
-<td style="text-align: center;"><a href="#/caso-práctico-3">🐣</a></td>
+<td style="text-align: center;"><a href="#/tu-turno-5a">💻</a> <a href="#/tu-turno-5b">💻</a></td>
+<td style="text-align: center;"><a href="#/caso5a">🐣</a> <a href="#/caso5b">🐣</a></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -546,7 +546,7 @@ Master in Computational Social Sciences • 2023-2024
 <td style="text-align: center;"><a href="#/clase-6">6</a></td>
 <td style="text-align: center;">S6</td>
 <td style="text-align: center;">19 oct</td>
-<td style="text-align: center;">Control flow structures. Practical case studies</td>
+<td style="text-align: center;">Import/export and functions</td>
 <td style="text-align: center;"><a href="https://github.com/dadosdelaplace/mucss-data-programming/material/scripts">📝</a></td>
 <td style="text-align: center;"><a href="#/tu-turno-4">💻</a></td>
 <td style="text-align: center;"><a href="#/caso-práctico-3">🐣</a></td>
@@ -558,7 +558,7 @@ Master in Computational Social Sciences • 2023-2024
 <td style="text-align: center;"><a href="#/clase-7">7</a></td>
 <td style="text-align: center;">S7</td>
 <td style="text-align: center;">24 oct</td>
-<td style="text-align: center;">Functions</td>
+<td style="text-align: center;">Functions, control flow structures and joins</td>
 <td style="text-align: center;"><a href="https://github.com/dadosdelaplace/mucss-data-programming/material/scripts">📝</a></td>
 <td style="text-align: center;"><a href="#/tu-turno-4">💻</a></td>
 <td style="text-align: center;"><a href="#/caso-práctico-3">🐣</a></td>
@@ -1378,7 +1378,7 @@ Master in Computational Social Sciences • 2023-2024
 <div class="cell">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a><span class="fu">today</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-10-05"</code></pre>
+<pre><code>[1] "2023-10-19"</code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -1388,7 +1388,7 @@ Master in Computational Social Sciences • 2023-2024
 <div class="cell">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="fu">now</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-10-05 13:37:30 CEST"</code></pre>
+<pre><code>[1] "2023-10-19 12:38:44 CEST"</code></pre>
 </div>
 </div>
 </div>
@@ -3871,8 +3871,8 @@ weights   63   70   85   95</code></pre>
 <pre><code># A tibble: 2 × 14
   name      height  mass hair_color skin_color eye_color birth_year sex   gender
   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-1 Barriss …    166    50 black      yellow     blue              40 fema… femin…
-2 Wedge An…    170    77 brown      fair       hazel             21 male  mascu…
+1 Yoda          66    17 white      green      brown            896 male  mascu…
+2 Tion Med…    206    80 none       grey       black             NA male  mascu…
 # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
 #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 </div>
@@ -3917,10 +3917,10 @@ weights   63   70   85   95</code></pre>
 <pre><code># A tibble: 4 × 14
   name      height  mass hair_color skin_color eye_color birth_year sex   gender
   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-1 Jar Jar …    196    66 none       orange     orange            52 male  mascu…
-2 Obi-Wan …    182    77 auburn, w… fair       blue-gray         57 male  mascu…
-3 Lobot        175    79 none       light      blue              37 male  mascu…
-4 Mas Amed…    196    NA none       blue       blue              NA male  mascu…
+1 Taun We      213    NA none       grey       black             NA fema… femin…
+2 Shaak Ti     178    57 none       red, blue… black             NA fema… femin…
+3 Beru Whi…    165    75 brown      light      blue              47 fema… femin…
+4 Luke Sky…    172    77 blond      fair       blue              19 male  mascu…
 # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
 #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 </div>
@@ -3984,7 +3984,7 @@ weights   63   70   85   95</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb355"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb355-1"><a href="#cb355-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 1 3 5 1 4 4 5 3 6 5</code></pre>
+<pre><code> [1] 6 1 4 5 6 6 4 2 4 5</code></pre>
 </div>
 </div>
 </div>
@@ -3996,8 +3996,8 @@ weights   63   70   85   95</code></pre>
 <div class="sourceCode cell-code" id="cb357"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb357-1"><a href="#cb357-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb357-2"><a href="#cb357-2"></a>       <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.2</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.05</span>, <span class="fl">0.05</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 4 1 1 1 4 2 2 1 2 5 3 5 1 1 2 6 4 2 3 2 6 5 1 2 1 2 2 6 1 4 5 2 1 3 2 4 1 3
-[39] 1 2 4 4 3 1 2 2 1 1 1 2</code></pre>
+<pre><code> [1] 1 4 1 6 4 6 3 5 1 2 4 1 2 1 5 1 2 1 1 1 2 6 1 1 2 6 1 2 2 2 5 2 1 4 1 3 1 5
+[39] 3 1 1 1 3 1 1 1 1 1 1 1</code></pre>
 </div>
 </div>
 </section>
@@ -5000,6 +5000,11 @@ weights   63   70   85   95</code></pre>
 <li><p>After knowing the voting intention, create a third column called <code>income</code> in which you simulate their gross annual income. We will assume that for PP’s voterts, incomes follows a distribution <span class="math inline">\(N(\mu = 37000€, sigma = 800)\)</span> and that for SUMAR’s voters it follows a distribution <span class="math inline">\(N(\mu = 26000€, sigma = 1200)\)</span>.</p></li>
 </ol>
 </div>
+</section></section>
+<section>
+<section id="clase-5" class="title-slide slide level1 center">
+<h1>Lesson 5: tidyverse (summary)</h1>
+<p><span style="color:#444442;"><strong>Summarizing data</strong></span></p>
 </section>
 <section id="count-count" class="slide level2">
 <h2>Count: count()</h2>
@@ -5445,7 +5450,7 @@ dplyr 1.1.0.
 </div>
 </div>
 </section>
-<section id="tu-turno-4c" class="slide level2">
+<section id="tu-turno-5a" class="slide level2">
 <h2>💻 Your turn</h2>
 <p><span style="color:#444442;"><strong>Try to solve the following exercises without looking at the solutions</strong></span></p>
 <div class="panel-tabset">
@@ -5500,14 +5505,2004 @@ dplyr 1.1.0.
 </div>
 </div>
 </section>
-<section id="caso4b" class="slide level2">
-<h2>🐣 Case study III</h2>
+<section id="caso5a" class="slide level2">
+<h2>🐣 Case study I</h2>
 <p>Let us randomly select 50% of the data, keeping the original distribution (in proportions) between humans and non-humans (we should remove first missing values).</p>
 <div class="fragment">
 <p>Then keep only the variables name, height, those representing a color characteristic and the variable films. Calculate the average heights in humans and non-humans. Finally calculate the frequencies of eye color and human/non-human.</p>
+</div>
+</section>
+<section id="report-rmd-y-quarto" class="slide level2">
+<h2>Report: rmd y Quarto</h2>
+<p>One of the <span class="hl-yellow"><strong>main strengths</strong></span> of <code>R</code> is the <span class="hl-yellow"><strong>easiness to generate reports, books, webs, notes and even slides</strong></span> (this material for example). To do this, <span class="hl-purple"><strong>install</strong></span> before</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>package <code>{rmarkdown}</code> (allows us to generate <code>.rmd</code> files)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb507"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb507-1"><a href="#cb507-1"></a><span class="fu">install.packages</span>(<span class="st">"rmarkdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>install <a href="https://quarto.org/docs/get-started/"><strong>Quarto</strong></a> (the «new» <code>.rmd</code> files, names as <code>.qmd</code>)</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="img/quarto.png"></p>
+</div>
+</div>
+</section>
+<section id="report-rmd-y-quarto-1" class="slide level2">
+<h2>Report: rmd y Quarto</h2>
+<p>So far we have only programmed in scripts (<code>.R</code> files) within projects, but in many occasions <span class="hl-yellow"><strong>we will not work alone</strong></span> and we will need to <span class="hl-yellow"><strong>communicate the results</strong></span> in different formats:</p>
+<ul>
+<li>notes (for ourselves)</li>
+<li>slides</li>
+<li>web</li>
+<li>reports</li>
+</ul>
+<div class="fragment">
+<p>For all of this we will use <span class="hl-yellow"><strong>Quarto (new rmarkdown)</strong></span></p>
+</div>
+</section>
+<section id="report-rmd-y-quarto-2" class="slide level2">
+<h2>Report: rmd y Quarto</h2>
+<p>The <code>.qmd</code> (or <code>.rmd</code>) extension files will allow us to easily combine:</p>
+<ul>
+<li><span class="hl-yellow"><strong>Markdown</strong></span>: <span class="hl-purple"><strong>typed language</strong></span> which allows us to create simple content (wordpress type, with text, <strong>bold</strong>, <em>cursives</em>, etc) with a readable layout.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><span class="hl-yellow"><strong>Math (latex)</strong></span>: language for writing mathematical notation such as <span class="math inline">\(x^2\)</span> or <span class="math display">\[sqrt{y}$ or \]</span>int_{a}^{b} f(x) dx$.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="hl-yellow"><strong>Code and outputs</strong></span>: we will be able to show not only the final step but also the code you have been doing (not only in <code>R</code>), with <span class="hl-purple"><strong>code boxes called chunks</strong></span> .</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Images, <span class="hl-yellow"><strong>graphics</strong></span>, tables, styles (css, js), etc.</li>
+</ul>
+</div>
+</section>
+<section id="report-rmd-y-quarto-3" class="slide level2">
+<h2>Report: rmd y Quarto</h2>
+<p>The main advantage of making this type of material in Quarto/Rmarkdown is that, by doing it from <code>RStudio</code>, you can generate a <span class="hl-yellow"><strong>report or presentation without leaving the programming environment</strong></span> in which you are working.</p>
+<p>This way you can analyze the data, summarize it and at the same time report it with the same tool.</p>
+<div class="fragment">
+<p>Recently the <code>RStudio</code> team developed <span class="hl-yellow"><strong>Quarto</strong></span>, an improved version of Rmarkdown (<code>.qmd</code> files), with a slightly more aesthetic and simple format. You have all the documentation and examples at <a href="https://quarto.org/"><strong>https://quarto.org/</strong></a></p>
+</div>
+</section>
+<section id="our-first-report" class="slide level2">
+<h2>Our first report</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><img data-src="img/quarto-create.png"></p>
+</div><div class="column" style="width:45%;">
+<p>We are going to create the <span class="hl-yellow"><strong>first rmarkdown file with Quarto</strong></span> with extension <code>.qmd</code>. For this we will only need to click on</p>
+<p><code>File &lt;&lt; New File &lt;&lt; Quarto Document</code></p>
+</div>
+</div>
+</section>
+<section id="our-first-report-1" class="slide level2">
+<h2>Our first report</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><img data-src="img/quarto-format.png"></p>
+</div><div class="column" style="width:55%;">
+<p>After doing so we will be presented with several <span class="hl-yellow"><strong>output format options</strong></span>:</p>
+<ul>
+<li><code>.pdf</code> file</li>
+<li>file <code>.html</code> (<span class="hl-yellow"><strong>recommendable</strong></span>): dynamic document, allows interaction with the user, like a “web page”.</li>
+<li><code>.doc</code> file (not recommended)</li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<p>For the moment we will leave the <span class="hl-yellow"><strong>default HTML format</strong></span> checked, and we will write the <span class="hl-yellow"><strong>title</strong></span> of our document. After that we will have our <span class="hl-yellow"><strong>file .qmd</strong></span> (it is no longer an .R script like the ones we have opened so far).</p>
+</div>
+</section>
+<section id="our-first-report-2" class="slide level2">
+<h2>Our first report</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="img/quarto-example.png"></p>
+</div><div class="column" style="width:40%;">
+<p>You should have something similar to the image capture with <span class="hl-yellow"><strong>two editing modes</strong></span>: <code>Source</code> (with code, the recommended option until you master it) and <code>Visual</code> (more like a blog).</p>
+</div>
+</div>
+<p>To <span class="hl-yellow"><strong>run the ENTIRE document</strong></span> you must click <code>Render on Save</code> and hit save.</p>
+<p><img data-src="img/quarto-prueba-html.png"></p>
+<p>You should have obtained an <span class="hl-yellow"><strong>html output similar to this</strong></span> (and a <span class="hl-yellow"><strong>html file</strong></span> has been generated on your pc).</p>
+</section>
+<section id="our-first-report-3" class="slide level2">
+<h2>Our first report</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/quarto-example.png"></p>
+</div><div class="column" style="width:50%;">
+<p>A <code>.qmd</code> file is <span class="hl-yellow"><strong>basically divided into three parts</strong></span>:</p>
+<ul>
+<li><p><span class="hl-yellow"><strong>Header</strong></span>: the part you have at the beginning between <code>---</code>.</p></li>
+<li><p><span class="hl-yellow"><strong>Text</strong></span>: that we can format and enhance with bold (written as <strong>bold</strong>, with double asterisk at the beginning and end), italics (<em>cursive</em>, with underscore at the beginning and end) or highlight function names or variables of R. You can add equations like <span class="math inline">\(x^2\)</span> (I have written <code>$x^2$</code>, between dollars).</p></li>
+<li><p><span class="hl-yellow"><strong>R code</strong></span></p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="qmd-header" class="slide level2">
+<h2>qmd header</h2>
+<p>The <span class="hl-yellow"><strong>header is in YAML</strong></span> format and contains the <span class="hl-yellow"><strong>metadata</strong></span> of the document:</p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="img/quarto-cabecera.png"></p>
+</div><div class="column" style="width:70%;">
+<ul>
+<li><code>title</code> and <code>subtitle</code>: document title/subtitle</li>
+<li><code>author</code>: author of the document</li>
+<li><code>date</code>: date</li>
+<li>`<code>format</code>: output format (we can customize it)
+<ul>
+<li><code>theme</code>: if you have any style file</li>
+<li><code>toc</code>: if you want index or not</li>
+<li><code>toc-location</code>: index position</li>
+<li><code>toc-title</code>: index title</li>
+<li><code>toc-depth</code>: index depth</li>
+</ul></li>
+<li><code>editor</code>: if you are in visual or source mode.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="text" class="slide level2">
+<h2>Text</h2>
+<p>As for writing there is only one <span class="hl-yellow"><strong>important thing</strong></span>: unless we indicate otherwise, <span class="hl-yellow"><strong>EVERYTHING we are going to write is (normal)</strong> text</span>. No R code.</p>
+<div class="columns">
+<div class="column" style="width:35%;">
+<p><img data-src="img/quarto-prueba-qmd2.png" width="350"> <img data-src="img/quarto-prueba-html2.png" width="320"></p>
+</div><div class="column" style="width:65%;">
+<p>We are going to start by writing a section at the beginning (<code># Intro</code> and behind it e.g.&nbsp;the phrase</p>
+<blockquote>
+<p>This material has been designed by Javier Álvarez Liébana, professor at the Complutense University of Madrid.</p>
+</blockquote>
+<p>In addition to the <code>Running Code</code> we will add a <code>#</code>: the <span class="hl-yellow"><strong>OUT OF CHUNKS</strong></span> <code>#</code> will be used to create <span class="hl-yellow"><strong>epigraphs (sections)</strong></span> in the document.</p>
+</div>
+</div>
+</section>
+<section id="table-of-contents" class="slide level2">
+<h2>Table of contents</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="img/quarto-indice-qmd-2.png" width="370"> <img data-src="img/quarto-indice-html2.png" width="370"></p>
+</div><div class="column" style="width:60%;">
+<p>To make the <span class="hl-yellow"><strong>index capture those sections</strong></span> we will modify the header of the file as shown in the image (you can change the location of the index and the title if you want to test).</p>
+</div>
+</div>
+</section>
+<section id="text-1" class="slide level2">
+<h2>Text</h2>
+<p>Let’s <span class="hl-yellow"><strong>customize the text</strong></span> by doing the following:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/quarto-texto-mejorado-qmd.png" width="370"> <img data-src="img/quarto-texto-mejorado-html.png" width="370"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p>Let’s add <span class="hl-yellow"><strong>bold to the name</strong></span> (putting ** at the beginning and at the end).</p></li>
+<li><p>Let’s add <span class="hl-yellow"><strong>cursive</strong></span> to the word material (putting _ at the beginning and at the end).</p></li>
+<li><p>Let’s add a <span class="hl-yellow"><strong>link</strong></span> <a href="https://www.ucm.es" class="uri">https://www.ucm.es</a>, associating it to the name of the University. To do this we put the title in square brackets and just behind the link in brackets <code>["Universidad Complutense de Madrid"](https://www.ucm.es)</code>.</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="code" class="slide level2">
+<h2>Code</h2>
+<p>To <span class="hl-yellow"><strong>add R code</strong></span> we must create our <span class="hl-yellow"><strong>code boxes called chunks</strong></span>: high in the path in our markdown text where we can include code from almost any language (and its outputs).</p>
+<p>&nbsp;</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/quarto-chunk-qmd.png" width="470"></p>
+</div><div class="column" style="width:50%;">
+<p>To include one you must go <span class="hl-yellow"><strong>header</strong></span> as follows you have a shortcut <code>Command + Option + I</code> (Mac) or <code>Ctrl + Shift + I</code> (Windows)</p>
+</div>
+</div>
+</section>
+<section id="code-1" class="slide level2">
+<h2>Code</h2>
+<p>Inside this box (which now has a different color in the document) <span class="hl-yellow"><strong>write code R</strong></span> as we have been doing so far in the scripts.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/quarto-chunk-1-qmd.png" width="410"> <img data-src="img/quarto-chunk-1-html.png" width="410"></p>
+</div><div class="column" style="width:50%;">
+<p>Let’s for example define two variables and their sum in the following way, writing this code in our <code>.qmd</code> (inside that chunk).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb508"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb508-1"><a href="#cb508-1"></a><span class="co"># R code</span></span>
+<span id="cb508-2"><a href="#cb508-2"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb508-3"><a href="#cb508-3"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb508-4"><a href="#cb508-4"></a>x <span class="sc">+</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="labelling-chunks" class="slide level2">
+<h2>Labelling chunks</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/quarto-tag-chunks-qmd.png" width="400"> <img data-src="img/quarto-tag-chunks-html.png" width="400"></p>
+</div><div class="column" style="width:50%;">
+<p>Chunks can have a <span class="hl-yellow"><strong>name or tag</strong></span>, so that we can reference them again to avoid repeating code.</p>
+</div>
+</div>
+</section>
+<section id="running-chunks" class="slide level2">
+<h2>Running chunks</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="img/quarto-inline-qmd.png" width="400"> <img data-src="img/quarto-inline-html.png" width="380"></p>
+</div><div class="column" style="width:60%;">
+<p>In each chunk there are <span class="hl-yellow"><strong>two buttons</strong></span>:</p>
+<ul>
+<li><p><span class="hl-yellow"><strong>play</strong></span> button: activates the <span class="hl-yellow"><strong>run and exit of that particular chunk</strong></span> (you can view it within your own <code>RStudio</code>)</p></li>
+<li><p><span class="hl-yellow"><strong>rewind</strong></span> button: triggers <span class="hl-yellow"><strong>execute and exit all chunks up to that one</strong></span> (without getting to it)</p></li>
+</ul>
+<p>&nbsp;</p>
+<p>In addition we can <span class="hl-yellow"><strong>include R code inside the text line</strong></span> (instead of displaying the text x execute the R code displaying the variable).</p>
+</div>
+</div>
+</section>
+<section id="customizing-chunks" class="slide level2">
+<h2>Customizing chunks</h2>
+<p>The <span class="hl-yellow"><strong>chunks can be customized</strong></span> with options at the beginning of the chunk preceded by <code>#|</code>:</p>
+<ul>
+<li><p><code></code>#| echo: false`: <span class="hl-green"><strong>execute code</strong></span> and it <span class="hl-green"><strong>shows result</strong></span> but <span class="hl-red"><strong>does not display code</strong></span> in the output.</p></li>
+<li><p><code>#| include: false</code>: <span class="hl-green"><strong>executes code</strong></span> but <span class="hl-red"><strong>does not display result</strong></span> and <span class="hl-red"><strong>does not display code</strong></span> in the output.</p></li>
+<li><p><code>#| eval: false</code>: <span class="hl-red"><strong>does not execute code</strong></span>, <span class="hl-red"><strong>does not display result</strong></span> but <span class="hl-green"><strong>does display code</strong></span> on output.</p></li>
+<li><p><code>#| message: false</code>: <span class="hl-green"><strong>executes code</strong></span> but <span class="hl-red"><strong>does not display output messages</strong></span>.</p></li>
+<li><p><code>#| warning: false</code>: <span class="hl-green"><strong>executes code</strong></span> but <span class="hl-red"><strong>does not display warning messages</strong></span>.</p></li>
+<li><p><code>#| error: true</code>: <span class="hl-green"><strong>executes code</strong></span> and <span class="hl-green"><strong>allows errors</strong></span> showing the error message in the output.</p></li>
+</ul>
+
+<img data-src="img/quarto-options-chunk.png" width="380" class="r-stretch"><p>These options can be applied chunk by chunk or set globally with <code>knitr::opts_chunk$set()</code> at the beginning of the document (within a chunk).</p>
+</section>
+<section id="organizing-qmd" class="slide level2">
+<h2>Organizing qmd</h2>
+<p>In addition to text and code we can enter the following:</p>
+<ul>
+<li><p><span class="hl-yellow"><strong>Equations</strong></span>: you can additionally add equations such as <span class="math inline">\(x^2\)</span> (I have written <code>$x^2$</code>, the equation between dollars).</p></li>
+<li><p><span class="hl-yellow"><strong>Lists</strong></span>: you can itemize elements by putting <code>*</code></p></li>
+</ul>
+<p><code>* Step 1: ...</code></p>
+<p><code>* Step 2: ...</code></p>
+<ul>
+<li><span class="hl-yellow"><strong>Cross-references</strong></span>: you can tag parts of the document (the tag is constructed with <code>{#section-name}</code>) and then call them with <code>[Section](@section-name)</code>).</li>
+</ul>
+</section>
+<section id="graphicsimages" class="slide level2">
+<h2>Graphics/images</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/quarto-fig-qmd.png" width="340"> <img data-src="img/quarto-fig-html.png" width="390"></p>
+</div><div class="column" style="width:50%;">
+<p>Por último, también podemos <span class="hl-yellow"><strong>añadir pies de gráficas o imágenes</strong></span> añadiendo <code>#| fig-cap: "..."</code></p>
+</div>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:65%;">
+<p>Finally, we can also <span class="hl-yellow"><strong>add captions to graphics or images</strong></span> by adding <code>#| fig-cap: "..."</code>.</p>
+</div><div class="column" style="width:35%;">
+<p><img data-src="img/quarto-cabecera-desplegable.png" width="400"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="theme-and-styles" class="slide level2">
+<h2>Theme and styles</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/quarto-estilos-qmd.png" width="400"> <img data-src="img/quarto-estilos-html.png" width="400"></p>
+</div><div class="column" style="width:50%;">
+<p>Finally, you can add a <span class="hl-yellow"><strong>custom theme</strong></span> including a <span class="hl-yellow"><strong>style file</strong></span> (<code>.scss</code> or <code>.css</code> file). I have left one for you at <a href="https://github.com/dadosdelaplace/mucss-data-programming/tree/main/material" class="uri">https://github.com/dadosdelaplace/mucss-data-programming/tree/main/material</a>.</p>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>The style file must be in the same folder as the <code>.qmd</code> file.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="caso5b" class="slide level2">
+<h2>🐣 Case study</h2>
+<p>Produce a <code>.qmd</code> report such that.</p>
+<ul>
+<li><p>Create a file make <span class="hl-yellow"><strong>one section per exercise</strong></span> (see the following slides)</p></li>
+<li><p><span class="hl-yellow"><strong>Detail all the steps</strong></span> you consider mixing text, code and outputs .</p></li>
+<li><p>If statistical measures such as the mean appear, <span class="hl-yellow"><strong>try entering formulas</strong></span> with <code>$$</code> (look for information on how to enter equations in latex).</p></li>
+</ul>
+</section>
+<section id="case-study" class="slide level2">
+<h2>🐣 Case study</h2>
+<ol type="1">
+<li>Loads the billboard datatable from the <code>{tidyr}</code> package.</li>
+</ol>
+<div class="fragment">
+<ol start="2" type="1">
+<li>First of all, select only the <span class="hl-yellow"><strong>first 52 weeks</strong></span> (but also artist, track and date variables). After that convert the dataset to <span class="hl-yellow"><strong>tidydata</strong></span> with the appropriate formats and types for each variable</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li>Extracts the <span class="hl-yellow"><strong>list of distinct artists</strong></span> appearing in the table, including <span class="hl-yellow"><strong>how many times</strong></span> each appears.</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="4" type="1">
+<li>Determines <span class="hl-yellow"><strong>how many songs each artist</strong></span> has</li>
+</ol>
+</div>
+</section>
+<section id="case-study-1" class="slide level2">
+<h2>🐣 Case study</h2>
+<ol start="5" type="1">
+<li>Determines the <span class="hl-yellow"><strong>5 songs that appear in the charts the most weeks</strong></span>.</li>
+</ol>
+<div class="fragment">
+<ol start="6" type="1">
+<li>Determines <span class="hl-yellow"><strong>for each artist the song that appears the most weeks</strong></span>.</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="7" type="1">
+<li>Determines the <span class="hl-yellow"><strong>artist with the most songs</strong></span> in the list</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="8" type="1">
+<li>Calculates the <span class="hl-yellow"><strong>highest position</strong></span> that each song has been on. Calculates the highest position an artist has been in.</li>
+</ol>
+</div>
+</section>
+<section id="case-study-2" class="slide level2">
+<h2>🐣 Case study</h2>
+<ol start="9" type="1">
+<li>Get a <span class="hl-yellow"><strong>summary table</strong></span> with the average ranking of each artist (counting only the highest ranking achieved by their songs), as well as the number of (different) songs they have placed in the top 100.</li>
+</ol>
+<div class="fragment">
+<ol start="10" type="1">
+<li>Perform stratified random sampling, extracting 50% of the data but maintaining the proportion of data among the different quarters.</li>
+</ol>
+</div>
+</section></section>
+<section>
+<section id="clase-6" class="title-slide slide level1 center">
+<h1>Lesson 6: import and functions</h1>
+<p><span style="color:#444442;"><strong>Import/export and functions</strong></span></p>
+</section>
+<section id="case-study-3" class="slide level2">
+<h2>🐣 Case study 3</h2>
+<p>We are going to use the <code>biopsy</code> dataset that can be found in the dataset aggregator <a href="https://vincentarelbundock.github.io/Rdatasets/index.html" class="uri">https://vincentarelbundock.github.io/Rdatasets/index.html</a>. The <span class="hl-yellow"><strong>dataset contains data from 699 patients who underwent a breast biopsy</strong></span>, obtaining 11 variables (one id and 10 scales measured from 1 to 10).</p>
+<p>You can see the documentation at <a href="https://vincentarelbundock.github.io/Rdatasets/doc/MASS/biopsy.html" class="uri">https://vincentarelbundock.github.io/Rdatasets/doc/MASS/biopsy.html</a> . . .</p>
+<ol type="1">
+<li><span class="hl-yellow"><strong>Load the dataset</strong></span> from the <code>{MASS}</code> package as a tibble</li>
+</ol>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb510"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb510-1"><a href="#cb510-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb510-2"><a href="#cb510-2"></a>biopsy <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(MASS<span class="sc">::</span>biopsy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="case-study-3-1" class="slide level2">
+<h2>🐣 Case study 3</h2>
+<ol start="2" type="1">
+<li>The variable <code>ID</code> should be the identifier of each record: <span class="hl-yellow"><strong>eliminate duplicates</strong></span> for that variable of the previous dataset.</li>
+</ol>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb511"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb511-1"><a href="#cb511-1"></a>biopsy <span class="ot">&lt;-</span></span>
+<span id="cb511-2"><a href="#cb511-2"></a>  biopsy <span class="sc">|&gt;</span> </span>
+<span id="cb511-3"><a href="#cb511-3"></a>  <span class="fu">distinct</span>(ID, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="case-study-3-2" class="slide level2">
+<h2>🐣 Case study 3</h2>
+<ol start="3" type="1">
+<li>From the above dataset <span class="hl-yellow"><strong>filter</strong></span> only patients with malignant tumor and the variable <code>V9</code> with value 4 or lower, <span class="hl-yellow"><strong>further deleting any records containing missing data</strong></span> in any of the variables.</li>
+</ol>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb512"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb512-1"><a href="#cb512-1"></a>biopsy <span class="sc">|&gt;</span> </span>
+<span id="cb512-2"><a href="#cb512-2"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb512-3"><a href="#cb512-3"></a>  <span class="fu">filter</span>(class <span class="sc">==</span> <span class="st">"malignant"</span> <span class="sc">&amp;</span> V9 <span class="sc">&lt;=</span> <span class="dv">4</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 194 × 11
+   ID         V1    V2    V3    V4    V5    V6    V7    V8    V9 class    
+   &lt;chr&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;fct&gt;    
+ 1 1017122     8    10    10     8     7    10     9     7     1 malignant
+ 2 1041801     5     3     3     3     2     3     4     4     1 malignant
+ 3 1044572     8     7     5    10     7     9     5     5     4 malignant
+ 4 1047630     7     4     6     4     6     1     4     3     1 malignant
+ 5 1050670    10     7     7     6     4    10     4     1     2 malignant
+ 6 1054590     7     3     2    10     5    10     5     4     4 malignant
+ 7 1054593    10     5     5     3     6     7     7    10     1 malignant
+ 8 1065726     5     2     3     4     2     7     3     6     1 malignant
+ 9 1072179    10     7     7     3     8     5     7     4     3 malignant
+10 1080185    10    10    10     8     6     1     8     9     1 malignant
+# ℹ 184 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="case-study-3-3" class="slide level2">
+<h2>🐣 Case study 3</h2>
+<ol start="4" type="1">
+<li>From the above dataset obtain a <span class="hl-yellow"><strong>sample of 20% of the data</strong></span> (each record can be chosen with the same probability), and <span class="hl-yellow"><strong>sort them</strong></span> from highest to lowest by the variable <code>V1</code> and, in case of a tie, from lowest to highest by the variable <code>V2</code>.</li>
+</ol>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb514"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb514-1"><a href="#cb514-1"></a><span class="fu">set.seed</span>(<span class="dv">1234567</span>)</span>
+<span id="cb514-2"><a href="#cb514-2"></a>biopsy <span class="sc">|&gt;</span> </span>
+<span id="cb514-3"><a href="#cb514-3"></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="fl">0.2</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb514-4"><a href="#cb514-4"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(V1), V2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 129 × 11
+   ID         V1    V2    V3    V4    V5    V6    V7    V8    V9 class    
+   &lt;chr&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;fct&gt;    
+ 1 752904     10     1     1     1     2    10     5     4     1 malignant
+ 2 1116998    10     4     2     1     3     2     4     3    10 malignant
+ 3 1206841    10     5     6    10     6    10     7     7    10 malignant
+ 4 846423     10     6     3     6     4    10     7     8     4 malignant
+ 5 659642     10     8     4     4     4    10     3    10     4 malignant
+ 6 1189286    10    10     8     6     4     5     8    10     1 malignant
+ 7 1257200    10    10    10     7    10    10     8     2     1 malignant
+ 8 529329     10    10    10    10    10    10     4    10    10 malignant
+ 9 1165926     9     6     9     2    10     6     2     9    10 malignant
+10 1258549     9    10    10    10    10    10    10    10     1 malignant
+# ℹ 119 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="case-study-4a" class="slide level2">
+<h2>🐣 Case study 4a</h2>
+<p>From the original starwars dataset, include a column that calculates the BMI. After that, create a new variable that values <code>NA</code> if not human, <code>thin</code> below 18, <code>normal</code> between 18 and 30, <code>overweight</code> above 30.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb516"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb516-1"><a href="#cb516-1"></a>starwars <span class="sc">|&gt;</span> </span>
+<span id="cb516-2"><a href="#cb516-2"></a>  <span class="fu">mutate</span>(<span class="at">height =</span> height <span class="sc">/</span> <span class="dv">100</span>,</span>
+<span id="cb516-3"><a href="#cb516-3"></a>         <span class="at">BMI =</span> mass <span class="sc">/</span> (height<span class="sc">^</span><span class="dv">2</span>),</span>
+<span id="cb516-4"><a href="#cb516-4"></a>         <span class="st">"human"</span> <span class="ot">=</span> <span class="fu">case_when</span>(species <span class="sc">!=</span> <span class="st">"Human"</span> <span class="sc">~</span> <span class="cn">NA</span>,</span>
+<span id="cb516-5"><a href="#cb516-5"></a>                             BMI <span class="sc">&lt;</span> <span class="dv">18</span> <span class="sc">~</span> <span class="st">"thin"</span>,</span>
+<span id="cb516-6"><a href="#cb516-6"></a>                             BMI <span class="sc">&lt;</span> <span class="dv">30</span> <span class="sc">~</span> <span class="st">"normal"</span>,</span>
+<span id="cb516-7"><a href="#cb516-7"></a>                             <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"overweight"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 87 × 16
+   name     height  mass hair_color skin_color eye_color birth_year sex   gender
+   &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
+ 1 Luke Sk…   1.72    77 blond      fair       blue            19   male  mascu…
+ 2 C-3PO      1.67    75 &lt;NA&gt;       gold       yellow         112   none  mascu…
+ 3 R2-D2      0.96    32 &lt;NA&gt;       white, bl… red             33   none  mascu…
+ 4 Darth V…   2.02   136 none       white      yellow          41.9 male  mascu…
+ 5 Leia Or…   1.5     49 brown      light      brown           19   fema… femin…
+ 6 Owen La…   1.78   120 brown, gr… light      blue            52   male  mascu…
+ 7 Beru Wh…   1.65    75 brown      light      blue            47   fema… femin…
+ 8 R5-D4      0.97    32 &lt;NA&gt;       white, red red             NA   none  mascu…
+ 9 Biggs D…   1.83    84 black      light      brown           24   male  mascu…
+10 Obi-Wan…   1.82    77 auburn, w… fair       blue-gray       57   male  mascu…
+# ℹ 77 more rows
+# ℹ 7 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+#   vehicles &lt;list&gt;, starships &lt;list&gt;, BMI &lt;dbl&gt;, human &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="case-study-4b" class="slide level2">
+<h2>🐣 Case study 4b</h2>
+<p>Let’s proceed to <span class="hl-yellow"><strong>create a table with data of voters</strong></span> of size <code>n = 30</code> where <span class="hl-yellow"><strong>simulate the voting intention and their incomes</strong></span></p>
+<ol type="1">
+<li>Create a <code>tibble</code> with two columns, one named <code>id_voter</code> and one named <code>party</code>. In the first case it should go from 1 to 30. In the second case, it simulates its voting intention so that there is a 0.5 chance of <code>PP</code> and 0.5 chance of <code>SUMAR</code> (Spanish political parties).</li>
+</ol>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb518"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb518-1"><a href="#cb518-1"></a>data <span class="ot">&lt;-</span> </span>
+<span id="cb518-2"><a href="#cb518-2"></a>  <span class="fu">tibble</span>(<span class="st">"id_voter"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>,</span>
+<span id="cb518-3"><a href="#cb518-3"></a>         <span class="st">"party"</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"PP"</span>, <span class="st">"SUMAR"</span>), <span class="at">size =</span> <span class="dv">30</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="case-study-4b-1" class="slide level2">
+<h2>🐣 Case study 4b</h2>
+<ol start="2" type="1">
+<li>After knowing the voting intention, create a third column called <code>income</code> in which you simulate their gross annual income. We will assume that for PP’s voters, incomes follows a distribution <span class="math inline">\(N(\mu = 37000€, sigma = 800)\)</span> and that for SUMAR’s voters it follows a distribution <span class="math inline">\(N(\mu = 26000€, sigma = 1200)\)</span>.</li>
+</ol>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb519"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb519-1"><a href="#cb519-1"></a>data <span class="ot">&lt;-</span> </span>
+<span id="cb519-2"><a href="#cb519-2"></a>  data <span class="sc">|&gt;</span> </span>
+<span id="cb519-3"><a href="#cb519-3"></a>  <span class="fu">mutate</span>(<span class="st">"income"</span> <span class="ot">=</span></span>
+<span id="cb519-4"><a href="#cb519-4"></a>           <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">30</span>, <span class="at">mean =</span> <span class="fu">if_else</span>(party <span class="sc">==</span> <span class="st">"PP"</span>, <span class="dv">37000</span>, <span class="dv">26000</span>),</span>
+<span id="cb519-5"><a href="#cb519-5"></a>                 <span class="at">sd =</span> <span class="fu">if_else</span>(party <span class="sc">==</span> <span class="st">"PP"</span>, <span class="dv">800</span>, <span class="dv">1200</span>)))</span>
+<span id="cb519-6"><a href="#cb519-6"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 30 × 3
+   id_voter party income
+      &lt;int&gt; &lt;chr&gt;  &lt;dbl&gt;
+ 1        1 PP    36594.
+ 2        2 PP    35928.
+ 3        3 PP    37742.
+ 4        4 SUMAR 27402.
+ 5        5 SUMAR 25858.
+ 6        6 PP    36699.
+ 7        7 PP    37654.
+ 8        8 PP    37619.
+ 9        9 SUMAR 26000.
+10       10 SUMAR 23940.
+# ℹ 20 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="case-study-5" class="slide level2">
+<h2>🐣 Case study 5</h2>
+<ol type="1">
+<li>Loads the billboard datatable from the <code>{tidyr}</code> package.</li>
+</ol>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb521"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb521-1"><a href="#cb521-1"></a>billboard</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 317 × 79
+   artist     track date.entered   wk1   wk2   wk3   wk4   wk5   wk6   wk7   wk8
+   &lt;chr&gt;      &lt;chr&gt; &lt;date&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 2 Pac      Baby… 2000-02-26      87    82    72    77    87    94    99    NA
+ 2 2Ge+her    The … 2000-09-02      91    87    92    NA    NA    NA    NA    NA
+ 3 3 Doors D… Kryp… 2000-04-08      81    70    68    67    66    57    54    53
+ 4 3 Doors D… Loser 2000-10-21      76    76    72    69    67    65    55    59
+ 5 504 Boyz   Wobb… 2000-04-15      57    34    25    17    17    31    36    49
+ 6 98^0       Give… 2000-08-19      51    39    34    26    26    19     2     2
+ 7 A*Teens    Danc… 2000-07-08      97    97    96    95   100    NA    NA    NA
+ 8 Aaliyah    I Do… 2000-01-29      84    62    51    41    38    35    35    38
+ 9 Aaliyah    Try … 2000-03-18      59    53    38    28    21    18    16    14
+10 Adams, Yo… Open… 2000-08-26      76    76    74    69    68    67    61    58
+# ℹ 307 more rows
+# ℹ 68 more variables: wk9 &lt;dbl&gt;, wk10 &lt;dbl&gt;, wk11 &lt;dbl&gt;, wk12 &lt;dbl&gt;,
+#   wk13 &lt;dbl&gt;, wk14 &lt;dbl&gt;, wk15 &lt;dbl&gt;, wk16 &lt;dbl&gt;, wk17 &lt;dbl&gt;, wk18 &lt;dbl&gt;,
+#   wk19 &lt;dbl&gt;, wk20 &lt;dbl&gt;, wk21 &lt;dbl&gt;, wk22 &lt;dbl&gt;, wk23 &lt;dbl&gt;, wk24 &lt;dbl&gt;,
+#   wk25 &lt;dbl&gt;, wk26 &lt;dbl&gt;, wk27 &lt;dbl&gt;, wk28 &lt;dbl&gt;, wk29 &lt;dbl&gt;, wk30 &lt;dbl&gt;,
+#   wk31 &lt;dbl&gt;, wk32 &lt;dbl&gt;, wk33 &lt;dbl&gt;, wk34 &lt;dbl&gt;, wk35 &lt;dbl&gt;, wk36 &lt;dbl&gt;,
+#   wk37 &lt;dbl&gt;, wk38 &lt;dbl&gt;, wk39 &lt;dbl&gt;, wk40 &lt;dbl&gt;, wk41 &lt;dbl&gt;, wk42 &lt;dbl&gt;, …</code></pre>
+</div>
+</div>
+</section>
+<section id="case-study-5-1" class="slide level2">
+<h2>🐣 Case study 5</h2>
+<ol start="2" type="1">
+<li>First of all, select only the <span class="hl-yellow"><strong>first 52 weeks</strong></span> (but also artist, track and date variables). After that convert the dataset to <span class="hl-yellow"><strong>tidydata</strong></span> with the appropriate formats and types for each variable</li>
+</ol>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb523"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb523-1"><a href="#cb523-1"></a>billboard_1 <span class="ot">&lt;-</span></span>
+<span id="cb523-2"><a href="#cb523-2"></a>  billboard <span class="sc">|&gt;</span> </span>
+<span id="cb523-3"><a href="#cb523-3"></a>  <span class="fu">select</span>(artist<span class="sc">:</span>date.entered, <span class="fu">num_range</span>(<span class="st">"wk"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">52</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb523-4"><a href="#cb523-4"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="st">"wk1"</span><span class="sc">:</span><span class="st">"wk52"</span>, <span class="at">names_to =</span> <span class="st">"week"</span>,</span>
+<span id="cb523-5"><a href="#cb523-5"></a>               <span class="at">values_to =</span> <span class="st">"rank"</span>, <span class="at">names_prefix =</span> <span class="st">"wk"</span>,</span>
+<span id="cb523-6"><a href="#cb523-6"></a>               <span class="at">values_drop_na =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb523-7"><a href="#cb523-7"></a>  <span class="fu">mutate</span>(<span class="at">week =</span> <span class="fu">as.numeric</span>(week))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li>Extracts the <span class="hl-yellow"><strong>list of distinct artists</strong></span> appearing in the table, including <span class="hl-yellow"><strong>how many times</strong></span> each appears.</li>
+</ol>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb524"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb524-1"><a href="#cb524-1"></a>billboard_1 <span class="sc">|&gt;</span> </span>
+<span id="cb524-2"><a href="#cb524-2"></a>  <span class="fu">count</span>(artist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 228 × 2
+   artist                  n
+   &lt;chr&gt;               &lt;int&gt;
+ 1 2 Pac                   7
+ 2 2Ge+her                 3
+ 3 3 Doors Down           72
+ 4 504 Boyz               18
+ 5 98^0                   20
+ 6 A*Teens                 5
+ 7 Aaliyah                52
+ 8 Adams, Yolanda         20
+ 9 Adkins, Trace          11
+10 Aguilera, Christina    67
+# ℹ 218 more rows</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="case-study-5-2" class="slide level2">
+<h2>🐣 Case study 5</h2>
+<ol start="4" type="1">
+<li>Determines <span class="hl-yellow"><strong>how many songs each artist</strong></span> has</li>
+</ol>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb526"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb526-1"><a href="#cb526-1"></a>billboard_1 <span class="sc">|&gt;</span> </span>
+<span id="cb526-2"><a href="#cb526-2"></a>  <span class="fu">distinct</span>(artist, track) <span class="sc">|&gt;</span> </span>
+<span id="cb526-3"><a href="#cb526-3"></a>  <span class="fu">count</span>(artist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 228 × 2
+   artist                  n
+   &lt;chr&gt;               &lt;int&gt;
+ 1 2 Pac                   1
+ 2 2Ge+her                 1
+ 3 3 Doors Down            2
+ 4 504 Boyz                1
+ 5 98^0                    1
+ 6 A*Teens                 1
+ 7 Aaliyah                 2
+ 8 Adams, Yolanda          1
+ 9 Adkins, Trace           1
+10 Aguilera, Christina     3
+# ℹ 218 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="case-study-5-3" class="slide level2">
+<h2>🐣 Case study 5</h2>
+<ol start="5" type="1">
+<li>Determines the <span class="hl-yellow"><strong>5 songs that appear in the charts the most weeks</strong></span>.</li>
+</ol>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb528"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb528-1"><a href="#cb528-1"></a>billboard_1 <span class="sc">|&gt;</span> </span>
+<span id="cb528-2"><a href="#cb528-2"></a>  <span class="fu">count</span>(track) <span class="sc">|&gt;</span></span>
+<span id="cb528-3"><a href="#cb528-3"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">5</span>, n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  track                   n
+  &lt;chr&gt;               &lt;int&gt;
+1 Breathe                52
+2 Kryptonite             52
+3 With Arms Wide Open    47
+4 Higher                 44
+5 I Wanna Know           44</code></pre>
+</div>
+</div>
+</section>
+<section id="case-study-5-4" class="slide level2">
+<h2>🐣 Case study 5</h2>
+<ol start="6" type="1">
+<li>Determines <span class="hl-yellow"><strong>for each artist the song that appears the most weeks</strong></span>.</li>
+</ol>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb530"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb530-1"><a href="#cb530-1"></a>billboard_1 <span class="sc">|&gt;</span> </span>
+<span id="cb530-2"><a href="#cb530-2"></a>  <span class="fu">count</span>(artist, track) <span class="sc">|&gt;</span></span>
+<span id="cb530-3"><a href="#cb530-3"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">1</span>, n, <span class="at">by =</span> artist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 237 × 3
+   artist              track                       n
+   &lt;chr&gt;               &lt;chr&gt;                   &lt;int&gt;
+ 1 2 Pac               Baby Don't Cry (Keep...     7
+ 2 2Ge+her             The Hardest Part Of ...     3
+ 3 3 Doors Down        Kryptonite                 52
+ 4 504 Boyz            Wobble Wobble              18
+ 5 98^0                Give Me Just One Nig...    20
+ 6 A*Teens             Dancing Queen               5
+ 7 Aaliyah             Try Again                  32
+ 8 Adams, Yolanda      Open My Heart              20
+ 9 Adkins, Trace       More                       11
+10 Aguilera, Christina What A Girl Wants          24
+# ℹ 227 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="case-study-5-5" class="slide level2">
+<h2>🐣 Case study 5</h2>
+<ol start="7" type="1">
+<li>Determines the <span class="hl-yellow"><strong>artist with the most songs</strong></span> in the list</li>
+</ol>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb532"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb532-1"><a href="#cb532-1"></a>billboard_1 <span class="sc">|&gt;</span> </span>
+<span id="cb532-2"><a href="#cb532-2"></a>  <span class="fu">distinct</span>(artist, track) <span class="sc">|&gt;</span></span>
+<span id="cb532-3"><a href="#cb532-3"></a>  <span class="fu">count</span>(artist) <span class="sc">|&gt;</span> </span>
+<span id="cb532-4"><a href="#cb532-4"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">1</span>, n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  artist     n
+  &lt;chr&gt;  &lt;int&gt;
+1 Jay-Z      5</code></pre>
+</div>
+</div>
+</section>
+<section id="case-study-5-6" class="slide level2">
+<h2>🐣 Case study 5</h2>
+<ol start="8" type="1">
+<li>Calculates the <span class="hl-yellow"><strong>highest position</strong></span> that each song has been on. Calculates the highest position an artist has been in.</li>
+</ol>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb534"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb534-1"><a href="#cb534-1"></a>billboard_1 <span class="sc">|&gt;</span> </span>
+<span id="cb534-2"><a href="#cb534-2"></a>  <span class="fu">slice_min</span>(rank, <span class="at">by =</span> track, <span class="at">with_ties =</span> <span class="cn">FALSE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 316 × 5
+   artist         track                   date.entered  week  rank
+   &lt;chr&gt;          &lt;chr&gt;                   &lt;date&gt;       &lt;dbl&gt; &lt;dbl&gt;
+ 1 2 Pac          Baby Don't Cry (Keep... 2000-02-26       3    72
+ 2 2Ge+her        The Hardest Part Of ... 2000-09-02       2    87
+ 3 3 Doors Down   Kryptonite              2000-04-08      32     3
+ 4 3 Doors Down   Loser                   2000-10-21       7    55
+ 5 504 Boyz       Wobble Wobble           2000-04-15       4    17
+ 6 98^0           Give Me Just One Nig... 2000-08-19       7     2
+ 7 A*Teens        Dancing Queen           2000-07-08       4    95
+ 8 Aaliyah        I Don't Wanna           2000-01-29       6    35
+ 9 Aaliyah        Try Again               2000-03-18      14     1
+10 Adams, Yolanda Open My Heart           2000-08-26       9    57
+# ℹ 306 more rows</code></pre>
+</div>
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb536"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb536-1"><a href="#cb536-1"></a>billboard_1 <span class="sc">|&gt;</span> </span>
+<span id="cb536-2"><a href="#cb536-2"></a>  <span class="fu">slice_min</span>(rank, <span class="at">by =</span> artist, <span class="at">with_ties =</span> <span class="cn">FALSE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 228 × 5
+   artist              track                   date.entered  week  rank
+   &lt;chr&gt;               &lt;chr&gt;                   &lt;date&gt;       &lt;dbl&gt; &lt;dbl&gt;
+ 1 2 Pac               Baby Don't Cry (Keep... 2000-02-26       3    72
+ 2 2Ge+her             The Hardest Part Of ... 2000-09-02       2    87
+ 3 3 Doors Down        Kryptonite              2000-04-08      32     3
+ 4 504 Boyz            Wobble Wobble           2000-04-15       4    17
+ 5 98^0                Give Me Just One Nig... 2000-08-19       7     2
+ 6 A*Teens             Dancing Queen           2000-07-08       4    95
+ 7 Aaliyah             Try Again               2000-03-18      14     1
+ 8 Adams, Yolanda      Open My Heart           2000-08-26       9    57
+ 9 Adkins, Trace       More                    2000-04-29       8    65
+10 Aguilera, Christina Come On Over Baby (A... 2000-08-05      11     1
+# ℹ 218 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="case-study-5-7" class="slide level2">
+<h2>🐣 Case study 5</h2>
+<ol start="9" type="1">
+<li>Get a <span class="hl-yellow"><strong>summary table</strong></span> with the average ranking of each artist (counting only the highest ranking achieved by their songs), as well as the number of (different) songs they have placed in the top 100.</li>
+</ol>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb538"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb538-1"><a href="#cb538-1"></a>billboard_1 <span class="sc">|&gt;</span> </span>
+<span id="cb538-2"><a href="#cb538-2"></a>  <span class="fu">slice_min</span>(rank, <span class="at">by =</span> track, <span class="at">with_ties =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb538-3"><a href="#cb538-3"></a>  <span class="fu">summarise</span>(<span class="at">avg_rank =</span> <span class="fu">mean</span>(rank), <span class="at">n_songs =</span> <span class="fu">n</span>(), <span class="at">.by =</span> artist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 227 × 3
+   artist              avg_rank n_songs
+   &lt;chr&gt;                  &lt;dbl&gt;   &lt;int&gt;
+ 1 2 Pac                  72          1
+ 2 2Ge+her                87          1
+ 3 3 Doors Down           29          2
+ 4 504 Boyz               17          1
+ 5 98^0                    2          1
+ 6 A*Teens                95          1
+ 7 Aaliyah                18          2
+ 8 Adams, Yolanda         57          1
+ 9 Adkins, Trace          65          1
+10 Aguilera, Christina     1.67       3
+# ℹ 217 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="case-study-5-8" class="slide level2">
+<h2>🐣 Case study 5</h2>
+<ol start="10" type="1">
+<li>Perform stratified random sampling, extracting 50% of the data but maintaining the proportion of data among the different quarters.</li>
+</ol>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb540"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb540-1"><a href="#cb540-1"></a>billboard_1 <span class="sc">|&gt;</span> </span>
+<span id="cb540-2"><a href="#cb540-2"></a>  <span class="fu">mutate</span>(<span class="at">q =</span> lubridate<span class="sc">::</span><span class="fu">quarter</span>(date.entered)) <span class="sc">|&gt;</span> </span>
+<span id="cb540-3"><a href="#cb540-3"></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> <span class="fl">0.5</span>, <span class="at">by =</span> q)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,639 × 6
+   artist        track                   date.entered  week  rank     q
+   &lt;chr&gt;         &lt;chr&gt;                   &lt;date&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
+ 1 Kumbia Kings  U Don't Love Me         2000-03-04       9    89     1
+ 2 Braxton, Toni He Wasn't Man Enough    2000-03-18      23    13     1
+ 3 Jay-Z         Do It Again (Put Ya ... 2000-01-15       9    95     1
+ 4 Raye, Collin  Couldn't Last A Mome... 2000-03-18      12    46     1
+ 5 Thomas, Carl  I Wish                  2000-03-25      10    21     1
+ 6 Ginuwine      The Best Man I Can B... 2000-01-08       2    97     1
+ 7 Kid Rock      Only God Knows Why      2000-02-19       4    39     1
+ 8 Bega, Lou     Tricky Tricky           2000-01-29       3    87     1
+ 9 Aaliyah       I Don't Wanna           2000-01-29      14    49     1
+10 Pink          There U Go              2000-03-04      25    20     1
+# ℹ 2,629 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="importexport" class="slide level2">
+<h2>Import/export</h2>
+<p>So far we have only used data already loaded in packages but many times <span class="hl-yellow"><strong>we will need to import data externally</strong></span>. One of the main <span class="hl-yellow"><strong>strengths</strong></span> of <code>R</code> is that we can import data very easily in different formats:</p>
+<ul>
+<li><p><span class="hl-yellow"><strong>R native formats</strong></span>: <code>.rda</code>, <code>.RData</code> and <code>.rds</code> formats.</p></li>
+<li><p><span class="hl-yellow"><strong>Rectangular (tabular) data</strong></span>: <code>.csv</code> and <code>.tsv</code> formats</p></li>
+<li><p><span class="hl-yellow"><strong>Untabulated data</strong></span>: <code>.txt</code> format.</p></li>
+<li><p><span class="hl-yellow"><strong>Data in excel</strong></span>: <code>.xls</code> and <code>.xlsx</code> formats</p></li>
+<li><p><span class="hl-yellow"><strong>Data from SAS/Stata/SPSS</strong></span>: <code>.sas7bdat</code>, <code>.sav</code> and <code>.dat</code> formats</p></li>
+<li><p><span class="hl-yellow"><strong>Data from Google Drive</strong></span></p></li>
+<li><p><span class="hl-yellow"><strong>Data from API’s</strong></span>: aemet, catastro, twitter, spotify, etc.</p></li>
+</ul>
+</section>
+<section id="r-native-formats" class="slide level2">
+<h2>R native formats</h2>
+<p>The <span class="hl-yellow"><strong>simplest</strong></span> files to import into <code>R</code> (and which usually take up less disk space) are its own <span class="hl-yellow"><strong>native extensions</strong></span>: files in <code>.RData</code>, <code>.rda</code> and <code>.rds</code> formats. To load the former we simply need to <span class="hl-yellow"><strong>use the native</strong></span> function <code>load()</code> by providing it the file path.</p>
+<ul>
+<li><code>RData</code> file: we are going to import a dataset with the different characteristics of the <span class="hl-purple"><strong>Titanic voyagers</strong></span>, including who survived and who died.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb542"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb542-1"><a href="#cb542-1"></a><span class="fu">load</span>(<span class="st">"./data/titanic.RData"</span>)</span>
+<span id="cb542-2"><a href="#cb542-2"></a><span class="fu">as_tibble</span>(titanic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 12
+  PassengerId Survived Pclass Name    Sex     Age SibSp Parch Ticket  Fare Cabin
+        &lt;int&gt;    &lt;int&gt;  &lt;int&gt; &lt;fct&gt;   &lt;fct&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;fct&gt;  &lt;dbl&gt; &lt;fct&gt;
+1           1        0      3 Braund… male     22     1     0 A/5 2…  7.25 ""   
+2           2        1      1 Cuming… fema…    38     1     0 PC 17… 71.3  "C85"
+3           3        1      3 Heikki… fema…    26     0     0 STON/…  7.92 ""   
+4           4        1      1 Futrel… fema…    35     1     0 113803 53.1  "C12…
+5           5        0      3 Allen,… male     35     0     0 373450  8.05 ""   
+# ℹ 1 more variable: Embarked &lt;fct&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="r-native-formats-1" class="slide level2">
+<h2>R native formats</h2>
+<ul>
+<li><code>.rda</code> file: we will import a dataset with <span class="hl-purple"><strong>breast cancer data</strong></span> from <a href="https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/1471-2288-13-33"><strong>Royston and Altman (2013)</strong></a>, including 2982 patients and their characteristics.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb544"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb544-1"><a href="#cb544-1"></a><span class="fu">load</span>(<span class="st">"./data/rotterdam_breast_cancer.rda"</span>)</span>
+<span id="cb544-2"><a href="#cb544-2"></a><span class="fu">as_tibble</span>(rotterdam)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 15
+    pid  year   age  meno size  grade nodes   pgr    er hormon chemo rtime recur
+  &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;  &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt;
+1     1  1992    74     1 &lt;=20      3     0    35   291      0     0  1799     0
+2     2  1984    79     1 20-50     3     0    36   611      0     0  2828     0
+3     3  1983    44     0 &lt;=20      2     0   138     0      0     0  6012     0
+4     4  1985    70     1 20-50     3     0     0    12      0     0  2624     0
+5     5  1983    75     1 &lt;=20      3     0   260   409      0     0  4915     0
+6     6  1983    52     0 &lt;=20      3     0   139   303      0     0  5888     0
+7     7  1993    40     0 &lt;=20      2     0    13     4      0     0  2491     0
+# ℹ 2 more variables: dtime &lt;dbl&gt;, death &lt;int&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="r-native-formats-2" class="slide level2">
+<h2>R native formats</h2>
+<ul>
+<li><code>.rds</code> files: for this type we must use <code>readRDS()</code>, and we need to incorporate a <span class="hl-yellow"><strong>argument <code>file</code></strong></span> with the path. In this case we are going to import <span class="hl-purple"><strong>lung cancer data</strong></span> from the North Central Cancer Treatment Group.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb546"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb546-1"><a href="#cb546-1"></a>lung_cancer <span class="ot">&lt;-</span></span>
+<span id="cb546-2"><a href="#cb546-2"></a>  <span class="fu">readRDS</span>(<span class="at">file =</span> <span class="st">"./data/NCCTG_lung_cancer.rds"</span>) <span class="sc">|&gt;</span> <span class="fu">as_tibble</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 10
+   inst  time status   age   sex ph.ecog ph.karno pat.karno meal.cal wt.loss
+  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;
+1     3   306      2    74     1       1       90       100     1175      NA
+2     3   455      2    68     1       0       90        90     1225      15
+3     3  1010      1    56     1       0       90        90       NA      15
+4     5   210      2    57     1       1       90        60     1150      11
+5     1   883      2    60     1       0      100        90       NA       0</code></pre>
+</div>
+</div>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>The <span class="hl-yellow"><strong>paths</strong></span> must always be <span class="hl-yellow"><strong>without spaces, ñ, or accents</strong></span>. And note that files loaded with <code>load()</code> are automatically loaded into the environment (with the originally saved name), but <code>read()</code> functions are only loaded locally (if not saved, they do not exist in the future).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="tabular-data-readr" class="slide level2">
+<h2>Tabular data: readr</h2>
+<p>The <code>{readr}</code> package within the <code>{tidyverse}</code> environment contains several useful functions for <span class="hl-yellow"><strong>loading rectangular data (without formatting)</strong></span>.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><code>read_csv()</code>: <code>.csv</code> files whose <span class="hl-purple"><strong>separator is comma</strong></span></li>
+<li><code>read_csv2()</code>: <span class="hl-purple"><strong>semicolon</strong></span></li>
+<li><code>read_tsv()</code>: <span class="hl-purple"><strong>tabulator</strong></span>.</li>
+<li><code>read_table()</code>: <span class="hl-purple"><strong>space</strong></span>.</li>
+<li><code>read_delim()</code>: generic function for <span class="hl-purple"><strong>character delimited files</strong></span>.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/data-import-readr.png"></p>
+</div>
+</div>
+<p>All of them need as <strong>argument the file path</strong> plus <strong>other optional</strong> (skip header or not, decimals, etc). See more at <a href="https://readr.tidyverse.org/" class="uri">https://readr.tidyverse.org/</a></p>
+</section>
+<section id="tabular-data-.csv-.tsv" class="slide level2">
+<h2>Tabular data (.csv, .tsv)</h2>
+<p>The main advantage of <code>{readr}</code> is that it <span class="hl-yellow"><strong>automates formatting</strong></span> to go from a flat (unformatted) file to a tibble (in rows and columns, with formatting).</p>
+<div class="fragment">
+<ul>
+<li>File <code>.csv</code>: with <code>read_csv()</code> we will load <span class="hl-purple"><strong>comma separated</strong></span> files, passing as <span class="hl-yellow"><strong>argument the path</strong></span> in <code>file = ...</code>. Let’s import the <code>chickens.csv</code> dataset (about cartoon chickens, why not). If you look at the output it gives us the type of variables.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb548"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb548-1"><a href="#cb548-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb548-2"><a href="#cb548-2"></a>chickens <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"./data/chickens.csv"</span>)</span>
+<span id="cb548-3"><a href="#cb548-3"></a>chickens</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  chicken                 sex     eggs_laid motto                               
+  &lt;chr&gt;                   &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;                               
+1 Foghorn Leghorn         rooster         0 That's a joke, ah say, that's a jok…
+2 Chicken Little          hen             3 The sky is falling!                 
+3 Ginger                  hen            12 Listen. We'll either die free chick…
+4 Camilla the Chicken     hen             7 Bawk, buck, ba-gawk.                
+5 Ernie The Giant Chicken rooster         0 Put Captain Solo in the cargo hold. </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="tabular-data-.csv-.tsv-1" class="slide level2">
+<h2>Tabular data (.csv, .tsv)</h2>
+<p>The <span class="hl-yellow"><strong>variable format</strong></span> will normally be done <span class="hl-yellow"><strong>automatically</strong></span> by <code>read_csv()</code>, and we can query it with <code>spec()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb550"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb550-1"><a href="#cb550-1"></a><span class="fu">spec</span>(chickens)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>cols(
+  chicken = col_character(),
+  sex = col_character(),
+  eggs_laid = col_double(),
+  motto = col_character()
+)</code></pre>
+</div>
+</div>
+</section>
+<section id="tabular-data-.csv-.tsv-2" class="slide level2">
+<h2>Tabular data (.csv, .tsv)</h2>
+<p>Although it usually does it well automatically we can <span class="hl-yellow"><strong>specify the format explicitly</strong></span> in <code>col_types = list()</code> (in list format, with <code>col_xxx()</code> for each type of variable, for example one we will put it as qualitative or factor). We can even indicate that <span class="hl-yellow"><strong>variables we want to select</strong></span> (without occupying memory), by indicating it in <code>col_select = ...</code> (in list format, with <code>col_select = ...</code>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb552"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb552-1"><a href="#cb552-1"></a>chickens <span class="ot">&lt;-</span></span>
+<span id="cb552-2"><a href="#cb552-2"></a>  <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"./data/chickens.csv"</span>,</span>
+<span id="cb552-3"><a href="#cb552-3"></a>           <span class="at">col_types =</span> <span class="fu">list</span>(<span class="fu">col_character</span>(), <span class="fu">col_factor</span>(), <span class="fu">col_double</span>(), <span class="fu">col_character</span>()),</span>
+<span id="cb552-4"><a href="#cb552-4"></a>           <span class="at">col_select =</span> <span class="fu">c</span>(chicken, sex, eggs_laid))</span>
+<span id="cb552-5"><a href="#cb552-5"></a>chickens</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+  chicken                 sex     eggs_laid
+  &lt;chr&gt;                   &lt;fct&gt;       &lt;dbl&gt;
+1 Foghorn Leghorn         rooster         0
+2 Chicken Little          hen             3
+3 Ginger                  hen            12
+4 Camilla the Chicken     hen             7
+5 Ernie The Giant Chicken rooster         0</code></pre>
+</div>
+</div>
+</section>
+<section id="untabulated-data-.txt" class="slide level2">
+<h2>Untabulated data (.txt)</h2>
+<p>What happens when the <span class="hl-red"><strong>separator is not correct</strong></span>?</p>
+<div class="fragment">
+<p>If we use <code>read_csv()</code> it expects the separator between columns to be a comma but, as you can see with the following <code>.txt</code>, it interprets everything as a single column: <span class="hl-yellow"><strong>has no comma and does not know where to separate</strong></span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb554"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb554-1"><a href="#cb554-1"></a>datos_txt <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"./data/massey-rating.txt"</span>)</span>
+<span id="cb554-2"><a href="#cb554-2"></a><span class="fu">dim</span>(datos_txt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10  1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb556"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb556-1"><a href="#cb556-1"></a><span class="fu">as_tibble</span>(datos_txt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 1
+   `UCC PAY LAZ KPK  RT   COF BIH DII ENG ACU Rank Team            Conf`
+   &lt;chr&gt;                                                                
+ 1 1   1   1   1   1     1   1   1   1   1    1 Ohio St          B10    
+ 2 2   2   2   2   2     2   2   2   4   2    2 Oregon           P12    
+ 3 3   4   3   4   3     4   3   4   2   3    3 Alabama          SEC    
+ 4 4   3   4   3   4     3   5   3   3   4    4 TCU              B12    
+ 5 6   6   6   5   5     7   6   5   6  11    5 Michigan St      B10    
+ 6 7   7   7   6   7     6  11   8   7   8    6 Georgia          SEC    
+ 7 5   5   5   7   6     8   4   6   5   5    7 Florida St       ACC    
+ 8 8   8   9   9  10     5   7   7  10   7    8 Baylor           B12    
+ 9 9  11   8  13  11    11  12   9  14   9    9 Georgia Tech     ACC    
+10 13  10  13  11   8     9  10  11   9  10   10 Mississippi      SEC   </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="untabulated-data-.txt-1" class="slide level2">
+<h2>Untabulated data (.txt)</h2>
+<p>To do this we have.</p>
+<ul>
+<li><p><code>read_csv2()</code> when the <span class="hl-yellow"><strong>separator is semicolon</strong></span>, <code>read_tsv()</code> when the <span class="hl-yellow"><strong>is a tab</strong></span> and <code>read_table()</code> when the <span class="hl-yellow"><strong>is a space</strong></span>.</p></li>
+<li><p><code>read_delim()</code> in general.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb558"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb558-1"><a href="#cb558-1"></a>datos_txt <span class="ot">&lt;-</span> <span class="fu">read_table</span>(<span class="at">file =</span> <span class="st">"./data/massey-rating.txt"</span>)</span>
+<span id="cb558-2"><a href="#cb558-2"></a><span class="fu">as_tibble</span>(datos_txt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 13
+     UCC   PAY   LAZ   KPK    RT   COF   BIH   DII   ENG   ACU  Rank Team  Conf 
+   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+ 1     1     1     1     1     1     1     1     1     1     1     1 Ohio  St   
+ 2     2     2     2     2     2     2     2     2     4     2     2 Oreg… P12  
+ 3     3     4     3     4     3     4     3     4     2     3     3 Alab… SEC  
+ 4     4     3     4     3     4     3     5     3     3     4     4 TCU   B12  
+ 5     6     6     6     5     5     7     6     5     6    11     5 Mich… St   
+ 6     7     7     7     6     7     6    11     8     7     8     6 Geor… SEC  
+ 7     5     5     5     7     6     8     4     6     5     5     7 Flor… St   
+ 8     8     8     9     9    10     5     7     7    10     7     8 Bayl… B12  
+ 9     9    11     8    13    11    11    12     9    14     9     9 Geor… Tech 
+10    13    10    13    11     8     9    10    11     9    10    10 Miss… SEC  </code></pre>
+</div>
+</div>
+</section>
+<section id="excel-data-.xls-.xlsx" class="slide level2">
+<h2>Excel data (.xls, .xlsx)</h2>
+<p>Another key import package will be the <code>{readxl}</code> package for <span class="hl-yellow"><strong>importing data from Excel</strong></span>. Three functions will be key:</p>
+<ul>
+<li><code>read_xls()</code> specific to <code>.xls</code>, <code>read_xlsx()</code> specific to <code>.xlsx</code>.</li>
+<li><code>read_excel()</code>: for both <code>.xls</code> and <code>.xlsx</code>.</li>
+</ul>
+<div class="fragment">
+<p>We are going to import <code>deaths.xlsx</code> with celebrity death records.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb560"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb560-1"><a href="#cb560-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb560-2"><a href="#cb560-2"></a>deaths <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="at">path =</span> <span class="st">"./data/deaths.xlsx"</span>)</span>
+<span id="cb560-3"><a href="#cb560-3"></a>deaths</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 6
+  `Lots of people`             ...2       ...3  ...4     ...5          ...6     
+  &lt;chr&gt;                        &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;         &lt;chr&gt;    
+1 simply cannot resist writing &lt;NA&gt;       &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;          some not…
+2 at                           the        top   &lt;NA&gt;     of            their sp…
+3 or                           merging    &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;          cells    
+4 Name                         Profession Age   Has kids Date of birth Date of …
+5 David Bowie                  musician   69    TRUE     17175         42379    
+6 Carrie Fisher                actor      60    TRUE     20749         42731    
+7 Chuck Berry                  musician   90    TRUE     9788          42812    
+8 Bill Paxton                  actor      61    TRUE     20226         42791    </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="excel-data-.xls-.xlsx-1" class="slide level2">
+<h2>Excel data (.xls, .xlsx)</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb562"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb562-1"><a href="#cb562-1"></a>deaths</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 6
+  `Lots of people`             ...2       ...3  ...4     ...5          ...6     
+  &lt;chr&gt;                        &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;         &lt;chr&gt;    
+1 simply cannot resist writing &lt;NA&gt;       &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;          some not…
+2 at                           the        top   &lt;NA&gt;     of            their sp…
+3 or                           merging    &lt;NA&gt;  &lt;NA&gt;     &lt;NA&gt;          cells    
+4 Name                         Profession Age   Has kids Date of birth Date of …
+5 David Bowie                  musician   69    TRUE     17175         42379    
+6 Carrie Fisher                actor      60    TRUE     20749         42731    
+7 Chuck Berry                  musician   90    TRUE     9788          42812    
+8 Bill Paxton                  actor      61    TRUE     20226         42791    </code></pre>
+</div>
+</div>
+<p>One thing that is <span class="hl-yellow"><strong>very common misfortune</strong></span> is that there is some kind of comment or text at the beginning of the file, having to <span class="hl-yellow"><strong>skip those rows</strong></span>.</p>
+</section>
+<section id="excel-data-.xls-.xlsx-2" class="slide level2">
+<h2>Excel data (.xls, .xlsx)</h2>
+<p>We can <span class="hl-yellow"><strong>skip these rows</strong></span> directly in the load with <code>skip = ...</code> (indicating the number of rows to skip).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb564"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb564-1"><a href="#cb564-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb564-2"><a href="#cb564-2"></a>deaths <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="at">path =</span> <span class="st">"./data/deaths.xlsx"</span>, <span class="at">skip =</span> <span class="dv">4</span>)</span>
+<span id="cb564-3"><a href="#cb564-3"></a>deaths</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 6
+  Name          Profession Age   `Has kids` `Date of birth`     `Date of death`
+  &lt;chr&gt;         &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;      &lt;dttm&gt;              &lt;chr&gt;          
+1 David Bowie   musician   69    TRUE       1947-01-08 00:00:00 42379          
+2 Carrie Fisher actor      60    TRUE       1956-10-21 00:00:00 42731          
+3 Chuck Berry   musician   90    TRUE       1926-10-18 00:00:00 42812          
+4 Bill Paxton   actor      61    TRUE       1955-05-17 00:00:00 42791          
+5 Prince        musician   57    TRUE       1958-06-07 00:00:00 42481          </code></pre>
+</div>
+</div>
+</section>
+<section id="excel-data-.xls-.xlsx-3" class="slide level2">
+<h2>Excel data (.xls, .xlsx)</h2>
+<p>In addition with <code>col_names = ...</code> we can already rename the columns in the import (if <span class="hl-yellow"><strong>provide names assumes 1st line already as a data</strong></span>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb566" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb566-1"><a href="#cb566-1"></a>deaths <span class="ot">&lt;-</span></span>
+<span id="cb566-2"><a href="#cb566-2"></a>  <span class="fu">read_xlsx</span>(<span class="at">path =</span> <span class="st">"./data/deaths.xlsx"</span>,</span>
+<span id="cb566-3"><a href="#cb566-3"></a>            <span class="at">skip =</span> <span class="dv">5</span>,</span>
+<span id="cb566-4"><a href="#cb566-4"></a>            <span class="at">col_names =</span> <span class="fu">c</span>(<span class="st">"name"</span>, <span class="st">"profession"</span>, <span class="st">"age"</span>, <span class="st">"kids"</span>, <span class="st">"birth"</span>, <span class="st">"death"</span>))</span>
+<span id="cb566-5"><a href="#cb566-5"></a>deaths</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 6
+  name               profession age   kids  birth               death
+  &lt;chr&gt;              &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;dttm&gt;              &lt;chr&gt;
+1 David Bowie        musician   69    TRUE  1947-01-08 00:00:00 42379
+2 Carrie Fisher      actor      60    TRUE  1956-10-21 00:00:00 42731
+3 Chuck Berry        musician   90    TRUE  1926-10-18 00:00:00 42812
+4 Bill Paxton        actor      61    TRUE  1955-05-17 00:00:00 42791
+5 Prince             musician   57    TRUE  1958-06-07 00:00:00 42481
+6 Alan Rickman       actor      69    FALSE 1946-02-21 00:00:00 42383
+7 Florence Henderson actor      82    TRUE  1934-02-14 00:00:00 42698</code></pre>
+</div>
+</div>
+</section>
+<section id="excel-data-.xls-.xlsx-4" class="slide level2">
+<h2>Excel data (.xls, .xlsx)</h2>
+<p>Sometimes <span class="hl-red"><strong>Excel dates are incorrectly formatted</strong></span> (surprise): we can use <code>convertToDate()</code> from the <code>{openxlsx}</code> package to convert it.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb568"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb568-1"><a href="#cb568-1"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb568-2"><a href="#cb568-2"></a>deaths<span class="sc">$</span>death <span class="ot">&lt;-</span> <span class="fu">convertToDate</span>(deaths<span class="sc">$</span>death)</span>
+<span id="cb568-3"><a href="#cb568-3"></a>deaths</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 6
+  name               profession age   kids  birth               death     
+  &lt;chr&gt;              &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;dttm&gt;              &lt;date&gt;    
+1 David Bowie        musician   69    TRUE  1947-01-08 00:00:00 2016-01-10
+2 Carrie Fisher      actor      60    TRUE  1956-10-21 00:00:00 2016-12-27
+3 Chuck Berry        musician   90    TRUE  1926-10-18 00:00:00 2017-03-18
+4 Bill Paxton        actor      61    TRUE  1955-05-17 00:00:00 2017-02-25
+5 Prince             musician   57    TRUE  1958-06-07 00:00:00 2016-04-21
+6 Alan Rickman       actor      69    FALSE 1946-02-21 00:00:00 2016-01-14
+7 Florence Henderson actor      82    TRUE  1934-02-14 00:00:00 2016-11-24</code></pre>
+</div>
+</div>
+</section>
+<section id="excel-data-.xls-.xlsx-5" class="slide level2">
+<h2>Excel data (.xls, .xlsx)</h2>
+<p>We can also <span class="hl-yellow"><strong>load an Excel with several sheets</strong></span>: to <span class="hl-yellow"><strong>indicate the sheet</strong></span> (either by its name or by its number) we will use the argument <code>sheet = ...</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb570"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb570-1"><a href="#cb570-1"></a>mtcars <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="at">path =</span> <span class="st">"./data/datasets.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"mtcars"</span>)</span>
+<span id="cb570-2"><a href="#cb570-2"></a>mtcars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 11
+    mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
+  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1  21       6   160   110  3.9   2.62  16.5     0     1     4     4
+2  21       6   160   110  3.9   2.88  17.0     0     1     4     4
+3  22.8     4   108    93  3.85  2.32  18.6     1     1     4     1
+4  21.4     6   258   110  3.08  3.22  19.4     1     0     3     1
+5  18.7     8   360   175  3.15  3.44  17.0     0     0     3     2</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>We can even indicate the <span class="hl-yellow"><strong>range of cells</strong></span> to load with <code>range = ...</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb572"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb572-1"><a href="#cb572-1"></a>iris <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="at">path =</span> <span class="st">"./data/datasets.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"iris"</span>, <span class="at">range =</span> <span class="st">"C1:E4"</span>)</span>
+<span id="cb572-2"><a href="#cb572-2"></a>iris</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  Petal.Length Petal.Width Species
+         &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  
+1          1.4         0.2 setosa 
+2          1.4         0.2 setosa 
+3          1.3         0.2 setosa </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="importing-from-sasstataspss" class="slide level2">
+<h2>Importing from SAS/STATA/SPSS</h2>
+<p>The <code>{haven}</code> package within the tidyverse orbit will allow us to <span class="hl-yellow"><strong>import files from the 3 most important payment software</strong></span>: SAS, SPSS and Stata.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb574"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb574-1"><a href="#cb574-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb574-2"><a href="#cb574-2"></a></span>
+<span id="cb574-3"><a href="#cb574-3"></a><span class="co"># SAS</span></span>
+<span id="cb574-4"><a href="#cb574-4"></a>iris_sas <span class="ot">&lt;-</span> <span class="fu">read_sas</span>(<span class="at">data_file =</span> <span class="st">"./data/iris.sas7bdat"</span>)</span>
+<span id="cb574-5"><a href="#cb574-5"></a></span>
+<span id="cb574-6"><a href="#cb574-6"></a><span class="co"># SPSS</span></span>
+<span id="cb574-7"><a href="#cb574-7"></a>iris_spss <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="at">file =</span> <span class="st">"./data/iris.sav"</span>)</span>
+<span id="cb574-8"><a href="#cb574-8"></a></span>
+<span id="cb574-9"><a href="#cb574-9"></a><span class="co"># Stata</span></span>
+<span id="cb574-10"><a href="#cb574-10"></a>iris_stata <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="at">file =</span> <span class="st">"./data/iris.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="export" class="slide level2">
+<h2>Export</h2>
+<p>In the same way that we can import we can also <span class="hl-yellow"><strong>export</strong></span></p>
+<ul>
+<li>exported in <code>.RData</code> (recommended option for variables stored in <code>R</code>). Remember that this extension <span class="hl-yellow"><strong>can only be used in <code>R</code></strong></span>. To do so, just use <code>save(object, file = path)</code>.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb575"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb575-1"><a href="#cb575-1"></a>table <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="st">"a"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="st">"b"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span>
+<span id="cb575-2"><a href="#cb575-2"></a><span class="fu">save</span>(table, <span class="at">file =</span> <span class="st">"./data/table.RData"</span>)</span>
+<span id="cb575-3"><a href="#cb575-3"></a><span class="fu">rm</span>(table) <span class="co"># eliminar</span></span>
+<span id="cb575-4"><a href="#cb575-4"></a><span class="fu">load</span>(<span class="st">"./data/table.RData"</span>)</span>
+<span id="cb575-5"><a href="#cb575-5"></a>table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+      a     b
+  &lt;int&gt; &lt;int&gt;
+1     1     1
+2     2     2
+3     3     3
+4     4     4</code></pre>
+</div>
+</div>
+</section>
+<section id="export-1" class="slide level2">
+<h2>Export</h2>
+<p>In the same way that we can import we can also <span class="hl-yellow"><strong>export</strong></span></p>
+<ul>
+<li>exported in <code>.csv</code>. To do this we simply use <code>write_csv(object, file = path)</code>.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb577"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb577-1"><a href="#cb577-1"></a><span class="fu">write_csv</span>(table, <span class="at">file =</span> <span class="st">"./data/table.csv"</span>)</span>
+<span id="cb577-2"><a href="#cb577-2"></a><span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"./data/table.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+      a     b
+  &lt;dbl&gt; &lt;dbl&gt;
+1     1     1
+2     2     2
+3     3     3
+4     4     4</code></pre>
+</div>
+</div>
+</section>
+<section id="directly-from-website" class="slide level2">
+<h2>Directly from website</h2>
+<p>One of the main advantages of <code>R</code> is that we can make use of all the previous functions of <span class="hl-yellow"><strong>import but directly from a web</strong></span>, without the need to perform the manual download: instead of passing it the local path we will indicate the <span class="hl-yellow"><strong>link</strong></span>. For example, we are going to download the covid data from ISCIII (<a href="https://cnecovid.isciii.es/covid19/#documentaci%C3%B3n-y-datos" class="uri">https://cnecovid.isciii.es/covid19/#documentaci%C3%B3n-y-datos</a>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb579"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb579-1"><a href="#cb579-1"></a>covid_data <span class="ot">&lt;-</span></span>
+<span id="cb579-2"><a href="#cb579-2"></a>  <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"https://cnecovid.isciii.es/covid19/resources/casos_hosp_uci_def_sexo_edad_provres.csv"</span>, <span class="at">n_max =</span> <span class="dv">700</span>)</span>
+<span id="cb579-3"><a href="#cb579-3"></a>covid_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="importing-from-google-drive" class="slide level2">
+<h2>Importing from google drive</h2>
+<p>Another option available (especially if we work with other people working) is to <span class="hl-yellow"><strong>import from a Google Drive spreadsheet</strong></span>, making use of <code>read_sheet()</code> from the <code>{googlesheets4}</code> package.</p>
+<p>The first time you will be asked for a tidyverse permission to interact with your drive</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb580"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb580-1"><a href="#cb580-1"></a><span class="fu">library</span>(googlesheets4)</span>
+<span id="cb580-2"><a href="#cb580-2"></a>google_sheet <span class="ot">&lt;-</span></span>
+<span id="cb580-3"><a href="#cb580-3"></a>  <span class="fu">read_sheet</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1n_UTbD93-oDJR2r-rsMNff5ro147NL_ZN_vYIA2eJ3Q/edit?usp=sharing"</span>)</span>
+<span id="cb580-4"><a href="#cb580-4"></a>google_sheet</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="importing-from-api-owid" class="slide level2">
+<h2>Importing from API (owid)</h2>
+<p>Another interesting option is the <span class="hl-yellow"><strong>data download from an API</strong></span>: an intermediary between an app or data provider and our <code>R</code>. For example, let’s load the <code>{owidR}</code> library, which allows us to download data from the web <a href="https://ourworldindata.org/" class="uri">https://ourworldindata.org/</a>. The <code>owid_covid()</code> function loads without realizing it more than 300 000 records with more than 50 variables from 238 countries.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb581"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb581-1"><a href="#cb581-1"></a><span class="fu">library</span>(owidR)</span>
+<span id="cb581-2"><a href="#cb581-2"></a><span class="fu">owid_covid</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+</section>
+<section id="importing-from-owid" class="slide level2">
+<h2>Importing from (owid)</h2>
+<p>This package has the <code>owid_search()</code> function to search datasets by keywords, for example, <code>emissions</code>, giving us a dataset with the title of the database and its id for later use.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb582"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb582-1"><a href="#cb582-1"></a><span class="fu">as_tibble</span>(<span class="fu">owid_search</span>(<span class="st">"emissions"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+<div class="fragment">
+<p>Let’s ask you for example for the <span class="hl-yellow"><strong>oecd emissions</strong></span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb583"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb583-1"><a href="#cb583-1"></a><span class="fu">owid</span>(<span class="st">"emissions-of-air-pollutants-oecd"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+</div>
+</section>
+<section id="importing-from-api-aemet" class="slide level2">
+<h2>Importing from API (aemet)</h2>
+<p>In many occasions to connect to the API we will first have to <span class="hl-yellow"><strong>register and obtain a key</strong></span>, this is the case of the <code>{climaemet}</code> package to access meteorological data (<a href="https://opendata.aemet.es/centrodedescargas/inicio" class="uri">https://opendata.aemet.es/centrodedescargas/inicio</a>).</p>
+<p>Once we have the API key we register it in our RStudio to be able to use it in the future.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb584"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb584-1"><a href="#cb584-1"></a><span class="fu">library</span>(climaemet)</span>
+<span id="cb584-2"><a href="#cb584-2"></a></span>
+<span id="cb584-3"><a href="#cb584-3"></a><span class="co"># Api key</span></span>
+<span id="cb584-4"><a href="#cb584-4"></a>apikey <span class="ot">&lt;-</span> <span class="st">"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYXZhbHYwOUB1Y20uZXMiLCJqdGkiOiI4YTU1ODUxMS01MTE3LTQ4MTYtYmM4OS1hYmVkNDhiODBkYzkiLCJpc3MiOiJBRU1FVCIsImlhdCI6MTY2NjQ2OTcxNSwidXNlcklkIjoiOGE1NTg1MTEtNTExNy00ODE2LWJjODktYWJlZDQ4YjgwZGM5Iiwicm9sZSI6IiJ9.HEMR77lZy2ASjmOxJa8ppx2J8Za1IViurMX3p1reVBU"</span></span>
+<span id="cb584-5"><a href="#cb584-5"></a></span>
+<span id="cb584-6"><a href="#cb584-6"></a><span class="fu">aemet_api_key</span>(apikey, <span class="at">install =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+</section>
+<section id="importing-from-aemet" class="slide level2">
+<h2>Importing from (aemet)</h2>
+<p>With this package we can do a <span class="hl-yellow"><strong>search for stations</strong></span> to know both its postal code and its identifier code within the AEMET network (for example, the station of the airport of El Prat, Barcelona, is the code <code>"0076"</code>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb585"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb585-1"><a href="#cb585-1"></a>stations <span class="ot">&lt;-</span> <span class="fu">aemet_stations</span>()</span>
+<span id="cb585-2"><a href="#cb585-2"></a>stations</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb586"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb586-1"><a href="#cb586-1"></a><span class="fu">aemet_last_obs</span>(<span class="st">"0076"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+
+</div>
+</section>
+<section id="tu-turno-6" class="slide level2">
+<h2>💻 Your turn</h2>
+<p><span style="color:#444442;"><strong>Try to solve the following exercises without looking at the solutions</strong></span></p>
+<div class="panel-tabset">
+<ul id="tabset-13" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-13-1"><span class="hl-yellow"><strong>Exercise 1</strong></span></a></li><li><a href="#tabset-13-2"><span class="hl-yellow"><strong>Exercise 2</strong></span></a></li><li><a href="#tabset-13-3"><span class="hl-yellow"><strong>Exercise 3</strong></span></a></li><li><a href="#tabset-13-4"><span class="hl-yellow"><strong>Exercise 4</strong></span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-13-1">
+<p>📝 The <code>who</code> dataset we have used in previous exercises, export it to a native <code>R</code> format in the <code>data</code> folder of the project</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb587"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb587-1"><a href="#cb587-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb587-2"><a href="#cb587-2"></a><span class="fu">save</span>(who, <span class="at">file =</span> <span class="st">"./data/who.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-13-2">
+<p>📝 Loads the <code>who</code> dataset but from the data folder (import the file created in the previous exercise)</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb588"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb588-1"><a href="#cb588-1"></a><span class="fu">load</span>(<span class="st">"./data/who.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-13-3">
+<p>📝 Repeats the same (export and import) in 4 formats: <code>.csv</code>, <code>.xlsx</code>, <code>.sav</code> (spss) and <code>.dta</code> (stata)</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb589"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb589-1"><a href="#cb589-1"></a><span class="co"># csv</span></span>
+<span id="cb589-2"><a href="#cb589-2"></a><span class="fu">library</span>(readr)</span>
+<span id="cb589-3"><a href="#cb589-3"></a><span class="fu">write_csv</span>(who, <span class="at">file =</span> <span class="st">"./data/who.csv"</span>)</span>
+<span id="cb589-4"><a href="#cb589-4"></a>who_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"./data/who.csv"</span>)</span>
+<span id="cb589-5"><a href="#cb589-5"></a></span>
+<span id="cb589-6"><a href="#cb589-6"></a><span class="co"># excel</span></span>
+<span id="cb589-7"><a href="#cb589-7"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb589-8"><a href="#cb589-8"></a><span class="fu">write.xlsx</span>(who, <span class="at">file =</span> <span class="st">"./data/who.xlsx"</span>)</span>
+<span id="cb589-9"><a href="#cb589-9"></a>who_data <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="at">path =</span> <span class="st">"./data/who.xlsx"</span>)</span>
+<span id="cb589-10"><a href="#cb589-10"></a></span>
+<span id="cb589-11"><a href="#cb589-11"></a><span class="co"># sas y stata</span></span>
+<span id="cb589-12"><a href="#cb589-12"></a><span class="fu">library</span>(haven)</span>
+<span id="cb589-13"><a href="#cb589-13"></a><span class="fu">write_sav</span>(who, <span class="at">path =</span> <span class="st">"./data/who.sav"</span>)</span>
+<span id="cb589-14"><a href="#cb589-14"></a>who_data <span class="ot">&lt;-</span> <span class="fu">read_spss</span>(<span class="at">path =</span> <span class="st">"./data/who.sav"</span>)</span>
+<span id="cb589-15"><a href="#cb589-15"></a></span>
+<span id="cb589-16"><a href="#cb589-16"></a><span class="fu">write_dta</span>(who, <span class="at">path =</span> <span class="st">"./data/who.dta"</span>)</span>
+<span id="cb589-17"><a href="#cb589-17"></a>who_data <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="at">path =</span> <span class="st">"./data/who.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-13-4">
+<p>📝 Repeat the loading of <code>who.csv</code> but only select the first 4 columns already in the load.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb590"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb590-1"><a href="#cb590-1"></a>who_select <span class="ot">&lt;-</span></span>
+<span id="cb590-2"><a href="#cb590-2"></a>  <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"./data/who.csv"</span>,</span>
+<span id="cb590-3"><a href="#cb590-3"></a>           <span class="at">col_select =</span> <span class="fu">c</span>(<span class="st">"country"</span>, <span class="st">"iso2"</span>, <span class="st">"iso3"</span>, <span class="st">"year"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="case-6" class="slide level2">
+<h2>🐣 Case study 6</h2>
+<p>In the data folder you have the dataset <code>breast-cancer-wisconsin-data.csv</code>. Create a <code>.qmd</code> file and customize it to include the following:</p>
+<ol type="1">
+<li>Import the csv file into a <code>tibble</code>. Is it tidydata? How many patients and variables do we have?</li>
+</ol>
+<div class="fragment">
+<ol start="2" type="1">
+<li>The dataset represents breast cancer data (<code>id</code> identifier, <code>diagnosis</code> the malignant/benign diagnosis and all other tumor properties). What % had a malignant tumor and what % a benign one?</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li>Which of the two types of tumors have, on average, a higher radius?</li>
+</ol>
+</div>
+</section>
+<section id="case-study-6" class="slide level2">
+<h2>🐣 Case study 6</h2>
+<ol start="4" type="1">
+<li>Seek the help of the <code>t.test()</code> function. This function allows us to test whether or not the means of two distributions are equal. Can we reject the null hypothesis that the radius means are the same, under a significance of <span class="math inline">\(alpha = 0.05\)</span>?</li>
+</ol>
+</section>
+<section id="functions" class="slide level2">
+<h2>Functions</h2>
+<p>Not only can we use <strong>default functions</strong> that come already loaded in packages, we can also <span class="hl-yellow"><strong>create our own functions</strong></span> to <strong>automate tasks</strong>.</p>
+<p>How to <span class="hl-purple"><strong>create our own function</strong></span>? Let’s take a look at its <strong>basic scheme</strong>:</p>
+<div class="fragment">
+<ul>
+<li><span class="hl-yellow"><strong>Name</strong></span>: for example <code>name_fun</code> (no spaces or strange characters). To the name we <span class="hl-yellow"><strong>assign the reserved word</strong></span> <code>function()</code> .</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Define <span class="hl-yellow"><strong>input arguments</strong></span> (inside <code>function()</code>).</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb591"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb591-1"><a href="#cb591-1"></a>name_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(input1, input2, ...) {</span>
+<span id="cb591-2"><a href="#cb591-2"></a>  </span>
+<span id="cb591-3"><a href="#cb591-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="functions-1" class="slide level2">
+<h2>Functions</h2>
+<p>Not only can we use <strong>default functions</strong> that come already loaded in packages, we can also <span class="hl-yellow"><strong>create our own functions</strong></span> to <strong>automate tasks</strong>.</p>
+<p>How to <span class="hl-purple"><strong>create our own function</strong></span>? Let’s look at its <strong>basic scheme</strong>:</p>
+<ul>
+<li><span class="hl-yellow"><strong>Body</strong></span> function inside <code>{ }</code>.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>We end the function with the <span class="hl-yellow"><strong>output</strong></span> arguments with <code>return()</code>.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb592"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb592-1"><a href="#cb592-1"></a>name_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(input1, input2, ...) {</span>
+<span id="cb592-2"><a href="#cb592-2"></a>  </span>
+<span id="cb592-3"><a href="#cb592-3"></a>  <span class="co"># Code</span></span>
+<span id="cb592-4"><a href="#cb592-4"></a>  code</span>
+<span id="cb592-5"><a href="#cb592-5"></a>  </span>
+<span id="cb592-6"><a href="#cb592-6"></a>  <span class="co"># Output</span></span>
+<span id="cb592-7"><a href="#cb592-7"></a>  <span class="fu">return</span>(var_output)</span>
+<span id="cb592-8"><a href="#cb592-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="functions-2" class="slide level2">
+<h2>Functions</h2>
+<ul>
+<li><p><code>input1, input2, ...</code>: will be the <span class="hl-yellow"><strong>input arguments</strong></span>, the arguments that the function takes to execute the code inside it.</p></li>
+<li><p><code>code</code>: lines of code that we want to <span class="hl-yellow"><strong>execute the function</strong></span>.</p></li>
+<li><p><code>return(var_output)</code>: the <span class="hl-yellow"><strong>output arguments</strong></span> will be entered.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb593"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb593-1"><a href="#cb593-1"></a>name_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(input1, input2, ...) {</span>
+<span id="cb593-2"><a href="#cb593-2"></a>  </span>
+<span id="cb593-3"><a href="#cb593-3"></a>  <span class="co"># Code</span></span>
+<span id="cb593-4"><a href="#cb593-4"></a>  code</span>
+<span id="cb593-5"><a href="#cb593-5"></a>  </span>
+<span id="cb593-6"><a href="#cb593-6"></a>  <span class="co"># Output</span></span>
+<span id="cb593-7"><a href="#cb593-7"></a>  <span class="fu">return</span>(var_output)</span>
+<span id="cb593-8"><a href="#cb593-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>All variables that we define inside the function are <span class="hl-yellow"><strong>local variables: they will only exist inside the function</strong></span> unless we specify otherwise.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="functions-3" class="slide level2">
+<h2>Functions</h2>
+<p>Let’s look at a very simple example of a function for <span class="hl-yellow"><strong>calculate the area of a rectangle</strong></span>.</p>
+<div class="fragment">
+<p>Since the area of a rectangle is calculated as the <strong>product of its sides</strong>, we will need just that, its sides: those will be the <span class="hl-yellow"><strong>input arguments</strong></span> and the <span class="hl-purple"><strong>value to return</strong></span> will be just its <strong>area</strong> (<span class="math inline">\(side_1 * side_2\)</span>).</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb594"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb594-1"><a href="#cb594-1"></a><span class="co"># Definition</span></span>
+<span id="cb594-2"><a href="#cb594-2"></a>calc_area <span class="ot">&lt;-</span> <span class="cf">function</span>(side_1, side_2) {</span>
+<span id="cb594-3"><a href="#cb594-3"></a>  </span>
+<span id="cb594-4"><a href="#cb594-4"></a>  area <span class="ot">&lt;-</span> side_1 <span class="sc">*</span> side_2</span>
+<span id="cb594-5"><a href="#cb594-5"></a>  <span class="fu">return</span>(area)</span>
+<span id="cb594-6"><a href="#cb594-6"></a>  </span>
+<span id="cb594-7"><a href="#cb594-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="functions-4" class="slide level2">
+<h2>Functions</h2>
+<p>We can also do a direct definition, <strong>without storing variables along the way</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb595"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb595-1"><a href="#cb595-1"></a><span class="co"># Definition</span></span>
+<span id="cb595-2"><a href="#cb595-2"></a>calc_area <span class="ot">&lt;-</span> <span class="cf">function</span>(side_1, side_2) {</span>
+<span id="cb595-3"><a href="#cb595-3"></a>  </span>
+<span id="cb595-4"><a href="#cb595-4"></a>  <span class="fu">return</span>(side_1 <span class="sc">*</span> side_2)</span>
+<span id="cb595-5"><a href="#cb595-5"></a>  </span>
+<span id="cb595-6"><a href="#cb595-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span class="hl-yellow"><strong>How to apply the function?</strong></span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb596"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb596-1"><a href="#cb596-1"></a><span class="fu">calc_area</span>(<span class="dv">5</span>, <span class="dv">3</span>) <span class="co"># rectangle 5 x 3 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb598"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb598-1"><a href="#cb598-1"></a><span class="fu">calc_area</span>(<span class="dv">1</span>, <span class="dv">5</span>) <span class="co"># rectangle 1 x 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+</section>
+<section id="default-inputs" class="slide level2">
+<h2>Default inputs</h2>
+<p>Imagine now that we realize that 90% of the time we use this function to <span class="hl-yellow"><strong>default calculate the area of a square</strong></span> (i.e.&nbsp;we only need one side). To do this, we can define <span class="hl-yellow"><strong>default arguments</strong></span> in the function: they will take that value unless we assign another one.</p>
+<p>Why not assign <code>side_2 = side_1</code> by default, to save lines of code and time?</p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb600"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb600-1"><a href="#cb600-1"></a>calc_area <span class="ot">&lt;-</span> <span class="cf">function</span>(side_1, <span class="at">side_2 =</span> side_1) {</span>
+<span id="cb600-2"><a href="#cb600-2"></a>  </span>
+<span id="cb600-3"><a href="#cb600-3"></a>  <span class="co"># Code</span></span>
+<span id="cb600-4"><a href="#cb600-4"></a>  area <span class="ot">&lt;-</span> side_1 <span class="sc">*</span> side_2</span>
+<span id="cb600-5"><a href="#cb600-5"></a>  </span>
+<span id="cb600-6"><a href="#cb600-6"></a>  <span class="co"># Result</span></span>
+<span id="cb600-7"><a href="#cb600-7"></a>  <span class="fu">return</span>(area)</span>
+<span id="cb600-8"><a href="#cb600-8"></a>  </span>
+<span id="cb600-9"><a href="#cb600-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="default-inputs-1" class="slide level2">
+<h2>Default inputs</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb601"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb601-1"><a href="#cb601-1"></a>calc_area <span class="ot">&lt;-</span> <span class="cf">function</span>(side_1, <span class="at">side_2 =</span> side_1) {</span>
+<span id="cb601-2"><a href="#cb601-2"></a>  </span>
+<span id="cb601-3"><a href="#cb601-3"></a>  <span class="co"># Code</span></span>
+<span id="cb601-4"><a href="#cb601-4"></a>  area <span class="ot">&lt;-</span> side_1 <span class="sc">*</span> side_2</span>
+<span id="cb601-5"><a href="#cb601-5"></a>  </span>
+<span id="cb601-6"><a href="#cb601-6"></a>  <span class="co"># Result</span></span>
+<span id="cb601-7"><a href="#cb601-7"></a>  <span class="fu">return</span>(area)</span>
+<span id="cb601-8"><a href="#cb601-8"></a>  </span>
+<span id="cb601-9"><a href="#cb601-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now <span class="hl-yellow"><strong>default</strong></span> the second side will be equal to the first (if added it will use both).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb602"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb602-1"><a href="#cb602-1"></a><span class="fu">calc_area</span>(<span class="at">side_1 =</span> <span class="dv">5</span>) <span class="co"># square</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb604"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb604-1"><a href="#cb604-1"></a><span class="fu">calc_area</span>(<span class="at">side_1 =</span> <span class="dv">5</span>, <span class="at">side_2 =</span> <span class="dv">7</span>) <span class="co"># rectangle</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 35</code></pre>
+</div>
+</div>
+</section>
+<section id="multiple-output" class="slide level2">
+<h2>Multiple output</h2>
+<p>Let’s complicate the function a bit and add in the output the values of each side, labeled <code>side_1</code> and <code>side_2</code>, <span class="hl-yellow"><strong>packing the output in a list</strong></span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb606"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb606-1"><a href="#cb606-1"></a><span class="co"># Definition</span></span>
+<span id="cb606-2"><a href="#cb606-2"></a>calc_area <span class="ot">&lt;-</span> <span class="cf">function</span>(side_1, <span class="at">side_2 =</span> side_1) {</span>
+<span id="cb606-3"><a href="#cb606-3"></a>  </span>
+<span id="cb606-4"><a href="#cb606-4"></a>  <span class="co"># Code</span></span>
+<span id="cb606-5"><a href="#cb606-5"></a>  area <span class="ot">&lt;-</span> side_1 <span class="sc">*</span> side_2</span>
+<span id="cb606-6"><a href="#cb606-6"></a>  <span class="co"># Result</span></span>
+<span id="cb606-7"><a href="#cb606-7"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="st">"area"</span> <span class="ot">=</span> area, <span class="st">"side_1"</span> <span class="ot">=</span> side_1, <span class="st">"side_2"</span> <span class="ot">=</span> side_2))</span>
+<span id="cb606-8"><a href="#cb606-8"></a>  </span>
+<span id="cb606-9"><a href="#cb606-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>All the variables that we define inside the function are <span class="hl-yellow"><strong>local variables: they will only exist inside</strong></span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="introduction-to-lists" class="slide level2">
+<h2>Introduction to lists</h2>
+<p>Let’s see a small summary of the data we already know:</p>
+<ul>
+<li><p><span class="hl-yellow"><strong>vectors</strong></span>: collection of elements of the same type. They can be numbers, characters or logical values, among others.</p></li>
+<li><p><span class="hl-yellow"><strong>matrices</strong></span>: BIDIMENSIONAL collection of elements of equal type and equal length.</p></li>
+<li><p><span class="hl-yellow"><strong>data.frame / tibble</strong></span>: BIDIMENSIONAL collection of elements of equal length but of any type.</p></li>
+</ul>
+<div class="fragment">
+<p>The <span class="hl-yellow"><strong>lists</strong></span> will be <span class="hl-purple"><strong>collections of variables of different type and different length</strong></span>, with totally heterogeneous structures (even a list can have inside it another list).</p>
+</div>
+</section>
+<section id="introduction-to-lists-1" class="slide level2">
+<h2>Introduction to lists</h2>
+<p>Let’s create <span class="hl-yellow"><strong>our first list</strong></span> with <code>list()</code> with three elements: our parents’ names, our place of birth and our siblings’ ages.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb607"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb607-1"><a href="#cb607-1"></a>var_1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Paloma"</span>, <span class="st">"Gregorio"</span>)</span>
+<span id="cb607-2"><a href="#cb607-2"></a>var_2 <span class="ot">&lt;-</span> <span class="st">"Madrid"</span></span>
+<span id="cb607-3"><a href="#cb607-3"></a>var_3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">26</span>)</span>
+<span id="cb607-4"><a href="#cb607-4"></a></span>
+<span id="cb607-5"><a href="#cb607-5"></a>list_example <span class="ot">&lt;-</span></span>
+<span id="cb607-6"><a href="#cb607-6"></a>  <span class="fu">list</span>(<span class="st">"parents"</span> <span class="ot">=</span> var_1, <span class="st">"birth_place"</span> <span class="ot">=</span> var_2,</span>
+<span id="cb607-7"><a href="#cb607-7"></a>       <span class="st">"siblings_ages"</span> <span class="ot">=</span> var_3)</span>
+<span id="cb607-8"><a href="#cb607-8"></a>list_example</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$parents
+[1] "Paloma"   "Gregorio"
+
+$birth_place
+[1] "Madrid"
+
+$siblings_ages
+[1] 25 30 26</code></pre>
+</div>
+</div>
+</section>
+<section id="introduction-to-lists-2" class="slide level2">
+<h2>Introduction to lists</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb609"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb609-1"><a href="#cb609-1"></a><span class="fu">length</span>(list_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+<p>If you look at the object we have defined as a list, its <span class="hl-yellow"><strong>length</strong></span> is 3 because we have <strong>stored three elements</strong>: a vector of characters (of length 2), a character (vector of length 1), and a vector of numbers (of length 3).</p>
+<div class="fragment">
+<p>We have stored elements of <span class="hl-yellow"><strong>different type</strong></span> (something we could already do) but, in addition, of <strong>different lengths</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb611"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb611-1"><a href="#cb611-1"></a><span class="fu">dim</span>(list_example) <span class="co"># NULL since we do not have a bidim object</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NULL</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb613"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb613-1"><a href="#cb613-1"></a><span class="fu">class</span>(list_example) <span class="co"># list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "list"</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="introduction-to-lists-3" class="slide level2">
+<h2>Introduction to lists</h2>
+<p>If we put them together with a <code>tibble()</code>, since they have different lengths, we would get an <span class="hl-red"><strong>error</strong></span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb615"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb615-1"><a href="#cb615-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb615-2"><a href="#cb615-2"></a><span class="fu">tibble</span>(<span class="st">"parents"</span> <span class="ot">=</span> var_1,</span>
+<span id="cb615-3"><a href="#cb615-3"></a>       <span class="st">"birth_place"</span> <span class="ot">=</span> var_2,</span>
+<span id="cb615-4"><a href="#cb615-4"></a>       <span class="st">"siblings_ages"</span> <span class="ot">=</span> var_3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `tibble()`:
+! Tibble columns must have compatible sizes.
+• Size 2: Existing data.
+• Size 3: Column `siblings_ages`.
+ℹ Only values of size one are recycled.</code></pre>
+</div>
+</div>
+</section>
+<section id="introduction-to-lists-4" class="slide level2">
+<h2>Introduction to lists</h2>
+<ul>
+<li><span class="hl-yellow"><strong>Access by index</strong></span>: with the operator <code>[[i]]</code> we access the <strong>i-th element</strong> of the list.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb617"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb617-1"><a href="#cb617-1"></a>list_example[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Paloma"   "Gregorio"</code></pre>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="hl-yellow"><strong>Access by name</strong></span>: with the operator <code>$element_name</code> we access by its name.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb619"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb619-1"><a href="#cb619-1"></a>list_example<span class="sc">$</span>parents</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Paloma"   "Gregorio"</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>In contrast, the <span class="hl-yellow"><strong>single bracket</strong></span> allows us to access <span class="hl-yellow"><strong>several elements</strong></span> at a time</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb621"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb621-1"><a href="#cb621-1"></a><span class="co"># Many elements</span></span>
+<span id="cb621-2"><a href="#cb621-2"></a>list_example[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$parents
+[1] "Paloma"   "Gregorio"
+
+$birth_place
+[1] "Madrid"</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="multiple-output-1" class="slide level2">
+<h2>Multiple output</h2>
+<p>Before, we did not care about the order of the arguments, but now the <span class="hl-yellow"><strong>order of the input arguments matters</strong></span>, since we include <code>side_1</code> and <code>side_2</code> in the output.</p>
+<div class="fragment">
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>It is highly recommended to make the function call <span class="hl-yellow"><strong>explicitly stating the arguments</strong></span> to improve <strong>legibility and interpretability</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb623"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb623-1"><a href="#cb623-1"></a><span class="co"># Same as calc_area(5, 3)</span></span>
+<span id="cb623-2"><a href="#cb623-2"></a><span class="fu">calc_area</span>(<span class="at">side_1 =</span> <span class="dv">5</span>, <span class="at">side_2 =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$area
+[1] 15
+
+$side_1
+[1] 5
+
+$side_2
+[1] 3</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="own-functions-knowledge" class="slide level2">
+<h2>Own functions: knowledge</h2>
+<p>It seems silly what we have done, but we have crossed an important frontier: we have gone from <span class="hl-yellow"><strong>consuming knowledge</strong></span> (code from other packages, elaborated by others), to <span class="hl-purple"><strong>generating knowledge</strong></span>, creating our own functions.</p>
+</section>
+<section id="local-vs-global-variables" class="slide level2">
+<h2>Local vs global variables</h2>
+<p>An important aspect to think about with functions: what happens if we <span class="hl-yellow"><strong>name a variable inside</strong></span> a function to which we have <strong>forgotten to assign</strong> a value inside?</p>
+<div class="fragment">
+<p>We must be cautious when using functions in <code>R</code>, since due to the <span class="hl-yellow"><strong>“lexicographic rule”</strong></span>, if a variable is not defined inside the function, <code>R</code> will <span class="hl-purple"><strong>look for such a variable in the environment</strong></span> of variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb625"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb625-1"><a href="#cb625-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb625-2"><a href="#cb625-2"></a>fun_example <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb625-3"><a href="#cb625-3"></a>    </span>
+<span id="cb625-4"><a href="#cb625-4"></a>  <span class="fu">print</span>(x) <span class="co"># No output</span></span>
+<span id="cb625-5"><a href="#cb625-5"></a>}</span>
+<span id="cb625-6"><a href="#cb625-6"></a><span class="fu">fun_example</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="local-vs-global-variables-1" class="slide level2">
+<h2>Local vs global variables</h2>
+<p>If a variable <span class="hl-yellow"><strong>is already defined outside the function (global environment)</strong></span>, and is also used inside changing its value, the value <span class="hl-yellow"><strong>only changes inside</strong></span> but <span class="hl-red"><strong>not in the global environment</strong></span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb627"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb627-1"><a href="#cb627-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb627-2"><a href="#cb627-2"></a>fun_example <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb627-3"><a href="#cb627-3"></a>    </span>
+<span id="cb627-4"><a href="#cb627-4"></a>  x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb627-5"><a href="#cb627-5"></a>  <span class="fu">print</span>(x) <span class="co"># what is assigned inside</span></span>
+<span id="cb627-6"><a href="#cb627-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb628"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb628-1"><a href="#cb628-1"></a><span class="co"># what is assigned inside</span></span>
+<span id="cb628-2"><a href="#cb628-2"></a><span class="fu">fun_example</span>() <span class="co">#&lt;&lt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb630"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb630-1"><a href="#cb630-1"></a><span class="co"># what is assigned outside</span></span>
+<span id="cb630-2"><a href="#cb630-2"></a><span class="fu">print</span>(x) <span class="co">#&lt;&lt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+</section>
+<section id="local-vs-global-variables-2" class="slide level2">
+<h2>Local vs global variables</h2>
+<p>If we want it to change locally as well as <span class="hl-yellow"><strong>globally</strong></span> we must use the <span class="hl-yellow"><strong>double assignment</strong></span> (<code>&lt;&lt;-</code>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb632"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb632-1"><a href="#cb632-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb632-2"><a href="#cb632-2"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb632-3"><a href="#cb632-3"></a>fun_example <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb632-4"><a href="#cb632-4"></a>  </span>
+<span id="cb632-5"><a href="#cb632-5"></a>  <span class="co"># change locally</span></span>
+<span id="cb632-6"><a href="#cb632-6"></a>  x <span class="ot">&lt;-</span> <span class="dv">3</span> </span>
+<span id="cb632-7"><a href="#cb632-7"></a>  <span class="co"># change globally</span></span>
+<span id="cb632-8"><a href="#cb632-8"></a>  y <span class="ot">&lt;&lt;-</span> <span class="dv">0</span> <span class="co">#&lt;&lt;</span></span>
+<span id="cb632-9"><a href="#cb632-9"></a>  </span>
+<span id="cb632-10"><a href="#cb632-10"></a>  <span class="fu">print</span>(x)</span>
+<span id="cb632-11"><a href="#cb632-11"></a>  <span class="fu">print</span>(y)</span>
+<span id="cb632-12"><a href="#cb632-12"></a>}</span>
+<span id="cb632-13"><a href="#cb632-13"></a></span>
+<span id="cb632-14"><a href="#cb632-14"></a><span class="fu">fun_example</span>() <span class="co"># what is assigned inside</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3
+[1] 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb634"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb634-1"><a href="#cb634-1"></a>x <span class="co"># what is assigned outside</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb636"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb636-1"><a href="#cb636-1"></a>y <span class="co"># what is assigned outside</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+</section>
+<section id="tu-turno-6a" class="slide level2">
+<h2>💻 Your turn</h2>
+<p><span style="color:#444442;"><strong>Try to solve the following exercises without looking at the solutions</strong></span></p>
+<div class="panel-tabset">
+<ul id="tabset-14" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-14-1"><span class="hl-yellow"><strong>Exercise 1</strong></span></a></li><li><a href="#tabset-14-2"><span class="hl-yellow"><strong>Exercise 2</strong></span></a></li><li><a href="#tabset-14-3"><span class="hl-yellow"><strong>Exercise 3</strong></span></a></li><li><a href="#tabset-14-4"><span class="hl-yellow"><strong>Exercise 4</strong></span></a></li><li><a href="#tabset-14-5"><span class="hl-yellow"><strong>Exercise 5</strong></span></a></li><li><a href="#tabset-14-6"><span class="hl-yellow"><strong>Exercise 6</strong></span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-14-1">
+<p>📝 Modify the code below to define a function called <code>sum_fun</code>, so that given two elements, it returns their sum.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb638"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb638-1"><a href="#cb638-1"></a>name_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb638-2"><a href="#cb638-2"></a>  sum <span class="ot">&lt;-</span> <span class="co"># código a ejecutar</span></span>
+<span id="cb638-3"><a href="#cb638-3"></a>  <span class="fu">return</span>()</span>
+<span id="cb638-4"><a href="#cb638-4"></a>}</span>
+<span id="cb638-5"><a href="#cb638-5"></a><span class="fu">sum_fun</span>(<span class="dv">3</span>, <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb639"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb639-1"><a href="#cb639-1"></a>sum_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb639-2"><a href="#cb639-2"></a>  sum <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span>
+<span id="cb639-3"><a href="#cb639-3"></a>  <span class="fu">return</span>(sum)</span>
+<span id="cb639-4"><a href="#cb639-4"></a>}</span>
+<span id="cb639-5"><a href="#cb639-5"></a><span class="fu">sum_fun</span>(<span class="dv">3</span>, <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-14-2">
+<p>📝 Modify the code below to define a function called <code>product_fun</code>, so that given two elements, it returns their product, but by default it calculates the square</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb640"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb640-1"><a href="#cb640-1"></a>name_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb640-2"><a href="#cb640-2"></a>  product <span class="ot">&lt;-</span> <span class="co"># code</span></span>
+<span id="cb640-3"><a href="#cb640-3"></a>  <span class="fu">return</span>()</span>
+<span id="cb640-4"><a href="#cb640-4"></a>}</span>
+<span id="cb640-5"><a href="#cb640-5"></a><span class="fu">product_fun</span>(<span class="dv">3</span>)</span>
+<span id="cb640-6"><a href="#cb640-6"></a><span class="fu">product_fun</span>(<span class="dv">3</span>, <span class="sc">-</span><span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb641"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb641-1"><a href="#cb641-1"></a>product_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">y =</span> x) {</span>
+<span id="cb641-2"><a href="#cb641-2"></a>  product <span class="ot">&lt;-</span> x <span class="sc">*</span> y</span>
+<span id="cb641-3"><a href="#cb641-3"></a>  <span class="fu">return</span>(product)</span>
+<span id="cb641-4"><a href="#cb641-4"></a>}</span>
+<span id="cb641-5"><a href="#cb641-5"></a><span class="fu">product_fun</span>(<span class="dv">3</span>)</span>
+<span id="cb641-6"><a href="#cb641-6"></a><span class="fu">product_fun</span>(<span class="dv">3</span>, <span class="sc">-</span><span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-14-3">
+<p>📝 Define a function called <code>equal_names</code> that, given two names, tells us if they are equal or not. Do this by considering case-sensitive, and case-insensitive. Take a look at the <code>{stringr}</code> package.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb642"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb642-1"><a href="#cb642-1"></a><span class="co"># Case-sensitive</span></span>
+<span id="cb642-2"><a href="#cb642-2"></a>equal_names <span class="ot">&lt;-</span> <span class="cf">function</span>(p_1, p_2) {</span>
+<span id="cb642-3"><a href="#cb642-3"></a>  <span class="fu">return</span>(p_1 <span class="sc">==</span> p_2)</span>
+<span id="cb642-4"><a href="#cb642-4"></a>}</span>
+<span id="cb642-5"><a href="#cb642-5"></a><span class="fu">equal_names</span>(<span class="st">"Javi"</span>, <span class="st">"javi"</span>)</span>
+<span id="cb642-6"><a href="#cb642-6"></a><span class="fu">equal_names</span>(<span class="st">"Javi"</span>, <span class="st">"Lucía"</span>)</span>
+<span id="cb642-7"><a href="#cb642-7"></a></span>
+<span id="cb642-8"><a href="#cb642-8"></a>equal_names <span class="ot">&lt;-</span> <span class="cf">function</span>(p_1, p_2) {</span>
+<span id="cb642-9"><a href="#cb642-9"></a>  <span class="fu">return</span>(<span class="fu">toupper</span>(p_1) <span class="sc">==</span> <span class="fu">toupper</span>(p_2))</span>
+<span id="cb642-10"><a href="#cb642-10"></a>}</span>
+<span id="cb642-11"><a href="#cb642-11"></a><span class="fu">equal_names</span>(<span class="st">"Javi"</span>, <span class="st">"javi"</span>)</span>
+<span id="cb642-12"><a href="#cb642-12"></a><span class="fu">equal_names</span>(<span class="st">"Javi"</span>, <span class="st">"Lucía"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-14-4">
+<p>📝 Create a function called <code>BMI_calc</code> that, given two arguments (weight and height in meters) and a name, returns a list with the BMI and the name.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb643"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb643-1"><a href="#cb643-1"></a>BMI_calc <span class="ot">&lt;-</span> <span class="cf">function</span>(names, w, h) {</span>
+<span id="cb643-2"><a href="#cb643-2"></a>  </span>
+<span id="cb643-3"><a href="#cb643-3"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="st">"names"</span> <span class="ot">=</span> names, <span class="st">"BMI"</span> <span class="ot">=</span> w<span class="sc">/</span>(h<span class="sc">^</span><span class="dv">2</span>)))</span>
+<span id="cb643-4"><a href="#cb643-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-14-5">
+<p>📝 Repeat the above exercise but with another optional argument called units (by default, <code>units = "m"</code>). Develop the function so that it does the right thing if <code>units = "m"</code> and if <code>units = "cm"</code>.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb644"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb644-1"><a href="#cb644-1"></a>BMI_calc <span class="ot">&lt;-</span> <span class="cf">function</span>(names, w, h, <span class="at">units =</span> <span class="st">"m"</span>) {</span>
+<span id="cb644-2"><a href="#cb644-2"></a>  </span>
+<span id="cb644-3"><a href="#cb644-3"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="st">"names"</span> <span class="ot">=</span> names,</span>
+<span id="cb644-4"><a href="#cb644-4"></a>              <span class="st">"BMI"</span> <span class="ot">=</span> w<span class="sc">/</span>(<span class="fu">if_else</span>(units <span class="sc">==</span> <span class="st">"m"</span>, h, h<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span>)))</span>
+<span id="cb644-5"><a href="#cb644-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-14-6">
+<p>📝 Create a tibble of 7 persons, with three variables (invent name, and simulate weight, height in centimeters), and apply the defined function so that we obtain a fourth column with their BMI.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb645"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb645-1"><a href="#cb645-1"></a>data <span class="ot">&lt;-</span></span>
+<span id="cb645-2"><a href="#cb645-2"></a>  <span class="fu">tibble</span>(<span class="st">"names"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"javi"</span>, <span class="st">"sandra"</span>, <span class="st">"laura"</span>,</span>
+<span id="cb645-3"><a href="#cb645-3"></a>                       <span class="st">"ana"</span>, <span class="st">"carlos"</span>, <span class="st">"leo"</span>, <span class="cn">NA</span>),</span>
+<span id="cb645-4"><a href="#cb645-4"></a>         <span class="st">"w"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">7</span>, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="dv">1</span>),</span>
+<span id="cb645-5"><a href="#cb645-5"></a>         <span class="st">"h"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">7</span>, <span class="at">mean =</span> <span class="dv">168</span>, <span class="at">sd =</span> <span class="dv">5</span>))</span>
+<span id="cb645-6"><a href="#cb645-6"></a></span>
+<span id="cb645-7"><a href="#cb645-7"></a>BMI <span class="sc">|&gt;</span> </span>
+<span id="cb645-8"><a href="#cb645-8"></a>  <span class="fu">mutate</span>(<span class="at">BMI =</span> <span class="fu">BMI_calc</span>(names, w, h, <span class="at">units =</span> <span class="st">"cm"</span>)<span class="sc">$</span>BMI)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="case-6-b" class="slide level2">
+<h2>🐣 Case study 6b: funcitons</h2>
+<p>Define a function called <code>temperature_converter</code> that, given a temperature in Fahrenheit, Celsius or Kelvin, converts it to any of the others (think what arguments the user needs). Apply the function to the <code>Temp</code> column of the <code>airquality</code> set, and incorporate it into the file in a new <code>Temp_Celsius</code> column.</p>
 <div class="footer footer-default">
 <p><a href="..."><strong>Javier Álvarez Liébana</strong></a> • Master in Computational Social Sciences • 2023-2024</p>
-</div>
 </div>
 </section></section>
     </div>
