@@ -546,7 +546,7 @@ Master in Computational Social Sciences • 2023-2024
 <td style="text-align: center;"><a href="#/clase-6">6</a></td>
 <td style="text-align: center;">S6</td>
 <td style="text-align: center;">19 oct</td>
-<td style="text-align: center;">Import/export and functions</td>
+<td style="text-align: center;">Import/export</td>
 <td style="text-align: center;"><a href="https://github.com/dadosdelaplace/mucss-data-programming/material/scripts">📝</a></td>
 <td style="text-align: center;"><a href="#/tu-turno-4">💻</a></td>
 <td style="text-align: center;"><a href="#/caso-práctico-3">🐣</a></td>
@@ -558,7 +558,7 @@ Master in Computational Social Sciences • 2023-2024
 <td style="text-align: center;"><a href="#/clase-7">7</a></td>
 <td style="text-align: center;">S7</td>
 <td style="text-align: center;">24 oct</td>
-<td style="text-align: center;">Functions, control flow structures and joins</td>
+<td style="text-align: center;">Functions</td>
 <td style="text-align: center;"><a href="https://github.com/dadosdelaplace/mucss-data-programming/material/scripts">📝</a></td>
 <td style="text-align: center;"><a href="#/tu-turno-4">💻</a></td>
 <td style="text-align: center;"><a href="#/caso-práctico-3">🐣</a></td>
@@ -570,7 +570,7 @@ Master in Computational Social Sciences • 2023-2024
 <td style="text-align: center;"><a href="#/clase-8">8</a></td>
 <td style="text-align: center;">S7</td>
 <td style="text-align: center;">26 oct</td>
-<td style="text-align: center;">Advance data types: list, factors and strings</td>
+<td style="text-align: center;">Control flow structures. Factors, lists and strings</td>
 <td style="text-align: center;"><a href="https://github.com/dadosdelaplace/mucss-data-programming/material/scripts">📝</a></td>
 <td style="text-align: center;"><a href="#/tu-turno-4">💻</a></td>
 <td style="text-align: center;"><a href="#/caso-práctico-3">🐣</a></td>
@@ -582,7 +582,7 @@ Master in Computational Social Sciences • 2023-2024
 <td style="text-align: center;"><a href="#/clase-9">9</a></td>
 <td style="text-align: center;">S10</td>
 <td style="text-align: center;">16 nov</td>
-<td style="text-align: center;">Advance data management</td>
+<td style="text-align: center;">Joins and SQL</td>
 <td style="text-align: center;"><a href="https://github.com/dadosdelaplace/mucss-data-programming/material/scripts">📝</a></td>
 <td style="text-align: center;"><a href="#/tu-turno-4">💻</a></td>
 <td style="text-align: center;"><a href="#/caso-práctico-3">🐣</a></td>
@@ -599,7 +599,7 @@ Master in Computational Social Sciences • 2023-2024
 <h2>Plannning</h2>
 <ul>
 <li><p>Individual Task I (10%): 24th October (R base, databases, tidydata)</p></li>
-<li><p>Individual Task II (20%): 7th November (Tidyverse, control flow structures, functions)</p></li>
+<li><p>Individual Task II (20%): 16th November (Tidyverse, control flow structures, functions)</p></li>
 <li><p>Individual Task III (30%): 7th December (all contents)</p></li>
 </ul>
 </section>
@@ -1378,7 +1378,7 @@ Master in Computational Social Sciences • 2023-2024
 <div class="cell">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a><span class="fu">today</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-10-19"</code></pre>
+<pre><code>[1] "2023-10-26"</code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -1388,7 +1388,7 @@ Master in Computational Social Sciences • 2023-2024
 <div class="cell">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="fu">now</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-10-19 12:38:44 CEST"</code></pre>
+<pre><code>[1] "2023-10-26 12:37:55 CEST"</code></pre>
 </div>
 </div>
 </div>
@@ -3871,8 +3871,8 @@ weights   63   70   85   95</code></pre>
 <pre><code># A tibble: 2 × 14
   name      height  mass hair_color skin_color eye_color birth_year sex   gender
   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-1 Yoda          66    17 white      green      brown            896 male  mascu…
-2 Tion Med…    206    80 none       grey       black             NA male  mascu…
+1 Arvel Cr…     NA    NA brown      fair       brown             NA male  mascu…
+2 Bib Fort…    180    NA none       pale       pink              NA male  mascu…
 # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
 #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 </div>
@@ -3917,10 +3917,10 @@ weights   63   70   85   95</code></pre>
 <pre><code># A tibble: 4 × 14
   name      height  mass hair_color skin_color eye_color birth_year sex   gender
   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-1 Taun We      213    NA none       grey       black             NA fema… femin…
-2 Shaak Ti     178    57 none       red, blue… black             NA fema… femin…
-3 Beru Whi…    165    75 brown      light      blue              47 fema… femin…
-4 Luke Sky…    172    77 blond      fair       blue              19 male  mascu…
+1 Biggs Da…    183    84 black      light      brown             24 male  mascu…
+2 Taun We      213    NA none       grey       black             NA fema… femin…
+3 Dexter J…    198   102 none       brown      yellow            NA male  mascu…
+4 San Hill     191    NA none       grey       gold              NA male  mascu…
 # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
 #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 </div>
@@ -3984,7 +3984,7 @@ weights   63   70   85   95</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb355"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb355-1"><a href="#cb355-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 6 1 4 5 6 6 4 2 4 5</code></pre>
+<pre><code> [1] 3 4 1 1 2 2 4 2 5 1</code></pre>
 </div>
 </div>
 </div>
@@ -3996,8 +3996,8 @@ weights   63   70   85   95</code></pre>
 <div class="sourceCode cell-code" id="cb357"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb357-1"><a href="#cb357-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb357-2"><a href="#cb357-2"></a>       <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.2</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.05</span>, <span class="fl">0.05</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 1 4 1 6 4 6 3 5 1 2 4 1 2 1 5 1 2 1 1 1 2 6 1 1 2 6 1 2 2 2 5 2 1 4 1 3 1 5
-[39] 3 1 1 1 3 1 1 1 1 1 1 1</code></pre>
+<pre><code> [1] 1 1 1 1 1 2 5 1 1 6 5 2 2 1 1 6 1 1 1 1 1 2 1 1 1 1 1 1 3 1 5 1 1 1 5 1 2 1
+[39] 1 3 5 2 1 2 2 1 5 5 1 1</code></pre>
 </div>
 </div>
 </section>
@@ -5886,7 +5886,7 @@ dplyr 1.1.0.
 </section></section>
 <section>
 <section id="clase-6" class="title-slide slide level1 center">
-<h1>Lesson 6: import and functions</h1>
+<h1>Lesson 6: import/export</h1>
 <p><span style="color:#444442;"><strong>Import/export and functions</strong></span></p>
 </section>
 <section id="case-study-3" class="slide level2">
@@ -6973,6 +6973,45 @@ dplyr 1.1.0.
 <ol start="4" type="1">
 <li>Seek the help of the <code>t.test()</code> function. This function allows us to test whether or not the means of two distributions are equal. Can we reject the null hypothesis that the radius means are the same, under a significance of <span class="math inline">\(alpha = 0.05\)</span>?</li>
 </ol>
+</section></section>
+<section>
+<section id="clase-7" class="title-slide slide level1 center">
+<h1>Lesson 7: functions</h1>
+<p><span style="color:#444442;"><strong>Functions</strong></span></p>
+</section>
+<section id="summary-1" class="slide level2">
+<h2>Summary</h2>
+<p>Let’s make a brief summary of what we have learned up to now</p>
+<div class="fragment">
+<ul>
+<li><span class="hl-yellow"><strong>Lesson 1</strong></span>: main concepts about how R works (operating with vectors)</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="hl-yellow"><strong>Lesson 2</strong></span>: how to store data (first databases and tidy data)</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="hl-yellow"><strong>Lesson 3</strong></span>: first operations by rows with tidyverse (filter, slice_max, slice_min, slice, slice_sample, drop_na, arrange, distinct)</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="hl-yellow"><strong>Lesson 4</strong></span>: first operations by columns with tidyverse (select, relocate, mutate)</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="hl-yellow"><strong>Lesson 5</strong></span>: generating first summaries (count, group_by, summarise) and reports (Quarto)</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="hl-yellow"><strong>Lesson 6</strong></span>: import/export files (load, read_csv, read_xlsx, save, write_csv, write_xls, write_xlsx)</li>
+</ul>
+</div>
 </section>
 <section id="functions" class="slide level2">
 <h2>Functions</h2>
@@ -7386,7 +7425,7 @@ $side_2
 </div>
 </div>
 </section>
-<section id="tu-turno-6a" class="slide level2">
+<section id="tu-turno-7b" class="slide level2">
 <h2>💻 Your turn</h2>
 <p><span style="color:#444442;"><strong>Try to solve the following exercises without looking at the solutions</strong></span></p>
 <div class="panel-tabset">
@@ -7498,9 +7537,1192 @@ $side_2
 </div>
 </div>
 </section>
-<section id="case-6-b" class="slide level2">
-<h2>🐣 Case study 6b: funcitons</h2>
+<section id="case-7-b" class="slide level2">
+<h2>🐣 Case study 7: functions</h2>
 <p>Define a function called <code>temperature_converter</code> that, given a temperature in Fahrenheit, Celsius or Kelvin, converts it to any of the others (think what arguments the user needs). Apply the function to the <code>Temp</code> column of the <code>airquality</code> set, and incorporate it into the file in a new <code>Temp_Celsius</code> column.</p>
+</section></section>
+<section>
+<section id="clase-8" class="title-slide slide level1 center">
+<h1>Lesson 8: flow control structures</h1>
+<p><span style="color:#444442;"><strong>Flow control structures</strong></span></p>
+</section>
+<section id="flow-control-structures" class="slide level2">
+<h2>Flow control structures</h2>
+<p>A <span class="hl-yellow"><strong>control expression</strong></span> will be a set of commands that allow us to <span class="hl-yellow"><strong>decide the path</strong></span> along which we want our code to progress:</p>
+<ul>
+<li><p>What do we do if A happens?</p></li>
+<li><p>What if B happens?</p></li>
+<li><p>Do I have to program X times the same thing if you want it to repeat?</p></li>
+</ul>
+<div class="fragment">
+<p>If you have programmed in any other language, you will be familiar with <span class="hl-yellow"><strong>conditional structures</strong></span> such as an <code>if (blabla) {...} else {...}</code> (which we will sometimes use) or <span class="hl-yellow"><strong>loops</strong></span> <code>for/while</code> (which we will try to avoid as much as possible).</p>
+</div>
+</section>
+<section id="if-structures" class="slide level2">
+<h2>If structures</h2>
+<p>One of the most famous control structures of any programming language is the <span class="hl-yellow"><strong>conditional structure</strong></span> <code>if</code>.</p>
+<blockquote>
+<p>IF the imposed conditions are fulfilled (TRUE), it executes the commands we have inside it.</p>
+</blockquote>
+<p>For example, the structure <code>if (x == 1) { code A }</code> will <span class="hl-yellow"><strong>execute the code between braces</strong></span> but <span class="hl-purple"><strong>IF AND ONLY IF</strong></span> the <span class="hl-purple"><strong>condition is true</strong></span> (in this case, only if <code>x</code> equals 1). Otherwise, it does nothing.</p>
+<div class="fragment">
+<p>Let’s define for example a simple variable, the ages of 8 people and let’s check which of them are minors.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb646"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb646-1"><a href="#cb646-1"></a>ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">14</span>, <span class="dv">17</span>, <span class="dv">24</span>, <span class="dv">56</span>, <span class="dv">31</span>, <span class="dv">20</span>, <span class="dv">87</span>, <span class="dv">73</span>)</span>
+<span id="cb646-2"><a href="#cb646-2"></a>ages <span class="sc">&lt;</span> <span class="dv">18</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="if-structures-1" class="slide level2">
+<h2>If structures</h2>
+<p>Remember that with the <code>any()</code> and <code>all()</code> functions we can know if <span class="hl-yellow"><strong>all or any of the elements</strong></span> of a vector fulfill a condition.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb648"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb648-1"><a href="#cb648-1"></a><span class="fu">any</span>(ages <span class="sc">&lt;</span> <span class="dv">18</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>We are going to build our first conditional structure: we want that, <span class="hl-yellow"><strong>If there is a minor, print us a message</strong></span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb650"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb650-1"><a href="#cb650-1"></a><span class="cf">if</span> (<span class="fu">any</span>(ages <span class="sc">&lt;</span> <span class="dv">18</span>)) { </span>
+<span id="cb650-2"><a href="#cb650-2"></a>  </span>
+<span id="cb650-3"><a href="#cb650-3"></a>  <span class="fu">print</span>(<span class="st">"There is any person of legal age"</span>)</span>
+<span id="cb650-4"><a href="#cb650-4"></a>  </span>
+<span id="cb650-5"><a href="#cb650-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "There is any person of legal age"</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="if-structures-2" class="slide level2">
+<h2>If structures</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb652"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb652-1"><a href="#cb652-1"></a><span class="cf">if</span> (<span class="fu">any</span>(ages <span class="sc">&lt;</span> <span class="dv">18</span>)) { </span>
+<span id="cb652-2"><a href="#cb652-2"></a>  </span>
+<span id="cb652-3"><a href="#cb652-3"></a>  <span class="fu">print</span>(<span class="st">"There is any person of legal age"</span>)</span>
+<span id="cb652-4"><a href="#cb652-4"></a>  </span>
+<span id="cb652-5"><a href="#cb652-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In case <span class="hl-yellow"><strong>conditions are not verified</strong></span> inside the <code>if()</code> (return <code>FALSE</code>), nothing will happen.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb653"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb653-1"><a href="#cb653-1"></a><span class="cf">if</span> (<span class="fu">all</span>(ages <span class="sc">&gt;=</span> <span class="dv">18</span>)) { </span>
+<span id="cb653-2"><a href="#cb653-2"></a>  </span>
+<span id="cb653-3"><a href="#cb653-3"></a>  <span class="fu">print</span>(<span class="st">"Everyone is of legal age"</span>)</span>
+<span id="cb653-4"><a href="#cb653-4"></a>  </span>
+<span id="cb653-5"><a href="#cb653-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Notice that in this case <strong>we have not obtained any message</strong> because the condition <code>all(ages &gt;= 18)</code> is not <code>TRUE</code> (they are not all older than 18), so <strong>it has not executed the code</strong>.</p>
+</section>
+<section id="if-else-structures" class="slide level2">
+<h2>If-else structures</h2>
+<p>The <code>if (condition) { }</code> structure can be combined with an <code>else { }</code>: when the <span class="hl-yellow"><strong>condition is not verified</strong></span> (as before), it will <span class="hl-yellow"><strong>execute the alternative code</strong></span> inside the <code>else { }</code>, allowing us to decide what happens when it IS verified and when it IS NOT.</p>
+<div class="fragment">
+<p>For example, the structure <code>if (x == 1) { code A } else { code B }</code> will execute A if <code>x</code> is 1 and B in any other case.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb654"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb654-1"><a href="#cb654-1"></a><span class="cf">if</span> (<span class="fu">all</span>(ages <span class="sc">&gt;=</span> <span class="dv">18</span>)) { </span>
+<span id="cb654-2"><a href="#cb654-2"></a>  </span>
+<span id="cb654-3"><a href="#cb654-3"></a>  <span class="fu">print</span>(<span class="st">"Everyone is of legal age"</span>)</span>
+<span id="cb654-4"><a href="#cb654-4"></a>  </span>
+<span id="cb654-5"><a href="#cb654-5"></a>} <span class="cf">else</span> {</span>
+<span id="cb654-6"><a href="#cb654-6"></a>  </span>
+<span id="cb654-7"><a href="#cb654-7"></a>  <span class="fu">print</span>(<span class="st">"There is any person under legal age"</span>)</span>
+<span id="cb654-8"><a href="#cb654-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "There is any person under legal age"</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="if-else-structures-1" class="slide level2">
+<h2>If-else structures</h2>
+<p>This <code>if - else</code> structure can be <span class="hl-yellow"><strong>nested</strong></span>: imagine that we want to perform an action if all were of legal age; otherwise, but if all minors are 16 or older, perform another action; otherwise, another action.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb656"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb656-1"><a href="#cb656-1"></a><span class="cf">if</span> (<span class="fu">all</span>(ages <span class="sc">&gt;=</span> <span class="dv">18</span>)) { </span>
+<span id="cb656-2"><a href="#cb656-2"></a>  </span>
+<span id="cb656-3"><a href="#cb656-3"></a>  <span class="fu">print</span>(<span class="st">"Everyone is of legal age"</span>)</span>
+<span id="cb656-4"><a href="#cb656-4"></a>  </span>
+<span id="cb656-5"><a href="#cb656-5"></a>} <span class="cf">else</span> <span class="cf">if</span> (<span class="fu">all</span>(ages <span class="sc">&gt;=</span> <span class="dv">16</span>)) {</span>
+<span id="cb656-6"><a href="#cb656-6"></a>  </span>
+<span id="cb656-7"><a href="#cb656-7"></a>  <span class="fu">print</span>(<span class="st">"There are some minors but all are 16 years of age or older"</span>)</span>
+<span id="cb656-8"><a href="#cb656-8"></a>  </span>
+<span id="cb656-9"><a href="#cb656-9"></a>} <span class="cf">else</span> { <span class="fu">print</span>(<span class="st">"There is any person under 16 years of age"</span>) }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "There is any person under 16 years of age"</code></pre>
+</div>
+</div>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>You can <strong>collapse the control structures</strong> by clicking on the arrow to the left of them in your script.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="if-else-vectorized-structures" class="slide level2">
+<h2>If-else vectorized structures</h2>
+<p>This conditional structure can be <span class="hl-yellow"><strong>vectorized</strong></span>: gather in a single row a large number of comparison structures with the function <code>if_else()</code> (<code>{dplyr}</code> package), whose input arguments will be</p>
+<ul>
+<li>the condition to evaluate</li>
+<li>what happens when it is met</li>
+<li>what happens when it is not met</li>
+</ul>
+<p>With the example of the ages, we are going to leave the data absent if they are under age, and if they are over age it stays as it is.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb658"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb658-1"><a href="#cb658-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb658-2"><a href="#cb658-2"></a><span class="fu">if_else</span>(ages <span class="sc">&gt;=</span> <span class="dv">18</span>, ages, <span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA NA 24 56 31 20 87 73</code></pre>
+</div>
+</div>
+</section>
+<section id="if-else-vectorized-structures-1" class="slide level2">
+<h2>If-else vectorized structures</h2>
+<p>All these structures <span class="hl-yellow"><strong>not only for numeric data</strong></span>. We are going to define a vector of names with some absent ones, and we are going to replace the absent ones by the text <code>"unknown_name"</code> (the ones that are not absent, that is to say the ones that <code>is.na()</code> returns FALSE, stay as they are).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb660"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb660-1"><a href="#cb660-1"></a>names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Juan"</span>, <span class="st">"María"</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="st">"Lucía"</span>,</span>
+<span id="cb660-2"><a href="#cb660-2"></a>           <span class="st">"Carmen"</span>, <span class="st">"Javier"</span>, <span class="cn">NA</span>, <span class="st">"Carlos"</span>, </span>
+<span id="cb660-3"><a href="#cb660-3"></a>           <span class="cn">NA</span>, <span class="st">"Gregorio"</span>, <span class="st">"Paloma"</span>)</span>
+<span id="cb660-4"><a href="#cb660-4"></a></span>
+<span id="cb660-5"><a href="#cb660-5"></a><span class="fu">if_else</span>(<span class="fu">is.na</span>(names), <span class="st">"unknown_name"</span>, names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Juan"         "María"        "unknown_name" "unknown_name" "Lucía"       
+ [6] "Carmen"       "Javier"       "unknown_name" "Carlos"       "unknown_name"
+[11] "Gregorio"     "Paloma"      </code></pre>
+</div>
+</div>
+</section>
+<section id="if-else-vectorized-structures-2" class="slide level2">
+<h2>If-else vectorized structures</h2>
+<p>It is important to remember that a logical condition actually has <span class="hl-yellow"><strong>three possible outcomes</strong></span>: <code>TRUE</code>, <code>FALSE</code> and <code>NA</code> (missing values). What happens when the <span class="hl-purple"><strong>evaluated condition produces a missing data</strong></span>?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb662"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb662-1"><a href="#cb662-1"></a>ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">NA</span>, ages, <span class="cn">NA</span>)</span>
+<span id="cb662-2"><a href="#cb662-2"></a><span class="fu">if_else</span>(ages <span class="sc">&gt;</span> <span class="dv">18</span>, <span class="st">"greater than 18"</span>, <span class="st">"otherwise"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] NA                "otherwise"       "otherwise"       "greater than 18"
+ [5] "greater than 18" "greater than 18" "greater than 18" "greater than 18"
+ [9] "greater than 18" NA               </code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>The <code>if_else()</code> function provides us with an extra argument <code>missing = ...</code> to decide the value to be assigned for missing values (by default, it returns <code>NA</code>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb664"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb664-1"><a href="#cb664-1"></a><span class="fu">if_else</span>(ages <span class="sc">&gt;</span> <span class="dv">18</span>, <span class="st">"greater than 18"</span>, <span class="st">"otherwise"</span>, <span class="at">missing =</span> <span class="st">"unknown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "unknown"         "otherwise"       "otherwise"       "greater than 18"
+ [5] "greater than 18" "greater than 18" "greater than 18" "greater than 18"
+ [9] "greater than 18" "unknown"        </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="loops" class="slide level2">
+<h2>Loops</h2>
+<p>Although most of the time they can be replaced by other more readable and efficient expressions, it is important to know another well-known control expression: <span class="hl-yellow"><strong>loops</strong></span>.</p>
+<ul>
+<li><p><code>for { }</code>: allows <span class="hl-yellow"><strong>repeating the same code</strong></span> a <span class="hl-purple"><strong>fixed and known number</strong></span> of times (usually based on an index).</p></li>
+<li><p><code>while { }</code>: allows <span class="hl-yellow"><strong>repeating the same code</strong></span> a <span class="hl-purple"><strong>indeterminate number of times</strong></span>, until a given <strong>condition</strong> is no longer met.</p></li>
+</ul>
+</section>
+<section id="for-loops" class="slide level2">
+<h2>For loops</h2>
+<p>A <span class="hl-yellow"><strong>for-loop</strong></span> is a structure that allows us to <span class="hl-yellow"><strong>repeat</strong></span> a set of commands a <span class="hl-purple"><strong>finite and known number</strong></span> of times: given a <strong>set of indices</strong>, the loop will loop through each of them.</p>
+<div class="fragment">
+<p>We are going to define a vector <code>x</code> any and print each element squared: if we wanted the first element squared we would write <code>x[1]^2</code>, if we wanted to do it in general, for the i-th element, <code>x[i]^2</code>. What we will do inside the <code>for (indices) { code }</code> is to indicate which values <code>i</code> will take (<span class="hl-yellow"><strong>index vector</strong></span>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb666"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb666-1"><a href="#cb666-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="sc">-</span><span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">4</span>)</span>
+<span id="cb666-2"><a href="#cb666-2"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<span id="cb666-3"><a href="#cb666-3"></a>  </span>
+<span id="cb666-4"><a href="#cb666-4"></a>  <span class="fu">print</span>(x[i]<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb666-5"><a href="#cb666-5"></a>  </span>
+<span id="cb666-6"><a href="#cb666-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0
+[1] 49
+[1] 1
+[1] 16</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="for-loops-1" class="slide level2">
+<h2>For loops</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb668"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb668-1"><a href="#cb668-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) { </span>
+<span id="cb668-2"><a href="#cb668-2"></a>  <span class="fu">print</span>(x[i]<span class="sc">^</span><span class="dv">2</span>) </span>
+<span id="cb668-3"><a href="#cb668-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Inside the parentheses <code>for ()</code> we have just a <span class="hl-yellow"><strong>sequence of numbers</strong></span> that we have learned to construct. If we wanted it to do the same but excluding for example the second element it would be enough to define the indexes to traverse as <code>c(1, 3, 4)</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb669"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb669-1"><a href="#cb669-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>)) {</span>
+<span id="cb669-2"><a href="#cb669-2"></a>  </span>
+<span id="cb669-3"><a href="#cb669-3"></a>  <span class="fu">print</span>(x[i]<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb669-4"><a href="#cb669-4"></a>  </span>
+<span id="cb669-5"><a href="#cb669-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0
+[1] 1
+[1] 16</code></pre>
+</div>
+</div>
+</section>
+<section id="for-loops-2" class="slide level2">
+<h2>For loops</h2>
+<p>We can also define a variable <code>y &lt;- rep(0, 4)</code> (an “empty” <strong>vector</strong> filled with zeros), storing the <span class="hl-yellow"><strong>i-th element of the vector</strong></span> defined as <code>x[i]^2</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb671"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb671-1"><a href="#cb671-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">4</span>)</span>
+<span id="cb671-2"><a href="#cb671-2"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<span id="cb671-3"><a href="#cb671-3"></a>  </span>
+<span id="cb671-4"><a href="#cb671-4"></a>  y[i] <span class="ot">&lt;-</span> x[i]<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb671-5"><a href="#cb671-5"></a>  </span>
+<span id="cb671-6"><a href="#cb671-6"></a>}</span>
+<span id="cb671-7"><a href="#cb671-7"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  0 49  1 16</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>The above is equivalent to this</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb673"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb673-1"><a href="#cb673-1"></a>y <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb673-2"><a href="#cb673-2"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  0 49  1 16</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="avoiding-loops" class="slide level2">
+<h2>Avoiding loops</h2>
+<p>Using the <code>{microbenchmark}</code> package we can see how <span class="hl-yellow"><strong>loops are less efficient</strong></span> (hence most of the time we try to avoid them if there is an alternative).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb675"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb675-1"><a href="#cb675-1"></a><span class="fu">library</span>(microbenchmark)</span>
+<span id="cb675-2"><a href="#cb675-2"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span></span>
+<span id="cb675-3"><a href="#cb675-3"></a><span class="fu">microbenchmark</span>(y <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span>, </span>
+<span id="cb675-4"><a href="#cb675-4"></a>               <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>) { y[i] <span class="ot">&lt;-</span> x[i]<span class="sc">^</span><span class="dv">2</span> },</span>
+<span id="cb675-5"><a href="#cb675-5"></a>               <span class="at">times =</span> <span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Unit: microseconds
+                                    expr      min       lq        mean   median
+                                y &lt;- x^2    1.722    2.132    2.776274    2.501
+ for (i in 1:100) {     y[i] &lt;- x[i]^2 } 1504.864 1630.836 1963.309928 1808.612
+       uq      max neval
+    3.198   16.113   500
+ 2089.586 7816.158   500</code></pre>
+</div>
+</div>
+</section>
+<section id="for-loops-3" class="slide level2">
+<h2>For loops</h2>
+<p>Let’s look at another example <span class="hl-yellow"><strong>combining numeric and character vectors</strong></span>: let’s define again a vector of ages and names, and let’s go through each one printing a message on the screen.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb677"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb677-1"><a href="#cb677-1"></a>names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Javi"</span>, <span class="st">"Laura"</span>, <span class="st">"Carlos"</span>, <span class="st">"Lucía"</span>, <span class="st">"Mar"</span>)</span>
+<span id="cb677-2"><a href="#cb677-2"></a>ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">33</span>, <span class="dv">51</span>, <span class="dv">18</span>, <span class="dv">43</span>, <span class="dv">29</span>)</span>
+<span id="cb677-3"><a href="#cb677-3"></a></span>
+<span id="cb677-4"><a href="#cb677-4"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) { </span>
+<span id="cb677-5"><a href="#cb677-5"></a>  </span>
+<span id="cb677-6"><a href="#cb677-6"></a>  <span class="fu">print</span>(<span class="fu">glue</span>(<span class="st">"{names[i]} are {ages[i]} years old"</span>)) </span>
+<span id="cb677-7"><a href="#cb677-7"></a>  </span>
+<span id="cb677-8"><a href="#cb677-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Javi are 33 years old
+Laura are 51 years old
+Carlos are 18 years old
+Lucía are 43 years old
+Mar are 29 years old</code></pre>
+</div>
+</div>
+</section>
+<section id="for-loops-4" class="slide level2">
+<h2>For loops</h2>
+<p>Notice that <span class="hl-yellow"><strong>if we don’t want to worry about adding another person</strong></span>, we can make the loop start at 1 and end at the <span class="hl-yellow"><strong>last place</strong></span> (whichever one it is), using <code>length()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb679"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb679-1"><a href="#cb679-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(names)) { </span>
+<span id="cb679-2"><a href="#cb679-2"></a>  </span>
+<span id="cb679-3"><a href="#cb679-3"></a>  <span class="fu">print</span>(<span class="fu">glue</span>(<span class="st">"{names[i]} are {ages[i]} years old"</span>)) </span>
+<span id="cb679-4"><a href="#cb679-4"></a>  </span>
+<span id="cb679-5"><a href="#cb679-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Javi are 33 years old
+Laura are 51 years old
+Carlos are 18 years old
+Lucía are 43 years old
+Mar are 29 years old</code></pre>
+</div>
+</div>
+</section>
+<section id="for-loops-5" class="slide level2">
+<h2>For loops</h2>
+<p>Although the set that the loop runs through is usually numeric indices, we can <span class="hl-yellow"><strong>run through any type of object</strong></span>, for example days of the week</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb681"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb681-1"><a href="#cb681-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb681-2"><a href="#cb681-2"></a>week_days <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"monday"</span>, <span class="st">"tuesday"</span>, <span class="st">"wednesday"</span>, <span class="st">"thursday"</span>,</span>
+<span id="cb681-3"><a href="#cb681-3"></a>               <span class="st">"friday"</span>, <span class="st">"saturday"</span>, <span class="st">"sunday"</span>)</span>
+<span id="cb681-4"><a href="#cb681-4"></a></span>
+<span id="cb681-5"><a href="#cb681-5"></a><span class="cf">for</span> (days <span class="cf">in</span> week_days) {</span>
+<span id="cb681-6"><a href="#cb681-6"></a>  </span>
+<span id="cb681-7"><a href="#cb681-7"></a>  <span class="fu">print</span>(<span class="fu">str_to_upper</span>(days))</span>
+<span id="cb681-8"><a href="#cb681-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "MONDAY"
+[1] "TUESDAY"
+[1] "WEDNESDAY"
+[1] "THURSDAY"
+[1] "FRIDAY"
+[1] "SATURDAY"
+[1] "SUNDAY"</code></pre>
+</div>
+</div>
+</section>
+<section id="for-loops-6" class="slide level2">
+<h2>For loops</h2>
+<p>One last example: let’s go through our <code>swiss</code> dataset from the <code>{datasets}</code> package and we will <strong>pass to missing data</strong> all the fertility values greater than 80.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb683"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb683-1"><a href="#cb683-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(swiss)) {</span>
+<span id="cb683-2"><a href="#cb683-2"></a>  </span>
+<span id="cb683-3"><a href="#cb683-3"></a>  <span class="cf">if</span> (swiss<span class="sc">$</span>Fertility[i] <span class="sc">&gt;</span> <span class="dv">80</span>) { </span>
+<span id="cb683-4"><a href="#cb683-4"></a>    </span>
+<span id="cb683-5"><a href="#cb683-5"></a>    swiss<span class="sc">$</span>Fertility[i] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb683-6"><a href="#cb683-6"></a>    </span>
+<span id="cb683-7"><a href="#cb683-7"></a>  }</span>
+<span id="cb683-8"><a href="#cb683-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>This would be exactly equivalent to the <code>if_else()</code> vectorized <code>if_else()</code> we saw previously</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb684"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb684-1"><a href="#cb684-1"></a><span class="fu">data</span>(<span class="st">"swiss"</span>)</span>
+<span id="cb684-2"><a href="#cb684-2"></a>swiss<span class="sc">$</span>Fertility <span class="ot">&lt;-</span> <span class="fu">if_else</span>(swiss<span class="sc">$</span>Fertility <span class="sc">&gt;</span> <span class="dv">80</span>, <span class="cn">NA</span>, swiss<span class="sc">$</span>Fertility)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="while-loops" class="slide level2">
+<h2>While loops</h2>
+<p>Another way to design a loop is with the <code>while { }</code> structure, which will execute the loop an <span class="hl-yellow"><strong>unknown a priori number of times</strong></span>, it will do so until the <span class="hl-yellow"><strong>imposed condition is no longer true</strong></span>. For example, we will initialize a variable <code>cycles &lt;- 1</code>, and at each step we will increment by one unit, and we will not exit the loop until <code>cycles &gt; 4</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb685"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb685-1"><a href="#cb685-1"></a>cycles <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb685-2"><a href="#cb685-2"></a><span class="cf">while</span>(cycles <span class="sc">&lt;=</span> <span class="dv">4</span>) {</span>
+<span id="cb685-3"><a href="#cb685-3"></a>  </span>
+<span id="cb685-4"><a href="#cb685-4"></a>  <span class="fu">print</span>(<span class="fu">glue</span>(<span class="st">"Not yet, cycles {cycles}"</span>)) </span>
+<span id="cb685-5"><a href="#cb685-5"></a>  cycles <span class="ot">&lt;-</span> cycles <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb685-6"><a href="#cb685-6"></a>  </span>
+<span id="cb685-7"><a href="#cb685-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Not yet, cycles 1
+Not yet, cycles 2
+Not yet, cycles 3
+Not yet, cycles 4</code></pre>
+</div>
+</div>
+</section>
+<section id="while-loops-1" class="slide level2">
+<h2>While loops</h2>
+<p>And what happens when the <span class="hl-yellow"><strong>condition never becomes FALSE</strong></span>? See for yourself.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb687"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb687-1"><a href="#cb687-1"></a><span class="cf">while</span> (<span class="dv">1</span> <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb687-2"><a href="#cb687-2"></a>  </span>
+<span id="cb687-3"><a href="#cb687-3"></a>  <span class="fu">print</span>(<span class="st">"Press ESC to abort the loop"</span>)</span>
+<span id="cb687-4"><a href="#cb687-4"></a>  </span>
+<span id="cb687-5"><a href="#cb687-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>&nbsp;</p>
+<div class="callout callout-warning callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>A <code>while { }</code> loop can be very dangerous if it is not well controlled that the loop ends at some point.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="while-loops-2" class="slide level2">
+<h2>While loops</h2>
+<p>We have two commands reserved to be able to <span class="hl-yellow"><strong>abort a loop or forcibly advance</strong></span>:</p>
+<ul>
+<li><code>break</code>: enables you to <span class="hl-yellow"><strong>stop a loop</strong></span> even if it has not reached the end of its index set to traverse (or the condition is still met).</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb688"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb688-1"><a href="#cb688-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb688-2"><a href="#cb688-2"></a>  <span class="cf">if</span> (i <span class="sc">==</span> <span class="dv">3</span>) {</span>
+<span id="cb688-3"><a href="#cb688-3"></a>    </span>
+<span id="cb688-4"><a href="#cb688-4"></a>    <span class="cf">break</span> <span class="co"># if i = 3, stop the loop</span></span>
+<span id="cb688-5"><a href="#cb688-5"></a>    </span>
+<span id="cb688-6"><a href="#cb688-6"></a>  }</span>
+<span id="cb688-7"><a href="#cb688-7"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb688-8"><a href="#cb688-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2</code></pre>
+</div>
+</div>
+</section>
+<section id="while-loops-3" class="slide level2">
+<h2>While loops</h2>
+<p>We have two commands reserved to be able to <span class="hl-yellow"><strong>abort a loop or forcibly advance</strong></span>:</p>
+<ul>
+<li><code>next</code>: <span class="hl-yellow"><strong>forces the loop to advance</strong></span> to the next iteration, aborting the current iteration it is in.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb690"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb690-1"><a href="#cb690-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
+<span id="cb690-2"><a href="#cb690-2"></a>  <span class="cf">if</span> (i <span class="sc">==</span> <span class="dv">3</span>) {</span>
+<span id="cb690-3"><a href="#cb690-3"></a>    </span>
+<span id="cb690-4"><a href="#cb690-4"></a>    <span class="cf">next</span> <span class="co"># if i = 3, we continue</span></span>
+<span id="cb690-5"><a href="#cb690-5"></a>    </span>
+<span id="cb690-6"><a href="#cb690-6"></a>  }</span>
+<span id="cb690-7"><a href="#cb690-7"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb690-8"><a href="#cb690-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2
+[1] 4
+[1] 5</code></pre>
+</div>
+</div>
+</section>
+<section id="repeat-loops" class="slide level2">
+<h2>Repeat loops</h2>
+<p>Although it is a rarely used option, there is a control structure called <code>repeat { }</code> that executes a <span class="hl-yellow"><strong>loop infinitely until we order it to stop</strong></span> with a break.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb692"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb692-1"><a href="#cb692-1"></a>count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb692-2"><a href="#cb692-2"></a><span class="cf">repeat</span> { </span>
+<span id="cb692-3"><a href="#cb692-3"></a>  </span>
+<span id="cb692-4"><a href="#cb692-4"></a>  count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb692-5"><a href="#cb692-5"></a>  <span class="cf">if</span> (count <span class="sc">&gt;=</span> <span class="dv">100</span>) { <span class="cf">break</span> }</span>
+<span id="cb692-6"><a href="#cb692-6"></a>  </span>
+<span id="cb692-7"><a href="#cb692-7"></a>}</span>
+<span id="cb692-8"><a href="#cb692-8"></a>count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 100</code></pre>
+</div>
+</div>
+</section>
+<section id="replicate" class="slide level2">
+<h2>Replicate</h2>
+<p>Another way to <span class="hl-yellow"><strong>repeat or replicate</strong></span> code, apart from the loop structures already seen, is to make use of <code>replicate()</code>, which for the moment we will not make it depend on an index: we will simply <span class="hl-yellow"><strong>repeat n times</strong></span> the same code.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb694"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb694-1"><a href="#cb694-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
+<span id="cb694-2"><a href="#cb694-2"></a><span class="fu">replicate</span>(<span class="at">n =</span> <span class="dv">3</span>, x<span class="sc">^</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    1    1
+[2,]    4    4    4
+[3,]    9    9    9</code></pre>
+</div>
+</div>
+</section>
+<section id="tu-turno-7" class="slide level2">
+<h2>💻 Your turn</h2>
+<div class="panel-tabset">
+<ul id="tabset-15" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-15-1"><span class="hl-yellow"><strong>Exercise 1</strong></span></a></li><li><a href="#tabset-15-2"><span class="hl-yellow"><strong>Exercise 2</strong></span></a></li><li><a href="#tabset-15-3"><span class="hl-yellow"><strong>Exercise 3</strong></span></a></li><li><a href="#tabset-15-4"><span class="hl-yellow"><strong>Exercise 4</strong></span></a></li><li><a href="#tabset-15-5"><span class="hl-yellow"><strong>Exercise 5</strong></span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-15-1">
+<p>📝 Modify the code below to print a message on the screen if all data in the <code>airquality</code> set are from months other than January.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb696"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb696-1"><a href="#cb696-1"></a><span class="fu">library</span>(datasets)</span>
+<span id="cb696-2"><a href="#cb696-2"></a>months <span class="ot">&lt;-</span> airquality<span class="sc">$</span>Month</span>
+<span id="cb696-3"><a href="#cb696-3"></a></span>
+<span id="cb696-4"><a href="#cb696-4"></a><span class="cf">if</span> (months <span class="sc">==</span> <span class="dv">2</span>) {</span>
+<span id="cb696-5"><a href="#cb696-5"></a>  <span class="fu">print</span>(<span class="st">"No data for the month of January"</span>)</span>
+<span id="cb696-6"><a href="#cb696-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb697"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb697-1"><a href="#cb697-1"></a><span class="fu">library</span>(datasets)</span>
+<span id="cb697-2"><a href="#cb697-2"></a>months <span class="ot">&lt;-</span> airquality<span class="sc">$</span>Month</span>
+<span id="cb697-3"><a href="#cb697-3"></a></span>
+<span id="cb697-4"><a href="#cb697-4"></a><span class="cf">if</span> (<span class="fu">all</span>(months <span class="sc">!=</span> <span class="dv">1</span>)) {</span>
+<span id="cb697-5"><a href="#cb697-5"></a>  <span class="fu">print</span>(<span class="st">"No data for the month of January"</span>)</span>
+<span id="cb697-6"><a href="#cb697-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-15-2">
+<p>📝 Modify the code below to store in a variable called <code>high_temperature</code> a <code>TRUE</code> value if any of the records have a temperature greater than 90 (they are in Farenheit) and a <code>FALSE</code> otherwise.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb698"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb698-1"><a href="#cb698-1"></a>temp<span class="ot">&lt;-</span> airquality<span class="sc">$</span>Temp</span>
+<span id="cb698-2"><a href="#cb698-2"></a></span>
+<span id="cb698-3"><a href="#cb698-3"></a><span class="cf">if</span> (temp <span class="sc">==</span> <span class="dv">100</span>) {</span>
+<span id="cb698-4"><a href="#cb698-4"></a>  <span class="fu">print</span>(<span class="st">"Some of the records have temperatures above 90 Farenheit."</span>)</span>
+<span id="cb698-5"><a href="#cb698-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb699"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb699-1"><a href="#cb699-1"></a><span class="co"># Option 1</span></span>
+<span id="cb699-2"><a href="#cb699-2"></a>temp <span class="ot">&lt;-</span> airquality<span class="sc">$</span>Temp</span>
+<span id="cb699-3"><a href="#cb699-3"></a>high_temp <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb699-4"><a href="#cb699-4"></a><span class="cf">if</span> (<span class="fu">any</span>(temp <span class="sc">&gt;</span> <span class="dv">90</span>)) {</span>
+<span id="cb699-5"><a href="#cb699-5"></a>   high_temp <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb699-6"><a href="#cb699-6"></a>}</span>
+<span id="cb699-7"><a href="#cb699-7"></a></span>
+<span id="cb699-8"><a href="#cb699-8"></a><span class="co"># Option 2</span></span>
+<span id="cb699-9"><a href="#cb699-9"></a>high_temp <span class="ot">&lt;-</span> <span class="fu">any</span>(airquality<span class="sc">$</span>Temp <span class="sc">&gt;</span> <span class="dv">90</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-15-3">
+<p>📝 Modify the code below to design a <code>for</code> loop of 5 iterations that loops through the first 5 odd ones and adds one to them.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb700"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb700-1"><a href="#cb700-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
+<span id="cb700-2"><a href="#cb700-2"></a>  </span>
+<span id="cb700-3"><a href="#cb700-3"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb700-4"><a href="#cb700-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb701"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb701-1"><a href="#cb701-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>)) {</span>
+<span id="cb701-2"><a href="#cb701-2"></a>  </span>
+<span id="cb701-3"><a href="#cb701-3"></a>  <span class="fu">print</span>(i <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb701-4"><a href="#cb701-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-15-4">
+<p>📝 Modify the code below to design a <code>while</code> loop that starts with a <code>count &lt;- 1</code> variable and stops when it reaches 6.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb702"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb702-1"><a href="#cb702-1"></a>count <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb702-2"><a href="#cb702-2"></a><span class="cf">while</span> (count <span class="sc">==</span> <span class="dv">2</span>) {</span>
+<span id="cb702-3"><a href="#cb702-3"></a>  </span>
+<span id="cb702-4"><a href="#cb702-4"></a>  <span class="fu">print</span>(count)</span>
+<span id="cb702-5"><a href="#cb702-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb703"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb703-1"><a href="#cb703-1"></a>count <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb703-2"><a href="#cb703-2"></a><span class="cf">while</span> (count <span class="sc">&lt;</span> <span class="dv">6</span>) {</span>
+<span id="cb703-3"><a href="#cb703-3"></a>  </span>
+<span id="cb703-4"><a href="#cb703-4"></a>  <span class="fu">print</span>(count)</span>
+<span id="cb703-5"><a href="#cb703-5"></a>  count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb703-6"><a href="#cb703-6"></a>  </span>
+<span id="cb703-7"><a href="#cb703-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-15-5">
+<p>📝 Using <code>sample()</code>, it simulates the roll of 100 dice (each with 6 sides), but in such a way that the die is tricked, and calculates the average of the rolls.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb704"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb704-1"><a href="#cb704-1"></a><span class="co"># no tricked</span></span>
+<span id="cb704-2"><a href="#cb704-2"></a>rolls <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb704-3"><a href="#cb704-3"></a><span class="fu">mean</span>(rolls)</span>
+<span id="cb704-4"><a href="#cb704-4"></a></span>
+<span id="cb704-5"><a href="#cb704-5"></a><span class="co"># tricked</span></span>
+<span id="cb704-6"><a href="#cb704-6"></a>rolls <span class="ot">&lt;-</span></span>
+<span id="cb704-7"><a href="#cb704-7"></a>  <span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb704-8"><a href="#cb704-8"></a>         <span class="at">prob =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>))</span>
+<span id="cb704-9"><a href="#cb704-9"></a><span class="fu">mean</span>(rolls)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="case-8" class="slide level2">
+<h2>🐣 Case study 8</h2>
+<p>📝 Design a <code>for</code> loop of 200 iterations that, starting at an initial value of 100 (euros), adds 3€ (updating the value) if the current number of the iteration is even, and subtracts 5€ if it is odd (investigate the <code>%%</code> function).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb705"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb705-1"><a href="#cb705-1"></a><span class="dv">10</span> <span class="sc">%%</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb707"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb707-1"><a href="#cb707-1"></a><span class="dv">11</span> <span class="sc">%%</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb709"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb709-1"><a href="#cb709-1"></a><span class="dv">12</span> <span class="sc">%%</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb711"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb711-1"><a href="#cb711-1"></a><span class="dv">13</span> <span class="sc">%%</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>📝 Design the above loop but store the money from each iteration in some variable</p>
+</div>
+<div class="fragment">
+<p>📝 Design the loop of exercise 5 but stop when we have no money left.</p>
+</div>
+</section>
+<section id="quali-factors" class="slide level2">
+<h2>Quali: factors</h2>
+<p>In statistics, when we talk about <span class="hl-yellow"><strong>qualitative variables</strong></span>, we will call <strong>levels or modalities</strong> the <strong>different values</strong> that these data can take. For example, in the case of the <code>sex</code> variable of the <code>starwars</code> set, we have 4 allowed levels: <code>female</code>, <code>hermaphroditic</code>, <code>male</code> and <code>none</code> (in addition to missing data).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb713"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb713-1"><a href="#cb713-1"></a>starwars <span class="sc">|&gt;</span> <span class="fu">count</span>(sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  sex                n
+  &lt;chr&gt;          &lt;int&gt;
+1 female            16
+2 hermaphroditic     1
+3 male              60
+4 none               6
+5 &lt;NA&gt;               4</code></pre>
+</div>
+</div>
+</section>
+<section id="quali-factors-1" class="slide level2">
+<h2>Quali: factors</h2>
+<p>These kinds of variables are known in <code>R</code> as <span class="hl-yellow"><strong>factors</strong></span>, and the fundamental package to deal with them is <code>{forcats}</code> (from the <code>{tidyverse}</code> environment).</p>
+
+<img data-src="img/factors.jpg" class="r-stretch"></section>
+<section id="quali-factors-2" class="slide level2">
+<h2>Quali: factors</h2>
+<p>This package allows us to set the <span class="hl-yellow"><strong>levels</strong></span> (stored internally as <code>levels</code>) that a given categorical variable takes so that no mistakes, errors in data collection and generation can be generated. It also makes their analysis less computationally expensive when doing searches and comparisons, giving them a <span class="hl-yellow"><strong>different treatment than normal text strings</strong></span>.</p>
+<div class="fragment">
+<p>Let’s see a simple example simulating a <code>party</code> variable taking the values <code>"PP"</code>, <code>"PSOE"</code> and <code>"SUMAR"</code> (of size 15)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb715"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb715-1"><a href="#cb715-1"></a><span class="fu">set.seed</span>(<span class="dv">1234567</span>)</span>
+<span id="cb715-2"><a href="#cb715-2"></a>party <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="st">"PP"</span>, <span class="st">"PSOE"</span>, <span class="st">"SUMAR"</span>), <span class="at">size =</span> <span class="dv">15</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb715-3"><a href="#cb715-3"></a>party</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "PP"    "PSOE"  "SUMAR" "PP"    "PP"    "SUMAR" "PSOE"  "SUMAR" "SUMAR"
+[10] "SUMAR" "PP"    "PSOE"  "PP"    "PSOE"  "SUMAR"</code></pre>
+</div>
+</div>
+<p>The <code>party</code> variable is currently of <span class="hl-yellow"><strong>type text</strong></span>, of type <code>chr</code>, something we can check with <code>class(state)</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb717"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb717-1"><a href="#cb717-1"></a><span class="fu">class</span>(party)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="quali-factors-3" class="slide level2">
+<h2>Quali: factors</h2>
+<p>From a statistical and computational point of view, for <code>R</code> this variable right now would be equivalent to a named variable. But statistically <span class="hl-yellow"><strong>a variable as a string</strong></span> is not the same as a categorical variable that <span class="hl-yellow"><strong>can only take those 3 levels</strong></span>. How to <span class="hl-yellow"><strong>convert to factor</strong></span>?</p>
+<div class="fragment">
+<p>By making use of the <code>as_factor()</code> function from the <code>{forcats}</code> package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb719"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb719-1"><a href="#cb719-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb719-2"><a href="#cb719-2"></a>party_fct <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="st">"id"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(party),</span>
+<span id="cb719-3"><a href="#cb719-3"></a>                    <span class="st">"party"</span> <span class="ot">=</span> <span class="fu">as_factor</span>(party))</span>
+<span id="cb719-4"><a href="#cb719-4"></a>party_fct</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 2
+      id party
+   &lt;int&gt; &lt;fct&gt;
+ 1     1 PP   
+ 2     2 PSOE 
+ 3     3 SUMAR
+ 4     4 PP   
+ 5     5 PP   
+ 6     6 SUMAR
+ 7     7 PSOE 
+ 8     8 SUMAR
+ 9     9 SUMAR
+10    10 SUMAR
+11    11 PP   
+12    12 PSOE 
+13    13 PP   
+14    14 PSOE 
+15    15 SUMAR</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="quali-factors-4" class="slide level2">
+<h2>Quali: factors</h2>
+<p>Not only the class of the variable has changed, but now, below the saved value, the sentence <code>Levels: ...</code> appears: these are the <span class="hl-yellow"><strong>modalities or levels</strong></span> of our qualitative.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb721"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb721-1"><a href="#cb721-1"></a>party_fct <span class="sc">|&gt;</span> <span class="fu">pull</span>(party)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] PP    PSOE  SUMAR PP    PP    SUMAR PSOE  SUMAR SUMAR SUMAR PP    PSOE 
+[13] PP    PSOE  SUMAR
+Levels: PP PSOE SUMAR</code></pre>
+</div>
+</div>
+</section>
+<section id="quali-factors-5" class="slide level2">
+<h2>Quali: factors</h2>
+<p>Imagine that we are defining the database of deputies of the Congress and that the deputies of the PP did not attend that day to the plenary session: although our variable does not take that value THAT DAY, the state <code>PSOE</code> is a <span class="hl-yellow"><strong>allowed level in the database</strong></span> (so even if we eliminate it, because it is a factor, the level remains, we do not have it now but it is an allowed level).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb723"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb723-1"><a href="#cb723-1"></a>party_fct <span class="sc">|&gt;</span> </span>
+<span id="cb723-2"><a href="#cb723-2"></a>  <span class="fu">filter</span>(party <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"PP"</span>, <span class="st">"SUMAR"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb723-3"><a href="#cb723-3"></a>  <span class="fu">pull</span>(party)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] PP    SUMAR PP    PP    SUMAR SUMAR SUMAR SUMAR PP    PP    SUMAR
+Levels: PP PSOE SUMAR</code></pre>
+</div>
+</div>
+</section>
+<section id="quali-factors-6" class="slide level2">
+<h2>Quali: factors</h2>
+<p>With <code>factor()</code> function we can <span class="hl-yellow"><strong>explicitly specify</strong></span> the names of the modalities and using <code>levels = ...</code> we can explicitly tell it the <span class="hl-yellow"><strong>“order” of the modalities</strong></span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb725"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb725-1"><a href="#cb725-1"></a>party_fct <span class="ot">&lt;-</span></span>
+<span id="cb725-2"><a href="#cb725-2"></a>  <span class="fu">tibble</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(party),</span>
+<span id="cb725-3"><a href="#cb725-3"></a>         <span class="at">party =</span> <span class="fu">factor</span>(party, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"SUMAR"</span>, <span class="st">"PP"</span>, <span class="st">"PSOE"</span>)))</span>
+<span id="cb725-4"><a href="#cb725-4"></a>party_fct <span class="sc">|&gt;</span> <span class="fu">pull</span>(party)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] PP    PSOE  SUMAR PP    PP    SUMAR PSOE  SUMAR SUMAR SUMAR PP    PSOE 
+[13] PP    PSOE  SUMAR
+Levels: SUMAR PP PSOE</code></pre>
+</div>
+</div>
+</section>
+<section id="quali-factors-7" class="slide level2">
+<h2>Quali: factors</h2>
+<p>The previous “order” is just in the sense which it will be counted/plotted first) but <span class="hl-purple"><strong>we don’t have (yet) an ordinal variable</strong></span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb727"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb727-1"><a href="#cb727-1"></a>party_fct<span class="sc">$</span>party <span class="sc">&lt;</span> <span class="st">"SUMAR"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>What if we want to <span class="hl-yellow"><strong>define a qualitative variable ORDINAL</strong></span>? Inside <code>factor()</code> we must indicate that <code>ordered = TRUE</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb729"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb729-1"><a href="#cb729-1"></a>marks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>, <span class="st">"B"</span>, <span class="st">"A+"</span>, <span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"C"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>, <span class="st">"D"</span>, <span class="st">"A+"</span>)</span>
+<span id="cb729-2"><a href="#cb729-2"></a>marks_database <span class="ot">&lt;-</span></span>
+<span id="cb729-3"><a href="#cb729-3"></a>  <span class="fu">tibble</span>(<span class="st">"student"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(marks),</span>
+<span id="cb729-4"><a href="#cb729-4"></a>         <span class="st">"marks"</span> <span class="ot">=</span></span>
+<span id="cb729-5"><a href="#cb729-5"></a>           <span class="fu">factor</span>(marks, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"E"</span>, <span class="st">"D"</span>, <span class="st">"C"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>, <span class="st">"A+"</span>),</span>
+<span id="cb729-6"><a href="#cb729-6"></a>                  <span class="at">ordered =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb729-7"><a href="#cb729-7"></a>marks_database <span class="sc">|&gt;</span> <span class="fu">pull</span>(marks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] A  E  F  B  A+ A  C  C  D  B  A  C  C  E  F  D  A+
+Levels: F &lt; E &lt; D &lt; C &lt; B &lt; A &lt; A+</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="quali-factors-8" class="slide level2">
+<h2>Quali: factors</h2>
+<p>What changes? If you notice now, although the variable is still qualitative, we can <span class="hl-yellow"><strong>make comparisons and order the records</strong></span> because there is a <span class="hl-purple"><strong>hierarchy</strong></span> between the modalities.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb731"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb731-1"><a href="#cb731-1"></a>marks_database <span class="sc">|&gt;</span> <span class="fu">filter</span>(marks <span class="sc">&gt;=</span> <span class="st">"B"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 2
+  student marks
+    &lt;int&gt; &lt;ord&gt;
+1       1 A    
+2       4 B    
+3       5 A+   
+4       6 A    
+5      10 B    
+6      11 A    
+7      17 A+   </code></pre>
+</div>
+</div>
+</section>
+<section id="quali-factors-9" class="slide level2">
+<h2>Quali: factors</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>If we want to tell it to <span class="hl-yellow"><strong>drop an unused level</strong></span> at that moment (and that we want to <span class="hl-purple"><strong>exclude from the definition</strong></span>) we can do it with <code>fct_drop()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb733"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb733-1"><a href="#cb733-1"></a>marks_database <span class="sc">|&gt;</span> </span>
+<span id="cb733-2"><a href="#cb733-2"></a>  <span class="fu">filter</span>(marks <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"E"</span>, <span class="st">"D"</span>, <span class="st">"C"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb733-3"><a href="#cb733-3"></a>  <span class="fu">pull</span>(marks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] A E F B A C C D B A C C E F D
+Levels: F &lt; E &lt; D &lt; C &lt; B &lt; A &lt; A+</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:55%;">
+<div class="cell" data-layout-align="left">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="./img/drop_factor.jpg" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb735"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb735-1"><a href="#cb735-1"></a>marks_database <span class="sc">|&gt;</span> </span>
+<span id="cb735-2"><a href="#cb735-2"></a>  <span class="fu">filter</span>(marks <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"E"</span>, <span class="st">"D"</span>, <span class="st">"C"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb735-3"><a href="#cb735-3"></a>  <span class="fu">mutate</span>(<span class="at">marks =</span> <span class="fu">fct_drop</span>(marks)) <span class="sc">|&gt;</span>  </span>
+<span id="cb735-4"><a href="#cb735-4"></a>  <span class="fu">pull</span>(marks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] A E F B A C C D B A C C E F D
+Levels: F &lt; E &lt; D &lt; C &lt; B &lt; A</code></pre>
+</div>
+</div>
+</section>
+<section id="quali-factors-10" class="slide level2">
+<h2>Quali: factors</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Just as we can delete levels we can <span class="hl-yellow"><strong>expand existing levels</strong></span> (even if there is no data for that level at that time) with <code>fct_expand()</code>.</p>
+</div><div class="column" style="width:55%;">
+<div class="cell" data-layout-align="left">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="./img/factor_expand.jpg" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb737"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb737-1"><a href="#cb737-1"></a>marks_database <span class="sc">|&gt;</span> </span>
+<span id="cb737-2"><a href="#cb737-2"></a>  <span class="fu">mutate</span>(<span class="at">marks =</span> <span class="fu">fct_expand</span>(marks, <span class="fu">c</span>(<span class="st">"F-"</span>, <span class="st">"A+"</span>, <span class="st">"A++"</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb737-3"><a href="#cb737-3"></a>  <span class="fu">pull</span>(marks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] A  E  F  B  A+ A  C  C  D  B  A  C  C  E  F  D  A+
+Levels: F &lt; E &lt; D &lt; C &lt; B &lt; A &lt; A+ &lt; F- &lt; A++</code></pre>
+</div>
+</div>
+</section>
+<section id="quali-factors-11" class="slide level2">
+<h2>Quali: factors</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>In addition with <code>fct_explicit_na()</code> we can <span class="hl-yellow"><strong>assign a level to the missing values</strong></span> to be included in the analysis and visualizations.</p>
+</div><div class="column" style="width:55%;">
+<div class="cell" data-layout-align="left">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="./img/factor_explicit.jpg" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb739"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb739-1"><a href="#cb739-1"></a><span class="fu">fct_explicit_na</span>(<span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="cn">NA</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] a         b         (Missing)
+Levels: a b (Missing)</code></pre>
+</div>
+</div>
+</section>
+<section id="quali-factors-12" class="slide level2">
+<h2>Quali: factors</h2>
+<p>Even once defined we can <span class="hl-yellow"><strong>reorder the levels</strong></span> with <code>fct_relevel()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb741"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb741-1"><a href="#cb741-1"></a>marks_database_expand <span class="ot">&lt;-</span> </span>
+<span id="cb741-2"><a href="#cb741-2"></a>  marks_database <span class="sc">|&gt;</span>  </span>
+<span id="cb741-3"><a href="#cb741-3"></a>  <span class="fu">mutate</span>(<span class="at">marks =</span> <span class="fu">fct_expand</span>(marks, <span class="fu">c</span>(<span class="st">"F-"</span>, <span class="st">"A+"</span>, <span class="st">"A++"</span>))) <span class="sc">|&gt;</span> </span>
+<span id="cb741-4"><a href="#cb741-4"></a>  <span class="fu">pull</span>(marks)</span>
+<span id="cb741-5"><a href="#cb741-5"></a></span>
+<span id="cb741-6"><a href="#cb741-6"></a>marks_database_expand <span class="sc">|&gt;</span> </span>
+<span id="cb741-7"><a href="#cb741-7"></a>  <span class="fu">fct_relevel</span>(<span class="fu">c</span>(<span class="st">"F-"</span>, <span class="st">"F"</span>, <span class="st">"E"</span>, <span class="st">"D"</span>, <span class="st">"C"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>, <span class="st">"A+"</span>, <span class="st">"A++"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] A  E  F  B  A+ A  C  C  D  B  A  C  C  E  F  D  A+
+Levels: F- &lt; F &lt; E &lt; D &lt; C &lt; B &lt; A &lt; A+ &lt; A++</code></pre>
+</div>
+</div>
+</section>
+<section id="quali-factors-13" class="slide level2">
+<h2>Quali: factors</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>This way of working with qualitative variables allows us to give a <span class="hl-yellow"><strong>theoretical definition</strong></span> of our database, and we can even count values that do not yet exist (but could), making use of <code>fct_count()</code>.</p>
+</div><div class="column" style="width:45%;">
+<div class="cell" data-layout-align="left">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="./img/fct_count.jpg" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb743"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb743-1"><a href="#cb743-1"></a>marks_database <span class="sc">|&gt;</span> </span>
+<span id="cb743-2"><a href="#cb743-2"></a>  <span class="fu">mutate</span>(<span class="at">marks =</span> <span class="fu">fct_expand</span>(marks, <span class="fu">c</span>(<span class="st">"F-"</span>, <span class="st">"A+"</span>, <span class="st">"A++"</span>))) <span class="sc">|&gt;</span> </span>
+<span id="cb743-3"><a href="#cb743-3"></a>  <span class="fu">pull</span>(marks) <span class="sc">|&gt;</span> </span>
+<span id="cb743-4"><a href="#cb743-4"></a>  <span class="fu">fct_count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 2
+  f         n
+  &lt;ord&gt; &lt;int&gt;
+1 F         2
+2 E         2
+3 D         2
+4 C         4
+5 B         2
+6 A         3
+7 A+        2
+8 F-        0
+9 A++       0</code></pre>
+</div>
+</div>
+</section>
+<section id="quali-factors-14" class="slide level2">
+<h2>Quali: factors</h2>
+<p>The levels can also be <span class="hl-yellow"><strong>sorted by frequency</strong></span> with <code>fct_infreq()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb745"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb745-1"><a href="#cb745-1"></a>marks_database <span class="sc">|&gt;</span> </span>
+<span id="cb745-2"><a href="#cb745-2"></a>  <span class="fu">mutate</span>(<span class="at">marks =</span> <span class="fu">fct_infreq</span>(marks)) <span class="sc">|&gt;</span> </span>
+<span id="cb745-3"><a href="#cb745-3"></a>  <span class="fu">pull</span>(marks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] A  E  F  B  A+ A  C  C  D  B  A  C  C  E  F  D  A+
+Levels: C &lt; A &lt; F &lt; E &lt; D &lt; B &lt; A+</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb747"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb747-1"><a href="#cb747-1"></a>marks_database <span class="sc">|&gt;</span> </span>
+<span id="cb747-2"><a href="#cb747-2"></a>  <span class="fu">mutate</span>(<span class="at">marks =</span> <span class="fu">fct_infreq</span>(marks)) <span class="sc">|&gt;</span> </span>
+<span id="cb747-3"><a href="#cb747-3"></a>  <span class="fu">pull</span>(marks) <span class="sc">|&gt;</span> </span>
+<span id="cb747-4"><a href="#cb747-4"></a>  <span class="fu">fct_count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 2
+  f         n
+  &lt;ord&gt; &lt;int&gt;
+1 C         4
+2 A         3
+3 F         2
+4 E         2
+5 D         2
+6 B         2
+7 A+        2</code></pre>
+</div>
+</div>
+</section>
+<section id="quali-factors-15" class="slide level2">
+<h2>Quali: factors</h2>
+<p>Sometimes we will want to <span class="hl-yellow"><strong>group levels</strong></span>, for example, not allowing levels that <span class="hl-yellow"><strong>do not happen a minimum number of times</strong></span> with <code>fct_lump_min(..., min = ..)</code> (observations that do not meet this will go to a <strong>generic level</strong> called <code>Other</code>, although this can be changed with the <code>other_level</code> argument).</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb749"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb749-1"><a href="#cb749-1"></a>marks_database <span class="sc">|&gt;</span> </span>
+<span id="cb749-2"><a href="#cb749-2"></a>  <span class="fu">pull</span>(marks) <span class="sc">%&gt;%</span> </span>
+<span id="cb749-3"><a href="#cb749-3"></a>  <span class="fu">fct_lump_min</span>(<span class="at">min =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] A     Other Other Other Other A     C     C     Other Other A     C    
+[13] C     Other Other Other Other
+Levels: C &lt; A &lt; Other</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb751"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb751-1"><a href="#cb751-1"></a>marks_database <span class="sc">|&gt;</span> </span>
+<span id="cb751-2"><a href="#cb751-2"></a>  <span class="fu">pull</span>(marks) <span class="sc">|&gt;</span></span>
+<span id="cb751-3"><a href="#cb751-3"></a>  <span class="fu">fct_lump_min</span>(<span class="at">min =</span> <span class="dv">3</span>,</span>
+<span id="cb751-4"><a href="#cb751-4"></a>               <span class="at">other_level =</span> <span class="st">"Less frequent"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] A             Less frequent Less frequent Less frequent Less frequent
+ [6] A             C             C             Less frequent Less frequent
+[11] A             C             C             Less frequent Less frequent
+[16] Less frequent Less frequent
+Levels: C &lt; A &lt; Less frequent</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="quali-factors-16" class="slide level2">
+<h2>Quali: factors</h2>
+<p>We can do something equivalent but based on its <span class="hl-yellow"><strong>relative frequency</strong></span> with <code>fct_lump_prop()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb753"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb753-1"><a href="#cb753-1"></a>marks_database <span class="sc">|&gt;</span> </span>
+<span id="cb753-2"><a href="#cb753-2"></a>  <span class="fu">pull</span>(marks) <span class="sc">|&gt;</span> </span>
+<span id="cb753-3"><a href="#cb753-3"></a>  <span class="fu">fct_lump_prop</span>(<span class="at">prop =</span> <span class="fl">0.15</span>,</span>
+<span id="cb753-4"><a href="#cb753-4"></a>                <span class="at">other_level =</span> <span class="st">"less frequent"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] A             less frequent less frequent less frequent less frequent
+ [6] A             C             C             less frequent less frequent
+[11] A             C             C             less frequent less frequent
+[16] less frequent less frequent
+Levels: C &lt; A &lt; less frequent</code></pre>
+</div>
+</div>
+</section>
+<section id="quali-factors-17" class="slide level2">
+<h2>Quali: factors</h2>
+<p>We can apply this to our datasets to <span class="hl-yellow"><strong>recategorize variables</strong></span> very quickly.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb755"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb755-1"><a href="#cb755-1"></a>starwars <span class="sc">|&gt;</span>  </span>
+<span id="cb755-2"><a href="#cb755-2"></a>  <span class="fu">drop_na</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb755-3"><a href="#cb755-3"></a>  <span class="fu">mutate</span>(<span class="at">species =</span></span>
+<span id="cb755-4"><a href="#cb755-4"></a>           <span class="fu">fct_lump_min</span>(species, <span class="at">min =</span> <span class="dv">3</span>,</span>
+<span id="cb755-5"><a href="#cb755-5"></a>                        <span class="at">other_level =</span> <span class="st">"Others"</span>)) <span class="sc">|&gt;</span>  </span>
+<span id="cb755-6"><a href="#cb755-6"></a>  <span class="fu">count</span>(species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+  species     n
+  &lt;fct&gt;   &lt;int&gt;
+1 Droid       6
+2 Gungan      3
+3 Human      35
+4 Others     39</code></pre>
+</div>
+</div>
+</section>
+<section id="quali-factors-18" class="slide level2">
+<h2>Quali: factors</h2>
+<p>With <code>fct_reorder()</code> we can also indicate that we want to <span class="hl-yellow"><strong>order the factors</strong></span> according to a function applied to another variable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb757"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb757-1"><a href="#cb757-1"></a>starwars_factor <span class="ot">&lt;-</span> </span>
+<span id="cb757-2"><a href="#cb757-2"></a>  starwars <span class="sc">|&gt;</span>  </span>
+<span id="cb757-3"><a href="#cb757-3"></a>  <span class="fu">drop_na</span>(height, species) <span class="sc">|&gt;</span> </span>
+<span id="cb757-4"><a href="#cb757-4"></a>  <span class="fu">mutate</span>(<span class="at">species =</span></span>
+<span id="cb757-5"><a href="#cb757-5"></a>           <span class="fu">fct_lump_min</span>(species, <span class="at">min =</span> <span class="dv">3</span>,</span>
+<span id="cb757-6"><a href="#cb757-6"></a>                        <span class="at">other_level =</span> <span class="st">"Others"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb758"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb758-1"><a href="#cb758-1"></a>starwars_factor <span class="sc">|&gt;</span>  <span class="fu">pull</span>(species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] Human  Droid  Droid  Human  Human  Human  Human  Droid  Human  Human 
+[11] Human  Human  Others Human  Others Others Human  Human  Others Human 
+[21] Human  Droid  Others Human  Human  Others Human  Others Others Human 
+[31] Others Human  Gungan Gungan Gungan Others Others Human  Others Others
+[41] Others Others Others Others Human  Others Others Others Others Others
+[51] Others Others Others Human  Human  Human  Others Others Others Human 
+[61] Human  Human  Human  Others Others Others Others Human  Others Droid 
+[71] Others Others Others Others Others Human  Others Human 
+Levels: Droid Gungan Human Others</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb760"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb760-1"><a href="#cb760-1"></a>starwars_factor <span class="sc">|&gt;</span> </span>
+<span id="cb760-2"><a href="#cb760-2"></a>  <span class="fu">mutate</span>(<span class="at">species =</span> <span class="fu">fct_reorder</span>(species, height, mean)) <span class="sc">|&gt;</span> </span>
+<span id="cb760-3"><a href="#cb760-3"></a>  <span class="fu">pull</span>(species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] Human  Droid  Droid  Human  Human  Human  Human  Droid  Human  Human 
+[11] Human  Human  Others Human  Others Others Human  Human  Others Human 
+[21] Human  Droid  Others Human  Human  Others Human  Others Others Human 
+[31] Others Human  Gungan Gungan Gungan Others Others Human  Others Others
+[41] Others Others Others Others Human  Others Others Others Others Others
+[51] Others Others Others Human  Human  Human  Others Others Others Human 
+[61] Human  Human  Human  Others Others Others Others Human  Others Droid 
+[71] Others Others Others Others Others Human  Others Human 
+Levels: Droid Others Human Gungan</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="your-turn" class="slide level2">
+<h2>💻 Your turn</h2>
+<div class="panel-tabset">
+<ul id="tabset-16" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-16-1"><span class="hl-yellow"><strong>Exercise 1</strong></span></a></li><li><a href="#tabset-16-2"><span class="hl-yellow"><strong>Exercise 2</strong></span></a></li><li><a href="#tabset-16-3"><span class="hl-yellow"><strong>Exercise 3</strong></span></a></li><li><a href="#tabset-16-4"><span class="hl-yellow"><strong>Exercise 4</strong></span></a></li><li><a href="#tabset-16-5"><span class="hl-yellow"><strong>Exercise 5</strong></span></a></li><li><a href="#tabset-16-6"><span class="hl-yellow"><strong>Exercise 6</strong></span></a></li><li><a href="#tabset-16-7"><span class="hl-yellow"><strong>Exercise 7</strong></span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-16-1">
+<p>📝 Given the variable <code>months</code> defined below (defined as a character vector), convert this variable to factor (just that)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb762"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb762-1"><a href="#cb762-1"></a>months <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Jan"</span>, <span class="st">"Feb"</span>, <span class="st">"Mar"</span>, <span class="st">"Apr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb763"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb763-1"><a href="#cb763-1"></a>months <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Jan"</span>, <span class="st">"Feb"</span>, <span class="st">"Mar"</span>, <span class="st">"Apr"</span>)</span>
+<span id="cb763-2"><a href="#cb763-2"></a>months_fct <span class="ot">&lt;-</span> <span class="fu">as_factor</span>(months)</span>
+<span id="cb763-3"><a href="#cb763-3"></a>months_fct</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-16-2">
+<p>📝 Given the variable <code>months</code> defined below converts this variable to a factor but indicating the levels correctly.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb764"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb764-1"><a href="#cb764-1"></a>months <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="st">"Apr"</span>, <span class="st">"Jan"</span>, <span class="st">"Oct"</span>, <span class="st">"Jul"</span>, <span class="st">"Jan"</span>, <span class="st">"Sep"</span>, <span class="cn">NA</span>, <span class="st">"Feb"</span>, <span class="st">"Dic"</span>,</span>
+<span id="cb764-2"><a href="#cb764-2"></a>           <span class="st">"Jul"</span>, <span class="st">"Mar"</span>, <span class="st">"Jan"</span>, <span class="st">"Mar"</span>, <span class="st">"Feb"</span>, <span class="st">"Apr"</span>, <span class="st">"May"</span>, <span class="st">"Oct"</span>, <span class="st">"Sep"</span>,  <span class="cn">NA</span>,</span>
+<span id="cb764-3"><a href="#cb764-3"></a>           <span class="st">"Dic"</span>, <span class="st">"Jul"</span>, <span class="st">"Nov"</span>, <span class="st">"Feb"</span>, <span class="st">"Oct"</span>, <span class="st">"Jun"</span>, <span class="st">"Sep"</span>, <span class="st">"Oct"</span>, <span class="st">"Oct"</span>, <span class="st">"Sep"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb765"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb765-1"><a href="#cb765-1"></a>months_fct <span class="ot">&lt;-</span></span>
+<span id="cb765-2"><a href="#cb765-2"></a>  <span class="fu">factor</span>(months,</span>
+<span id="cb765-3"><a href="#cb765-3"></a>         <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Jan"</span>, <span class="st">"Feb"</span>, <span class="st">"Mar"</span>, <span class="st">"Apr"</span>, <span class="st">"May"</span>, <span class="st">"Jun"</span>, <span class="st">"Jul"</span>, <span class="st">"Aug"</span>, <span class="st">"Sep"</span>, <span class="st">"Oct"</span>, <span class="st">"Nov"</span>, <span class="st">"Dic"</span>))</span>
+<span id="cb765-4"><a href="#cb765-4"></a>months_fct</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-16-3">
+<p>📝 Count how many values there are for each month but keep in mind that they are factors (maybe there are unused levels and you should get a 0 for them).</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb766"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb766-1"><a href="#cb766-1"></a>meses_fct <span class="sc">|&gt;</span>  <span class="fu">fct_count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-16-4">
+<p>📝 Since there are missing values, it indicates that the absentee is a thirteenth level labeled <code>"missing"</code>.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb767"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb767-1"><a href="#cb767-1"></a>months_fct <span class="ot">&lt;-</span> </span>
+<span id="cb767-2"><a href="#cb767-2"></a>  months_fct <span class="sc">|&gt;</span> </span>
+<span id="cb767-3"><a href="#cb767-3"></a>  <span class="fu">fct_explicit_na</span>(<span class="at">na_level =</span> <span class="st">"missing"</span>)</span>
+<span id="cb767-4"><a href="#cb767-4"></a>months_fct</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-16-5">
+<p>📝 Removes unused levels.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb768"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb768-1"><a href="#cb768-1"></a>months_fct <span class="ot">&lt;-</span> </span>
+<span id="cb768-2"><a href="#cb768-2"></a>  months_fct <span class="sc">%&gt;%</span></span>
+<span id="cb768-3"><a href="#cb768-3"></a>  <span class="fu">fct_drop</span>()</span>
+<span id="cb768-4"><a href="#cb768-4"></a>months_fct</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-16-6">
+<p>📝 Sort the levels by frequency of occurrence.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb769"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb769-1"><a href="#cb769-1"></a>months_fct <span class="sc">|&gt;</span> </span>
+<span id="cb769-2"><a href="#cb769-2"></a>  <span class="fu">fct_infreq</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-16-7">
+<p>📝 Group levels so that any level that does not appear at least 7% of the time is grouped in a level called <code>"other months"</code>.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb770"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb770-1"><a href="#cb770-1"></a>months_fct <span class="ot">&lt;-</span></span>
+<span id="cb770-2"><a href="#cb770-2"></a>  months_fct <span class="sc">|&gt;</span> </span>
+<span id="cb770-3"><a href="#cb770-3"></a>  <span class="fu">fct_lump_prop</span>(<span class="at">prop =</span> <span class="fl">0.07</span>, <span class="at">other_level =</span> <span class="st">"other months"</span>)</span>
+<span id="cb770-4"><a href="#cb770-4"></a>months_fct </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="clase-9" class="title-slide slide level1 center">
+<h1>Lesson 9: lists, joins and SQL</h1>
+<p><span style="color:#444442;"><strong>Lists. Joins and SQL connection</strong></span></p>
+</section>
+<section id="lists" class="slide level2">
+<h2>Lists</h2>
+</section>
+<section id="joins" class="slide level2">
+<h2>Joins</h2>
+</section>
+<section id="sql-connection" class="slide level2">
+<h2>SQL connection</h2>
 <div class="footer footer-default">
 <p><a href="..."><strong>Javier Álvarez Liébana</strong></a> • Master in Computational Social Sciences • 2023-2024</p>
 </div>

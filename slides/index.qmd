@@ -112,10 +112,10 @@ Currently, [**researcher and lecturer at the Faculty of Statistics of the UCM**]
 |     [3](#clase-3)      | S3    | 28 sep |     Tidyverse: rows | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-3) [💻](#tu-turno-3a) [💻](#tu-turno-3b)      |  [🐣](#caso-práctico-3)  |         |   
 |     [4](#clase-4)      | S4    | 5 oct |   Tidyverse: columns   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4a)  [💻](#tu-turno-4b) [💻](#tu-turno-4c)      |  [🐣](#caso4) [🐣](#caso4a) [🐣](#caso4b)  |         | 
 |     [5](#clase-5)      | S5   | 10 oct |        Tidyverse: summarising. Rmarkdown    | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-5a)  [💻](#tu-turno-5b)      |  [🐣](#caso5a) [🐣](#caso5b)  |         | 
-|     [6](#clase-6)      | S6    | 19 oct |     Import/export and functions | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
-|     [7](#clase-7)      | S7    | 24 oct |     Functions, control flow structures and joins | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |    
-|     [8](#clase-8)      | S7    | 26 oct |        Advance data types: list, factors and strings   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |   | 
-|     [9](#clase-9)      | S10   | 16 nov |        Advance data management  | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
+|     [6](#clase-6)      | S6    | 19 oct |     Import/export | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
+|     [7](#clase-7)      | S7    | 24 oct |     Functions | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |    
+|     [8](#clase-8)      | S7    | 26 oct |   Control flow structures. Factors, lists and strings   | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |   | 
+|     [9](#clase-9)      | S10   | 16 nov |        Joins and SQL | [📝](https://github.com/dadosdelaplace/mucss-data-programming/material/scripts)  |       [💻](#tu-turno-4)      |  [🐣](#caso-práctico-3)  |         | 
 
 :::
 :::
@@ -127,7 +127,7 @@ Currently, [**researcher and lecturer at the Faculty of Statistics of the UCM**]
 
 * Individual Task I (10%): 24th October (R base, databases, tidydata)
 
-* Individual Task II (20%): 7th November (Tidyverse, control flow structures, functions)
+* Individual Task II (20%): 16th November (Tidyverse, control flow structures, functions)
 
 * Individual Task III (30%): 7th December (all contents)
 
@@ -5173,7 +5173,7 @@ Produce a `.qmd` report such that.
 
 10. Perform stratified random sampling, extracting 50% of the data but maintaining the proportion of data among the different quarters.
 
-# Lesson 6: import and functions {#clase-6}
+# Lesson 6: import/export {#clase-6}
 
 [**Import/export and functions**]{style="color:#444442;"}
 
@@ -6043,8 +6043,41 @@ In the data folder you have the dataset `breast-cancer-wisconsin-data.csv`. Crea
 4. Seek the help of the `t.test()` function. This function allows us to test whether or not the means of two distributions are equal. Can we reject the null hypothesis that the radius means are the same, under a significance of $alpha = 0.05$?
 
 
+# Lesson 7: functions {#clase-7}
+
+[**Functions**]{style="color:#444442;"}
+
 ---
 
+## Summary
+
+Let's make a brief summary of what we have learned up to now
+
+. . .
+
+* [**Lesson 1**]{.hl-yellow}: main concepts about how R works (operating with vectors)
+
+. . .
+
+* [**Lesson 2**]{.hl-yellow}: how to store data (first databases and tidy data)
+
+. . .
+
+* [**Lesson 3**]{.hl-yellow}: first operations by rows with tidyverse (filter, slice_max, slice_min, slice, slice_sample, drop_na, arrange, distinct)
+
+. . .
+
+* [**Lesson 4**]{.hl-yellow}: first operations by columns with tidyverse (select, relocate, mutate)
+
+. . .
+
+* [**Lesson 5**]{.hl-yellow}: generating first summaries (count, group_by, summarise) and reports (Quarto)
+
+. . .
+
+* [**Lesson 6**]{.hl-yellow}: import/export files (load, read_csv, read_xlsx, save, write_csv, write_xls, write_xlsx)
+
+---
 
 ## Functions
 
@@ -6439,7 +6472,7 @@ y # what is assigned outside
 ---
 
 
-## 💻 Your turn {#tu-turno-6a}
+## 💻 Your turn {#tu-turno-7b}
 
 [**Try to solve the following exercises without looking at the solutions**]{style="color:#444442;"}
 
@@ -6565,11 +6598,1155 @@ BMI |>
 
 ---
 
-## 🐣 Case study 6b: funcitons {#case-6-b}
+## 🐣 Case study 7: functions {#case-7-b}
 
 Define a function called `temperature_converter` that, given a temperature in Fahrenheit, Celsius or Kelvin, converts it to any of the others (think what arguments the user needs). Apply the function to the `Temp` column of the `airquality` set, and incorporate it into the file in a new `Temp_Celsius` column.
 
 
+# Lesson 8: flow control structures {#clase-8}
 
+[**Flow control structures**]{style="color:#444442;"}
+
+---
+
+
+## Flow control structures
+
+A [**control expression**]{.hl-yellow} will be a set of commands that allow us to [**decide the path**]{.hl-yellow} along which we want our code to progress:
+
+* What do we do if A happens?
+
+* What if B happens?
+
+* Do I have to program X times the same thing if you want it to repeat?
+
+. . .
+
+If you have programmed in any other language, you will be familiar with [**conditional structures**]{.hl-yellow} such as an `if (blabla) {...} else {...}` (which we will sometimes use) or [**loops**]{.hl-yellow} `for/while` (which we will try to avoid as much as possible).
+
+---
+
+## If structures
+
+One of the most famous control structures of any programming language is the [**conditional structure**]{.hl-yellow} `if`.
+
+> IF the imposed conditions are fulfilled (TRUE), it executes the commands we have inside it.
+
+For example, the structure `if (x == 1) { code A }` will [**execute the code between braces**]{.hl-yellow} but [**IF AND ONLY IF**]{.hl-purple} the [**condition is true**]{.hl-purple} (in this case, only if `x` equals 1). Otherwise, it does nothing.
+
+. . .
+
+Let's define for example a simple variable, the ages of 8 people and let's check which of them are minors.
+
+```{r}
+ages <- c(14, 17, 24, 56, 31, 20, 87, 73)
+ages < 18
+```
+
+---
+
+## If structures
+
+
+Remember that with the `any()` and `all()` functions we can know if [**all or any of the elements**]{.hl-yellow} of a vector fulfill a condition.
+
+```{r}
+any(ages < 18) 
+```
+
+. . .
+
+We are going to build our first conditional structure: we want that, [**If there is a minor, print us a message**]{.hl-yellow}.
+
+```{r}
+if (any(ages < 18)) { 
+  
+  print("There is any person of legal age")
+  
+}
+```
+
+---
+
+## If structures
+
+```{r}
+#| eval: false
+if (any(ages < 18)) { 
+  
+  print("There is any person of legal age")
+  
+}
+```
+
+
+In case [**conditions are not verified**]{.hl-yellow} inside the `if()` (return `FALSE`), nothing will happen. 
+
+
+```{r}
+if (all(ages >= 18)) { 
+  
+  print("Everyone is of legal age")
+  
+}
+```
+
+Notice that in this case **we have not obtained any message** because the condition `all(ages >= 18)` is not `TRUE` (they are not all older than 18), so **it has not executed the code**.
+
+---
+
+## If-else structures
+
+The `if (condition) { }` structure can be combined with an `else { }`: when the [**condition is not verified**]{.hl-yellow} (as before), it will [**execute the alternative code**]{.hl-yellow} inside the `else { }`, allowing us to decide what happens when it IS verified and when it IS NOT.
+
+. . .
+
+For example, the structure `if (x == 1) { code A } else { code B }` will execute A if `x` is 1 and B in any other case.
+
+```{r}
+if (all(ages >= 18)) { 
+  
+  print("Everyone is of legal age")
+  
+} else {
+  
+  print("There is any person under legal age")
+}
+```
+
+---
+
+## If-else structures
+
+This `if - else` structure can be [**nested**]{.hl-yellow}: imagine that we want to perform an action if all were of legal age; otherwise, but if all minors are 16 or older, perform another action; otherwise, another action.
+
+```{r}
+if (all(ages >= 18)) { 
+  
+  print("Everyone is of legal age")
+  
+} else if (all(ages >= 16)) {
+  
+  print("There are some minors but all are 16 years of age or older")
+  
+} else { print("There is any person under 16 years of age") }
+```
+
+::: callout-note
+## Tip
+
+You can **collapse the control structures** by clicking on the arrow to the left of them in your script.
+
+:::
+
+
+---
+
+## If-else vectorized structures
+
+
+This conditional structure can be [**vectorized**]{.hl-yellow}: gather in a single row a large number of comparison structures with the function `if_else()` (`{dplyr}` package), whose input arguments will be
+
+* the condition to evaluate
+* what happens when it is met
+* what happens when it is not met
+
+With the example of the ages, we are going to leave the data absent if they are under age, and if they are over age it stays as it is.
+
+```{r}
+library(dplyr)
+if_else(ages >= 18, ages, NA)
+```
+
+---
+
+## If-else vectorized structures
+
+
+All these structures [**not only for numeric data**]{.hl-yellow}. We are going to define a vector of names with some absent ones, and we are going to replace the absent ones by the text `"unknown_name"` (the ones that are not absent, that is to say the ones that `is.na()` returns FALSE, stay as they are).
+
+```{r}
+names <- c("Juan", "María", NA, NA, "Lucía",
+           "Carmen", "Javier", NA, "Carlos", 
+           NA, "Gregorio", "Paloma")
+
+if_else(is.na(names), "unknown_name", names)
+```
+
+---
+
+## If-else vectorized structures
+
+
+It is important to remember that a logical condition actually has [**three possible outcomes**]{.hl-yellow}: `TRUE`, `FALSE` and `NA` (missing values). What happens when the [**evaluated condition produces a missing data**]{.hl-purple}?
+
+```{r}
+ages <- c(NA, ages, NA)
+if_else(ages > 18, "greater than 18", "otherwise")
+```
+
+. . .
+
+
+The `if_else()` function provides us with an extra argument `missing = ...` to decide the value to be assigned for missing values (by default, it returns `NA`).
+
+```{r}
+if_else(ages > 18, "greater than 18", "otherwise", missing = "unknown")
+```
+
+
+---
+
+## Loops
+
+Although most of the time they can be replaced by other more readable and efficient expressions, it is important to know another well-known control expression: [**loops**]{.hl-yellow}.
+
+* `for { }`: allows [**repeating the same code**]{.hl-yellow} a [**fixed and known number**]{.hl-purple} of times (usually based on an index).
+
+* `while { }`: allows [**repeating the same code**]{.hl-yellow} a [**indeterminate number of times**]{.hl-purple}, until a given **condition** is no longer met.
+
+---
+
+## For loops
+
+A [**for-loop**]{.hl-yellow} is a structure that allows us to [**repeat**]{.hl-yellow} a set of commands a [**finite and known number**]{.hl-purple} of times: given a **set of indices**, the loop will loop through each of them.
+
+. . .
+
+We are going to define a vector `x` any and print each element squared: if we wanted the first element squared we would write `x[1]^2`, if we wanted to do it in general, for the i-th element, `x[i]^2`. What we will do inside the `for (indices) { code }` is to indicate which values `i` will take ([**index vector**]{.hl-yellow}).
+
+```{r}
+x <- c(0, -7, 1, 4)
+for (i in 1:4) {
+  
+  print(x[i]^2)
+  
+}
+```
+
+---
+
+## For loops
+
+```{r}
+#| eval: false
+for (i in 1:4) { 
+  print(x[i]^2) 
+}
+```
+
+Inside the parentheses `for ()` we have just a [**sequence of numbers**]{.hl-yellow} that we have learned to construct. If we wanted it to do the same but excluding for example the second element it would be enough to define the indexes to traverse as `c(1, 3, 4)`.
+
+```{r}
+for (i in c(1, 3, 4)) {
+  
+  print(x[i]^2)
+  
+}
+```
+
+---
+
+## For loops
+
+We can also define a variable `y <- rep(0, 4)` (an "empty" **vector** filled with zeros), storing the [**i-th element of the vector**]{.hl-yellow} defined as `x[i]^2`.
+
+```{r}
+y <- rep(0, 4)
+for (i in 1:4) {
+  
+  y[i] <- x[i]^2
+  
+}
+y
+```
+
+. . .
+
+The above is equivalent to this
+
+```{r}
+y <- x^2
+y
+```
+
+---
+
+## Avoiding loops
+
+
+Using the `{microbenchmark}` package we can see how [**loops are less efficient**]{.hl-yellow} (hence most of the time we try to avoid them if there is an alternative).
+
+```{r}
+library(microbenchmark)
+x <- 1:1000
+microbenchmark(y <- x^2, 
+               for (i in 1:100) { y[i] <- x[i]^2 },
+               times = 500)
+```
+
+---
+ 
+## For loops
+
+
+Let's look at another example [**combining numeric and character vectors**]{.hl-yellow}: let's define again a vector of ages and names, and let's go through each one printing a message on the screen.
+
+```{r}
+names <- c("Javi", "Laura", "Carlos", "Lucía", "Mar")
+ages <- c(33, 51, 18, 43, 29)
+
+for (i in 1:5) { 
+  
+  print(glue("{names[i]} are {ages[i]} years old")) 
+  
+}
+```
+
+---
+
+## For loops
+
+
+Notice that [**if we don't want to worry about adding another person**]{.hl-yellow}, we can make the loop start at 1 and end at the [**last place**]{.hl-yellow} (whichever one it is), using `length()`.
+
+```{r}
+for (i in 1:length(names)) { 
+  
+  print(glue("{names[i]} are {ages[i]} years old")) 
+  
+}
+```
+
+---
+
+## For loops
+
+Although the set that the loop runs through is usually numeric indices, we can [**run through any type of object**]{.hl-yellow}, for example days of the week
+
+```{r}
+library(stringr)
+week_days <- c("monday", "tuesday", "wednesday", "thursday",
+               "friday", "saturday", "sunday")
+
+for (days in week_days) {
+  
+  print(str_to_upper(days))
+}
+```
+
+---
+
+## For loops
+
+One last example: let's go through our `swiss` dataset from the `{datasets}` package and we will **pass to missing data** all the fertility values greater than 80.
+
+```{r}
+for (i in 1:nrow(swiss)) {
+  
+  if (swiss$Fertility[i] > 80) { 
+    
+    swiss$Fertility[i] <- NA
+    
+  }
+}
+```
+
+. . .
+
+This would be exactly equivalent to the `if_else()` vectorized `if_else()` we saw previously
+
+```{r}
+data("swiss")
+swiss$Fertility <- if_else(swiss$Fertility > 80, NA, swiss$Fertility)
+```
+
+
+---
+
+## While loops
+
+Another way to design a loop is with the `while { }` structure, which will execute the loop an [**unknown a priori number of times**]{.hl-yellow}, it will do so until the [**imposed condition is no longer true**]{.hl-yellow}. For example, we will initialize a variable `cycles <- 1`, and at each step we will increment by one unit, and we will not exit the loop until `cycles > 4`.
+
+```{r}
+cycles <- 1
+while(cycles <= 4) {
+  
+  print(glue("Not yet, cycles {cycles}")) 
+  cycles <- cycles + 1
+  
+}
+```
+
+
+---
+  
+## While loops
+
+
+And what happens when the [**condition never becomes FALSE**]{.hl-yellow}? See for yourself.
+
+```{r}
+#| eval: false
+while (1 > 0) {
+  
+  print("Press ESC to abort the loop")
+  
+}
+```
+
+&nbsp;
+
+::: callout-warning
+## Warning
+
+A `while { }` loop can be very dangerous if it is not well controlled that the loop ends at some point.
+
+:::
+
+---
+
+## While loops
+
+We have two commands reserved to be able to [**abort a loop or forcibly advance**]{.hl-yellow}:
+
+* `break`: enables you to [**stop a loop**]{.hl-yellow} even if it has not reached the end of its index set to traverse (or the condition is still met).
+
+```{r}
+for(i in 1:10) {
+  if (i == 3) {
+    
+    break # if i = 3, stop the loop
+    
+  }
+  print(i)
+}
+```
+
+---
+
+## While loops
+
+We have two commands reserved to be able to [**abort a loop or forcibly advance**]{.hl-yellow}:
+
+* `next`: [**forces the loop to advance**]{.hl-yellow} to the next iteration, aborting the current iteration it is in. 
+
+```{r}
+for(i in 1:5) {
+  if (i == 3) {
+    
+    next # if i = 3, we continue
+    
+  }
+  print(i)
+}
+```
+
+---
+
+## Repeat loops
+
+Although it is a rarely used option, there is a control structure called `repeat { }` that executes a [**loop infinitely until we order it to stop**]{.hl-yellow} with a break.
+
+```{r}
+count <- 0
+repeat { 
+  
+  count <- count + 1
+  if (count >= 100) { break }
+  
+}
+count
+```
+
+
+---
+
+## Replicate
+
+Another way to [**repeat or replicate**]{.hl-yellow} code, apart from the loop structures already seen, is to make use of `replicate()`, which for the moment we will not make it depend on an index: we will simply [**repeat n times**]{.hl-yellow} the same code.
+
+```{r}
+x <- 1:3
+replicate(n = 3, x^2)
+```
+
+---
+
+## 💻 Your turn {#tu-turno-7}
+
+::: panel-tabset
+
+### [**Exercise 1**]{.hl-yellow}
+
+📝 Modify the code below to print a message on the screen if all data in the `airquality` set are from months other than January.
+
+```{r}
+#| eval: false
+library(datasets)
+months <- airquality$Month
+
+if (months == 2) {
+  print("No data for the month of January")
+}
+```
+
+```{r}
+#| code-fold: true
+#| eval: false
+library(datasets)
+months <- airquality$Month
+
+if (all(months != 1)) {
+  print("No data for the month of January")
+}
+```
+
+
+### [**Exercise 2**]{.hl-yellow}
+
+📝 Modify the code below to store in a variable called `high_temperature` a `TRUE` value if any of the records have a temperature greater than 90 (they are in Farenheit) and a `FALSE` otherwise.
+ 
+```{r}
+#| eval: false
+temp<- airquality$Temp
+
+if (temp == 100) {
+  print("Some of the records have temperatures above 90 Farenheit.")
+}
+```
+
+ 
+```{r}
+#| eval: false
+#| code-fold: true
+# Option 1
+temp <- airquality$Temp
+high_temp <- FALSE
+if (any(temp > 90)) {
+   high_temp <- TRUE
+}
+
+# Option 2
+high_temp <- any(airquality$Temp > 90)
+```
+
+### [**Exercise 3**]{.hl-yellow}
+
+📝 Modify the code below to design a `for` loop of 5 iterations that loops through the first 5 odd ones and adds one to them.
+
+```{r}
+#| eval: false
+for (i in 1:5) {
+  
+  print(i)
+}
+```
+
+```{r}
+#| eval: false
+#| code-fold: true
+for (i in c(1, 3, 5, 7, 9)) {
+  
+  print(i + 1)
+}
+```
+
+### [**Exercise 4**]{.hl-yellow}
+
+📝 Modify the code below to design a `while` loop that starts with a `count <- 1` variable and stops when it reaches 6.
+
+```{r}
+#| eval: false
+count <- 1
+while (count == 2) {
+  
+  print(count)
+}
+```
+
+```{r}
+#| eval: false
+#| code-fold: true
+count <- 1
+while (count < 6) {
+  
+  print(count)
+  count <- count + 1
+  
+}
+```
+
+
+### [**Exercise 5**]{.hl-yellow}
+
+📝 Using `sample()`, it simulates the roll of 100 dice (each with 6 sides), but in such a way that the die is tricked, and calculates the average of the rolls.
+
+
+```{r}
+#| eval: false
+#| code-fold: true
+
+# no tricked
+rolls <- sample(x = 1:6, size = 100, replace = TRUE)
+mean(rolls)
+
+# tricked
+rolls <-
+  sample(x = 1:6, size = 100, replace = TRUE,
+         prob = c(1/2, 1/10, 1/10, 1/10, 1/10, 1/10))
+mean(rolls)
+```
+
+:::
+
+---
+
+
+## 🐣 Case study 8 {#case-8}
+
+
+📝 Design a `for` loop of 200 iterations that, starting at an initial value of 100 (euros), adds 3€ (updating the value) if the current number of the iteration is even, and subtracts 5€ if it is odd (investigate the `%%` function).
+
+```{r}
+10 %% 2
+11 %% 2
+12 %% 2
+13 %% 2
+```
+
+
+. . .
+
+📝 Design the above loop but store the money from each iteration in some variable
+
+. . .
+
+
+📝 Design the loop of exercise 5 but stop when we have no money left.
+
+---
+
+## Quali: factors
+
+In statistics, when we talk about [**qualitative variables**]{.hl-yellow}, we will call **levels or modalities** the **different values** that these data can take. For example, in the case of the `sex` variable of the `starwars` set, we have 4 allowed levels: `female`, `hermaphroditic`, `male` and `none` (in addition to missing data).
+
+```{r}
+starwars |> count(sex)
+```
+
+
+
+---
+
+## Quali: factors
+
+These kinds of variables are known in `R` as [**factors**]{.hl-yellow}, and the fundamental package to deal with them is `{forcats}` (from the `{tidyverse}` environment). 
+
+
+![](img/factors.jpg)
+
+
+---
+
+## Quali: factors
+
+This package allows us to set the [**levels**]{.hl-yellow} (stored internally as `levels`) that a given categorical variable takes so that no mistakes, errors in data collection and generation can be generated. It also makes their analysis less computationally expensive when doing searches and comparisons, giving them a [**different treatment than normal text strings**]{.hl-yellow}.
+
+. . .
+
+Let's see a simple example simulating a `party` variable taking the values `"PP"`, `"PSOE"` and `"SUMAR"` (of size 15)
+
+```{r}
+set.seed(1234567)
+party <- sample(x = c("PP", "PSOE", "SUMAR"), size = 15, replace = TRUE)
+party
+```
+
+The `party` variable is currently of [**type text**]{.hl-yellow}, of type `chr`, something we can check with `class(state)`.
+
+```{r}
+class(party)
+```
+
+---
+
+## Quali: factors
+
+From a statistical and computational point of view, for `R` this variable right now would be equivalent to a named variable. But statistically [**a variable as a string**]{.hl-yellow} is not the same as a categorical variable that [**can only take those 3 levels**]{.hl-yellow}. How to [**convert to factor**]{.hl-yellow}? 
+
+. . .
+
+By making use of the `as_factor()` function from the `{forcats}` package.
+
+```{r}
+library(tidyverse)
+party_fct <- tibble("id" = 1:length(party),
+                    "party" = as_factor(party))
+party_fct
+```
+
+---
+
+## Quali: factors
+
+Not only the class of the variable  has  changed, but now, below the saved value, the sentence `Levels: ...` appears: these are the [**modalities or levels**]{.hl-yellow} of our qualitative. 
+
+```{r}
+party_fct |> pull(party)
+```
+
+---
+
+
+## Quali: factors
+
+Imagine that we are defining the database of deputies of the Congress and that the deputies of the PP did not attend that day to the plenary session: although our variable does not take that value THAT DAY, the state `PSOE` is a [**allowed level in the database**]{.hl-yellow} (so even if we eliminate it, because it is a factor, the level remains, we do not have it now but it is an allowed level).
+
+
+```{r}
+party_fct |> 
+  filter(party %in% c("PP", "SUMAR")) |> 
+  pull(party)
+```
+
+---
+
+## Quali: factors
+
+With `factor()` function we can [**explicitly specify**]{.hl-yellow} the names of the modalities and using `levels = ...` we can explicitly tell it the [**"order" of the modalities**]{.hl-yellow} 
+
+
+```{r}
+party_fct <-
+  tibble(id = 1:length(party),
+         party = factor(party, levels = c("SUMAR", "PP", "PSOE")))
+party_fct |> pull(party)
+```
+
+
+---
+
+
+## Quali: factors
+
+The previous "order" is just in the sense which it will be counted/plotted first) but [**we don't have (yet) an ordinal variable**]{.hl-purple}
+
+
+```{r}
+party_fct$party < "SUMAR"
+```
+
+. . .
+
+What if we want to [**define a qualitative variable ORDINAL**]{.hl-yellow}? Inside `factor()` we must indicate that `ordered = TRUE`.
+
+```{r}
+marks <- c("A", "E", "F", "B", "A+", "A", "C", "C", "D", "B", "A", "C", "C", "E", "F", "D", "A+")
+marks_database <-
+  tibble("student" = 1:length(marks),
+         "marks" =
+           factor(marks, levels = c("F", "E", "D", "C", "B", "A", "A+"),
+                  ordered = TRUE))
+marks_database |> pull(marks)
+```
+
+---
+
+## Quali: factors
+
+What changes? If you notice now, although the variable is still qualitative, we can [**make comparisons and order the records**]{.hl-yellow} because there is a [**hierarchy**]{.hl-purple} between the modalities.
+
+```{r}
+marks_database |> filter(marks >= "B")
+```
+
+---
+
+## Quali: factors
+
+
+:::: columns
+::: {.column width="45%"}
+
+If we want to tell it to [**drop an unused level**]{.hl-yellow} at that moment (and that we want to [**exclude from the definition**]{.hl-purple}) we can do it with `fct_drop()`.
+
+```{r}
+marks_database |> 
+  filter(marks %in% c("F", "E", "D", "C", "B", "A")) |> 
+  pull(marks)
+```
+
+:::
+
+::: {.column width="55%"}
+
+
+```{r echo = FALSE,  out.width = "100%", fig.align = "left"}
+knitr::include_graphics("./img/drop_factor.jpg")
+``` 
+
+:::
+
+::::
+
+```{r}
+marks_database |> 
+  filter(marks %in% c("F", "E", "D", "C", "B", "A")) |> 
+  mutate(marks = fct_drop(marks)) |>  
+  pull(marks)
+```
+
+---
+
+## Quali: factors
+
+
+:::: columns
+::: {.column width="45%"}
+
+
+Just as we can delete levels we can [**expand existing levels**]{.hl-yellow} (even if there is no data for that level at that time) with `fct_expand()`.
+
+:::
+
+::: {.column width="55%"}
+
+
+```{r echo = FALSE,  out.width = "100%", fig.align = "left"}
+knitr::include_graphics("./img/factor_expand.jpg")
+``` 
+
+:::
+::::
+
+```{r}
+marks_database |> 
+  mutate(marks = fct_expand(marks, c("F-", "A+", "A++"))) %>% 
+  pull(marks)
+```
+
+---
+
+## Quali: factors
+
+:::: columns
+::: {.column width="45%"}
+
+In addition with `fct_explicit_na()` we can [**assign a level to the missing values**]{.hl-yellow} to be included in the analysis and visualizations.
+
+:::
+
+::: {.column width="55%"}
+
+
+```{r echo = FALSE,  out.width = "100%", fig.align = "left"}
+knitr::include_graphics("./img/factor_explicit.jpg")
+``` 
+
+:::
+::::
+
+```{r}
+fct_explicit_na(factor(c("a", "b", NA)))
+```
+
+---
+
+## Quali: factors
+
+Even once defined we can [**reorder the levels**]{.hl-yellow} with `fct_relevel()`.
+
+
+```{r}
+marks_database_expand <- 
+  marks_database |>  
+  mutate(marks = fct_expand(marks, c("F-", "A+", "A++"))) |> 
+  pull(marks)
+
+marks_database_expand |> 
+  fct_relevel(c("F-", "F", "E", "D", "C", "B", "A", "A+", "A++"))
+  
+```
+
+
+---
+
+## Quali: factors
+
+:::: columns
+::: {.column width="55%"}
+
+This way of working with qualitative variables allows us to give a [**theoretical definition**]{.hl-yellow} of our database, and we can even count values that do not yet exist (but could), making use of `fct_count()`.
+
+:::
+
+::: {.column width="45%"}
+
+
+```{r echo = FALSE,  out.width = "70%", fig.align = "left"}
+knitr::include_graphics("./img/fct_count.jpg")
+``` 
+
+:::
+::::
+
+```{r}
+marks_database |> 
+  mutate(marks = fct_expand(marks, c("F-", "A+", "A++"))) |> 
+  pull(marks) |> 
+  fct_count()
+```
+
+
+---
+
+## Quali: factors
+
+The levels can also be [**sorted by frequency**]{.hl-yellow} with `fct_infreq()`.
+
+```{r}
+marks_database |> 
+  mutate(marks = fct_infreq(marks)) |> 
+  pull(marks)
+
+marks_database |> 
+  mutate(marks = fct_infreq(marks)) |> 
+  pull(marks) |> 
+  fct_count()
+```
+
+---
+
+## Quali: factors
+
+
+Sometimes we will want to [**group levels**]{.hl-yellow}, for example, not allowing levels that [**do not happen a minimum number of times**]{.hl-yellow} with `fct_lump_min(..., min = ..)` (observations that do not meet this will go to a **generic level** called `Other`, although this can be changed with the `other_level` argument). 
+
+:::: columns
+::: {.column width="50%"}
+
+
+```{r}
+marks_database |> 
+  pull(marks) %>% 
+  fct_lump_min(min = 3)
+```
+
+:::
+
+::: {.column width="50%"}
+
+
+```{r}
+marks_database |> 
+  pull(marks) |>
+  fct_lump_min(min = 3,
+               other_level = "Less frequent")
+```
+
+:::
+::::
+
+---
+
+## Quali: factors
+
+
+We can do something equivalent but based on its [**relative frequency**]{.hl-yellow} with `fct_lump_prop()`.
+
+
+```{r}
+marks_database |> 
+  pull(marks) |> 
+  fct_lump_prop(prop = 0.15,
+                other_level = "less frequent")
+```
+
+---
+
+
+## Quali: factors
+
+We can apply this to our datasets to [**recategorize variables**]{.hl-yellow} very quickly.
+
+```{r}
+starwars |>  
+  drop_na(species) |> 
+  mutate(species =
+           fct_lump_min(species, min = 3,
+                        other_level = "Others")) |>  
+  count(species)
+```
+
+---
+
+## Quali: factors
+
+
+
+With `fct_reorder()` we can also indicate that we want to [**order the factors**]{.hl-yellow} according to a function applied to another variable.
+
+
+```{r}
+starwars_factor <- 
+  starwars |>  
+  drop_na(height, species) |> 
+  mutate(species =
+           fct_lump_min(species, min = 3,
+                        other_level = "Others"))
+```
+
+:::: columns
+::: {.column width="50%"}
+
+
+```{r}
+starwars_factor |>  pull(species)
+```
+
+:::
+
+::: {.column width="50%"}
+
+
+```{r}
+starwars_factor |> 
+  mutate(species = fct_reorder(species, height, mean)) |> 
+  pull(species)
+```
+
+:::
+::::
+
+
+---
+
+## 💻 Your turn
+
+
+::: panel-tabset
+
+### [**Exercise 1**]{.hl-yellow}
+
+📝 Given the variable `months` defined below (defined as a character vector), convert this variable to factor (just that)
+
+```{r}
+months <- c("Jan", "Feb", "Mar", "Apr")
+```
+
+```{r}
+#| code-fold: true
+#| eval: false
+months <- c("Jan", "Feb", "Mar", "Apr")
+months_fct <- as_factor(months)
+months_fct
+```
+
+### [**Exercise 2**]{.hl-yellow}
+
+📝 Given the variable `months` defined below converts this variable to a factor but indicating the levels correctly.
+
+```{r}
+months <- c(NA, "Apr", "Jan", "Oct", "Jul", "Jan", "Sep", NA, "Feb", "Dic",
+           "Jul", "Mar", "Jan", "Mar", "Feb", "Apr", "May", "Oct", "Sep",  NA,
+           "Dic", "Jul", "Nov", "Feb", "Oct", "Jun", "Sep", "Oct", "Oct", "Sep")
+```
+
+
+
+```{r}
+#| code-fold: true
+#| eval: false
+months_fct <-
+  factor(months,
+         levels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dic"))
+months_fct
+```
+
+  
+### [**Exercise 3**]{.hl-yellow}
+
+📝 Count how many values there are for each month but keep in mind that they are factors (maybe there are unused levels and you should get a 0 for them).
+
+
+```{r}
+#| code-fold: true
+#| eval: false
+meses_fct |>  fct_count()
+```
+
+### [**Exercise 4**]{.hl-yellow}
+
+📝 Since there are missing values, it indicates that the absentee is a thirteenth level labeled `"missing"`.
+
+```{r}
+#| code-fold: true
+#| eval: false
+months_fct <- 
+  months_fct |> 
+  fct_explicit_na(na_level = "missing")
+months_fct
+```
+
+### [**Exercise 5**]{.hl-yellow}
+
+📝 Removes unused levels.
+
+
+```{r}
+#| code-fold: true
+#| eval: false
+months_fct <- 
+  months_fct %>%
+  fct_drop()
+months_fct
+```
+
+
+### [**Exercise 6**]{.hl-yellow}
+
+📝 Sort the levels by frequency of occurrence.
+
+
+```{r}
+#| code-fold: true
+#| eval: false
+months_fct |> 
+  fct_infreq()
+```
+
+### [**Exercise 7**]{.hl-yellow}
+
+📝 Group levels so that any level that does not appear at least 7% of the time is grouped in a level called `"other months"`.
+  
+```{r}
+#| code-fold: true
+#| eval: false
+months_fct <-
+  months_fct |> 
+  fct_lump_prop(prop = 0.07, other_level = "other months")
+months_fct 
+```
+
+:::
+
+
+
+# Lesson 9: lists, joins and SQL {#clase-9}
+
+[**Lists. Joins and SQL connection**]{style="color:#444442;"}
+
+---
+
+## Lists
+
+---
+
+## Joins
+
+--- 
+
+## SQL connection
 
 
