@@ -453,7 +453,7 @@ Master in Computational Social Sciences • 2023-2024
 </ul>
 <div class="fragment">
 <ul>
-<li><span class="hl-yellow"><strong>Individual work done during the course</strong></span> (60%). Throughout the course there are <span class="hl-purple"><strong>3 individual task submissions</strong></span>.</li>
+<li><span class="hl-yellow"><strong>Individual work done during the course</strong></span> (35%). Throughout the course there are <span class="hl-purple"><strong>3 individual task submissions</strong></span>.</li>
 </ul>
 </div>
 <div class="fragment">
@@ -599,8 +599,8 @@ Master in Computational Social Sciences • 2023-2024
 <h2>Plannning</h2>
 <ul>
 <li><p>Individual Task I (10%): 24th October (R base, databases, tidydata)</p></li>
-<li><p>Individual Task II (20%): 16th November (Tidyverse, control flow structures, functions)</p></li>
-<li><p>Individual Task III (30%): 7th December (all contents)</p></li>
+<li><p>Individual Task II (25%): 5th December (Tidyverse, control flow structures, functions, lists, etc)</p></li>
+<li><p>Group Task (30%)</p></li>
 </ul>
 </section>
 <section id="materials" class="slide level2">
@@ -1378,7 +1378,7 @@ Master in Computational Social Sciences • 2023-2024
 <div class="cell">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a><span class="fu">today</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-10-26"</code></pre>
+<pre><code>[1] "2023-11-16"</code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -1388,7 +1388,7 @@ Master in Computational Social Sciences • 2023-2024
 <div class="cell">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="fu">now</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-10-26 12:37:55 CEST"</code></pre>
+<pre><code>[1] "2023-11-16 13:17:28 CET"</code></pre>
 </div>
 </div>
 </div>
@@ -1404,7 +1404,7 @@ Master in Computational Social Sciences • 2023-2024
 </div>
 <div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a><span class="fu">month</span>(date)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 10</code></pre>
+<pre><code>[1] 11</code></pre>
 </div>
 </div>
 </div>
@@ -3871,8 +3871,8 @@ weights   63   70   85   95</code></pre>
 <pre><code># A tibble: 2 × 14
   name      height  mass hair_color skin_color eye_color birth_year sex   gender
   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-1 Arvel Cr…     NA    NA brown      fair       brown             NA male  mascu…
-2 Bib Fort…    180    NA none       pale       pink              NA male  mascu…
+1 Lando Ca…    177    79 black      dark       brown             31 male  mascu…
+2 Darth Ma…    175    80 none       red        yellow            54 male  mascu…
 # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
 #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 </div>
@@ -3917,10 +3917,10 @@ weights   63   70   85   95</code></pre>
 <pre><code># A tibble: 4 × 14
   name      height  mass hair_color skin_color eye_color birth_year sex   gender
   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-1 Biggs Da…    183    84 black      light      brown             24 male  mascu…
-2 Taun We      213    NA none       grey       black             NA fema… femin…
-3 Dexter J…    198   102 none       brown      yellow            NA male  mascu…
-4 San Hill     191    NA none       grey       gold              NA male  mascu…
+1 Wilhuff …    180    NA auburn, g… fair       blue              64 male  mascu…
+2 Sebulba      112    40 none       grey, red  orange            NA male  mascu…
+3 Ackbar       180    83 none       brown mot… orange            41 male  mascu…
+4 Finn          NA    NA black      dark       dark              NA male  mascu…
 # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
 #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 </div>
@@ -3984,7 +3984,7 @@ weights   63   70   85   95</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb355"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb355-1"><a href="#cb355-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 3 4 1 1 2 2 4 2 5 1</code></pre>
+<pre><code> [1] 1 1 2 6 4 5 1 4 2 5</code></pre>
 </div>
 </div>
 </div>
@@ -3996,8 +3996,8 @@ weights   63   70   85   95</code></pre>
 <div class="sourceCode cell-code" id="cb357"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb357-1"><a href="#cb357-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb357-2"><a href="#cb357-2"></a>       <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.2</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.05</span>, <span class="fl">0.05</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 1 1 1 1 1 2 5 1 1 6 5 2 2 1 1 6 1 1 1 1 1 2 1 1 1 1 1 1 3 1 5 1 1 1 5 1 2 1
-[39] 1 3 5 2 1 2 2 1 5 5 1 1</code></pre>
+<pre><code> [1] 1 2 5 1 1 1 1 1 1 1 1 5 2 3 1 1 1 2 1 1 3 1 1 6 1 1 2 2 1 1 2 1 1 1 1 1 1 1
+[39] 1 2 1 2 1 1 1 1 1 2 5 1</code></pre>
 </div>
 </div>
 </section>
@@ -7813,12 +7813,12 @@ $side_2
 <span id="cb675-5"><a href="#cb675-5"></a>               <span class="at">times =</span> <span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Unit: microseconds
-                                    expr      min       lq        mean   median
-                                y &lt;- x^2    1.722    2.132    2.776274    2.501
- for (i in 1:100) {     y[i] &lt;- x[i]^2 } 1504.864 1630.836 1963.309928 1808.612
-       uq      max neval
-    3.198   16.113   500
- 2089.586 7816.158   500</code></pre>
+                                    expr      min       lq       mean    median
+                                y &lt;- x^2    2.009    3.157    5.29761    3.8745
+ for (i in 1:100) {     y[i] &lt;- x[i]^2 } 1747.092 2686.238 3728.00569 3259.3155
+        uq       max neval
+    6.2525    64.657   500
+ 4131.3855 21647.262   500</code></pre>
 </div>
 </div>
 </section>
@@ -8717,16 +8717,954 @@ Levels: Droid Others Human Gungan</code></pre>
 </section>
 <section id="lists" class="slide level2">
 <h2>Lists</h2>
+<p>We have already seen that lists are an object in R that allows us to store <span class="hl-yellow"><strong>collections of variables of different type</strong></span> (as with <code>data.frame</code> and <code>tibble</code>) but also <span class="hl-purple"><strong>different lengths</strong></span>, with totally heterogeneous structures (even a list can have inside it another list).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb771"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb771-1"><a href="#cb771-1"></a>name <span class="ot">&lt;-</span> <span class="st">"Javi"</span></span>
+<span id="cb771-2"><a href="#cb771-2"></a>age <span class="ot">&lt;-</span> <span class="dv">34</span></span>
+<span id="cb771-3"><a href="#cb771-3"></a>marks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">9</span>)</span>
+<span id="cb771-4"><a href="#cb771-4"></a>parents <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Paloma"</span>, <span class="st">"Goyo"</span>)</span>
+<span id="cb771-5"><a href="#cb771-5"></a></span>
+<span id="cb771-6"><a href="#cb771-6"></a>list_var <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"name"</span> <span class="ot">=</span> name, <span class="st">"age"</span> <span class="ot">=</span> age, <span class="st">"marks"</span> <span class="ot">=</span> marks, <span class="st">"parents"</span> <span class="ot">=</span> parents)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb772"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb772-1"><a href="#cb772-1"></a>list_var<span class="sc">$</span>name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Javi"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb774"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb774-1"><a href="#cb774-1"></a>list_var<span class="sc">$</span>marks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  7  8  5  3 10  9</code></pre>
+</div>
+</div>
+</section>
+<section id="lists-1" class="slide level2">
+<h2>Lists</h2>
+<p>We can also make <span class="hl-yellow"><strong>lists with other lists inside</strong></span>, so that to access each level we must use the <code>[[]]</code> operator.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb776"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb776-1"><a href="#cb776-1"></a>list_of_lists <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"list_1"</span> <span class="ot">=</span> list_var[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], <span class="st">"list_2"</span> <span class="ot">=</span> list_var[<span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>])</span>
+<span id="cb776-2"><a href="#cb776-2"></a><span class="fu">names</span>(list_of_lists)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "list_1" "list_2"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb778"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb778-1"><a href="#cb778-1"></a><span class="fu">names</span>(list_of_lists[[<span class="dv">1</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "name" "age" </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb780"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb780-1"><a href="#cb780-1"></a>list_of_lists[[<span class="dv">1</span>]][[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Javi"</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>We are allowed to store <span class="hl-yellow"><strong>n-dimensional data</strong></span>!</p>
+</div>
+</section>
+<section id="lists-2" class="slide level2">
+<h2>Lists</h2>
+<p>One of the disadvantages is that a list <span class="hl-yellow"><strong>cannot be vectorized</strong></span> immediately, so any arithmetic operation applied to a list will give <span class="hl-red"><strong>error</strong></span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb782"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb782-1"><a href="#cb782-1"></a>data <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"a"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="st">"b"</span> <span class="ot">=</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">20</span>)</span>
+<span id="cb782-2"><a href="#cb782-2"></a>data <span class="sc">/</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in data/2: non-numeric argument to binary operator</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>For this purpose, one of the common (but outdated) options is to make use of the <code>lapply()</code> family.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb784"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb784-1"><a href="#cb784-1"></a><span class="fu">lapply</span>(data, <span class="at">FUN =</span> <span class="cf">function</span>(x) { x <span class="sc">/</span> <span class="dv">2</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$a
+[1] 0.5 1.0 1.5 2.0 2.5
+
+$b
+ [1]  5.0  5.5  6.0  6.5  7.0  7.5  8.0  8.5  9.0  9.5 10.0</code></pre>
+</div>
+</div>
+<p>By default, the output of <code>lapply()</code>is always a <span class="hl-yellow"><strong>list of equal length</strong></span>.</p>
+</div>
+</section>
+<section id="lists-3" class="slide level2">
+<h2>Lists</h2>
+<p>A more flexible and versatile option is to make use of the <code>{purrr}</code> package of the <code>{tidyverse}</code> environment.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb786"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb786-1"><a href="#cb786-1"></a><span class="fu">library</span>(purrr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This package is intended to mimic the <span class="hl-yellow"><strong>functional programming</strong></span> of other languages such as Scala or Hadoop’s <span class="hl-yellow"><strong>map-reduce strategy</strong></span> (from Google).</p>
+
+<img data-src="img/purrr.png" class="r-stretch"></section>
+<section id="lists-4" class="slide level2">
+<h2>Lists</h2>
+<p>The simplest function of the <code>{purrr}</code> package is the <code>map()</code> function, which <span class="hl-yellow"><strong>applies a vectorized function</strong></span> to each of the elements of a list. Let’s see a first example applied to vectors</p>
+<div class="fragment">
+<p><code>map()</code> allows us to <span class="hl-yellow"><strong>“map” each list</strong></span> and apply the function element by element (if applicable).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb787"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb787-1"><a href="#cb787-1"></a>x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"x1"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="st">"x2"</span> <span class="ot">=</span> <span class="dv">11</span><span class="sc">:</span><span class="dv">20</span>)</span>
+<span id="cb787-2"><a href="#cb787-2"></a><span class="fu">map</span>(x, sqrt) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$x1
+[1] 1.000000 1.414214 1.732051 2.000000
+
+$x2
+ [1] 3.316625 3.464102 3.605551 3.741657 3.872983 4.000000 4.123106 4.242641
+ [9] 4.358899 4.472136</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-warning callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Be careful</strong></p>
+</div>
+<div class="callout-content">
+<p>With vectors we have a default vectorization because <code>R</code> performs element-by-element operations. Note that, by default, the <span class="hl-yellow"><strong>output of <code>map</code> is a list</strong></span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="lists-5" class="slide level2">
+<h2>Lists</h2>
+<p>Let’s look at another example. Define in a list two samples from 2 normal distributions, of different sample size and different mean. Compute the mean of each one.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb789"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb789-1"><a href="#cb789-1"></a>x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">1500</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">0.7</span>),</span>
+<span id="cb789-2"><a href="#cb789-2"></a>          <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">2800</span>, <span class="at">mean =</span> <span class="dv">2</span>, <span class="at">sd =</span> <span class="fl">1.5</span>))</span>
+<span id="cb789-3"><a href="#cb789-3"></a><span class="fu">map</span>(x, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] -0.006135355
+
+[[2]]
+[1] 1.950277</code></pre>
+</div>
+</div>
+</section>
+<section id="lists-6" class="slide level2">
+<h2>Lists</h2>
+<p>What if we want to calculate the mean of their squared values?</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb791"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb791-1"><a href="#cb791-1"></a><span class="fu">map</span>(x, <span class="cf">function</span>(x) { <span class="fu">mean</span>(x<span class="sc">^</span><span class="dv">2</span>) })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] 0.4794524
+
+[[2]]
+[1] 6.094396</code></pre>
+</div>
+</div>
+</section>
+<section id="lists-7" class="slide level2">
+<h2>Lists</h2>
+<p>In addition to being <span class="hl-yellow"><strong>more readable and efficient</strong></span>, with <code>{purrr}</code> we can <span class="hl-yellow"><strong>decide the output format</strong></span> after the operation</p>
+<ul>
+<li>output as <span class="hl-purple"><strong>numeric (double) vector</strong></span> with <code>map_dbl()</code></li>
+<li>output as <span class="hl-purple"><strong>numeric (int) vector</strong></span> with <code>map_int()</code></li>
+<li>output as <span class="hl-purple"><strong>character vector</strong></span> with <code>map_chr()</code></li>
+<li>output as <span class="hl-purple"><strong>logical vector</strong></span> with <code>map_lgl()</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb793"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb793-1"><a href="#cb793-1"></a><span class="fu">map_dbl</span>(x, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.006135355  1.950277482</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb795"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb795-1"><a href="#cb795-1"></a><span class="fu">map_chr</span>(x, <span class="cf">function</span>(x) { <span class="fu">glue</span>(<span class="st">"Mean is {round(mean(x), 5)}"</span>) })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Mean is -0.00614" "Mean is 1.95028" </code></pre>
+</div>
+</div>
+</section>
+<section id="lists-8" class="slide level2">
+<h2>Lists</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb797"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb797-1"><a href="#cb797-1"></a><span class="fu">c</span>(x[[<span class="dv">1</span>]][<span class="dv">3</span>], x[[<span class="dv">2</span>]][<span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.3489989  3.1888925</code></pre>
+</div>
+</div>
+<p>Also, if you pass it a <span class="hl-yellow"><strong>number</strong></span> instead of a function, it will return the <span class="hl-yellow"><strong>ith element of each list</strong></span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb799"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb799-1"><a href="#cb799-1"></a><span class="fu">map_dbl</span>(x, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.3489989  3.1888925</code></pre>
+</div>
+</div>
+</section>
+<section id="lists-9" class="slide level2">
+<h2>Lists</h2>
+<p>We also have the option of generalizing it to be able to use functions that <span class="hl-yellow"><strong>need two arguments in the form of a list</strong></span> (binary operations), with <code>map2()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb801"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb801-1"><a href="#cb801-1"></a>x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"a"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">"b"</span> <span class="ot">=</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>)</span>
+<span id="cb801-2"><a href="#cb801-2"></a>y <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"c"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">0</span>), <span class="st">"b"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="sc">-</span><span class="dv">1</span>))</span>
+<span id="cb801-3"><a href="#cb801-3"></a><span class="fu">map2</span>(x, y, <span class="cf">function</span>(x, y) { x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> y<span class="sc">^</span><span class="dv">2</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$a
+[1]  2 20  9
+
+$b
+[1] 41 41 37</code></pre>
+</div>
+</div>
+</section>
+<section id="lists-10" class="slide level2">
+<h2>Lists</h2>
+<p>We can obtain the output in the form of <code>data.frame</code> by adding <code>list_rbind()</code> or <code>list_cbind()</code>, which <span class="hl-yellow"><strong>converts a list into a table</strong></span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb803"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb803-1"><a href="#cb803-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)</span>
+<span id="cb803-2"><a href="#cb803-2"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
+<span id="cb803-3"><a href="#cb803-3"></a><span class="fu">map2</span>(x, y, <span class="cf">function</span>(x, y) { <span class="fu">tibble</span>(x, y) }) <span class="sc">|&gt;</span> <span class="fu">list_rbind</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  x         y
+  &lt;chr&gt; &lt;int&gt;
+1 a         1
+2 b         2
+3 c         3</code></pre>
+</div>
+</div>
+</section>
+<section id="lists-11" class="slide level2">
+<h2>Lists</h2>
+<p>We can generalize it further with <code>pmap_xxx()</code> which allows us to use <span class="hl-yellow"><strong>multiple arguments (multiple lists)</strong></span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb805"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb805-1"><a href="#cb805-1"></a>x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb805-2"><a href="#cb805-2"></a>y <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)</span>
+<span id="cb805-3"><a href="#cb805-3"></a>z <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>)</span>
+<span id="cb805-4"><a href="#cb805-4"></a><span class="fu">pmap_dbl</span>(<span class="fu">list</span>(x, y, z), sum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 111 221 331</code></pre>
+</div>
+</div>
+</section>
+<section id="lists-12" class="slide level2">
+<h2>Lists</h2>
+<p>We have other types of iterators that, although they assume inputs, do not return anything, as <code>walk()</code> (just one input argument), <code>walk2()</code> (two arguments) and <code>pwalk()</code> (multiple arguments), all <span class="hl-yellow"><strong>invisibly return</strong></span>, just call a function for its <span class="hl-yellow"><strong>side effects</strong></span> rather than its return value.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb807"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb807-1"><a href="#cb807-1"></a><span class="fu">list</span>(<span class="st">"a"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">"b"</span> <span class="ot">=</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">|&gt;</span></span>
+<span id="cb807-2"><a href="#cb807-2"></a>  <span class="fu">map2</span>(<span class="fu">list</span>(<span class="st">"a"</span> <span class="ot">=</span> <span class="dv">11</span><span class="sc">:</span><span class="dv">13</span>, <span class="st">"b"</span> <span class="ot">=</span> <span class="dv">14</span><span class="sc">:</span><span class="dv">16</span>),</span>
+<span id="cb807-3"><a href="#cb807-3"></a>       <span class="cf">function</span>(x, y) { x <span class="sc">+</span> y }) <span class="sc">|&gt;</span> </span>
+<span id="cb807-4"><a href="#cb807-4"></a>  <span class="fu">walk</span>(print)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12 14 16
+[1] 18 20 22</code></pre>
+</div>
+</div>
+</section>
+<section id="your-turn-1" class="slide level2">
+<h2>💻 Your turn</h2>
+<div class="panel-tabset">
+<ul id="tabset-17" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-17-1"><span class="hl-yellow"><strong>Exercise 1</strong></span></a></li><li><a href="#tabset-17-2"><span class="hl-yellow"><strong>Exercise 2</strong></span></a></li><li><a href="#tabset-17-3"><span class="hl-yellow"><strong>Exercise 3</strong></span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-17-1">
+<p>📝 Define a list of 4 elements of different types and access the second of them (I will include one that is a tibble so that you can see that in a list there is room for everything).</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb809"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb809-1"><a href="#cb809-1"></a>list_example <span class="ot">&lt;-</span></span>
+<span id="cb809-2"><a href="#cb809-2"></a>  <span class="fu">list</span>(<span class="st">"name"</span> <span class="ot">=</span> <span class="st">"Javier"</span>, <span class="st">"cp"</span> <span class="ot">=</span> <span class="dv">28019</span>,</span>
+<span id="cb809-3"><a href="#cb809-3"></a>       <span class="st">"siblings"</span> <span class="ot">=</span> <span class="cn">TRUE</span>,</span>
+<span id="cb809-4"><a href="#cb809-4"></a>       <span class="st">"marks"</span> <span class="ot">=</span> <span class="fu">tibble</span>(<span class="st">"maths"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">7.5</span>, <span class="dv">8</span>, <span class="dv">9</span>),</span>
+<span id="cb809-5"><a href="#cb809-5"></a>                        <span class="st">"lang"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">6</span>)))</span>
+<span id="cb809-6"><a href="#cb809-6"></a>list_example</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-17-2">
+<p>📝 From the list above, access the elements that occupy places 1 and 4 of the list defined above.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb810"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb810-1"><a href="#cb810-1"></a>list_example[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)]</span>
+<span id="cb810-2"><a href="#cb810-2"></a></span>
+<span id="cb810-3"><a href="#cb810-3"></a>list_example<span class="sc">$</span>name</span>
+<span id="cb810-4"><a href="#cb810-4"></a>list_example<span class="sc">$</span>marks</span>
+<span id="cb810-5"><a href="#cb810-5"></a></span>
+<span id="cb810-6"><a href="#cb810-6"></a>list_example[<span class="fu">c</span>(<span class="st">"name"</span>, <span class="st">"marks"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-17-3">
+<p>📝 Load the <code>starwars</code> dataset from the <code>{dplyr}</code> package and access the second movie that appears in <code>starwars$films</code> (for each character). Determine which ones do not appear in more than one movie.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb811"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb811-1"><a href="#cb811-1"></a>second_film <span class="ot">&lt;-</span> <span class="fu">map</span>(starwars<span class="sc">$</span>films, <span class="dv">2</span>)</span>
+<span id="cb811-2"><a href="#cb811-2"></a><span class="fu">map_lgl</span>(second_film, is.null)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE
+[13] FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE
+[25]  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE
+[37]  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE
+[49] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE FALSE
+[61] FALSE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+[73] FALSE  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
+[85]  TRUE  TRUE FALSE</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="joins" class="slide level2">
 <h2>Joins</h2>
+<p>When working with data we will not always have the information in a single table, and sometimes, we will be interested in <span class="hl-yellow"><strong>cross-referencing</strong></span> information from different sources.</p>
+<div class="fragment">
+<p>For this we will use a classic of every language that handles data: the famous <span class="hl-yellow"><strong>join</strong></span>, a tool that will allow us to <span class="hl-yellow"><strong>cross one or several tables</strong></span>, making use of a <span class="hl-yellow"><strong>identifying column</strong></span> of each one of them.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb813"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb813-1"><a href="#cb813-1"></a>table_1 <span class="sc">|&gt;</span></span>
+<span id="cb813-2"><a href="#cb813-2"></a>  <span class="fu">xxx_join</span>(table_2, <span class="at">by =</span> id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section>
-<section id="sql-connection" class="slide level2">
-<h2>SQL connection</h2>
+<section id="joins-1" class="slide level2">
+<h2>Joins</h2>
+<ul>
+<li><p><code>inner_join()</code>: only <span class="hl-yellow"><strong>records with id in both</strong></span> tables survive.</p></li>
+<li><p><code>full_join()</code>: keeps <span class="hl-yellow"><strong>all records in both</strong></span> tables.</p></li>
+<li><p><code>left_join()</code>: keeps <span class="hl-yellow"><strong>all the records of the first table</strong></span>, and looks for which ones have id also in the second one (in case of <span class="hl-yellow"><strong>not having it, it fills with NA</strong></span> the fields of the 2nd table).</p></li>
+<li><p><code>right_join()</code>: keeps <span class="hl-yellow"><strong>all records in the second table</strong></span>, and searches which ones have id also in the first one.</p></li>
+</ul>
+
+<img data-src="img/sql-joins.jpg" class="r-stretch"></section>
+<section id="joins-2" class="slide level2">
+<h2>Joins</h2>
+<p>Let’s test the various joins with a simple example</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb814"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb814-1"><a href="#cb814-1"></a>tb_1 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="st">"key"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">"val_x"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"x1"</span>, <span class="st">"x2"</span>, <span class="st">"x3"</span>))</span>
+<span id="cb814-2"><a href="#cb814-2"></a>tb_2 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="st">"key"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>), <span class="st">"val_y"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"y1"</span>, <span class="st">"y2"</span>, <span class="st">"y3"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb815"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb815-1"><a href="#cb815-1"></a>tb_1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+    key val_x
+  &lt;int&gt; &lt;chr&gt;
+1     1 x1   
+2     2 x2   
+3     3 x3   </code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb817"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb817-1"><a href="#cb817-1"></a>tb_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+    key val_y
+  &lt;dbl&gt; &lt;chr&gt;
+1     1 y1   
+2     2 y2   
+3     4 y3   </code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="left_join" class="slide level2">
+<h2>left_join()</h2>
+<p>Imagine that we want to <span class="hl-yellow"><strong>incorporate</strong></span> to <code>tb_1</code> the <span class="hl-yellow"><strong>information from table_2</strong></span>, identifying the records by the key column (<code>by = "key"</code>, the column it has to cross): we want to keep all the records of the first table and look for which ones have the same value in <code>key</code> also in the second one.</p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb819"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb819-1"><a href="#cb819-1"></a>tb_1 <span class="sc">|&gt;</span> </span>
+<span id="cb819-2"><a href="#cb819-2"></a>  <span class="fu">left_join</span>(tb_2, <span class="at">by =</span> <span class="st">"key"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+    key val_x val_y
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+1     1 x1    y1   
+2     2 x2    y2   
+3     3 x3    &lt;NA&gt; </code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/left_join.jpg"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="left_join-1" class="slide level2">
+<h2>left_join()</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb821"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb821-1"><a href="#cb821-1"></a>tb_1 <span class="sc">|&gt;</span></span>
+<span id="cb821-2"><a href="#cb821-2"></a>  <span class="fu">left_join</span>(tb_2, <span class="at">by =</span> <span class="st">"key"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+    key val_x val_y
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+1     1 x1    y1   
+2     2 x2    y2   
+3     3 x3    &lt;NA&gt; </code></pre>
+</div>
+</div>
+<p>Notice that the <span class="hl-yellow"><strong>records in the first one whose key was not found in the second one</strong></span> has given them the value of <span class="hl-yellow"><strong>absent</strong></span>.</p>
+</section>
+<section id="right_join" class="slide level2">
+<h2>right_join()</h2>
+<p>The <code>right_join()</code> will perform the opposite operation: we will now <span class="hl-yellow"><strong>incorporate</strong></span> to <code>tb_2</code> the <span class="hl-yellow"><strong>information from table_2</strong></span>, identifying the records by the <code>key</code> column: we want to keep all the records of the second one and look for which ones have id (same value in <code>key</code>) also in the first table.</p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb823"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb823-1"><a href="#cb823-1"></a>tb_1 <span class="sc">|&gt;</span> </span>
+<span id="cb823-2"><a href="#cb823-2"></a>  <span class="fu">right_join</span>(tb_2, <span class="at">by =</span> <span class="st">"key"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+    key val_x val_y
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+1     1 x1    y1   
+2     2 x2    y2   
+3     4 &lt;NA&gt;  y3   </code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/right_join.jpg"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="right_join-1" class="slide level2">
+<h2>right_join()</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb825"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb825-1"><a href="#cb825-1"></a>tb_1 <span class="sc">|&gt;</span></span>
+<span id="cb825-2"><a href="#cb825-2"></a>  <span class="fu">right_join</span>(tb_2, <span class="at">by =</span> <span class="st">"key"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+    key val_x val_y
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+1     1 x1    y1   
+2     2 x2    y2   
+3     4 &lt;NA&gt;  y3   </code></pre>
+</div>
+</div>
+<p>Notice that now the <span class="hl-yellow"><strong>records of the second one whose key was not found in the first one</strong></span> are the ones given the value of <span class="hl-yellow"><strong>absent</strong></span>.</p>
+</section>
+<section id="keys-and-suffixes" class="slide level2">
+<h2>keys and suffixes</h2>
+<p>The key columns we will use for the crossover <span class="hl-yellow"><strong>will not always be named the same</strong></span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb827"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb827-1"><a href="#cb827-1"></a>tb_1 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="st">"key_1"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">"val_x"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"x1"</span>, <span class="st">"x2"</span>, <span class="st">"x3"</span>))</span>
+<span id="cb827-2"><a href="#cb827-2"></a>tb_2 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="st">"key_2"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>), <span class="st">"val_y"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"y1"</span>, <span class="st">"y2"</span>, <span class="st">"y3"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<ul>
+<li><code>by = c("key_2" = "key_2")</code>: we will indicate in which column of each table are the keys that we are going to cross.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb828"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb828-1"><a href="#cb828-1"></a><span class="co"># Left</span></span>
+<span id="cb828-2"><a href="#cb828-2"></a>tb_1  <span class="sc">|&gt;</span> </span>
+<span id="cb828-3"><a href="#cb828-3"></a>  <span class="fu">left_join</span>(tb_2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"key_1"</span> <span class="ot">=</span> <span class="st">"key_2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  key_1 val_x val_y
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+1     1 x1    y1   
+2     2 x2    y2   
+3     3 x3    &lt;NA&gt; </code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb830"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb830-1"><a href="#cb830-1"></a><span class="co"># Right</span></span>
+<span id="cb830-2"><a href="#cb830-2"></a>tb_1 <span class="sc">|&gt;</span> </span>
+<span id="cb830-3"><a href="#cb830-3"></a>  <span class="fu">right_join</span>(tb_2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"key_1"</span> <span class="ot">=</span> <span class="st">"key_2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  key_1 val_x val_y
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+1     1 x1    y1   
+2     2 x2    y2   
+3     4 &lt;NA&gt;  y3   </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="keys-and-suffixes-1" class="slide level2">
+<h2>keys and suffixes</h2>
+<p>We can also <span class="hl-yellow"><strong>cross over several columns at the same time</strong></span> (it will interpret as equal record the one that has the same set of keys), with <code>by = c("var1_t1" = "var1_t2", "var2_t1" = "var2_t2", ...)</code>. Let’s modify the previous example</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb832"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb832-1"><a href="#cb832-1"></a>tb_1 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="st">"k_11"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">"k_12"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>),  <span class="st">"val_x"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"x1"</span>, <span class="st">"x2"</span>, <span class="st">"x3"</span>))</span>
+<span id="cb832-2"><a href="#cb832-2"></a>tb_2 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="st">"k_21"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>), <span class="st">"k_22"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"e"</span>), <span class="st">"val_y"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"y1"</span>, <span class="st">"y2"</span>, <span class="st">"y3"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb833"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb833-1"><a href="#cb833-1"></a><span class="co"># Left</span></span>
+<span id="cb833-2"><a href="#cb833-2"></a>tb_1 <span class="sc">|&gt;</span> </span>
+<span id="cb833-3"><a href="#cb833-3"></a>  <span class="fu">left_join</span>(tb_2,</span>
+<span id="cb833-4"><a href="#cb833-4"></a>            <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"k_11"</span> <span class="ot">=</span> <span class="st">"k_21"</span>, <span class="st">"k_12"</span> <span class="ot">=</span> <span class="st">"k_22"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+   k_11 k_12  val_x val_y
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+1     1 a     x1    y1   
+2     2 b     x2    y2   
+3     3 c     x3    &lt;NA&gt; </code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb835"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb835-1"><a href="#cb835-1"></a><span class="co"># Right</span></span>
+<span id="cb835-2"><a href="#cb835-2"></a>tb_1 <span class="sc">|&gt;</span> </span>
+<span id="cb835-3"><a href="#cb835-3"></a>  <span class="fu">right_join</span>(tb_2,</span>
+<span id="cb835-4"><a href="#cb835-4"></a>             <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"k_11"</span> <span class="ot">=</span> <span class="st">"k_21"</span>, <span class="st">"k_12"</span> <span class="ot">=</span> <span class="st">"k_22"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+   k_11 k_12  val_x val_y
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+1     1 a     x1    y1   
+2     2 b     x2    y2   
+3     4 e     &lt;NA&gt;  y3   </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="keys-and-suffixes-2" class="slide level2">
+<h2>keys and suffixes</h2>
+<p>It could also happen that when crossing two tables, there are <span class="hl-yellow"><strong>columns of values named the same</strong></span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb837"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb837-1"><a href="#cb837-1"></a>tb_1 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="st">"key_1"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="st">"val"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"x1"</span>, <span class="st">"x2"</span>, <span class="st">"x3"</span>))</span>
+<span id="cb837-2"><a href="#cb837-2"></a>tb_2 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="st">"key_2"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>), <span class="st">"val"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"y1"</span>, <span class="st">"y2"</span>, <span class="st">"y3"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb838"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb838-1"><a href="#cb838-1"></a><span class="co"># Left</span></span>
+<span id="cb838-2"><a href="#cb838-2"></a>tb_1 <span class="sc">|&gt;</span></span>
+<span id="cb838-3"><a href="#cb838-3"></a>  <span class="fu">left_join</span>(tb_2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"key_1"</span> <span class="ot">=</span> <span class="st">"key_2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  key_1 val.x val.y
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+1     1 x1    y1   
+2     2 x2    y2   
+3     3 x3    &lt;NA&gt; </code></pre>
+</div>
+</div>
+<p>Notice that <span class="hl-yellow"><strong>default adds the suffixes</strong></span> <code>.x</code> and <code>.y</code> to tell us which table they come from.</p>
+</div>
+</section>
+<section id="keys-and-suffixes-3" class="slide level2">
+<h2>keys and suffixes</h2>
+<p>This <span class="hl-yellow"><strong>suffix can be specified</strong></span> in the optional argument <code>suffix = ...</code>, which allows us to <span class="hl-yellow"><strong>distinguish the variables</strong></span> of one table from another.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb840"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb840-1"><a href="#cb840-1"></a><span class="co"># Left</span></span>
+<span id="cb840-2"><a href="#cb840-2"></a>tb_1 <span class="sc">|&gt;</span></span>
+<span id="cb840-3"><a href="#cb840-3"></a>  <span class="fu">left_join</span>(tb_2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"key_1"</span> <span class="ot">=</span> <span class="st">"key_2"</span>),</span>
+<span id="cb840-4"><a href="#cb840-4"></a>            <span class="at">suffix =</span> <span class="fu">c</span>(<span class="st">"_table1"</span>, <span class="st">"_table2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  key_1 val_table1 val_table2
+  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;     
+1     1 x1         y1        
+2     2 x2         y2        
+3     3 x3         &lt;NA&gt;      </code></pre>
+</div>
+</div>
+</section>
+<section id="full_join" class="slide level2">
+<h2>full_join()</h2>
+<p>The two previous cases form what is known as <span class="hl-yellow"><strong>outer joins</strong></span>: crosses where observations are kept that appear in at least one table. The third outer join is known as <code>full_join()</code> which will <span class="hl-yellow"><strong>keep observations from both</strong></span> tables, <span class="hl-yellow"><strong>adding rows</strong></span> that do not match the other table.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb842"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb842-1"><a href="#cb842-1"></a>tb_1  <span class="sc">|&gt;</span> </span>
+<span id="cb842-2"><a href="#cb842-2"></a>  <span class="fu">full_join</span>(tb_2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"key_1"</span> <span class="ot">=</span> <span class="st">"key_2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  key_1 val.x val.y
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+1     1 x1    y1   
+2     2 x2    y2   
+3     3 x3    &lt;NA&gt; 
+4     4 &lt;NA&gt;  y3   </code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/full_join.jpg"></p>
+</div>
+</div>
+</section>
+<section id="inner_join" class="slide level2">
+<h2>inner_join()</h2>
+<p>Opposite the outer join is what is known as <span class="hl-yellow"><strong>inner join</strong></span>, with <code>inner_join()</code>: a join in which only the <span class="hl-yellow"><strong>observations that appear in both tables</strong></span> are kept, only those records that are patched are kept.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb844"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb844-1"><a href="#cb844-1"></a>tb_1 <span class="sc">|&gt;</span> </span>
+<span id="cb844-2"><a href="#cb844-2"></a>  <span class="fu">inner_join</span>(tb_2,  <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"key_1"</span> <span class="ot">=</span> <span class="st">"key_2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  key_1 val.x val.y
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+1     1 x1    y1   
+2     2 x2    y2   </code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/inner_join.png"></p>
+</div>
+</div>
+</section>
+<section id="inner_join-1" class="slide level2">
+<h2>inner_join()</h2>
+<p>Note that in terms of records, <code>inner_join</code> if it is commutative, <strong>we don’t care about the order of the tables</strong>: the only thing that changes is the order of the columns it adds.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb846"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb846-1"><a href="#cb846-1"></a>tb_1 <span class="sc">|&gt;</span> </span>
+<span id="cb846-2"><a href="#cb846-2"></a>  <span class="fu">inner_join</span>(tb_2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"key_1"</span> <span class="ot">=</span> <span class="st">"key_2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  key_1 val.x val.y
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+1     1 x1    y1   
+2     2 x2    y2   </code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb848"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb848-1"><a href="#cb848-1"></a>tb_2 <span class="sc">|&gt;</span> <span class="fu">inner_join</span>(tb_1, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"key_2"</span> <span class="ot">=</span> <span class="st">"key_1"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  key_2 val.x val.y
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+1     1 y1    x1   
+2     2 y2    x2   </code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="semianti_join" class="slide level2">
+<h2>semi/anti_join()</h2>
+<p>Finally we have two interesting tools to <span class="hl-yellow"><strong>filter (not cross) records</strong></span>: <code>semi_join()</code> and <code>anti_join()</code>. The <span class="hl-yellow"><strong>semi join</strong></span> leaves us in the <span class="hl-yellow"><strong>first table the records whose key is also in the second table</strong></span> (like an inner join but without adding the info from the second table). And the second one, the anti join, does just the opposite (those that are not).</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb850"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb850-1"><a href="#cb850-1"></a><span class="co"># semijoin</span></span>
+<span id="cb850-2"><a href="#cb850-2"></a>tb_1 <span class="sc">|&gt;</span> </span>
+<span id="cb850-3"><a href="#cb850-3"></a>  <span class="fu">semi_join</span>(tb_2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"key_1"</span> <span class="ot">=</span> <span class="st">"key_2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  key_1 val  
+  &lt;int&gt; &lt;chr&gt;
+1     1 x1   
+2     2 x2   </code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb852"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb852-1"><a href="#cb852-1"></a><span class="co"># antijoin</span></span>
+<span id="cb852-2"><a href="#cb852-2"></a>tb_1 <span class="sc">|&gt;</span> </span>
+<span id="cb852-3"><a href="#cb852-3"></a>  <span class="fu">anti_join</span>(tb_2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"key_1"</span> <span class="ot">=</span> <span class="st">"key_2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  key_1 val  
+  &lt;int&gt; &lt;chr&gt;
+1     3 x3   </code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="your-turn-2" class="slide level2">
+<h2>💻 Your turn</h2>
+<p>For the exercises we will use the tables available in the package <code>{nycflights13}</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb854"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb854-1"><a href="#cb854-1"></a><span class="fu">library</span>(nycflights13)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><strong>airlines</strong>: name of airlines (with their abbreviation).</li>
+<li><strong>airports</strong>: airport data (names, longitude, latitude, altitude, etc).</li>
+<li><strong>flights</strong>, <strong>planes</strong>: flight and aircraft data.</li>
+<li><strong>weather</strong>: hourly weather data.</li>
+</ul>
+</section>
+<section id="your-turn-3" class="slide level2">
+<h2>💻 Your turn</h2>
+<div class="panel-tabset">
+<ul id="tabset-18" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-18-1"><span class="hl-yellow"><strong>Exercise 1</strong></span></a></li><li><a href="#tabset-18-2"><span class="hl-yellow"><strong>Exercise 2</strong></span></a></li><li><a href="#tabset-18-3"><span class="hl-yellow"><strong>Exercise 3</strong></span></a></li><li><a href="#tabset-18-4"><span class="hl-yellow"><strong>Exercise 4</strong></span></a></li><li><a href="#tabset-18-5"><span class="hl-yellow"><strong>Exercise 5</strong></span></a></li><li><a href="#tabset-18-6"><span class="hl-yellow"><strong>Exercise 6</strong></span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-18-1">
+<p>📝 From package <code>{nycflights13}</code> incorporates into the <code>flights</code> table the airline data in <code>airlines</code>. We want to maintain all flight records, adding the airline information to the airlines table.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb855"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb855-1"><a href="#cb855-1"></a>flights_airlines <span class="ot">&lt;-</span></span>
+<span id="cb855-2"><a href="#cb855-2"></a>  flights <span class="sc">|&gt;</span> </span>
+<span id="cb855-3"><a href="#cb855-3"></a>  <span class="fu">left_join</span>(airlines, <span class="at">by =</span> <span class="st">"carrier"</span>)</span>
+<span id="cb855-4"><a href="#cb855-4"></a>flights_airlines</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-18-2">
+<p>📝 To the table obtained from the crossing of the previous section, include the data of the aircraft in <code>planes</code>, but including only those flights for which we have information on their aircraft (and vice versa).</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb856"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb856-1"><a href="#cb856-1"></a>flights_airlines_planes <span class="ot">&lt;-</span> </span>
+<span id="cb856-2"><a href="#cb856-2"></a>  flights_airlines <span class="sc">|&gt;</span> </span>
+<span id="cb856-3"><a href="#cb856-3"></a>  <span class="fu">inner_join</span>(planes, <span class="at">by =</span> <span class="st">"tailnum"</span>)</span>
+<span id="cb856-4"><a href="#cb856-4"></a>flights_airlines_planes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-18-3">
+<p>📝 Repeat the previous exercise but keeping both <code>year</code> variables (in one is the year of flight, in the other is the year of construction of the aircraft), and distinguishing them from each other</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb857"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb857-1"><a href="#cb857-1"></a>flights_airlines_planes <span class="ot">&lt;-</span> </span>
+<span id="cb857-2"><a href="#cb857-2"></a>  flights_airlines <span class="sc">|&gt;</span></span>
+<span id="cb857-3"><a href="#cb857-3"></a>  <span class="fu">inner_join</span>(planes, <span class="at">by =</span> <span class="st">"tailnum"</span>,</span>
+<span id="cb857-4"><a href="#cb857-4"></a>             <span class="at">suffix =</span> <span class="fu">c</span>(<span class="st">"_flight"</span>, <span class="st">"_build_aircraft"</span>))</span>
+<span id="cb857-5"><a href="#cb857-5"></a>flights_airlines_planes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-18-4">
+<p>📝 To the table obtained from the previous exercise includes the longitude and latitude of the airports in <code>airports</code>, distinguishing between the latitude/longitude of the airport at destination and at origin.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb858"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb858-1"><a href="#cb858-1"></a>flights_airlines_planes <span class="sc">|&gt;</span> </span>
+<span id="cb858-2"><a href="#cb858-2"></a>  <span class="fu">left_join</span>(airports <span class="sc">|&gt;</span> <span class="fu">select</span>(faa, lat, lon),</span>
+<span id="cb858-3"><a href="#cb858-3"></a>            <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"origin"</span> <span class="ot">=</span> <span class="st">"faa"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb858-4"><a href="#cb858-4"></a>  <span class="fu">rename</span>(<span class="at">lat_origin =</span> lat, <span class="at">lon_origin =</span> lon) <span class="sc">|&gt;</span> </span>
+<span id="cb858-5"><a href="#cb858-5"></a>  <span class="fu">left_join</span>(airports <span class="sc">|&gt;</span> <span class="fu">select</span>(faa, lat, lon),</span>
+<span id="cb858-6"><a href="#cb858-6"></a>            <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"dest"</span> <span class="ot">=</span> <span class="st">"faa"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb858-7"><a href="#cb858-7"></a>  <span class="fu">rename</span>(<span class="at">lat_dest =</span> lat, <span class="at">lon_dest =</span> lon)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-18-5">
+<p>📝 Filter from <code>airports</code> only those airports from which flights depart. Repeat the process filtering only those airports where flights arrive.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb859"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb859-1"><a href="#cb859-1"></a>airports <span class="sc">|&gt;</span> </span>
+<span id="cb859-2"><a href="#cb859-2"></a>  <span class="fu">semi_join</span>(flights, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"faa"</span> <span class="ot">=</span> <span class="st">"origin"</span>))</span>
+<span id="cb859-3"><a href="#cb859-3"></a>airports <span class="sc">|&gt;</span> </span>
+<span id="cb859-4"><a href="#cb859-4"></a>  <span class="fu">semi_join</span>(flights, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"faa"</span> <span class="ot">=</span> <span class="st">"dest"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-18-6">
+<p>📝 How many flights do we not have information about the aircraft? Eliminate flights that do not have an aircraft ID (other than NA) beforehand.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb860"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb860-1"><a href="#cb860-1"></a>flights <span class="sc">|&gt;</span></span>
+<span id="cb860-2"><a href="#cb860-2"></a>  <span class="fu">drop_na</span>(tailnum) <span class="sc">|&gt;</span></span>
+<span id="cb860-3"><a href="#cb860-3"></a>  <span class="fu">anti_join</span>(planes, <span class="at">by =</span> <span class="st">"tailnum"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb860-4"><a href="#cb860-4"></a>  <span class="fu">count</span>(tailnum, <span class="at">sort =</span> <span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="dbplyr-sql-connection" class="slide level2">
+<h2>dbplyr: SQL connection</h2>
+<p>Finally we are going to introduce the <code>{dbplyr}</code> package, which will allow us to combine <code>SQL</code> code into <code>R</code> to perform <span class="hl-yellow"><strong>database queries</strong></span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb861"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb861-1"><a href="#cb861-1"></a><span class="fu">install.packages</span>(<span class="st">"dbplyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>&nbsp;</p>
+<p>If you are using R to do data analysis, most of the data you need probably already lives in a database. We will learn how to <span class="hl-yellow"><strong>load data in to a local database</strong></span>.</p>
+</section>
+<section id="dbplyr-sql-connection-1" class="slide level2">
+<h2>dbplyr: SQL connection</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb862"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb862-1"><a href="#cb862-1"></a><span class="fu">install.packages</span>(<span class="st">"RSQLite"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We will also need to install a <span class="hl-yellow"><strong>DBI backend package</strong></span> (an interface that allows <code>{dplyr}</code> to work with many different databases using the same code). Five commonly used backends are:</p>
+<ul>
+<li><p><code>RMariaDB</code> connects to MySQL and MariaDB</p></li>
+<li><p><code>RPostgres</code> connects to Postgres and Redshift.</p></li>
+<li><p><code>RSQLite</code> embeds a SQLite database.</p></li>
+<li><p><code>odbc</code> connects to many commercial databases via the open database connectivity protocol.</p></li>
+<li><p><code>bigrquery</code> connects to Google’s BigQuery.</p></li>
+</ul>
+<div class="fragment">
+<p>In the following, we are going to use the <span class="hl-yellow"><strong>RSQLite backend</strong></span> (automatically installed when you install <code>{dbplyr}</code>).</p>
+</div>
+</section>
+<section id="dbplyr-sql-connection-2" class="slide level2">
+<h2>dbplyr: SQL connection</h2>
+<p>If we want to <span class="hl-yellow"><strong>work with a database adopting dplyr grammar</strong></span>, we must first connect to it. The connection will be done by using <code>DBI::dbConnect()</code>. The arguments to <code>DBI::dbConnect()</code> vary from database to database, but the first argument is always the database backend. SQLite only needs a path to the database.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb863"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb863-1"><a href="#cb863-1"></a>connection <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), <span class="at">dbname =</span> <span class="st">":memory:"</span>)</span>
+<span id="cb863-2"><a href="#cb863-2"></a>connection</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQLiteConnection&gt;
+  Path: :memory:
+  Extensions: TRUE</code></pre>
+</div>
+</div>
+<p>Here, the string <code>":memory:"</code> is a special path that creates <span class="hl-yellow"><strong>a temporary in-memory database</strong></span>.</p>
+</section>
+<section id="dbplyr-sql-connection-3" class="slide level2">
+<h2>dbplyr: SQL connection</h2>
+<p>The temporary database previously created has no yet data in it. We will <span class="hl-yellow"><strong>copy an existing database</strong></span> (for example, <code>gapminder</code> from <code>{gapminder}</code> package) using <code>copy_to()</code>. Using <code>tbl()</code> we “obtain” the database (called as named in <code>copy_to()</code>).</p>
+<p>The main difference is that not it is a <span class="hl-yellow"><strong>remote source in a SQLite database</strong></span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb865"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb865-1"><a href="#cb865-1"></a><span class="fu">copy_to</span>(connection, gapminder<span class="sc">::</span>gapminder, <span class="at">overwrite =</span> <span class="cn">TRUE</span>, <span class="at">name =</span> <span class="st">"gapminder_database"</span>)</span>
+<span id="cb865-2"><a href="#cb865-2"></a>gapminder_db <span class="ot">&lt;-</span> <span class="fu">tbl</span>(connection, <span class="st">"gapminder_database"</span>)</span>
+<span id="cb865-3"><a href="#cb865-3"></a>gapminder_db</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Source:   table&lt;gapminder_database&gt; [?? x 6]
+# Database: sqlite 3.43.2 [:memory:]
+   country     continent  year lifeExp      pop gdpPercap
+   &lt;chr&gt;       &lt;chr&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+ 1 Afghanistan Asia       1952    28.8  8425333      779.
+ 2 Afghanistan Asia       1957    30.3  9240934      821.
+ 3 Afghanistan Asia       1962    32.0 10267083      853.
+ 4 Afghanistan Asia       1967    34.0 11537966      836.
+ 5 Afghanistan Asia       1972    36.1 13079460      740.
+ 6 Afghanistan Asia       1977    38.4 14880372      786.
+ 7 Afghanistan Asia       1982    39.9 12881816      978.
+ 8 Afghanistan Asia       1987    40.8 13867957      852.
+ 9 Afghanistan Asia       1992    41.7 16317921      649.
+10 Afghanistan Asia       1997    41.8 22227415      635.
+# ℹ more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="dbplyr-sql-connection-4" class="slide level2">
+<h2>dbplyr: SQL connection</h2>
+<p>The main goal of <code>{dbplyr}</code> is to <span class="hl-yellow"><strong>automatically generate SQL from <code>dplyr</code> grammar</strong></span> that we are already familiar with.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb867"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb867-1"><a href="#cb867-1"></a>gapminder_db <span class="sc">|&gt;</span></span>
+<span id="cb867-2"><a href="#cb867-2"></a>  <span class="fu">select</span>(country, year, lifeExp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Source:   SQL [?? x 3]
+# Database: sqlite 3.43.2 [:memory:]
+   country      year lifeExp
+   &lt;chr&gt;       &lt;int&gt;   &lt;dbl&gt;
+ 1 Afghanistan  1952    28.8
+ 2 Afghanistan  1957    30.3
+ 3 Afghanistan  1962    32.0
+ 4 Afghanistan  1967    34.0
+ 5 Afghanistan  1972    36.1
+ 6 Afghanistan  1977    38.4
+ 7 Afghanistan  1982    39.9
+ 8 Afghanistan  1987    40.8
+ 9 Afghanistan  1992    41.7
+10 Afghanistan  1997    41.8
+# ℹ more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="dbplyr-sql-connection-5" class="slide level2">
+<h2>dbplyr: SQL connection</h2>
+<p>The most important difference between ordinary tibbles and remote database queries is that now <span class="hl-yellow"><strong>our <code>R</code> code is translated into SQL and executed in the database on the remote server</strong></span>, not in R on your local machine: it never pulls data into R unless you explicitly ask for it, <span class="hl-purple"><strong>delaying doing any work until the last possible moment</strong></span> (sends it to the database in one step).</p>
+<div class="fragment">
+<p>It is not <span class="hl-yellow"><strong>until we ask for the data</strong></span> (writing <code>gapminder_query</code> in console, for example), <code>dplyr</code> verbs generates the SQL and requests the results from the database.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb869"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb869-1"><a href="#cb869-1"></a>gapminder_query <span class="ot">&lt;-</span> </span>
+<span id="cb869-2"><a href="#cb869-2"></a>  gapminder_db <span class="sc">|&gt;</span></span>
+<span id="cb869-3"><a href="#cb869-3"></a>  <span class="fu">select</span>(country, year, lifeExp)</span>
+<span id="cb869-4"><a href="#cb869-4"></a>gapminder_query</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Source:   SQL [?? x 3]
+# Database: sqlite 3.43.2 [:memory:]
+   country      year lifeExp
+   &lt;chr&gt;       &lt;int&gt;   &lt;dbl&gt;
+ 1 Afghanistan  1952    28.8
+ 2 Afghanistan  1957    30.3
+ 3 Afghanistan  1962    32.0
+ 4 Afghanistan  1967    34.0
+ 5 Afghanistan  1972    36.1
+ 6 Afghanistan  1977    38.4
+ 7 Afghanistan  1982    39.9
+ 8 Afghanistan  1987    40.8
+ 9 Afghanistan  1992    41.7
+10 Afghanistan  1997    41.8
+# ℹ more rows</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="dbplyr-sql-connection-6" class="slide level2">
+<h2>dbplyr: SQL connection</h2>
+<p><strong>What is happening behind the scenes?</strong></p>
+<div class="fragment">
+<p><code>{dplyr}</code> is <span class="hl-yellow"><strong>translating our R code into SQL verbs</strong></span>, that we can check (without doing) by using <code>show_query()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb871"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb871-1"><a href="#cb871-1"></a>gapminder_query <span class="sc">|&gt;</span> </span>
+<span id="cb871-2"><a href="#cb871-2"></a>  <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT `country`, `year`, `lifeExp`
+FROM `gapminder_database`</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="dbplyr-sql-connection-7" class="slide level2">
+<h2>dbplyr: SQL connection</h2>
+<p>As commented, our remote database queries is not in R on your local machine: it never pulls data into R unless you explicitly ask for it. To do it, you can iterate a few times before you figure out what data you need, and then we use <code>collect()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb873"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb873-1"><a href="#cb873-1"></a>gapminder_tibble <span class="ot">&lt;-</span></span>
+<span id="cb873-2"><a href="#cb873-2"></a>  gapminder_query <span class="sc">|&gt;</span> </span>
+<span id="cb873-3"><a href="#cb873-3"></a>  <span class="fu">collect</span>()</span>
+<span id="cb873-4"><a href="#cb873-4"></a>gapminder_tibble</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,704 × 3
+   country      year lifeExp
+   &lt;chr&gt;       &lt;int&gt;   &lt;dbl&gt;
+ 1 Afghanistan  1952    28.8
+ 2 Afghanistan  1957    30.3
+ 3 Afghanistan  1962    32.0
+ 4 Afghanistan  1967    34.0
+ 5 Afghanistan  1972    36.1
+ 6 Afghanistan  1977    38.4
+ 7 Afghanistan  1982    39.9
+ 8 Afghanistan  1987    40.8
+ 9 Afghanistan  1992    41.7
+10 Afghanistan  1997    41.8
+# ℹ 1,694 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="dbplyr-sql-connection-8" class="slide level2">
+<h2>dbplyr: SQL connection</h2>
+<p>You can also use <code>translate_sql()</code> to translate individual expressions from <code>dplyr</code> to SQL</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb875"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb875-1"><a href="#cb875-1"></a>dbplyr<span class="sc">::</span><span class="fu">translate_sql</span>((x <span class="sc">+</span> y) <span class="sc">/</span> <span class="dv">2</span>, <span class="at">con =</span> connection)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt; (`x` + `y`) / 2.0</code></pre>
+</div>
+</div>
+</section></section>
+<section id="thanks" class="title-slide slide level1 center">
+<h1>Thanks</h1>
+<p><span style="color:#444442;"><strong>Thanks! </strong></span></p>
 <div class="footer footer-default">
 <p><a href="..."><strong>Javier Álvarez Liébana</strong></a> • Master in Computational Social Sciences • 2023-2024</p>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 

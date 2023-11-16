@@ -91,7 +91,7 @@ Currently, [**researcher and lecturer at the Faculty of Statistics of the UCM**]
 
 . . .
 
-- [**Individual work done during the course**]{.hl-yellow} (60%). Throughout the course there are [**3 individual task submissions**]{.hl-purple}.
+- [**Individual work done during the course**]{.hl-yellow} (35%). Throughout the course there are [**3 individual task submissions**]{.hl-purple}.
 
 . . .
 
@@ -127,9 +127,9 @@ Currently, [**researcher and lecturer at the Faculty of Statistics of the UCM**]
 
 * Individual Task I (10%): 24th October (R base, databases, tidydata)
 
-* Individual Task II (20%): 16th November (Tidyverse, control flow structures, functions)
+* Individual Task II (25%): 5th December (Tidyverse, control flow structures, functions, lists, etc)
 
-* Individual Task III (30%): 7th December (all contents)
+* Group Task  (30%)
 
 ---
 
@@ -7741,12 +7741,893 @@ months_fct
 
 ## Lists
 
+We have already seen that lists are an object in R that allows us to store [**collections of variables of different type**]{.hl-yellow} (as with `data.frame` and `tibble`) but also [**different lengths**]{.hl-purple}, with totally heterogeneous structures (even a list can have inside it another list).
+
+```{r}
+name <- "Javi"
+age <- 34
+marks <- c(7, 8, 5, 3, 10, 9)
+parents <- c("Paloma", "Goyo")
+
+list_var <- list("name" = name, "age" = age, "marks" = marks, "parents" = parents)
+```
+
+
+```{r}
+list_var$name
+list_var$marks
+```
+
+
+
+---
+
+## Lists
+
+
+We can also make [**lists with other lists inside**]{.hl-yellow}, so that to access each level we must use the `[[]]` operator.
+
+```{r}
+list_of_lists <- list("list_1" = list_var[1:2], "list_2" = list_var[3:4])
+names(list_of_lists)
+```
+
+```{r}
+names(list_of_lists[[1]])
+```
+
+```{r}
+list_of_lists[[1]][[1]]
+```
+
+. . .
+
+We are allowed to store [**n-dimensional data**]{.hl-yellow}!
+
+---
+
+## Lists
+
+One of the disadvantages is that a list [**cannot be vectorized**]{.hl-yellow} immediately, so any arithmetic operation applied to a list will give [**error**]{.hl-red}.
+
+```{r}
+#| error: true
+data <- list("a" = 1:5, "b" = 10:20)
+data / 2
+```
+
+. . .
+
+For this purpose, one of the common (but outdated) options is to make use of the `lapply()` family.
+
+```{r}
+lapply(data, FUN = function(x) { x / 2})
+```
+
+By default, the output of `lapply()`is always a [**list of equal length**]{.hl-yellow}.
+
+---
+
+## Lists
+
+
+A more flexible and versatile option is to make use of the `{purrr}` package of the `{tidyverse}` environment.
+
+```{r}
+library(purrr)
+```
+
+This package is intended to mimic the [**functional programming**]{.hl-yellow} of other languages such as Scala or Hadoop's [**map-reduce strategy**]{.hl-yellow} (from Google).
+
+![](img/purrr.png)
+
+---
+
+## Lists
+
+The simplest function of the `{purrr}` package is the `map()` function, which [**applies a vectorized function**]{.hl-yellow} to each of the elements of a list. Let's see a first example applied to vectors
+
+. . .
+
+`map()` allows us to [**"map" each list**]{.hl-yellow} and apply the function element by element (if applicable).
+
+```{r}
+x <- list("x1" = 1:4, "x2" = 11:20)
+map(x, sqrt) 
+```
+
+. . .
+
+
+::: callout-warning
+## Be careful
+
+With vectors we have a default vectorization because `R` performs element-by-element operations. Note that, by default, the [**output of `map` is a list**]{.hl-yellow}.
+:::
+
+
+---
+
+## Lists
+
+Let's look at another example. Define in a list two samples from 2 normal distributions, of different sample size and different mean. Compute the mean of each one.
+
+```{r}
+#| code-fold: true
+x <- list(rnorm(n = 1500, mean = 0, sd = 0.7),
+          rnorm(n = 2800, mean = 2, sd = 1.5))
+map(x, mean)
+```
+
+---
+
+## Lists
+
+What if we want to calculate the mean of their squared values?
+
+```{r}
+#| code-fold: true
+map(x, function(x) { mean(x^2) })
+```
+
+
+---
+
+## Lists
+
+In addition to being [**more readable and efficient**]{.hl-yellow}, with `{purrr}` we can [**decide the output format**]{.hl-yellow} after the operation
+
+* output as [**numeric (double) vector**]{.hl-purple} with `map_dbl()`
+* output as [**numeric (int) vector**]{.hl-purple} with `map_int()`
+* output as [**character vector**]{.hl-purple} with `map_chr()`
+* output as [**logical vector**]{.hl-purple} with `map_lgl()`
+
+```{r}
+map_dbl(x, mean)
+map_chr(x, function(x) { glue("Mean is {round(mean(x), 5)}") })
+```
+
+---
+
+## Lists
+
+```{r}
+c(x[[1]][3], x[[2]][3])
+```
+
+
+Also, if you pass it a [**number**]{.hl-yellow} instead of a function, it will return the [**ith element of each list**]{.hl-yellow}.
+
+```{r}
+map_dbl(x, 3)
+```
+
+
+---
+
+
+## Lists
+
+We also have the option of generalizing it to be able to use functions that [**need two arguments in the form of a list**]{.hl-yellow} (binary operations), with `map2()`
+
+
+```{r}
+x <- list("a" = 1:3, "b" = 4:6)
+y <- list("c" = c(-1, 4, 0), "b" = c(5, -4, -1))
+map2(x, y, function(x, y) { x^2 + y^2})
+```
+
+---
+
+## Lists
+
+We can obtain the output in the form of `data.frame` by adding `list_rbind()` or `list_cbind()`, which [**converts a list into a table**]{.hl-yellow}.
+
+
+```{r}
+x <- c("a", "b", "c")
+y <- 1:3
+map2(x, y, function(x, y) { tibble(x, y) }) |> list_rbind()
+```
+
+---
+
+## Lists
+
+We can generalize it further with `pmap_xxx()` which allows us to use [**multiple arguments (multiple lists)**]{.hl-yellow}.
+
+
+```{r}
+x <- list(1, 1, 1)
+y <- list(10, 20, 30)
+z <- list(100, 200, 300)
+pmap_dbl(list(x, y, z), sum)
+```
+
+---
+
+## Lists
+
+We have other types of iterators that, although they assume inputs, do not return anything, as `walk()` (just one input argument), `walk2()` (two arguments) and `pwalk()` (multiple arguments), all [**invisibly return**]{.hl-yellow}, just call a function for its [**side effects**]{.hl-yellow} rather than its return value.
+
+```{r}
+list("a" = 1:3, "b" = 4:6) |>
+  map2(list("a" = 11:13, "b" = 14:16),
+       function(x, y) { x + y }) |> 
+  walk(print)
+```
+
+---
+
+## 💻 Your turn
+
+
+::: panel-tabset
+
+### [**Exercise 1**]{.hl-yellow}
+
+📝 Define a list of 4 elements of different types and access the second of them (I will include one that is a tibble so that you can see that in a list there is room for everything).
+
+```{r}
+#| code-fold: true
+#| eval: false
+list_example <-
+  list("name" = "Javier", "cp" = 28019,
+       "siblings" = TRUE,
+       "marks" = tibble("maths" = c(7.5, 8, 9),
+                        "lang" = c(10, 5, 6)))
+list_example
+```
+
+### [**Exercise 2**]{.hl-yellow}
+
+📝 From the list above, access the elements that occupy places 1 and 4 of the list defined above.
+
+```{r}
+#| code-fold: true
+#| eval: false
+
+list_example[c(1, 4)]
+
+list_example$name
+list_example$marks
+
+list_example[c("name", "marks")]
+```
+
+
+
+### [**Exercise 3**]{.hl-yellow}
+
+📝  Load the `starwars` dataset from the `{dplyr}` package and access the second movie that appears in `starwars$films` (for each character). Determine which ones do not appear in more than one movie.
+
+```{r}
+second_film <- map(starwars$films, 2)
+map_lgl(second_film, is.null)
+```
+
+:::
+
+
 ---
 
 ## Joins
 
---- 
+When working with data we will not always have the information in a single table, and sometimes, we will be interested in [**cross-referencing**]{.hl-yellow} information from different sources.
 
-## SQL connection
+. . .
+
+For this we will use a classic of every language that handles data: the famous [**join**]{.hl-yellow}, a tool that will allow us to [**cross one or several tables**]{.hl-yellow}, making use of a [**identifying column**]{.hl-yellow} of each one of them.
+
+```{r}
+#| eval: false
+table_1 |>
+  xxx_join(table_2, by = id)
+```
+
+---
+
+## Joins
+
+* `inner_join()`: only [**records with id in both**]{.hl-yellow} tables survive.
+
+* `full_join()`: keeps [**all records in both**]{.hl-yellow} tables.
+
+* `left_join()`: keeps [**all the records of the first table**]{.hl-yellow}, and looks for which ones have id also in the second one (in case of [**not having it, it fills with NA**]{.hl-yellow} the fields of the 2nd table).
+
+* `right_join()`: keeps [**all records in the second table**]{.hl-yellow}, and searches which ones have id also in the first one.
+
+![](img/sql-joins.jpg)    
+
+
+
+---
+
+## Joins
+
+Let's test the various joins with a simple example
+
+```{r}
+tb_1 <- tibble("key" = 1:3, "val_x" = c("x1", "x2", "x3"))
+tb_2 <- tibble("key" = c(1, 2, 4), "val_y" = c("y1", "y2", "y3"))
+```
+
+:::: columns
+::: {.column width="50%"}
+
+```{r}
+tb_1
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+tb_2
+```
+
+:::
+::::
+
+---
+
+
+## left_join()
+
+Imagine that we want to [**incorporate**]{.hl-yellow} to `tb_1` the [**information from table_2**]{.hl-yellow}, identifying the records by the key column (`by = "key"`, the column it has to cross): we want to keep all the records of the first table and look for which ones have the same value in `key` also in the second one.
+
+. . .
+
+:::: columns
+::: {.column width="50%"}
+
+```{r}
+tb_1 |> 
+  left_join(tb_2, by = "key")
+```
+
+:::
+
+::: {.column width="50%"}
+
+![](img/left_join.jpg)
+
+:::
+::::
+
+
+
+---
+
+## left_join()
+
+
+```{r}
+tb_1 |>
+  left_join(tb_2, by = "key")
+```
+
+Notice that the [**records in the first one whose key was not found in the second one**]{.hl-yellow} has given them the value of [**absent**]{.hl-yellow}.
+
+---
+
+## right_join()
+
+The `right_join()` will perform the opposite operation: we will now [**incorporate**]{.hl-yellow} to `tb_2` the [**information from table_2**]{.hl-yellow}, identifying the records by the `key` column: we want to keep all the records of the second one and look for which ones have id (same value in `key`) also in the first table.
+
+. . .
+
+:::: columns
+::: {.column width="50%"}
+
+
+```{r}
+tb_1 |> 
+  right_join(tb_2, by = "key")
+```
+
+:::
+
+::: {.column width="50%"}
+
+
+![](img/right_join.jpg)
+
+:::
+::::
+
+
+---
+
+## right_join()
+
+
+```{r}
+tb_1 |>
+  right_join(tb_2, by = "key")
+```
+
+Notice that now the [**records of the second one whose key was not found in the first one**]{.hl-yellow} are the ones given the value of [**absent**]{.hl-yellow}.
+
+---
+
+## keys and suffixes
+
+The key columns we will use for the crossover [**will not always be named the same**]{.hl-yellow}.
+
+```{r}
+tb_1 <- tibble("key_1" = 1:3, "val_x" = c("x1", "x2", "x3"))
+tb_2 <- tibble("key_2" = c(1, 2, 4), "val_y" = c("y1", "y2", "y3"))
+```
+
+. . .
+
+* `by = c("key_2" = "key_2")`: we will indicate in which column of each table are the keys that we are going to cross.
+
+:::: columns
+::: {.column width="50%"}
+
+```{r}
+# Left
+tb_1  |> 
+  left_join(tb_2, by = c("key_1" = "key_2"))
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+# Right
+tb_1 |> 
+  right_join(tb_2, by = c("key_1" = "key_2"))
+```
+
+:::
+::::
+
+
+---
+
+## keys and suffixes
+
+We can also [**cross over several columns at the same time**]{.hl-yellow} (it will interpret as equal record the one that has the same set of keys), with `by = c("var1_t1" = "var1_t2", "var2_t1" = "var2_t2", ...)`. Let's modify the previous example
+
+```{r}
+tb_1 <- tibble("k_11" = 1:3, "k_12" = c("a", "b", "c"),  "val_x" = c("x1", "x2", "x3"))
+tb_2 <- tibble("k_21" = c(1, 2, 4), "k_22" = c("a", "b", "e"), "val_y" = c("y1", "y2", "y3"))
+```
+
+. . .
+
+:::: columns
+::: {.column width="50%"}
+
+```{r}
+# Left
+tb_1 |> 
+  left_join(tb_2,
+            by = c("k_11" = "k_21", "k_12" = "k_22"))
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+# Right
+tb_1 |> 
+  right_join(tb_2,
+             by = c("k_11" = "k_21", "k_12" = "k_22"))
+```
+
+:::
+::::
+
+---
+
+## keys and suffixes
+
+It could also happen that when crossing two tables, there are [**columns of values named the same**]{.hl-yellow}
+
+```{r}
+tb_1 <- tibble("key_1" = 1:3, "val" = c("x1", "x2", "x3"))
+tb_2 <- tibble("key_2" = c(1, 2, 4), "val" = c("y1", "y2", "y3"))
+```
+
+. . .
+
+```{r}
+# Left
+tb_1 |>
+  left_join(tb_2, by = c("key_1" = "key_2"))
+```
+
+Notice that [**default adds the suffixes**]{.hl-yellow} `.x` and `.y` to tell us which table they come from.
+
+---
+
+## keys and suffixes
+
+
+This [**suffix can be specified**]{.hl-yellow} in the optional argument `suffix = ...`, which allows us to [**distinguish the variables**]{.hl-yellow} of one table from another.
+
+```{r}
+# Left
+tb_1 |>
+  left_join(tb_2, by = c("key_1" = "key_2"),
+            suffix = c("_table1", "_table2"))
+```
+
+---
+
+## full_join()
+
+The two previous cases form what is known as [**outer joins**]{.hl-yellow}: crosses where observations are kept that appear in at least one table. The third outer join is known as `full_join()` which will [**keep observations from both**]{.hl-yellow} tables, [**adding rows**]{.hl-yellow} that do not match the other table.
+
+:::: columns
+::: {.column width="50%"}
+
+```{r}
+tb_1  |> 
+  full_join(tb_2, by = c("key_1" = "key_2"))
+```
+
+:::
+
+::: {.column width="50%"}
+
+![](img/full_join.jpg)
+
+:::
+::::
+
+---
+
+## inner_join()
+
+Opposite the outer join is what is known as [**inner join**]{.hl-yellow}, with `inner_join()`: a join in which only the [**observations that appear in both tables**]{.hl-yellow} are kept, only those records that are patched are kept.
+
+:::: columns
+::: {.column width="50%"}
+
+
+```{r}
+tb_1 |> 
+  inner_join(tb_2,  by = c("key_1" = "key_2"))
+```
+
+:::
+
+::: {.column width="50%"}
+
+![](img/inner_join.png)
+
+:::
+::::
+
+
+
+---
+
+## inner_join()
+
+Note that in terms of records, `inner_join` if it is commutative, **we don't care about the order of the tables**: the only thing that changes is the order of the columns it adds.
+
+:::: columns
+::: {.column width="50%"}
+
+
+```{r}
+tb_1 |> 
+  inner_join(tb_2, by = c("key_1" = "key_2"))
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+tb_2 |> inner_join(tb_1, by = c("key_2" = "key_1"))
+```
+
+:::
+::::
+
+---
+
+## semi/anti_join()
+
+Finally we have two interesting tools to [**filter (not cross) records**]{.hl-yellow}: `semi_join()` and `anti_join()`. The [**semi join**]{.hl-yellow} leaves us in the [**first table the records whose key is also in the second table**]{.hl-yellow} (like an inner join but without adding the info from the second table). And the second one, the anti join, does just the opposite (those that are not).
+
+
+:::: columns
+
+::: {.column width="50%"}
+
+```{r}
+# semijoin
+tb_1 |> 
+  semi_join(tb_2, by = c("key_1" = "key_2"))
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+# antijoin
+tb_1 |> 
+  anti_join(tb_2, by = c("key_1" = "key_2"))
+```
+
+:::
+::::
+
+---
+
+## 💻 Your turn
+
+For the exercises we will use the tables available in the package `{nycflights13}`.
+
+```{r}
+library(nycflights13)
+```
+
+* **airlines**: name of airlines (with their abbreviation).
+* **airports**: airport data (names, longitude, latitude, altitude, etc).
+* **flights**, **planes**: flight and aircraft data.
+* **weather**: hourly weather data.
+
+---
+
+## 💻 Your turn
+
+
+::: panel-tabset
+
+### [**Exercise 1**]{.hl-yellow}
+
+📝 From package `{nycflights13}` incorporates into the `flights` table the airline data in `airlines`. We want to maintain all flight records, adding the airline information to the airlines table.
+
+
+```{r}
+#| code-fold: true
+#| eval: false
+flights_airlines <-
+  flights |> 
+  left_join(airlines, by = "carrier")
+flights_airlines
+```
+
+### [**Exercise 2**]{.hl-yellow}
+
+📝 To the table obtained from the crossing of the previous section, include the data of the aircraft in `planes`, but including only those flights for which we have information on their aircraft (and vice versa). 
+
+```{r}
+#| code-fold: true
+#| eval: false
+
+flights_airlines_planes <- 
+  flights_airlines |> 
+  inner_join(planes, by = "tailnum")
+flights_airlines_planes
+```
+
+
+### [**Exercise 3**]{.hl-yellow}
+
+📝 Repeat the previous exercise but keeping both `year` variables (in one is the year of flight, in the other is the year of construction of the aircraft), and distinguishing them from each other
+
+
+```{r}
+#| code-fold: true
+#| eval: false
+
+flights_airlines_planes <- 
+  flights_airlines |>
+  inner_join(planes, by = "tailnum",
+             suffix = c("_flight", "_build_aircraft"))
+flights_airlines_planes
+```
+
+
+### [**Exercise 4**]{.hl-yellow}
+
+📝 To the table obtained from the previous exercise includes the longitude and latitude of the airports in `airports`, distinguishing between the latitude/longitude of the airport at destination and at origin.
+
+
+```{r}
+#| code-fold: true
+#| eval: false
+
+flights_airlines_planes |> 
+  left_join(airports |> select(faa, lat, lon),
+            by = c("origin" = "faa")) |> 
+  rename(lat_origin = lat, lon_origin = lon) |> 
+  left_join(airports |> select(faa, lat, lon),
+            by = c("dest" = "faa")) |> 
+  rename(lat_dest = lat, lon_dest = lon)
+```
+
+### [**Exercise 5**]{.hl-yellow}
+
+📝 Filter from `airports` only those airports from which flights depart. Repeat the process filtering only those airports where flights arrive.
+
+
+```{r}
+#| code-fold: true
+#| eval: false
+
+airports |> 
+  semi_join(flights, by = c("faa" = "origin"))
+airports |> 
+  semi_join(flights, by = c("faa" = "dest"))
+```
+
+### [**Exercise 6**]{.hl-yellow}
+
+📝 How many flights do we not have information about the aircraft? Eliminate flights that do not have an aircraft ID (other than NA) beforehand.
+
+
+```{r}
+#| code-fold: true
+#| eval: false
+
+flights |>
+  drop_na(tailnum) |>
+  anti_join(planes, by = "tailnum") |>
+  count(tailnum, sort = TRUE) 
+```
+
+:::
+
+
+---
+
+## dbplyr: SQL connection
+
+
+Finally we are going to introduce the `{dbplyr}` package, which will allow us to combine `SQL` code into `R` to perform [**database queries**]{.hl-yellow}
+
+```{r}
+#| eval: false
+install.packages("dbplyr")
+```
+
+&nbsp;
+
+If you are using R to do data analysis, most of the data you need probably already lives in a database. We will learn how to [**load data in to a local database**]{.hl-yellow}.
+
+
+---
+
+## dbplyr: SQL connection
+
+```{r}
+#| eval: false
+install.packages("RSQLite")
+```
+
+
+We will also need to install a [**DBI backend package**]{.hl-yellow} (an interface that allows `{dplyr}` to work with many different databases using the same code). Five commonly used backends are:
+
+* `RMariaDB` connects to MySQL and MariaDB
+
+* `RPostgres` connects to Postgres and Redshift.
+
+* `RSQLite` embeds a SQLite database.
+
+* `odbc` connects to many commercial databases via the open database connectivity protocol.
+
+* `bigrquery` connects to Google’s BigQuery.
+
+. . .
+
+In the following, we are going to use the [**RSQLite backend**]{.hl-yellow} (automatically installed when you install `{dbplyr}`).
+
+---
+
+## dbplyr: SQL connection
+
+If we want to [**work with a database adopting dplyr grammar**]{.hl-yellow}, we must first connect to it. The connection will be done by using `DBI::dbConnect()`. The arguments to `DBI::dbConnect()` vary from database to database, but the first argument is always the database backend. SQLite only needs a path to the database. 
+
+
+```{r}
+connection <- DBI::dbConnect(RSQLite::SQLite(), dbname = ":memory:")
+connection
+```
+
+Here, the string `":memory:"` is a special path that creates [**a temporary in-memory database**]{.hl-yellow}.
+
+---
+
+## dbplyr: SQL connection
+
+The temporary database previously created has no yet data in it. We will [**copy an existing database**]{.hl-yellow} (for example, `gapminder` from `{gapminder}` package) using `copy_to()`. Using `tbl()` we "obtain" the database (called as named in `copy_to()`).
+
+The main difference is that not it is a [**remote source in a SQLite database**]{.hl-yellow}.
+
+```{r}
+copy_to(connection, gapminder::gapminder, overwrite = TRUE, name = "gapminder_database")
+gapminder_db <- tbl(connection, "gapminder_database")
+gapminder_db
+```
+
+---
+
+## dbplyr: SQL connection
+
+
+The main goal of `{dbplyr}` is to [**automatically generate SQL from `dplyr` grammar**]{.hl-yellow} that we are already familiar with.
+
+```{r}
+gapminder_db |>
+  select(country, year, lifeExp)
+```
+
+---
+
+## dbplyr: SQL connection
+
+
+
+The most important difference between ordinary tibbles and remote database queries is that now [**our `R` code is translated into SQL and executed in the database on the remote server**]{.hl-yellow}, not in R on your local machine: it never pulls data into R unless you explicitly ask for it, [**delaying doing any work until the last possible moment**]{.hl-purple} (sends it to the database in one step).
+
+. . .
+
+It is not [**until we ask for the data**]{.hl-yellow} (writing `gapminder_query` in console, for example), `dplyr` verbs generates the SQL and requests the results from the database. 
+
+```{r}
+gapminder_query <- 
+  gapminder_db |>
+  select(country, year, lifeExp)
+gapminder_query
+```
+
+---
+
+## dbplyr: SQL connection
+
+**What is happening behind the scenes?**
+
+. . . 
+
+`{dplyr} ` is [**translating our R code into SQL verbs**]{.hl-yellow}, that we can check (without doing) by using `show_query()`
+
+```{r}
+gapminder_query |> 
+  show_query()
+```
+
+---
+
+## dbplyr: SQL connection
+
+As commented, our remote database queries is not in R on your local machine: it never pulls data into R unless you explicitly ask for it. To do it, you can iterate a few times before you figure out what data you need, and then we use `collect()`.
+
+```{r}
+gapminder_tibble <-
+  gapminder_query |> 
+  collect()
+gapminder_tibble
+```
+
+---
+
+## dbplyr: SQL connection
+
+You can also use `translate_sql()` to translate individual expressions from `dplyr` to SQL
+
+```{r}
+dbplyr::translate_sql((x + y) / 2, con = connection)
+```
+
+
+# Thanks
+
+[**Thanks! **]{style="color:#444442;"}
+
 
 
